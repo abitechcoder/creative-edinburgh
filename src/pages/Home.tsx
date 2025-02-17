@@ -1,9 +1,11 @@
-import React from 'react'
+import { MeetMember } from "../components";
 
 const Home = () => {
   return (
-    <div className='text-3xl font-bold bg-primary text-secondary'>Home</div>
-  )
-}
+    <div className="text-3xl font-bold  text-secondary">
+      <MeetMember />
+    </div>
+  );
+};
 
-export default Home
+export default Home;
