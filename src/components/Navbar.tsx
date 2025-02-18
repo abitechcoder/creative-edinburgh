@@ -28,7 +28,7 @@ const Navbar = ({ setIsMenuOpen }: any) => {
     <nav className={`h-[120px] flex items-center px-4 lg:px-9 fixed top-0 left-0 right-0 ${isScrolled ? "bg-white" : "bg-transparent"} z-20`}>
       <div className="w-full flex items-end justify-between">
         <a href='/' >
-          <Logo className="h-[50px]" />
+          <Logo className="h-[40px] md:h-[50px]" />
         </a>
         <div className='lg:hidden cursor-pointer' onClick={() => setIsMenuOpen(true)}>
           <GiHamburgerMenu size={40} />
