@@ -27,3 +27,30 @@ export const members = [
     date: "22th February 2025",
   },
 ];
+
+export const NavLinks = [
+  {id: 1,
+    title: "ABOUT US"
+  },
+  {id: 2,
+    title: "MEMBERSHIP"
+  },
+  {id: 3,
+    title: "MENTORSHIP"
+  },
+  {id: 4,
+    title: "EVENTS"
+  },
+  {id: 5,
+    title: "AWARDS"
+  },
+  {id: 6,
+    title: "FOR COMMUNITY"
+  },
+  {id: 7,
+    title: "SUPPORT US"
+  },
+  {id: 8,
+    title: "LOGIN"
+  },
+]
