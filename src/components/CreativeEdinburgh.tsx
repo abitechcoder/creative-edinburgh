@@ -1,7 +1,7 @@
 import React from "react";
 import { creativeEdinburgh } from "../constant";
 import Button from "./Button";
-import { CardImage } from "../assets";
+import { WhatWeDoImage } from "../assets";
 import styles from "../style";
 
 const CreativeEdinburgh: React.FC = () => {
@@ -10,7 +10,7 @@ const CreativeEdinburgh: React.FC = () => {
       {/* Left Image Section */}
       <div className="lg:w-1/2 w-full pe-6 ">
         <img
-          src={CardImage}
+          src={WhatWeDoImage}
           alt="Creative Edinburgh Event"
           className="w-full h-auto rounded-r-2xl shadow-lg "
         />

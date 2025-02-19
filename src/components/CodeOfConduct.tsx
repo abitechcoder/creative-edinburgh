@@ -3,7 +3,7 @@ import styles from "../style";
 
 const CodeOfConduct = () => {
   return (
-    <section className="flex flex-col md:flex-row   mx-auto py-12 ">
+    <section className="flex flex-col md:flex-row   mx-auto py-12 gap-5 ">
       {/* Text Content */}
       <div className="md:w-1/2 px-6">
         <h2

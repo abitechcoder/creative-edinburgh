@@ -1,11 +1,11 @@
-import { CardImage } from "../assets";
+import { OurValuesImage } from "../assets";
 import VissionMisionCard from "./VissionMisionCard";
 
 const OurValues = () => {
   return (
     <div className="my-10 lg:my-20">
       <VissionMisionCard
-        imageSrc={CardImage}
+        imageSrc={OurValuesImage}
         title="Our values"
         subtitle="Inclusive"
         text="In order to represent the whole creative community in Edinburgh, we strive to support individuals through genuinely inclusive services, ensuring fair representation from all backgrounds and communities. Through celebrating people, projects and places in Edinburgh we proudly shine a light on our ever-growing creative community and strengthen its legacy."

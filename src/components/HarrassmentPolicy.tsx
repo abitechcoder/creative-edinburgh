@@ -34,7 +34,7 @@ const creativeEdinburghPriorities = [
 const HarassmentPolicy = () => {
   return (
     <div className="py-12 mx-auto">
-      <div className="flex flex-col md:flex-row gap-x-10">
+      <div className="flex flex-col md:flex-row gap-5">
         <div className="w-full mt-6 md:mt-0 pe-6">
           <img
             src={CardImage}
@@ -42,7 +42,7 @@ const HarassmentPolicy = () => {
             className="rounded-e-2xl w-full"
           />
         </div>
-        <div className="md:pe-6 w-full">
+        <div className="px-5 w-full">
           <h2 className="text-xl font-bold mb-4">
             Harassment includes, but is not limited to:
           </h2>

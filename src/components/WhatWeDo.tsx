@@ -2,9 +2,9 @@ import styles from "../style";
 
 const WhatWeDo = () => {
   return (
-    <section className="bg-gray-50 py-16 relative px-6">
-      <div className="max-w-xl">
-        <h2 className={`${styles.heading1} text-black mb-10`}>WHAT WE DO</h2>
+    <section className="bg-gray-50 py-16 relative px-6 lg:h-screen grid grid-cols-1 lg:grid-cols-2">
+      <div className="w-full h-full flex flex-col justify-center">
+        <h2 className={`${styles.heading1} text-black mb-6 lg:mb-10 mt-16`}>WHAT WE DO</h2>
         <p
           className={`${styles.paragraph} text-gray-700 mb-5 font-medium leading-relaxed text-xl`}
         >
@@ -21,9 +21,10 @@ const WhatWeDo = () => {
           annual grant funding to support its core service delivery.
         </p>
       </div>
+      <div className="relative">
+        <div className="absolute top-[50%] left-20 w-[120px] h-[120px] bg-yellow-400 rounded-full hidden lg:block"></div>
+      </div>
 
-      {/* Decorative Elements */}
-      <div className="absolute top-20 right-16 w-20 h-20 bg-yellow-400 rounded-full hidden lg:block"></div>
     </section>
   );
 };

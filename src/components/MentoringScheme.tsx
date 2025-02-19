@@ -1,14 +1,14 @@
-import { CardImage } from "../assets";
+import { MentorshipSchemeImage } from "../assets";
 import styles from "../style";
 import Button from "./Button";
 
 const MentoringScheme = () => {
   return (
-    <section className="bg-[#A78BFA] text-black flex flex-col md:flex-row items-center gap-12 py-6 lg:py-20 ">
+    <section className="bg-[#A78BFA] text-black flex flex-col md:flex-row items-center gap-12 py-8 lg:py-20 ">
       {/* Image Section */}
       <div className=" w-full md:w-1/2 pe-6">
         <img
-          src={CardImage}
+          src={MentorshipSchemeImage}
           alt="Mentoring Scheme"
           className="w-full rounded-r-2xl "
         />

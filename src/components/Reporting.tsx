@@ -7,7 +7,7 @@ const codeOfConduct = [
 
 const Reporting = () => {
   return (
-    <section className="flex flex-col md:flex-row justify-between py-12">
+    <section className="flex flex-col md:flex-row gap-5 py-12">
       <div className="md:w-1/2 px-6">
         <h2
           className={`${styles.heading1} text-black mb-8 text-center lg:text-left uppercase`}

@@ -1,11 +1,11 @@
-import { CardImage } from "../assets";
+import { CuriousImage } from "../assets";
 import VissionMisionCard from "./VissionMisionCard";
 
 const MoreValue = () => {
   return (
     <div className="my-10 lg:my-20">
       <VissionMisionCard
-        imageSrc={CardImage}
+        imageSrc={CuriousImage}
         subtitle="Curious"
         text="We believe in lifelong curiosity and learning and as such, we enable innovation and development opportunities for our members and the wider community. Through our ambitious events programme, training opportunities, and courses we help to upskill and educate generations of creative thinkers. As an organisation, we are never afraid to experiment and take creative risks in hope that this resonates with our members."
         subtitle2="Sustainable"

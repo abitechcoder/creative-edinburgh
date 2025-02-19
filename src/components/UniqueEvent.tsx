@@ -1,4 +1,4 @@
-import { CardImage } from "../assets";
+import { UniqueEventsImage } from "../assets";
 import UniqueEventCard from "./UniqueEventCard";
 
 const UniqueEvent = () => {
@@ -12,7 +12,7 @@ const UniqueEvent = () => {
           "Our events are designed with the needs of the community at their heart - whether you're a freelancer, sole trader, student, working parent, business owner or anything in-between.",
           "Hosted in-person and online, Creative Edinburgh events span the city’s creative industries, helping you stay connected, build skills and knowledge and get inspired.",
         ]}
-        imageSrc={CardImage}
+        imageSrc={UniqueEventsImage}
         altText="People enjoying an event"
       />
     </div>
