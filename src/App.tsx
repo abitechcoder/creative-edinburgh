@@ -1,5 +1,13 @@
-import { Routes, Route } from "react-router";
-import { Homepage, Membership, WhatWeDoPage } from "./pages";
+import { Routes, Route } from "react-router-dom";
+import {
+  CodeOfConductPage,
+  ContactUs,
+  ErrorPage,
+  Homepage,
+  Membership,
+  VisionMissionPage,
+  WhatWeDoPage,
+} from "./pages";
 import RootLayout from "./layouts/RootLayout";
 
 function App() {
@@ -9,10 +17,12 @@ function App() {
         <Route index element={<Homepage />} />
         <Route path="about-us">
           <Route path="what-we-do" element={<WhatWeDoPage />} />
+          <Route path="vision-and-mission" element={<VisionMissionPage />} />
+          <Route path="code-of-conduct" element={<CodeOfConductPage />} />
+          <Route path="contact-us" element={<ContactUs />} />
         </Route>
-        <Route path="membership">
-          <Route index element={<Membership />} />
-        </Route>
+        <Route path="membership" element={<Membership />} />
+        <Route path="*" element={<ErrorPage />} />{" "}
       </Route>
     </Routes>
   );
