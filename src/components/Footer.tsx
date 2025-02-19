@@ -1,15 +1,12 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { FaTwitter, FaFacebook, FaInstagram, FaLinkedin, FaVimeoV } from 'react-icons/fa';
 import { edinburgh, tn } from '../assets';
-
-
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#0D0B18] text-white py-12 px-4 md:px-8">
+    <footer className="bg-[#0D0B18] text-white py-10 lg:py-20 px-4 md:px-8">
       {/* Main Footer Grid */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
         {/* Contact Section */}

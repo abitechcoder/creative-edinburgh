@@ -1,4 +1,4 @@
-import { CardImage, CardImage2 } from "./assets";
+import { CardImage, CardImage2, CardImage3 } from "./assets";
 import { TeamMember } from "./type";
 
 export const members = [
@@ -23,7 +23,7 @@ export const members = [
     id: 3,
     title: "Meet the Mentors: Sarah Clarkson",
     description: "Sarah Clarkson is an Edinburgh-based knitted textile designer and the founder of Woolly Originals. She has been mentoring as part of our programme since May 2021 - we had a wee chat to find out more about her experience so far.",
-    image: CardImage,
+    image: CardImage3,
     link: "#",
     date: "22th February 2025",
   },
