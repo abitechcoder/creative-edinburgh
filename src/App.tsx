@@ -5,6 +5,7 @@ import {
   ErrorPage,
   Homepage,
   Membership,
+  Mentoring,
   VisionMissionPage,
   WhatWeDoPage,
 } from "./pages";
@@ -22,6 +23,7 @@ function App() {
           <Route path="contact-us" element={<ContactUs />} />
         </Route>
         <Route path="membership" element={<Membership />} />
+        <Route path="mentoring" element={<Mentoring />} />
         <Route path="*" element={<ErrorPage />} />{" "}
       </Route>
     </Routes>
