@@ -1,4 +1,4 @@
-import { CardImage, CardImage2, CardImage3 } from "./assets";
+import { Caitlin, CardImage, CardImage2, CardImage3, Eva, Inga, Ola, Vicky, Zoe } from "./assets";
 import { TeamMember } from "./type";
 
 export const members = [
@@ -102,7 +102,7 @@ export const teamMembers: TeamMember[] = [
   {
     name: "OLA WOJTKIEWICZ",
     role: "Executive Director",
-    image: CardImage,
+    image: Ola,
     email: "ola@creative-edinburgh.com",
     responsibilities: [
       "Strategic leadership and development",
@@ -113,7 +113,7 @@ export const teamMembers: TeamMember[] = [
   {
     name: "ZOË ALBA FARRUGIA",
     role: "Programme Manager",
-    image: CardImage,
+    image: Zoe,
     email: "zoe@creative-edinburgh.com",
     responsibilities: [
       "Leading programs and initiatives",
@@ -124,7 +124,7 @@ export const teamMembers: TeamMember[] = [
   {
     name: "INGA DALE STEYN",
     role: "Community Manager",
-    image: CardImage,
+    image: Inga,
     email: "inga@creative-edinburgh.com",
     responsibilities: [
       "Managing partnerships",
@@ -133,36 +133,35 @@ export const teamMembers: TeamMember[] = [
     ],
   },
   {
-    name: "OLA WOJTKIEWICZ",
-    role: "Executive Director",
-    image: CardImage,
-    email: "ola@creative-edinburgh.com",
+    name: "Eva McKenzie",
+    role: "Community Assistant",
+    image: Eva,
+    email: "mentoring@creative-edinburgh.com",
     responsibilities: [
-      "Strategic leadership and development",
-      "Overseeing organizational growth",
-      "Building key partnerships",
+      "Managing Memberships or signing up",
+      "Prospective or current Mentoring questions",
     ],
   },
   {
-    name: "ZOË ALBA FARRUGIA",
-    role: "Programme Manager",
-    image: CardImage,
-    email: "zoe@creative-edinburgh.com",
+    name: "Caitlin Van Buren",
+    role: "Business Coordinator",
+    image: Caitlin,
+    email: "info@creative-edinburgh.com",
     responsibilities: [
-      "Leading programs and initiatives",
-      "Community engagement",
-      "Managing project timelines and budgets",
+      "General questions",
+      "Problems with the website",
+      "Business or administration",
     ],
   },
   {
-    name: "INGA DALE STEYN",
-    role: "Community Manager",
-    image: CardImage,
-    email: "inga@creative-edinburgh.com",
+    name: "Vicky Crocker",
+    role: "Marketing + Communications Manager",
+    image: Vicky,
+    email: "vicky@creative-edinburgh.com",
     responsibilities: [
-      "Managing partnerships",
-      "Enhancing membership benefits",
-      "Organizing networking events",
+      "Marketing partnerships",
+      "Press and PR opportunities",
+      "Requests for brand information",
     ],
   },
 ];
