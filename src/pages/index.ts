@@ -6,6 +6,8 @@ export { default as TeamMember } from "./TeamMember"
 export { default as WhatWeDoPage } from "./WhatWeDoPage"
 export { default as MembersLibrary } from "./MembersLibrary"
 
+export { default as MemberDetails } from "./MemberDetails"
+
 export { default as VisionMissionPage } from "./VissionMissionPage"
 export { default as ContactUs } from "./ContactUs"
 export { default as Board } from "./Board"

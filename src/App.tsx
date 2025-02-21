@@ -5,6 +5,7 @@ import {
   ContactUs,
   ErrorPage,
   Homepage,
+  MemberDetails,
   Membership,
   MembersLibrary,
   Mentoring,
@@ -28,9 +29,10 @@ function App() {
         <Route path="membership">
           <Route index element={<Membership />} />
           <Route path="members-library" element={<MembersLibrary />} />
+          <Route path=":id" element={<MemberDetails />} />
         </Route>
         <Route path="mentoring" element={<Mentoring />} />
-        <Route path="event">
+        <Route path="events">
           <Route path="book-tickets" element={<BookTicket />} />
           <Route path="our-programme" element={<OurProgramme />} />
         </Route>

@@ -31,28 +31,85 @@ export const members = [
 
 export const NavLinks = [
   {id: 1,
-    title: "ABOUT US"
+    title: "ABOUT US",
+    url: "",
+    links: [
+      {
+        id: 1,
+      title: "What We Do",
+      link: "/about-us/what-we-do"
+      },
+      // {
+      //   id: 2,
+      // title: "Our Team",
+      // link: "/about-us/what-we-do"
+      // },
+      {
+        id: 3,
+      title: "Vision, mission and values",
+      link: "/about-us/vision-and-mission"
+      },
+      {
+        id: 4,
+      title: "Code of Conduct",
+      link: "/about-us/code-of-conduct"
+      },
+      {
+        id: 5,
+      title: "Contact Us",
+      link: "/about-us/contact-us"
+      },
+    ]
   },
   {id: 2,
-    title: "MEMBERSHIP"
+    title: "MEMBERSHIP",
+    url: "",
+    links: [
+      {
+        id: 1,
+      title: "Members Directory",
+      link: "/membership/members-library"
+      }]
   },
   {id: 3,
-    title: "MENTORSHIP"
+    title: "MENTORING",
+    url: "/mentoring",
+    links: [],
   },
   {id: 4,
-    title: "EVENTS"
+    title: "EVENTS",
+    url: "",
+    links: [
+      {
+        id: 1,
+      title: "Book Tickets",
+      link: "/events/book-tickets"
+      },
+      {
+        id: 2,
+      title: "Our Programme",
+      link: "/events/our-programme"
+      }]
   },
   {id: 5,
-    title: "AWARDS"
+    title: "AWARDS",
+    url: "/",
+    links: []
   },
   {id: 6,
-    title: "FOR COMMUNITY"
+    title: "FOR COMMUNITY",
+    url: "/",
+    links: []
   },
   {id: 7,
-    title: "SUPPORT US"
+    title: "SUPPORT US",
+    url: "/",
+    links: []
   },
   {id: 8,
-    title: "LOGIN"
+    title: "LOGIN",
+    url: "/",
+    links: []
   },
 ]
 export const creativeEdinburgh = {
@@ -166,6 +223,104 @@ export const teamMembers: TeamMember[] = [
   },
 ];
 
+export const SECTORS = [
+  {
+    id: 1,
+    title: "All"
+  },
+  {
+    id: 2,
+    title: "Advertising and Marketing"
+  },
+  {
+    id: 3,
+    title: "AI, Software Development and Website Design"
+  },
+  {
+    id: 4,
+    title: "Architecture"
+  },
+  {
+    id: 5,
+    title: "Arts Education and Research"
+  },
+  {
+    id: 6,
+    title: "Crafts and Traditional Arts"
+  },
+  {
+    id: 7,
+    title: "Creative Practitioner"
+  },
+  {
+    id: 8,
+    title: "Culture, Communities and Heritage"
+  },
+  {
+    id: 9,
+    title: "Design (Exhibition, Fashion, Game, Graphic and Product)"
+  },
+  {
+    id: 10,
+    title: "Festivals"
+  },
+  {
+    id: 11,
+    title: "Film, Social Media, TV, Radio and Other Media"
+  },
+  {
+    id: 12,
+    title: "Literature and Publishing"
+  },
+  {
+    id: 13,
+    title: "Multi-Disciplinary and Participatory Practice"
+  },
+  {
+    id: 14,
+    title: "Services Supporting Creatives and Consultancy"
+  },
+  {
+    id: 15,
+    title: "Museums, Galleries and Libraries"
+  },
+  {
+    id: 16,
+    title: "Performing Arts (Comedy, Dance, Music, Opera, Theatre)"
+  },
+  {
+    id: 17,
+    title: "Visual Arts and Curatorial Services"
+  },
+]
+
+
+export const MEMBERSHIP_TYPE = [
+  {
+    id: 1,
+    title: "All"
+  },
+  {
+    id: 2,
+    title: "Free"
+  },
+  {
+    id: 3,
+    title: "Plus"
+  },
+  {
+    id: 4,
+    title: "Premium"
+  },
+  {
+    id: 5,
+    title: "Business"
+  },
+  {
+    id: 6,
+    title: "Community Leader"
+  },
+]
 export const futureGazeFaqs = [
   {
     question:
