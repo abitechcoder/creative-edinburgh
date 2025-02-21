@@ -31,11 +31,11 @@ const Navbar = ({ setIsMenuOpen }: any) => {
     title: "What We Do",
     link: "/about-us/what-we-do"
     },
-    {
-      id: 2,
-    title: "Our Team",
-    link: "/about-us/what-we-do"
-    },
+    // {
+    //   id: 2,
+    // title: "Our Team",
+    // link: "/about-us/what-we-do"
+    // },
     {
       id: 3,
     title: "Vision, mission and values",
@@ -60,6 +60,18 @@ const Navbar = ({ setIsMenuOpen }: any) => {
     link: "/membership/members-library"
     }]
 
+  const eventsLinks = [
+    {
+      id: 1,
+    title: "Book Tickets",
+    link: "/events/book-tickets"
+    },
+    {
+      id: 2,
+    title: "Our Programme",
+    link: "/events/our-programme"
+    }]
+
   window.addEventListener("scroll", scrollPage)
   return (
     <nav className={`h-[120px] flex items-center px-4 lg:px-9 fixed top-0 left-0 right-0 ${isScrolled ? "bg-white" : "bg-transparent"} z-20`}>
@@ -73,8 +85,8 @@ const Navbar = ({ setIsMenuOpen }: any) => {
         <div className="hidden lg:flex items-end gap-8">
           <MyDropDownLink title="ABOUT US" links={aboutLinks}/>
           <MyDropDownLink title="MEMBERSHIP" links={membershipLinks}/>
-          <NavLink href='/mentorship'>MENTORING</NavLink>
-          <NavLink href='#'>EVENTS</NavLink>
+          <NavLink href='/mentoring'>MENTORING</NavLink>
+          <MyDropDownLink title="Events" links={eventsLinks}/>
           <NavLink href='#'>AWARDS</NavLink>
           <NavLink href='#'>FOR COMMUNITY</NavLink>
           <NavLink href='#'>SUPPORT US</NavLink>

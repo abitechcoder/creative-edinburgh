@@ -4,7 +4,7 @@ import { Link } from 'react-router'
 const MyDropDownLink = ({ title, links }: any) => {
     return (
         <Menu>
-            <MenuButton className="hover:cursor-pointer text-base font-medium relative group">
+            <MenuButton className="hover:cursor-pointer text-base font-medium relative group uppercase">
                 {title}
                 <span className="absolute bottom-0 left-0 w-0 h-1 bg-tertiary transition-all duration-300 group-hover:w-full" />
             </MenuButton>

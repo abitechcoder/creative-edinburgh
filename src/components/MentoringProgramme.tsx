@@ -1,8 +1,6 @@
-import { MeetandGreet } from "../assets";
-
 const MentoringProgramme = () => {
   return (
-    <header className="relative lg:h-screen overflow-x-hidden">
+    <header className="relative lg:h-screen overflow-hidden">
       {/* Yellow Arc */}
       <svg
         viewBox="0 0 467.23 585.48"

@@ -31,28 +31,85 @@ export const members = [
 
 export const NavLinks = [
   {id: 1,
-    title: "ABOUT US"
+    title: "ABOUT US",
+    url: "",
+    links: [
+      {
+        id: 1,
+      title: "What We Do",
+      link: "/about-us/what-we-do"
+      },
+      // {
+      //   id: 2,
+      // title: "Our Team",
+      // link: "/about-us/what-we-do"
+      // },
+      {
+        id: 3,
+      title: "Vision, mission and values",
+      link: "/about-us/vision-and-mission"
+      },
+      {
+        id: 4,
+      title: "Code of Conduct",
+      link: "/about-us/code-of-conduct"
+      },
+      {
+        id: 5,
+      title: "Contact Us",
+      link: "/about-us/contact-us"
+      },
+    ]
   },
   {id: 2,
-    title: "MEMBERSHIP"
+    title: "MEMBERSHIP",
+    url: "",
+    links: [
+      {
+        id: 1,
+      title: "Members Directory",
+      link: "/membership/members-library"
+      }]
   },
   {id: 3,
-    title: "MENTORSHIP"
+    title: "MENTORING",
+    url: "/mentoring",
+    links: [],
   },
   {id: 4,
-    title: "EVENTS"
+    title: "EVENTS",
+    url: "",
+    links: [
+      {
+        id: 1,
+      title: "Book Tickets",
+      link: "/events/book-tickets"
+      },
+      {
+        id: 2,
+      title: "Our Programme",
+      link: "/events/our-programme"
+      }]
   },
   {id: 5,
-    title: "AWARDS"
+    title: "AWARDS",
+    url: "/",
+    links: []
   },
   {id: 6,
-    title: "FOR COMMUNITY"
+    title: "FOR COMMUNITY",
+    url: "/",
+    links: []
   },
   {id: 7,
-    title: "SUPPORT US"
+    title: "SUPPORT US",
+    url: "/",
+    links: []
   },
   {id: 8,
-    title: "LOGIN"
+    title: "LOGIN",
+    url: "/",
+    links: []
   },
 ]
 export const creativeEdinburgh = {
