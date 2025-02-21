@@ -5,8 +5,6 @@ import { IoCloseSharp } from "react-icons/io5";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { NavLinks } from "../constant";
 import { FaLongArrowAltRight } from "react-icons/fa";
-import Logo from "../components/Logo";
-
 
 interface MobileMenuItemProps {
   link: any;

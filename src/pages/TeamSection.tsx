@@ -1,4 +1,3 @@
-import React from 'react'
 import { TeamMember } from '.'
 import { smile } from '../assets'
 
