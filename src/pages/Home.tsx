@@ -1,6 +1,3 @@
-
-import TeamSection from "./TeamSection";
-
 import { Hero, MeetMember, ConnectSection } from "../components";
 
 const Home = () => {
@@ -11,7 +8,6 @@ const Home = () => {
       <Hero />
       <ConnectSection />
       <MeetMember />
-      <TeamSection />
     </div>
   );
 };

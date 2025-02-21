@@ -24,4 +24,5 @@ export { default as Mentoring } from "./Mentoring"
 export { default as BookTicket } from "./BookTicket"
 export { default as SteeringGroup } from "./SteeringGroup"
 export { default as OurProgramme } from "./OurProgramme"
+export { default as OurTeam } from "./OurTeam"
 

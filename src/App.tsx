@@ -10,6 +10,7 @@ import {
   MembersLibrary,
   Mentoring,
   OurProgramme,
+  OurTeam,
   VisionMissionPage,
   WhatWeDoPage,
 } from "./pages";
@@ -22,6 +23,7 @@ function App() {
         <Route index element={<Homepage />} />
         <Route path="about-us">
           <Route path="what-we-do" element={<WhatWeDoPage />} />
+          <Route path="team" element={<OurTeam />} />
           <Route path="vision-and-mission" element={<VisionMissionPage />} />
           <Route path="code-of-conduct" element={<CodeOfConductPage />} />
           <Route path="contact-us" element={<ContactUs />} />

@@ -28,48 +28,48 @@ const Navbar = ({ setIsMenuOpen }: any) => {
   const aboutLinks = [
     {
       id: 1,
-    title: "What We Do",
-    link: "/about-us/what-we-do"
+      title: "What We Do",
+      link: "/about-us/what-we-do"
     },
     // {
     //   id: 2,
-    // title: "Our Team",
-    // link: "/about-us/what-we-do"
+    //   title: "Our Team",
+    //   link: "/about-us/team"
     // },
     {
       id: 3,
-    title: "Vision, mission and values",
-    link: "/about-us/vision-and-mission"
+      title: "Vision, mission and values",
+      link: "/about-us/vision-and-mission"
     },
     {
       id: 4,
-    title: "Code of Conduct",
-    link: "/about-us/code-of-conduct"
+      title: "Code of Conduct",
+      link: "/about-us/code-of-conduct"
     },
     {
       id: 5,
-    title: "Contact Us",
-    link: "/about-us/contact-us"
+      title: "Contact Us",
+      link: "/about-us/contact-us"
     },
   ]
 
   const membershipLinks = [
     {
       id: 1,
-    title: "Members Directory",
-    link: "/membership/members-library"
+      title: "Members Directory",
+      link: "/membership/members-library"
     }]
 
   const eventsLinks = [
     {
       id: 1,
-    title: "Book Tickets",
-    link: "/events/book-tickets"
+      title: "Book Tickets",
+      link: "/events/book-tickets"
     },
     {
       id: 2,
-    title: "Our Programme",
-    link: "/events/our-programme"
+      title: "Our Programme",
+      link: "/events/our-programme"
     }]
 
   window.addEventListener("scroll", scrollPage)
@@ -83,10 +83,10 @@ const Navbar = ({ setIsMenuOpen }: any) => {
           <GiHamburgerMenu size={30} />
         </div>
         <div className="hidden lg:flex items-end gap-8">
-          <MyDropDownLink title="ABOUT US" links={aboutLinks}/>
-          <MyDropDownLink title="MEMBERSHIP" links={membershipLinks}/>
+          <MyDropDownLink title="ABOUT US" links={aboutLinks} />
+          <MyDropDownLink title="MEMBERSHIP" links={membershipLinks} />
           <NavLink href='/mentoring'>MENTORING</NavLink>
-          <MyDropDownLink title="Events" links={eventsLinks}/>
+          <MyDropDownLink title="Events" links={eventsLinks} />
           <NavLink href='#'>AWARDS</NavLink>
           <NavLink href='#'>FOR COMMUNITY</NavLink>
           <NavLink href='#'>SUPPORT US</NavLink>
