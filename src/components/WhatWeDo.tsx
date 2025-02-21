@@ -24,7 +24,6 @@ const WhatWeDo = () => {
       <div className="relative">
         <div className="absolute top-[50%] left-20 w-[120px] h-[120px] bg-yellow-400 rounded-full hidden lg:block"></div>
       </div>
-
     </section>
   );
 };

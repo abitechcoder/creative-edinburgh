@@ -4,6 +4,7 @@ import {
   ContactUs,
   ErrorPage,
   Homepage,
+  MemberDetails,
   Membership,
   MembersLibrary,
   Mentoring,
@@ -24,8 +25,9 @@ function App() {
           <Route path="contact-us" element={<ContactUs />} />
         </Route>
         <Route path="membership">
-          <Route index element={<Membership />}/>
-          <Route path="members-library" element={<MembersLibrary/>}/>
+          <Route index element={<Membership />} />
+          <Route path="members-library" element={<MembersLibrary />} />
+          <Route path=":id" element={<MemberDetails />} />
         </Route>
         <Route path="mentoring" element={<Mentoring />} />
         <Route path="*" element={<ErrorPage />} />{" "}

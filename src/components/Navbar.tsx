@@ -1,15 +1,17 @@
 import { useEffect, useState } from 'react';
 import Logo from './Logo';
 import { GiHamburgerMenu } from "react-icons/gi";
+import { Link } from 'react-router';
+import MyDropDownLink from './MyDropDownLink';
 
 const NavLink = ({ children, href = "#" }: { children: any, href: string }) => (
-  <a
-    href={href}
-    className="text-base font-medium relative group"
+  <Link
+    to={href}
+    className="text-base uppercase font-medium relative group block"
   >
     {children}
     <span className="absolute bottom-0 left-0 w-0 h-1 bg-tertiary transition-all duration-300 group-hover:w-full" />
-  </a>
+  </Link>
 );
 
 const Navbar = ({ setIsMenuOpen }: any) => {
@@ -23,6 +25,41 @@ const Navbar = ({ setIsMenuOpen }: any) => {
     }
   }
 
+  const aboutLinks = [
+    {
+      id: 1,
+    title: "What We Do",
+    link: "/about-us/what-we-do"
+    },
+    {
+      id: 2,
+    title: "Our Team",
+    link: "/about-us/what-we-do"
+    },
+    {
+      id: 3,
+    title: "Vision, mission and values",
+    link: "/about-us/vision-and-mission"
+    },
+    {
+      id: 4,
+    title: "Code of Conduct",
+    link: "/about-us/code-of-conduct"
+    },
+    {
+      id: 5,
+    title: "Contact Us",
+    link: "/about-us/contact-us"
+    },
+  ]
+
+  const membershipLinks = [
+    {
+      id: 1,
+    title: "Members Directory",
+    link: "/membership/members-library"
+    }]
+
   window.addEventListener("scroll", scrollPage)
   return (
     <nav className={`h-[120px] flex items-center px-4 lg:px-9 fixed top-0 left-0 right-0 ${isScrolled ? "bg-white" : "bg-transparent"} z-20`}>
@@ -34,13 +71,13 @@ const Navbar = ({ setIsMenuOpen }: any) => {
           <GiHamburgerMenu size={40} />
         </div>
         <div className="hidden lg:flex items-end gap-8">
-          <NavLink href=''>ABOUT US</NavLink>
-          <NavLink href=''>MEMBERSHIP</NavLink>
-          <NavLink href=''>MENTORING</NavLink>
-          <NavLink href=''>EVENTS</NavLink>
-          <NavLink href=''>AWARDS</NavLink>
-          <NavLink href=''>FOR COMMUNITY</NavLink>
-          <NavLink href=''>SUPPORT US</NavLink>
+          <MyDropDownLink title="ABOUT US" links={aboutLinks}/>
+          <MyDropDownLink title="MEMBERSHIP" links={membershipLinks}/>
+          <NavLink href='/mentorship'>MENTORING</NavLink>
+          <NavLink href='#'>EVENTS</NavLink>
+          <NavLink href='#'>AWARDS</NavLink>
+          <NavLink href='#'>FOR COMMUNITY</NavLink>
+          <NavLink href='#'>SUPPORT US</NavLink>
 
           <div className="flex items-end gap-6">
             <a href="https://twitter.com/creativeedin" className="text-gray-600 hover:text-tertiary transition-colors duration-300">

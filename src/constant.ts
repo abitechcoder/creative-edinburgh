@@ -165,3 +165,102 @@ export const teamMembers: TeamMember[] = [
     ],
   },
 ];
+
+export const SECTORS = [
+  {
+    id: 1,
+    title: "All"
+  },
+  {
+    id: 2,
+    title: "Advertising and Marketing"
+  },
+  {
+    id: 3,
+    title: "AI, Software Development and Website Design"
+  },
+  {
+    id: 4,
+    title: "Architecture"
+  },
+  {
+    id: 5,
+    title: "Arts Education and Research"
+  },
+  {
+    id: 6,
+    title: "Crafts and Traditional Arts"
+  },
+  {
+    id: 7,
+    title: "Creative Practitioner"
+  },
+  {
+    id: 8,
+    title: "Culture, Communities and Heritage"
+  },
+  {
+    id: 9,
+    title: "Design (Exhibition, Fashion, Game, Graphic and Product)"
+  },
+  {
+    id: 10,
+    title: "Festivals"
+  },
+  {
+    id: 11,
+    title: "Film, Social Media, TV, Radio and Other Media"
+  },
+  {
+    id: 12,
+    title: "Literature and Publishing"
+  },
+  {
+    id: 13,
+    title: "Multi-Disciplinary and Participatory Practice"
+  },
+  {
+    id: 14,
+    title: "Services Supporting Creatives and Consultancy"
+  },
+  {
+    id: 15,
+    title: "Museums, Galleries and Libraries"
+  },
+  {
+    id: 16,
+    title: "Performing Arts (Comedy, Dance, Music, Opera, Theatre)"
+  },
+  {
+    id: 17,
+    title: "Visual Arts and Curatorial Services"
+  },
+]
+
+
+export const MEMBERSHIP_TYPE = [
+  {
+    id: 1,
+    title: "All"
+  },
+  {
+    id: 2,
+    title: "Free"
+  },
+  {
+    id: 3,
+    title: "Plus"
+  },
+  {
+    id: 4,
+    title: "Premium"
+  },
+  {
+    id: 5,
+    title: "Business"
+  },
+  {
+    id: 6,
+    title: "Community Leader"
+  },
+]
