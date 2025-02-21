@@ -264,3 +264,11 @@ export const MEMBERSHIP_TYPE = [
     title: "Community Leader"
   },
 ]
+export const futureGazeFaqs = [
+  {
+    question:
+      "What are the benefits of joining as a Creative Edinburgh member?",
+    answer:
+      "Caroline Parkinson, host of FutureGaze and Director for Creative at the Edinburgh Futures Institute, recounts the journey of this initiative and what she hopes to achieve in the future. Read her guest blog to find out more.",
+  }
+];

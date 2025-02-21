@@ -33,3 +33,16 @@ export interface TeamMember {
   email: string;
   responsibilities: string[];
 }
+export interface CreativeCirclesProps {
+  imageSrc: string;
+  title: string;
+  description: string;
+  description2?: string;
+    reverse?: boolean;
+    hasToggle?: boolean;
+    toggleTitle?: string;
+    toggleContent?: string;
+    toggleLinkText?: string;
+    toggleLinkHref?: string;
+}
+

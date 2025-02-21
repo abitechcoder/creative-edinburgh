@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import {
+  BookTicket,
   CodeOfConductPage,
   ContactUs,
   ErrorPage,
@@ -8,6 +9,7 @@ import {
   Membership,
   MembersLibrary,
   Mentoring,
+  OurProgramme,
   VisionMissionPage,
   WhatWeDoPage,
 } from "./pages";
@@ -30,6 +32,10 @@ function App() {
           <Route path=":id" element={<MemberDetails />} />
         </Route>
         <Route path="mentoring" element={<Mentoring />} />
+        <Route path="event">
+          <Route path="book-tickets" element={<BookTicket />} />
+          <Route path="our-programme" element={<OurProgramme />} />
+        </Route>
         <Route path="*" element={<ErrorPage />} />{" "}
       </Route>
     </Routes>
