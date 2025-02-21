@@ -1,4 +1,3 @@
-import * as React from "react";
 const Logo = (props: any) => (
   <svg id="ce-logo" viewBox="0 0 245.114 50.617" {...props}>
     <g data-name="Grupo 431" transform="translate(49.814 30.2)">
