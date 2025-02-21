@@ -80,7 +80,7 @@ const Navbar = ({ setIsMenuOpen }: any) => {
           <Logo className="h-[40px] md:h-[50px]" />
         </a>
         <div className='lg:hidden cursor-pointer' onClick={() => setIsMenuOpen(true)}>
-          <GiHamburgerMenu size={40} />
+          <GiHamburgerMenu size={30} />
         </div>
         <div className="hidden lg:flex items-end gap-8">
           <MyDropDownLink title="ABOUT US" links={aboutLinks}/>
