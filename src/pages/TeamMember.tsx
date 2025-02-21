@@ -1,6 +1,12 @@
 import { useState } from "react";
 import { dale, eva, ola, vicky, zoe } from "../assets";
 import PastTeam from "./PastTeam";
+import WorkWithUs from "./WorkWithUs";
+import ExecutiveTeam from "./ExecutiveTeam";
+import Board from "./Board";
+import PastMember from "./PastMember";
+import CommunityAdvisor from "./CommunityAdvisor";
+import SteeringGroup from "./SteeringGroup";
 
 interface TeamMember {
   name: string;
@@ -48,11 +54,12 @@ const teamMembers: TeamMember[] = [
   },
 ];
 
-const TeamSection = () => {
+const TeamMember = () => {
   const [hoveredMember, setHoveredMember] = useState<string | null>(null);
 
   return (
     <section className="py-12 flex flex-col">
+      <ExecutiveTeam />
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-3 gap-8">
           {teamMembers.map((member) => (
@@ -103,8 +110,13 @@ const TeamSection = () => {
         </div>
       </div>
       <PastTeam />
+      <WorkWithUs />
+      <Board />
+      <PastMember />
+      <CommunityAdvisor />
+      <SteeringGroup />
     </section>
   );
 };
 
-export default TeamSection;
+export default TeamMember;

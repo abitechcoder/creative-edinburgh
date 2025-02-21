@@ -1,4 +1,4 @@
-import { CardImage } from "../assets";
+import { ReportingImage } from "../assets";
 import styles from "../style";
 const codeOfConduct = [
   "Harassment outside official channels.",
@@ -81,8 +81,8 @@ const Reporting = () => {
       </div>
       <div className="md:w-1/2 ps-6">
         <img
-          src={CardImage}
-          alt="Typing on keyboard"
+          src={ReportingImage}
+          alt="Reporting an harassment"
           className="w-full rounded-s-2xl "
         />
       </div>

@@ -2,7 +2,7 @@ import { teamMembers } from "../constant";
 
 const TeamSection = () => {
   return (
-    <section className="container mx-auto py-12 px-6">
+    <section className="py-12 px-8">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 ">
         {teamMembers.map((member, index) => (
           <div key={index} className="text-center">
@@ -10,28 +10,28 @@ const TeamSection = () => {
               <img
                 src={member.image}
                 alt={member.name}
-                className="w-full h-full object-cover transition duration-300 ease-in-out group-hover:opacity-50"
+                className="w-full h-[400px] object-cover object-center transition duration-300 ease-in-out group-hover:opacity-50"
               />
-              <div className="absolute inset-0 bg-blue-900 bg-opacity-90 flex flex-col items-start text-white opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out p-4">
-                <h3 className="text-base">
+              <div className="absolute inset-0 bg-blue-900 bg-opacity-90 flex flex-col items-start text-white opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out p-8">
+                <h3 className="text-lg font-bold">
                   Get in touch for enquiries regarding:
                 </h3>
-                <ul className="text-xs text-start list-none mt-1">
+                <ul className="text-lg text-start list-none my-2">
                   {member.responsibilities.map((responsibility, idx) => (
                     <li key={idx} className="before:content-['-'] before:mr-1">
                       {responsibility}
                     </li>
                   ))}
                 </ul>
-                <a
+                <p className="text-lg"><span className="font-bold">Email:</span> <a
                   href={`mailto:${member.email}`}
-                  className="mt-2 underline text-sm"
+                  className="underline"
                 >
                   {member.email}
-                </a>
+                </a></p>
               </div>
             </div>
-            <h3 className="mt-4 text-xl font-extrabold text-start">
+            <h3 className="mt-4 text-xl font-extrabold text-start uppercase">
               {member.name}
             </h3>
             <p className="text-gray-600 text-base text-start">{member.role}</p>

@@ -1,4 +1,4 @@
-import { CardImage } from "../assets";
+import { Harassment } from "../assets";
 import styles from "../style";
 
 const harassmentPoints = [
@@ -37,8 +37,8 @@ const HarassmentPolicy = () => {
       <div className="flex flex-col md:flex-row gap-5">
         <div className="w-full mt-6 md:mt-0 pe-6">
           <img
-            src={CardImage}
-            alt="People networking at an event"
+            src={Harassment}
+            alt="Harassment"
             className="rounded-e-2xl w-full"
           />
         </div>

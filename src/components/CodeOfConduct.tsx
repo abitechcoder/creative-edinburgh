@@ -1,4 +1,4 @@
-import { CardImage } from "../assets";
+import { CodeOfConductImage } from "../assets";
 import styles from "../style";
 
 const CodeOfConduct = () => {
@@ -46,8 +46,8 @@ const CodeOfConduct = () => {
       {/* Image Section */}
       <div className="md:w-1/2 mt-6 md:mt-0 pl-6">
         <img
-          src={CardImage}
-          alt="People networking at an event"
+          src={CodeOfConductImage}
+          alt="Code of Conduct"
           className="rounded-s-2xl w-full h-auto"
         />
       </div>

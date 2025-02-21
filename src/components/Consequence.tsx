@@ -1,4 +1,4 @@
-import { CardImage } from "../assets";
+import { ConsequencesImage } from "../assets";
 import styles from "../style";
 
 const Consequences = () => {
@@ -6,8 +6,8 @@ const Consequences = () => {
     <div className="flex flex-col md:flex-row gap-5 py-12 mx-auto">
       <div className="md:w-1/2 pe-6">
         <img
-          src={CardImage}
-          alt="Typing on keyboard"
+          src={ConsequencesImage}
+          alt="Consequences for harassment"
           className="w-full rounded-e-2xl "
         />
       </div>
