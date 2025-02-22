@@ -8,13 +8,14 @@ import {
   MemberDetails,
   Membership,
   MembersLibrary,
-  Mentoring,
   OurProgramme,
   OurTeam,
   VisionMissionPage,
   WhatWeDoPage,
 } from "./pages";
 import RootLayout from "./layouts/RootLayout";
+import { Mentoring } from "./assets";
+import { TeamSection } from "./components";
 
 function App() {
   return (
@@ -23,7 +24,11 @@ function App() {
         <Route index element={<Homepage />} />
         <Route path="about-us">
           <Route path="what-we-do" element={<WhatWeDoPage />} />
+
           <Route path="team" element={<OurTeam />} />
+
+          <Route path="our-team" element={<TeamSection />} />
+
           <Route path="vision-and-mission" element={<VisionMissionPage />} />
           <Route path="code-of-conduct" element={<CodeOfConductPage />} />
           <Route path="contact-us" element={<ContactUs />} />

@@ -1,8 +1,8 @@
 import React from "react";
-import { ContactTeam } from "../components";
+import { TeamMember } from ".";
 import styles from "../style";
 
-const ContactUs: React.FC = () => {
+const TeamSection = () => {
   return (
     <div>
       <section className="px-6 py-16 bg-gray-50 min-h-screen lg:h-screen grid grid-cols-1 lg:grid-cols-2">
@@ -10,15 +10,14 @@ const ContactUs: React.FC = () => {
           <h1
             className={`text-5xl lg:text-7xl font-extrabold text-black mb-10 uppercase  `}
           >
-            CONTACT US
+            PEOPLE BEHIND <br /> CREATIVE EDINBURGH
           </h1>
-          <p className={`${styles.paragraph} text-black mt-5 leading-relaxed`}>
-            If your message requires an urgent response, please contact
-            <a href="#" className="text-blue-500 font-medium ml-1">
-              info@creative-edinburgh.com
-            </a>
-            , where it can be forwarded to the appropriate Creative Edinburgh
-            team member who will be able to assist you.
+          <p className={`${styles.paragraph} text-black leading-relaxed`}>
+            The work of Creative Edinburgh is supported by a diverse and
+            experienced creative team. Each bring to the table their own unique
+            expertise to help the community grow and thrive. Thank you to all
+            former team and board members, who have been a big part of Creative
+            Edinburgh’s journey.
           </p>
         </div>
 
@@ -27,7 +26,7 @@ const ContactUs: React.FC = () => {
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 714.033 646.015"
-            className="fill-purple-400 w-[70%] mt-10 mx-auto lg:absolute top-[15%] left-[20%]"
+            className="fill-purple-400 w-[110%] mx-auto lg:absolute top-[15%]"
           >
             <g transform="translate(-725.967 -124.993)">
               <path
@@ -49,9 +48,9 @@ const ContactUs: React.FC = () => {
           </svg>
         </div>
       </section>
-      <ContactTeam />
+      <TeamMember />
     </div>
   );
 };
 
-export default ContactUs;
+export default TeamSection;
