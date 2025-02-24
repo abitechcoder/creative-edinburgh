@@ -1,5 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import {
+  Awards,
+  BecomeAPartner,
+  BecomeASponsor,
   BookTicket,
   CodeOfConductPage,
   ContactUs,
@@ -11,6 +14,7 @@ import {
   Mentoring,
   OurProgramme,
   OurTeam,
+  SupportOurCommunity,
   VisionMissionPage,
   WhatWeDoPage,
 } from "./pages";
@@ -37,6 +41,15 @@ function App() {
         <Route path="events">
           <Route path="book-tickets" element={<BookTicket />} />
           <Route path="our-programme" element={<OurProgramme />} />
+        </Route>
+        <Route path="awards" element={<Awards />} />
+        <Route path="support-us">
+          <Route path="become-a-partner" element={<BecomeAPartner />} />
+          <Route path="become-a-sponsor" element={<BecomeASponsor />} />
+          <Route
+            path="support-our-community"
+            element={<SupportOurCommunity />}
+          />
         </Route>
         <Route path="*" element={<ErrorPage />} />{" "}
       </Route>

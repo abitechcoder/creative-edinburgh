@@ -25,4 +25,7 @@ export { default as BookTicket } from "./BookTicket"
 export { default as SteeringGroup } from "./SteeringGroup"
 export { default as OurProgramme } from "./OurProgramme"
 export { default as OurTeam } from "./OurTeam"
-
+export { default as Awards } from "./Awards"
+export { default as BecomeAPartner } from "./BecomeAPartner"
+export { default as BecomeASponsor } from "./BecomeASponsor"
+export { default as SupportOurCommunity } from "./SupportOurCommunity"

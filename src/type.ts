@@ -45,4 +45,14 @@ export interface CreativeCirclesProps {
     toggleLinkText?: string;
     toggleLinkHref?: string;
 }
+export interface SponsorCardProps {
+  imageSrc: string;
+  title: string;
+  price?: string;
+  benefits: string[];
+  buttonText: string;
+  heading?: string;
+  heading2?: string;
+  additionalBenefits?: string[];
+}
 
