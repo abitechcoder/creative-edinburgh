@@ -1,12 +1,11 @@
-import TeamSection from "./TeamSection"
-
+import { TeamSection } from "../components";
 
 const OurTeam = () => {
-    return (
-        <div>
-            <TeamSection />
-        </div>
-    )
-}
+  return (
+    <div>
+      <TeamSection />
+    </div>
+  );
+};
 
-export default OurTeam
+export default OurTeam;
