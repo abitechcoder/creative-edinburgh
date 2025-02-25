@@ -1,300 +1,130 @@
 {
-    "members": [
+    "sectors": [
         {
             "id": 1,
-            "name": "Abi Pate",
-            "about_me": "I graduated in 2020 with an HND in Illustration after previously working in Archaeology.",
-            "photo": "",
-            "sector": "Creative Practitioner",
-            "membership_type": "Free"
+            "title": "Tech"
         },
         {
             "id": 2,
-            "name": "Caitlin Shadforth",
-            "about_me": "I am an aspiring artist originally from Australia living in the seaside town of Berwick upon tweed but hoping to venture to Edinburgh to live for a while. I love to be creative and see others being creative my artwork is based on the ocean and nature and",
-            "photo": "",
-            "sector": "Creative Practitioner",
-            "membership_type": "Free"
+            "title": "Food & Agro Processing"
         },
         {
             "id": 3,
-            "name": "Jamie Carty",
-            "about_me": "Theatrical Stage and Production Manager with experience in child supervision and a passion for education through the arts",
-            "photo": "",
-            "sector": "Creative Practitioner",
-            "membership_type": "Free"
+            "title": "Circular Economy"
         },
         {
             "id": 4,
-            "name": "Elzbieta Vozbinaite",
-            "about_me": "Elzbieta Vozbinaite was born in 2000, in Vilnius. In 2018 she graduated from Skalvija Film Academy two-year course led by Andrius Bla_evi_ius and won the best graduation film award ÒSkalvijukasÓ. Has participated in various international filmmaking workshop",
-            "photo": "",
-            "sector": "Creative Practitioner",
-            "membership_type": "Free"
+            "title": "Fashion & Beauty"
         },
         {
             "id": 5,
-            "name": "Amber Brown",
-            "about_me": "I have recently graduated from an MSc in International Marketing from Edinburgh Napier University. I am currently working as Head of Marketing at PongoPay, a mobile app and payment solution for the construction industry.",
-            "photo": "",
-            "sector": "Creative Practitioner",
-            "membership_type": "Free"
+            "title": "Digital"
         },
         {
             "id": 6,
-            "name": "Elisa Guietti",
-            "about_me": "Creativeflow Intuitive Art, Meditation & Therapy provides a safe and positive space for exploration, free expression, and healing. The project aims to nurture our authentic selves and invite people to explore the beauty of their creative energy.",
-            "photo": "",
-            "sector": "Creative Practitioner",
-            "membership_type": "Free"
+            "title": "Services"
         },
         {
             "id": 7,
-            "name": "Richard England",
-            "about_me": "Glencairn Furniture is an award-winning designer and maker of exquisitely handcrafted bespoke furniture.",
-            "photo": "",
-            "sector": "Creative Practitioner",
-            "membership_type": "Free"
+            "title": "Others"
+        }
+    ],
+    "businesses": [
+        {
+            "id": 1,
+            "name": "TechStuff",
+            "description": "Founded by Alimamy Turay, TechStuff is an innovative technology company specializing in cutting-edge digital solutions to enhance business operations and consumer experiences.",
+            "sector": "Tech"
+        },
+        {
+            "id": 2,
+            "name": "CIJ Digital Hub (SL) Limited",
+            "description": "Led by Chernor Issa Jalloh, CIJ Digital Hub focuses on digital innovation and transformation, providing technology-driven solutions to businesses and individuals.",
+            "sector": "Tech"
+        },
+        {
+            "id": 3,
+            "name": "Lisa's Cake",
+            "description": "Founded by Hawa Sia Mellisa Johnny, Lisa's Cakes offers a variety of delicious and high quality cakes and pastries tailored to customer preferences.",
+            "sector": "Food & Agro Processing"
+        },
+        {
+            "id": 4,
+            "name": "Tasty Plates",
+            "description": "Managed by Olive Lisk, Tasty Plates specializes in preparing nutiritious and favorful meals, catering to diverse customer needs.",
+            "sector": "Food & Agro Processing"
+        },
+        {
+            "id": 5,
+            "name": "EcoDesign Waste",
+            "description": "A sustainability-driven company focusing on waste management and recycling to reduce environmental impact through innovative recycling processes.",
+            "sector": "Circular Economy"
+        },
+        {
+            "id": 6,
+            "name": "Textile Waste",
+            "description": "An environmentally conscious business dedicated to repurposing textile materials and minimizing fabric waste in the fashion industry.",
+            "sector": "Circular Economy"
+        },
+        {
+            "id": 7,
+            "name": "Vicky Couture",
+            "description": "A fashion brand specializing in stylish and customized clothing, offering unique and high-quality apparel.",
+            "sector": "Fashion & Beauty"
         },
         {
             "id": 8,
-            "name": "Seonaid Rafferty",
-            "about_me": "Hello! I'm a graphic designer based in Edinburgh, with an interest also in visual marketing and writing. I have a particular passion for print mags.",
-            "photo": "",
-            "sector": "Creative Practitioner",
-            "membership_type": "Free"
+            "name": "Manikene",
+            "description": "A beauty and fashion company dedicated to enhancing personal style and grooming through innovative products and services.",
+            "sector": "Fashion & Beauty"
         },
         {
             "id": 9,
-            "name": "Charlotte Pascoe",
-            "about_me": "Freelance graphic designer and illustrator",
-            "photo": "",
-            "sector": "Creative Practitioner",
-            "membership_type": "Free"
+            "name": "SALMAH",
+            "description": "A fashion and beauty company focusing on high-quality, trendsetting apparel and beauty solutions.",
+            "sector": "Fashion & Beauty"
         },
         {
             "id": 10,
-            "name": "Dominic O'Reilly",
-            "about_me": "Tattoo artist & creative",
-            "photo": "",
-            "sector": "Creative Practitioner",
-            "membership_type": "Free"
+            "name": "BOKU TOK",
+            "description": "A digital platform designed to facilitate seamless communication and engagement through innovative technology solutions.",
+            "sector": "Digital"
         },
         {
             "id": 11,
-            "name": "Sara Cameron McBean",
-            "about_me": "Arts competitions and exhibitions",
-            "photo": "",
-            "sector": "Creative Practitioner",
-            "membership_type": "Free"
+            "name": "ICE",
+            "description": "A digital company providing advanced technology services, including software development and digital marketing.",
+            "sector": "Digital"
         },
         {
             "id": 12,
-            "name": "Lauren Ferguson",
-            "about_me": "Lauren FergusonÕs practice is primarily concerned with a sense of place which she develops through an in-depth exploration of the history, architecture and associated objects within spaces that she has a personal connection.",
-            "photo": "",
-            "sector": "Creative Practitioner",
-            "membership_type": "Free"
+            "name": "Bokya",
+            "description": "A service-oriented company offering business solutions to enterprises, ensuring efficiency and growth through strategic management and consultancy.",
+            "sector": "Services"
         },
         {
             "id": 13,
-            "name": "Tara Mac",
-            "about_me": "Hi, I'm Tara! I worked for over 10 years in both in-house and agency roles before deciding to go it alone. I offer branding and website design services, primarily for makers and fellow creatives. Check out my website to have a look at my work.",
-            "photo": "https://res.cloudinary.com/joinit/image/upload/f_auto,q_auto,w_800/v1678874935/uyrnaask7eycwcit7izi.jpg",
-            "sector": "Creative Practitioner",
-            "membership_type": "Free"
+            "name": "Fambul Global",
+            "description": "Dedicated to providing community-based services, fostering development through sustainable initiatives and impactful programs.",
+            "sector": "Services"
         },
         {
             "id": 14,
-            "name": "George Beckwith",
-            "about_me": "Ive always had a passion for the designing of products and finding what makes them appealing; visually and practically. I often find myself sketching out new ideas at any point in the day, and furthering this by making them out of whatever I can get hold of.",
-            "photo": "",
-            "sector": "Advertising and Marketing",
-            "membership_type": "Free"
+            "name": "Complain Box",
+            "description": "A consumer advocacy platform that provides a structured way for customers to voice concerns and seek resolutions from businesses.",
+            "sector": "Services"
         },
         {
             "id": 15,
-            "name": "Cate Nelson-Shaw",
-            "about_me": "An ambitious and strategic leader, I make an impact by combining my enterprising mindset, commercial focus and entrepreneurial flair. I creatively lead organisation growth and sustainability with openness and honestly to deliver objectives and make a difference. I am an accomplished communicator, influencer and ambassador with a flair for making connections and I have terrific networks. My engaging and compelling disposition is energising, making me a sought after change-maker. I participated on the Principally Women Leadership Development Programme. Delivered in partnership with Scottish Enterprise, the programme was for senior women business leaders with leadership potential to support scale up. I am passionate about equalities, diversity and inclusion and support and inspire others to realise their capability and potential, lifting as I climb. I am sought as a public speaker and often commissioned to write for national and local media. Enhancing my Executive career, I serve as a Non-Executive Director on a number of Boards, including Changing the Chemistry, whose vision is to change the chemistry in the boardroom, so people and boards embrace diversity of thought; and Dance Base, Scotland's National Centre for Dance where I was also Chair the Development Committee. Previously I was on the Board at Creative Scotland, the Marketing Society Scotland and Scotland Malawi Partnership. I was a Mentee on the Scottish Government's Board Chair Mentoring Scheme, having been nominated by the Chair of Creative Scotland. The scheme developed the existing talent of Board members to become future Chairs of Public Sector organisations. I began my career on the Graduate Programme at The Boots Company PLC, now Walgreens Boots Alliance, a global leader in retail and wholesale pharmacy; and have since worked both as a client in entrepreneurial start ups, family companies and in agencies directing client accounts. In 2013 I founded and grew entrepreneurial start up Yellowbook, a strategic, marketing and communications consultancy targeting ambitious growth companies within Scotland’s flourishing SME sector. I have a Chartered Postgraduate Diploma from the Chartered Institute of Marketing, am a Business Leader with the Marketing Society Scotland and Judge for their Annual STAR Awards.",
-            "photo": "https://res.cloudinary.com/joinit/image/upload/f_auto,q_auto,w_800/v1684317653/nya1vlbkgdqzg0xuc6tc.jpg",
-            "sector": "Advertising and Marketing",
-            "membership_type": "Free"
+            "name": "CALMATA",
+            "description": "A specialized company offering innovative solutions in the health and wellness sector, focusing on holistic well-being.",
+            "sector": "Others"
         },
         {
             "id": 16,
-            "name": "Agnes Wang",
-            "about_me": "Worked as a Press Officer for Summerhall during Fringe, and now working as in the Communication and Advertising team in United Nations Environment Programme.",
-            "photo": "https://res.cloudinary.com/joinit/image/upload/f_auto,q_auto,w_800/v1727964857/aucsjdjvpde0lqr05u5f.jpg",
-            "sector": "Advertising and Marketing",
-            "membership_type": "Free"
-        },
-        {
-            "id": 17,
-            "name": "Sara Robertson",
-            "about_me": "Professionally, I worked in ad agencies, and now for one of the industry associations. Personally, I am interested in a wide range of craft.",
-            "photo": "",
-            "sector": "Advertising and Marketing",
-            "membership_type": "Free"
-        },
-        {
-            "id": 18,
-            "name": "Abi Avery",
-            "about_me": "I am a professional photographer based in Edinburgh, Scotland. Specialising in sports and portraiture, I work with a mix of mediums to produce a variety of work. Working in the industry for over six years has led me to create a collection of content. Ruisg Conasg has been exhibited in two Edinburgh locations and my most recent project is being exhibited in London.",
-            "photo": "",
-            "sector": "Advertising and Marketing",
-            "membership_type": "Free"
-        },
-        {
-            "id": 19,
-            "name": "Ashleigh Thow",
-            "about_me": "I am an experienced membership engagement professional based in Edinburgh. With a background in marketing, communications and events, I found my niche working in membership and community engagement. I am currently Alumni Relations Manager at Edinburgh Napier University. At Edinburgh Napier, I lead on alumni communications, student/recent graduate engagement plus flagship alumni campaigns such as the Alumni Awards initiative and the School of Arts and Creative Industries (SACI) Alumni Hall of Fame.",
-            "photo": "",
-            "sector": "Advertising and Marketing",
-            "membership_type": "Plus"
-        },
-        {
-            "id": 20,
-            "name": "Chris Melvin",
-            "about_me": "My name’s Chris, an award-winning creative do-gooder with over a decade of experience. Based in Edinburgh, I’ve worked for top UK brands in agencies and freelance alike. I'm a proud Frankenstein creative, stitching together design, video and art direction with witty wordplay and digital know-how. Strategy is the bolt of lightning that brings it to life.",
-            "photo": "https://res.cloudinary.com/joinit/image/upload/f_auto,q_auto,w_800/v1680169516/wfyzcvb6rkp9ycz02kfw.jpg",
-            "sector": "Advertising and Marketing",
-            "membership_type": "Plus"
-        },
-        {
-            "id": 21,
-            "name": "Viktoria K",
-            "about_me": "Hi there, I am Viktoria, a lifelong creative who grew up working in the film industry. During the past few years, I opened a business and also transitioned into the tech industry. However, I have now decided to pursue my passion for entrepreneurship once again, which led me to establish my Virtual Assistance Agency, ACTIVATE. At ACTIVATE, I collaborate with creatives, entrepreneurs, and businesses, empowering them to take the next big step in their business. As of February, I have relocated to Edinburgh, eager to explore new opportunities, expand my horizons , and meet new folks.",
-            "photo": "https://res.cloudinary.com/joinit/image/upload/f_auto,q_auto,w_800/v1683026994/ipm2vykqov94etkhnt6s.png",
-            "sector": "Advertising and Marketing",
-            "membership_type": "Plus"
-        },
-        {
-            "id": 22,
-            "name": "Charlie Bell",
-            "about_me": "I am Head of Creative Design at FreeAgent.",
-            "photo": "https://res.cloudinary.com/joinit/image/upload/f_auto,q_auto,w_800/v1719556610/bk6ltsmsuenzrxyzszwg.jpg",
-            "sector": "AI, Software Development and Website Design",
-            "membership_type": "Free"
-        },
-        {
-            "id": 23,
-            "name": "Denys Tochylkin",
-            "about_me": "We started our company in 2001 in Kiev, Ukraine. We have considerable experience successfully developing many projects for European, British and American clients. We have also gained much experience in the public sector by participating in the creation of systems such as e-democracy, e-government, e-voting and electronic document management for city councils. Today, we work largely with clients, maintaining their online business. From the development of marketing strategies to the implementation of sophisticated software products, mobile applications and Internet systems, we are the full service digital agency service. We bring to life the boldest of ideas for new startups and established businesses, generating additional revenue for our clients.",
-            "photo": "",
-            "sector": "AI, Software Development and Website Design",
-            "membership_type": "Free"
-        },
-        {
-            "id": 24,
-            "name": "David Reid",
-            "about_me": "I am a visual artist creating with drawing, sculpture and art objects. My primary source of freelance is income is creative engagement with young people. I have a passion for promoting youth autonomy a voice through creativity and play. Interest in loose parts play, story telling and inclusive practices. Exploring unique approaches to engaging young people in arts and cultural heritage.",
-            "photo": "",
-            "sector": "Arts Education and Research",
-            "membership_type": "Free"
-        },
-        {
-            "id": 25,
-            "name": "Francesca Bernardi",
-            "about_me": "Francesca Bernardi (PhD, QTS), art-activist and creative coach, founding chair of the Antonio Gramsci Society UK, Global Councillor and Fellow of the Royal Society of Arts (RSA) and Associate Member of CATA (Canadian Art Therapy Association). I am also a Visiting Lecturer in Childhood Studies at the Carnegie School of Education (Leeds Beckett University) and Arts Therapies at the University of Roehampton. Trained in Art and Design education and worked as a teacher and artist-in-residence in schools, Alternative Provision and Further Education. I am a volunteer international board member of the Disability Without Abuse Project (Los Angeles).",
-            "photo": "",
-            "sector": "Arts Education and Research",
-            "membership_type": "Free"
-        },
-        {
-            "id": 26,
-            "name": "Cameron allan",
-            "about_me": "Hey, I'm Cammie. I'm a photographer working across Scotland and beyond! I work mainly in B2B commercial creative shoots, providing businesses with everything from events photography and headshots to glossy images for marketing and advertising. You might have seen my work on the back pages of some papers as I am one of HIbs' 2 club photographers. You may also have seen some of my lighting work in action on posters for Wonka, The Railway Children Return, and The Lost King, where I worked as 1st Asst, responsible for creating and maintaining the lighting rigs! I'm looking forward to meeting all of the wonderful CE member and seeing what wonderful projects we can work on together! I'm especially interested in developing my work in the fields of editorial and creative portraiture, so if anyone fancies a collaboration there, just let me know!!",
-            "photo": "https://res.cloudinary.com/joinit/image/upload/f_auto,q_auto,w_800/v1701199200/b5vpll5dywwinshpv5uy.jpg",
-            "sector": "Film, Social Media, TV, Radio and Other Media",
-            "membership_type": "Premium"
-        },
-        {
-            "id": 27,
-            "name": "Mickey Ellis",
-            "about_me": "I am an Edinburgh based creative director and designer. I have recently returned to my home town after living in London since 1998, working predominantly in the fashion, art and music industry. Having founded numerous successful brands I have a vast amount of experience in brand building, strategy and marketing, as well as garment and graphic design. I have recently founded Flux Studio - a creative solutions agency, based in Leith, as a way to connect with local businesses and brands and work together on creative projects that facilitate their growth, while also building my community and providing work for freelancers.",
-            "photo": "https://res.cloudinary.com/joinit/image/upload/f_auto,q_auto,w_800/v1708698360/e5mdutf8svmcfum7npkx.jpg",
-            "sector": "Design (Exhibition, Fashion, Game, Graphic and Product)",
-            "membership_type": "Premium"
-        },
-        {
-            "id": 28,
-            "name": "Haddon Kime",
-            "about_me": "At my core, I'm a storyteller. This foundation shapes my work as a songwriter, composer, and lyricist for theatre. It also guides my craft as a sound designer and studio engineer. My greatest fulfillment comes from collaborating with teams to bring powerful narratives to life. Originally from North America, I hold dual citizenship in Canada and the United States and am currently based in the UK on a Global Talent Visa.",
-            "photo": "https://res.cloudinary.com/joinit/image/upload/f_auto,q_auto,w_800/v1705073205/qfm9josc0ihelsuf3ivy.jpg",
-            "sector": "Performing Arts (Comedy, Dance, Music, Opera, Theatre)",
-            "membership_type": "Premium"
-        },
-        {
-            "id": 29,
-            "name": "Matthew Richter",
-            "about_me": "I'm a consultant and policy advisor working at the intersection of the arts and commercial real estate. I work with cities and other municipalities to develop strategic policy around cultural space protection; I work with developers to include cultural spaces in new large-scale real estate projects; and I work with community-based cultural organizations to build capacity around large capital projects. I've developed this work in Seattle, Washington, in the US, and have recently relocated to Edinburgh where I'm excited to take part in the cultural life of this incredible city.",
-            "photo": "https://res.cloudinary.com/joinit/image/upload/f_auto,q_auto,w_800/v1710864723/kcenqmtd6lwpqhq0ih0t.jpg",
-            "sector": "Services Supporting Creatives and Consultancy",
-            "membership_type": "Premium"
-        },
-        {
-            "id": 30,
-            "name": "Sophie Venz",
-            "about_me": "I am a freelance writer from Australia who moved to Edinburgh two years ago. Earlier this year I experienced a brain infection, which caused me to become unemployed and to focus on my creative work instead: writing and crafting.",
-            "photo": "",
-            "sector": "Services Supporting Creatives and Consultancy",
-            "membership_type": "Premium"
-        },
-        {
-            "id": 31,
-            "name": "Beautify Earth",
-            "about_me": "Beautify Earth curates mural and street art projects in partnership with community organizations, community-led developers, and cities. We are a regenerative business with our goals and values in line with advocating for artists and the creative economy, creating more beautiful and sustainable communities, and making art part of our everyday experience. In addition to our agency we are building a cooperative digital platform that features the largest database of mural and street artist portfolios that is open and free for all.",
-            "photo": "https://res.cloudinary.com/joinit/image/upload/f_auto,q_auto,w_800/v1727369014/mnlbuqourkuhfcpqjqxl.png",
-            "sector": "Visual Arts and Curatorial Services",
-            "membership_type": "Business"
-        },
-        {
-            "id": 32,
-            "name": "Edinburgh Chamber of Commerce",
-            "about_me": "As a member of the Edinburgh Chamber of Commerce, you can access a variety of practical benefits designed to help you develop and grow your business. We offer a range of business support tools including networking opportunities, help with marketing, training, policy and advocacy and support with entering new markets. Whether you want to connect with other leaders in the Edinburgh business community, increase your visibility in the Capital, or start trading internationally, we can help.",
-            "photo": "https://res.cloudinary.com/joinit/image/upload/f_auto,q_auto,w_800/v1739530695/w0r906dtksuazpo4xhu3.png",
-            "sector": "Services Supporting Creatives and Consultancy",
-            "membership_type": "Business"
-        },
-        {
-            "id": 33,
-            "name": "Impact Arts",
-            "about_me": "Established in 1994, Impact Arts is an innovative Scottish arts charity whose mission is to tackle inequalities in Scotland through creativity. We aim to address common challenges faced by those living with poverty - improving people’s wellbeing and their life chances, connecting communities and improving access to the arts for Scotland’s most disadvantaged areas.",
-            "photo": "https://res.cloudinary.com/joinit/image/upload/f_auto,q_auto,w_800/v1697551795/b1hgvd1kzrrbwdjgkbxp.jpg",
-            "sector": "Multi-Disciplinary and Participatory Practice",
-            "membership_type": "Business"
-        },
-        {
-            "id": 34,
-            "name": "Madeleine Shepherd",
-            "about_me": "Textile artist/maker who also takes photographs and writes stories. Most of my work has its roots in science, maths or science fiction. Knot Unktnot has a specific mathematical meaning but it also reflects a lot of of the activity in my studio - knotting/knitting yarn and untangling stuff too",
-            "photo": "https://res.cloudinary.com/joinit/image/upload/f_auto,q_auto,w_800/v1707223495/jxj0tjilljfw57xgi8iu.jpg",
-            "sector": "Crafts and Traditional Arts",
-            "membership_type": "Plus"
-        },
-        {
-            "id": 35,
-            "name": "Jade Chau",
-            "about_me": "I’m a product designer for a fin tech in london. I just moved to Edinburgh and want to start meeting more people professionally and gain more network. I love making new connections and I wanted to make more in my area",
-            "photo": "",
-            "sector": "AI, Software Development and Website Design",
-            "membership_type": "Free"
-        },
-        {
-            "id": 36,
-            "name": "James Ebdon-Jackson",
-            "about_me": "I'm a product manager in tech, with a design background. I have a very user-centric approach to digital products and enjoy working on projects aimed at non-technical users most of all. Outside of my work I enjoy more practical non-digital creative outlets. I like to paint and I have a few projects on the go with physical product design. Resin casting, some light woodwork, and all that jazz!",
-            "photo": "https://res.cloudinary.com/joinit/image/upload/f_auto,q_auto,w_800/v1681743820/rv4uglxkmfexughlo0ps.jpg",
-            "sector": "AI, Software Development and Website Design",
-            "membership_type": "Free"
-        },
-        {
-            "id": 37,
-            "name": "Bawesh Pradhan",
-            "about_me": "I partner with business owners in hospitality to use the data-driven methodology to become more productive",
-            "photo": "https://res.cloudinary.com/joinit/image/upload/f_auto,q_auto,w_800/v1685857327/hlbpp2638k5exq9kd4nk.jpg",
-            "sector": "AI, Software Development and Website Design",
-            "membership_type": "Free"
+            "name": "Splendor's Design",
+            "description": "A creative business dedicated to providing high-quality interior design and aesthetic solutions for residential and commercial spaces.",
+            "sector": "Others"
         }
     ]
 }

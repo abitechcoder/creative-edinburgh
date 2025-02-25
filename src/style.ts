@@ -1,7 +1,7 @@
-export const styles = {
+const styles = {
   boxWidth: "lg:max-w-[1900px] w-full",
 
-  heroHeading: "font-manrope text-3xl font-bold",
+  heroHeading: "text-4xl lg:text-7xl font-bold leading-[40px] lg:leading-[70px]",
 
   heading1: "lg:text-7xl text-4xl font-bold",
 

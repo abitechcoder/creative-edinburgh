@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Logo from './Logo';
+import { Logo } from '../assets';
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from 'react-router';
 import MyDropDownLink from './MyDropDownLink';
@@ -75,9 +75,9 @@ const Navbar = ({ setIsMenuOpen }: any) => {
   window.addEventListener("scroll", scrollPage)
   return (
     <nav className={`h-[120px] flex items-center px-4 lg:px-9 fixed top-0 left-0 right-0 ${isScrolled ? "bg-white" : "bg-transparent"} z-20`}>
-      <div className="w-full flex items-end justify-between">
+      <div className="w-full flex items-center justify-between">
         <a href='/' >
-          <Logo className="h-[40px] md:h-[50px]" />
+          <img src={Logo} alt="Creative Hub Africa Logo" className='h-[70px] lg:h-[100px]' />
         </a>
         <div className='lg:hidden cursor-pointer' onClick={() => setIsMenuOpen(true)}>
           <GiHamburgerMenu size={30} />
