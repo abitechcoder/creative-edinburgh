@@ -91,10 +91,11 @@ export const NavLinks = [
       link: "/events/our-programme"
       }]
   },
-  {id: 5,
+  {
+    id: 5,
     title: "AWARDS",
     url: "/awards",
-    links: []
+    links: [],
   },
   {id: 6,
     title: "FOR COMMUNITY",

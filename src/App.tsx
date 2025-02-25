@@ -18,8 +18,7 @@ import {
   WhatWeDoPage,
 } from "./pages";
 import RootLayout from "./layouts/RootLayout";
-import { Mentoring } from "./assets";
-import { TeamSection } from "./components";
+import { Mentoring, TeamSection } from "./components";
 
 function App() {
   return (
