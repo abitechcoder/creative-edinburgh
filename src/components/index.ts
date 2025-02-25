@@ -34,3 +34,28 @@ export {default as WhyChooseUs} from "./WhyChooseUs"
 export {default as Featured} from "./FeaturedOpportunities"
 export {default as Testimonials} from "./Testimonials"
 export {default as Newsletter} from "./Newsletter"
+export {default as PreviousAwards} from "./PreviousAwards"
+export {default as CreativeEdinburghAward} from "./CreativeEdinburghAward"
+export {default as TheAwardPillar} from "./TheAwardPillar"
+export {default as CreativeAward} from "./CreativeAward"
+export {default as PartnerSection} from "./PartnerSection"
+export {default as OurCommunitySocialMedias} from "./OurCommunitySocialMedias"
+export {default as OurPartnerCompany} from "./OurPartnerCompany"
+export {default as SponsorSection} from "./SponsorSection"
+export {default as SponsorTestimonials} from "./SponsorTestimonial"
+export {default as CommunitySponsor} from "./CommunitySponsor"
+export {default as PreviousSponsor} from "./PreviousSponsor"
+export {default as BecomeASponsorTestimonial} from "./BecomeASponsporTestimonial"
+export {default as CreativeCommunity} from "./CreativeCommunity"
+export {default as WelcomeSponsorship} from "./WelcomeSponsorship"
+export {default as PayItForward} from "./PayItForward"
+export {default as ChooseToDonate} from "./ChooseToDonate"
+export { default as TeamSection } from "../pages/OurTeam";
+export { default as TeamMember } from "./TeamMember";
+export { default as Board } from "./Board";
+export { default as PastTeam } from "./PastTeam";
+export { default as PastMember } from "./PastMember";
+export { default as WorkWithUs } from "./WorkWithUs";
+export { default as CommunityAdvisor } from "./CommunityAdvisor";
+export { default as SteeringGroup } from "./SteeringGroup";
+export { default as ExecutiveTeam } from "./ExecutiveTeam";

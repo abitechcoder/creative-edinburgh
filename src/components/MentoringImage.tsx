@@ -1,6 +1,6 @@
 import { Mentoring } from "../assets";
 
-const ConnectSection = () => {
+const MentoringImage = () => {
   return (
     <section className="relative w-full flex justify-center py-12 lg:py-24 overflow-hidden">
       {/* Purple Arc - Top Right */}
@@ -42,4 +42,4 @@ const ConnectSection = () => {
   );
 };
 
-export default ConnectSection;
+export default MentoringImage;

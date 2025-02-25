@@ -1,6 +1,6 @@
 import { teamMembers } from "../constant";
 
-const TeamSection = () => {
+const ContactTeam = () => {
   return (
     <section className="py-12 px-8">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 ">
@@ -23,12 +23,12 @@ const TeamSection = () => {
                     </li>
                   ))}
                 </ul>
-                <p className="text-lg"><span className="font-bold">Email:</span> <a
-                  href={`mailto:${member.email}`}
-                  className="underline"
-                >
-                  {member.email}
-                </a></p>
+                <p className="text-lg">
+                  <span className="font-bold">Email:</span>{" "}
+                  <a href={`mailto:${member.email}`} className="underline">
+                    {member.email}
+                  </a>
+                </p>
               </div>
             </div>
             <h3 className="mt-4 text-xl font-extrabold text-start uppercase">
@@ -42,4 +42,4 @@ const TeamSection = () => {
   );
 };
 
-export default TeamSection;
+export default ContactTeam;

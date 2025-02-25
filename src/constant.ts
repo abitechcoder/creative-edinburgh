@@ -1,4 +1,4 @@
-import { Caitlin, CardImage, CardImage2, CardImage3, Eva, Inga, Ola, Vicky, Zoe } from "./assets";
+import { Caitlin, CardImage, CardImage2, CardImage3, Eva, Inga, marie, Ola, Vicky, Zoe } from "./assets";
 import { TeamMember } from "./type";
 
 export const members = [
@@ -91,10 +91,11 @@ export const NavLinks = [
       link: "/events/our-programme"
       }]
   },
-  {id: 5,
+  {
+    id: 5,
     title: "AWARDS",
-    url: "/",
-    links: []
+    url: "/awards",
+    links: [],
   },
   {id: 6,
     title: "FOR COMMUNITY",
@@ -328,4 +329,84 @@ export const futureGazeFaqs = [
     answer:
       "Caroline Parkinson, host of FutureGaze and Director for Creative at the Edinburgh Futures Institute, recounts the journey of this initiative and what she hopes to achieve in the future. Read her guest blog to find out more.",
   }
+];
+
+export const partners = [
+  {
+    src: marie,
+    alt: "Creative Scotland",
+    width: 200,
+    height: 100,
+  },
+  {
+    src: marie,
+    alt: "Green Arts Initiative",
+    width: 150,
+    height: 150,
+  },
+  {
+    src: marie,
+    alt: "Anderson Strathern",
+    width: 180,
+    height: 60,
+  },
+  { src: marie, alt: "CodeBase", width: 150, height: 60 },
+  {
+    src: marie,
+    alt: "Creative Informatics",
+    width: 160,
+    height: 60,
+  },
+  {
+    src: marie,
+    alt: "University of Edinburgh",
+    width: 140,
+    height: 60,
+  },
+  {
+    src: marie,
+    alt: "Edinburgh Innovations",
+    width: 140,
+    height: 60,
+  },
+  {
+    src: marie,
+    alt: "Edinburgh Innovations",
+    width: 140,
+    height: 60,
+  },
+  {
+    src: marie,
+    alt: "Edinburgh Innovations",
+    width: 140,
+    height: 60,
+  },
+  {
+    src: marie,
+    alt: "Edinburgh Innovations",
+    width: 140,
+    height: 60,
+  },
+];
+export const donations = [
+  {
+    amount: "£75",
+    description:
+      "would pay for an annual Premium Membership package at Creative Edinburgh for a creative who is looking for support.",
+  },
+  {
+    amount: "£100",
+    description:
+      "would pay mentoring bursary which includes 5 (1-hour long) mentoring sessions with an expert trained and supported by Creative Edinburgh.",
+  },
+  {
+    amount: "£250",
+    description:
+      "would pay for a bundle of a 10-week-long Raise Your Game digital skills development course for one creative practitioner.",
+  },
+  {
+    amount: "£300",
+    description:
+      "would pay for a bursary for a freelance mentor who can’t afford to offer mentoring free of charge but is passionate about sharing their knowledge.",
+  },
 ];

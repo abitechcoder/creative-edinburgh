@@ -23,8 +23,25 @@ const ConnectSection = () => {
             />
           </div>
         </div>
-      </section>
-  )
-}
+        <div className="relative space-y-4 flex-1">
+          <svg
+            viewBox="0 0 137.169 137.76"
+            preserveAspectRatio="xMinYMin meet"
+            className="fill-white z-10 absolute w-[70px] h-[70px] lg:w-[120px] lg:h-[120px] -left-[20px] lg:-left-[60px] top-[20%] lg:top-[20%]"
+          >
+            <path
+              d="M1084.917,899.655a68.544,68.544,0,1,0-66.638,70.775,68.863,68.863,0,0,0,66.638-70.775"
+              transform="translate(-947.774 -832.697)"
+            ></path>
+          </svg>
+          <img
+            src={PeopleNetworking}
+            alt="People networking"
+            className="w-full rounded-lg shadow-lg h-[300px] lg:h-[500px] object-cover object-center"
+          />
+        </div>
+    </section>
+  );
+};
 
-export default ConnectSection
+export default ConnectSection;

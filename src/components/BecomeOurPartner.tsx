@@ -1,6 +1,6 @@
 const BecomeOurPartner = () => {
   return (
-    <div className="w-full z-15 bg-[#2E2E99] hover:bg-pink-300 py-12 flex justify-center items-center overflow-hidden px-6 relative group transition-all duration-500 ease-in">
+    <div className="w-full z-15 bg-blue-900 hover:bg-pink-300 py-12 flex justify-center items-center overflow-hidden px-6 relative group transition-all duration-500 ease-in">
       <svg
         viewBox="0 0 137.169 137.76"
         preserveAspectRatio="xMinYMin meet"
