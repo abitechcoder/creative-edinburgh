@@ -46,7 +46,7 @@ const Event = () => {
         <svg
           viewBox="0 0 304.343 675.885"
           preserveAspectRatio="xMinYMin meet"
-          className="absolute z-10 top-[275px] right-[40%] lg:top-[490px] lg:right-[20%] w-[200px] h-[200px] lg:w-[500px] lg:h-[500px] fill-orange-500 rotate-[90deg] "
+          className="absolute hidden lg:block z-10 top-[275px] right-[40%] lg:top-[490px] lg:right-[20%] w-[200px] h-[200px] lg:w-[500px] lg:h-[500px] fill-orange-500 rotate-[90deg] "
         >
           <path
             d="M694.788,530.1a310.655,310.655,0,0,1,67.419-202.566l-107.4-84.624a446.92,446.92,0,0,0-96.925,291c4.705,167.8,101.443,311.731,240.34,384.88l63.818-120.969A311.986,311.986,0,0,1,694.788,530.1"
@@ -58,7 +58,7 @@ const Event = () => {
           <svg
             viewBox="0 0 137.169 137.76"
             preserveAspectRatio="xMinYMin meet"
-            className="fill-purple-500 z-10 absolute w-[70px] h-[70px] lg:w-[120px] lg:h-[120px] left-[40%] -top-10 lg:-top-16 "
+            className="fill-purple-500 hidden lg:block z-10 absolute w-[70px] h-[70px] lg:w-[120px] lg:h-[120px] left-[40%] -top-10 lg:-top-16 "
           >
             <path
               d="M1084.917,899.655a68.544,68.544,0,1,0-66.638,70.775,68.863,68.863,0,0,0,66.638-70.775"

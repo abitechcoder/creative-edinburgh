@@ -30,65 +30,69 @@ export const members = [
 ];
 
 export const NavLinks = [
-  {id: 1,
+  {
+    id: 1,
     title: "ABOUT US",
     url: "",
     links: [
       {
         id: 1,
-      title: "What We Do",
-      link: "/about-us/what-we-do"
+        title: "What We Do",
+        link: "/about-us/what-we-do"
       },
-      // {
-      //   id: 2,
-      // title: "Our Team",
-      // link: "/about-us/what-we-do"
-      // },
+      {
+        id: 2,
+        title: "Our Team",
+        link: "/about-us/team"
+      },
       {
         id: 3,
-      title: "Vision, mission and values",
-      link: "/about-us/vision-and-mission"
+        title: "Vision, mission and values",
+        link: "/about-us/vision-and-mission"
       },
       {
         id: 4,
-      title: "Code of Conduct",
-      link: "/about-us/code-of-conduct"
+        title: "Code of Conduct",
+        link: "/about-us/code-of-conduct"
       },
       {
         id: 5,
-      title: "Contact Us",
-      link: "/about-us/contact-us"
+        title: "Contact Us",
+        link: "/about-us/contact-us"
       },
     ]
   },
-  {id: 2,
+  {
+    id: 2,
     title: "MEMBERSHIP",
     url: "",
     links: [
       {
         id: 1,
-      title: "Members Directory",
-      link: "/membership/members-library"
+        title: "Members Directory",
+        link: "/membership/members-library"
       }]
   },
-  {id: 3,
+  {
+    id: 3,
     title: "MENTORING",
     url: "/mentoring",
     links: [],
   },
-  {id: 4,
+  {
+    id: 4,
     title: "EVENTS",
     url: "",
     links: [
       {
         id: 1,
-      title: "Book Tickets",
-      link: "/events/book-tickets"
+        title: "Book Tickets",
+        link: "/events/book-tickets"
       },
       {
         id: 2,
-      title: "Our Programme",
-      link: "/events/our-programme"
+        title: "Our Programme",
+        link: "/events/our-programme"
       }]
   },
   {
@@ -97,19 +101,37 @@ export const NavLinks = [
     url: "/awards",
     links: [],
   },
-  {id: 6,
-    title: "FOR COMMUNITY",
-    url: "/",
-    links: []
-  },
-  {id: 7,
+  // {id: 6,
+  //   title: "FOR COMMUNITY",
+  //   url: "/",
+  //   links: []
+  // },
+  {
+    id: 7,
     title: "SUPPORT US",
-    url: "/",
-    links: []
+    url: "",
+    links: [
+      {
+        id: 1,
+        title: "Become A Partner",
+        link: "/support-us/become-a-partner",
+      },
+      {
+        id: 2,
+        title: "Become A Sponsor",
+        link: "/support-us/become-a-sponsor",
+      },
+      {
+        id: 3,
+        title: "Support Our Community",
+        link: "/support-us/support-our-community",
+      },
+    ]
   },
-  {id: 8,
+  {
+    id: 8,
     title: "LOGIN",
-    url: "/",
+    url: "/join",
     links: []
   },
 ]
@@ -135,7 +157,7 @@ export const creativeSierraleone = {
   activities3: [
     "arranging and/or promoting educational events and knowledge sharing and skills development courses for those working in the creative industries",
     "offering mentoring services to those in the creative industries",
-   
+
   ],
 }
 

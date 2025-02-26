@@ -3,7 +3,7 @@ import SponsorCard from "./SponsorCard";
 
 const CommunitySponsor = () => {
   return (
-    <header className="relative overflow-hidden py-32 bg-red-50">
+    <header className="relative overflow-hidden py-10 lg:py-20 bg-red-50">
       {/* Yellow Arc */}
       <svg
         viewBox="0 0 467.23 585.48"
@@ -53,7 +53,7 @@ const CommunitySponsor = () => {
       </svg>
 
       {/* Sponsor Cards Container */}
-      <div className="relative z-15 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 auto-rows-auto grid-flow-row dense px-6">
+      <div className="relative container mx-auto z-15 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-auto grid-flow-row dense px-4">
         {/* HEADLINE SPONSOR */}
         <div className="h-auto">
           <SponsorCard

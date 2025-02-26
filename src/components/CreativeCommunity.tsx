@@ -2,8 +2,8 @@ import styles from "../style";
 
 const CreativeCommunity = () => {
   return (
-    <div className="relative bg-pink-400 py-24 flex items-center px-6 overflow-hidden">
-      <div className="max-w-lg">
+    <div className="relative bg-primary py-10 lg:py-20 flex flex-col lg:flex-row lg:items-center px-6 overflow-hidden">
+      <div className="w-full">
         <p
           className={`${styles.paragraph} text-black font-normal leading-relaxed `}
         >

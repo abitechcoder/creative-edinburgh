@@ -15,14 +15,14 @@ const SponsorCard = ({
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <div className="bg-white p-10 rounded-2xl max-w-lg mx-auto transition-all duration-300 ">
+    <div className="bg-white pb-10 rounded-2xl max-w-lg mx-auto transition-all duration-300 ">
       {/* Image Section */}
       <div className="rounded-lg overflow-hidden">
-        <img src={imageSrc} alt={title} className="w-full h-60" />
+        <img src={imageSrc} alt={title} className="w-full h-[300px]" />
       </div>
 
       {/* Content Section */}
-      <div className="mt-6 text-center">
+      <div className="mt-4 px-4 lg:px-8 text-center">
         <h2 className="text-xl lg:text-2xl font-extrabold text-black">
           {title}
           {price && ` - ${price}`}

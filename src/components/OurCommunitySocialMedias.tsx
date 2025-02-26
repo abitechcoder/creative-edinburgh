@@ -15,13 +15,6 @@ const OurCommunitySocialMedias = () => {
         Our Community
       </h2>
       <div className="flex justify-evenly gap-8 flex-wrap">
-        <div className="flex flex-col items-center">
-          <div className="w-28 h-28 flex items-center justify-center rounded-full border-2 border-blue-600">
-            {/* Custom icon (replace with actual component if needed) */}
-            <span className="text-4xl font-bold text-blue-600">?</span>
-          </div>
-          <p className="mt-2 font-semibold">6,200+ members</p>
-        </div>
         {communityData.map((item, index) => (
           <div key={index} className="flex flex-col items-center">
             <div className="w-28 h-28 flex items-center justify-center rounded-full border-2 border-blue-600 text-blue-600">

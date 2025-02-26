@@ -44,7 +44,7 @@ const Consequences = () => {
             CodeBase Ltd.
           </a>
         </p> */}
-        <p
+        {/* <p
           className={`${styles.paragraph} text-gray-700 font-normal leading-relaxed mb-4`}
         >
           This Code of Conduct was developed in January 2023.
@@ -54,7 +54,7 @@ const Consequences = () => {
         >
           If you have any feedback about it, we’d welcome your thoughts via {" "}
            <a href="mailto:connect@sierraleonebusinessmarkit.com" className="text-tertiary underline">connect@sierraleonebusinessmarkit.com</a> rather than in public channels.
-        </p>
+        </p> */}
       </div>
     </div>
   );

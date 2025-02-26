@@ -39,7 +39,7 @@ const Navbar = ({ setIsMenuOpen }: any) => {
 
     {
       id: 3,
-      title: "Vision, mission and values",
+      title: "Vision, Mission and Values",
       link: "/about-us/vision-and-mission",
     },
     {

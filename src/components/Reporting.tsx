@@ -18,12 +18,12 @@ const Reporting = () => {
           className={`${styles.paragraph} text-black font-normal leading-relaxed mb-4`}
         >
           If you are being harassed, notice that someone else is being harassed,
-          or have any other concerns, please email us at{" "}
+          or have any other concerns, please contact us via our {" "}
           <a
             href="mailto:connect@sierraleonebusinessmarkit.com"
             className="text-blue-600 underline"
           >
-            connect@sierraleonebusinessmarkit.com
+            email
           </a>
           . Emails to this address will be forwarded to the Creative Hub Africa
           Executive Director and will remain confidential unless otherwise

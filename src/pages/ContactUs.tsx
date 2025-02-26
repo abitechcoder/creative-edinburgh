@@ -8,14 +8,14 @@ const ContactUs: React.FC = () => {
       <section className="px-6 py-16 bg-gray-50 min-h-screen lg:h-screen grid grid-cols-1 lg:grid-cols-2">
         <div className="pt-[100px] lg:pt-0 lg:flex flex-col justify-center">
           <h1
-            className={`text-5xl lg:text-7xl font-extrabold text-black mb-10 uppercase  `}
+            className={`text-3xl lg:text-7xl font-extrabold text-black mb-4 lg:mb-10 uppercase  `}
           >
             CONTACT US
           </h1>
           <p className={`${styles.paragraph} text-black mt-5 leading-relaxed`}>
-            If your message requires an urgent response, please contact
+            If your message requires an urgent response, please contact our
             <a href="mailto:connect@sierraleonebusinessmarkit.com" className="text-blue-500 font-medium ml-1">
-            connect@sierraleonebusinessmarkit.com
+            email
             </a>
             , where it can be forwarded to the appropriate Creative Hub Africa
             team member who will be able to assist you.

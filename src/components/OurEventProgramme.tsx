@@ -3,7 +3,7 @@ import Button from "./Button";
 
 const OurEventProgramme = () => {
   return (
-    <header className="relative overflow-hidden py-32">
+    <header className="relative overflow-hidden py-10 lg:py-32">
       {/* Yellow Arc */}
       <svg
         viewBox="0 0 467.23 585.48"
