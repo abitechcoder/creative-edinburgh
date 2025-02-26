@@ -1,4 +1,4 @@
-import { CodeOfConductImage, PeopleNetworking } from "../assets";
+import { PeopleNetworking } from "../assets";
 import styles from "../style";
 
 const CodeOfConduct = () => {

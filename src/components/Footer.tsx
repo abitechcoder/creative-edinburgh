@@ -5,11 +5,8 @@ import {
   FaInstagram,
   FaLinkedin,
 } from "react-icons/fa";
-import { edinburgh, tn } from "../assets";
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
   return (
     <footer className="bg-secondary text-white py-10 lg:py-20 px-4 md:px-8">
       {/* Main Footer Grid */}

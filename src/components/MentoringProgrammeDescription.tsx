@@ -1,5 +1,3 @@
-import styles from "../style";
-
 const MentoringProgrammeDescription = () => {
   return (
     <div className="p-6 flex items-center py-4 lg:py-8">

@@ -1,6 +1,4 @@
-import React from "react";
-
-const ContactModal = ({ onClose }) => {
+const ContactModal = ({ onClose }: any) => {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black/40 bg-opacity-50 z-50">
       <div className="bg-white w-[500px] rounded-lg p-6 shadow-lg">
@@ -37,7 +35,7 @@ const ContactModal = ({ onClose }) => {
             <textarea
               className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-cyan-800"
               placeholder="Enter your message"
-              rows="4"
+              rows={4}
               required
             ></textarea>
           </div>
