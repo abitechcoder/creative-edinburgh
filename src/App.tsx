@@ -8,6 +8,7 @@ import {
   ContactUs,
   ErrorPage,
   Homepage,
+  Login,
   MemberDetails,
   Membership,
   MembersLibrary,
@@ -18,7 +19,7 @@ import {
   WhatWeDoPage,
 } from "./pages";
 import RootLayout from "./layouts/RootLayout";
-import { Mentoring, TeamSection } from "./components";
+import { JoinMembership, Mentoring, TeamSection } from "./components";
 
 function App() {
   return (
@@ -57,6 +58,8 @@ function App() {
         </Route>
         <Route path="*" element={<ErrorPage />} />{" "}
       </Route>
+      <Route path="join" element={<JoinMembership />} />
+      <Route path="login" element={<Login />} />
     </Routes>
   );
 }

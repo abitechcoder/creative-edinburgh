@@ -127,7 +127,7 @@ const Navbar = ({ setIsMenuOpen }: any) => {
               </svg>
             </a>
             <a
-              href="https://www.instagram.com/creativeedinburgh/"
+              href="/join"
               className="text-gray-600 hover:text-tertiary transition-colors duration-300"
             >
               <svg
