@@ -1,4 +1,4 @@
-import { Board3, CardImage, CardImage2, CardImage3, marie, Team1, Team2, Team3, Team4, Team5 } from "./assets";
+import { Board3, CardImage, CardImage2, CardImage3, Team1, Team2, Team3, Team4, Team5 } from "./assets";
 import { TeamMember } from "./type";
 
 export const members = [
@@ -333,56 +333,56 @@ export const futureGazeFaqs = [
 
 export const partners = [
   {
-    src: marie,
+    src: "",
     alt: "Creative Scotland",
     width: 200,
     height: 100,
   },
   {
-    src: marie,
+    src: "",
     alt: "Green Arts Initiative",
     width: 150,
     height: 150,
   },
   {
-    src: marie,
+    src: "",
     alt: "Anderson Strathern",
     width: 180,
     height: 60,
   },
-  { src: marie, alt: "CodeBase", width: 150, height: 60 },
+  { src: "", alt: "CodeBase", width: 150, height: 60 },
   {
-    src: marie,
+    src: "",
     alt: "Creative Informatics",
     width: 160,
     height: 60,
   },
   {
-    src: marie,
+    src: "",
     alt: "University of Sierraleone",
     width: 140,
     height: 60,
   },
   {
-    src: marie,
+    src: "",
     alt: "Sierraleone Innovations",
     width: 140,
     height: 60,
   },
   {
-    src: marie,
+    src: "",
     alt: "Sierraleone Innovations",
     width: 140,
     height: 60,
   },
   {
-    src: marie,
+    src: "",
     alt: "Sierraleone Innovations",
     width: 140,
     height: 60,
   },
   {
-    src: marie,
+    src: "",
     alt: "Sierraleone Innovations",
     width: 140,
     height: 60,

@@ -1,4 +1,4 @@
-import { Board, CommunityAdvisor, ExecutiveTeam, PastMember, PastTeam, SteeringGroup, TeamMember, WorkWithUs } from "../components";
+import { Board, ExecutiveTeam, TeamMember, WorkWithUs } from "../components";
 import styles from "../style";
 
 const OurTeamPage = () => {

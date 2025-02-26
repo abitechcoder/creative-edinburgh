@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { amy, Board1, Board2, Board3, Board4, Board5, Board6, brian, bruce, charlie, christina, janice, jessica, marie, michaela, nicki, Profile1 } from "../assets";
+import { Board1, Board2, Board3, Board4, Board5, Board6, jessica, Profile1 } from "../assets";
 
 interface BoardMember {
   name: string;
@@ -38,12 +38,6 @@ const boardMembers: BoardMember[] = [
     name: "MICHAELA TURNER",
     image: Board6,
     description: "Michaela Turner has worked at supporting SME and start-ups in Edinburgh and the region for over the past 9 years. She currently leads on the industry engagement for the Creative Informatics program where she has been working to grow, develop and support the creative start up ecosystem. Prior to working in Creative Informatics, she has worked in knowledge exchange at the University of Edinburgh advising and supporting SME engagement.",
-    role: ""
-  },
-  {
-    name: "JANICE MCBLANE",
-    image: janice,
-    description: "",
     role: ""
   },
   {

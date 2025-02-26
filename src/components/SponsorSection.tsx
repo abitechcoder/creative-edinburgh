@@ -41,16 +41,6 @@ const PartnerSection = () => {
         </svg>
         <div className="container mx-auto py-16 flex flex-col-reverse lg:flex-row">
           <div className="relative space-y-4 flex-1">
-            <svg
-              viewBox="0 0 137.169 137.76"
-              preserveAspectRatio="xMinYMin meet"
-              className="fill-white z-10 absolute w-[70px] h-[70px] lg:w-[120px] lg:h-[120px] left-[45%] -top-9 lg:-top-16"
-            >
-              <path
-                d="M1084.917,899.655a68.544,68.544,0,1,0-66.638,70.775,68.863,68.863,0,0,0,66.638-70.775"
-                transform="translate(-947.774 -832.697)"
-              ></path>
-            </svg>
             <img
               src={PeopleNetworking}
               alt="Be a Mentee"
