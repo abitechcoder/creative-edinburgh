@@ -15,7 +15,7 @@ const CreativeEdinburghAwards = () => {
         >
           Since 2012, we’ve been celebrating the city’s creative community at
           our annual Creative Hub Africa Awards, highlighting the projects,
-          people and places that flourish across Edinburgh and continually
+          people and places that flourish across Sierraleone and continually
           ensuring its place on the cultural map, nationally and
           internationally!
         </p>

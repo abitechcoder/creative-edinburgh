@@ -1,8 +1,6 @@
 import {
-  BecomeOurPartner,
   CreativeAward,
   CreativeEdinburghAward,
-  PreviousAwards,
   TheAwardPillar,
 } from "../components";
 
@@ -12,8 +10,8 @@ const Awards = () => {
       <CreativeEdinburghAward />
       <TheAwardPillar />
       <CreativeAward />
-      <PreviousAwards />
-      <BecomeOurPartner />
+      {/* <PreviousAwards /> */}
+      {/* <BecomeOurPartner /> */}
     </div>
   );
 };

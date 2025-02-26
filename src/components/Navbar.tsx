@@ -75,6 +75,25 @@ const Navbar = ({ setIsMenuOpen }: any) => {
     },
   ];
 
+
+  const supportUsLinks = [
+    {
+      id: 1,
+      title: "Become A Partner",
+      link: "/support-us/become-a-partner",
+    },
+    {
+      id: 2,
+      title: "Become A Sponsor",
+      link: "/support-us/become-a-sponsor",
+    },
+    {
+      id: 3,
+      title: "Support Our Community",
+      link: "/support-us/support-our-community",
+    },
+  ];
+
   window.addEventListener("scroll", scrollPage);
   return (
     <nav className={`h-[120px] flex items-center px-4 lg:px-9 fixed top-0 left-0 right-0 ${isScrolled ? "bg-white" : "bg-transparent"} z-20`}>
@@ -93,9 +112,9 @@ const Navbar = ({ setIsMenuOpen }: any) => {
           <MyDropDownLink title="MEMBERSHIP" links={membershipLinks} />
           <NavLink href="/mentoring">MENTORING</NavLink>
           <MyDropDownLink title="Events" links={eventsLinks} />
-          <NavLink href="#">AWARDS</NavLink>
-          <NavLink href="#">FOR COMMUNITY</NavLink>
-          <NavLink href="#">SUPPORT US</NavLink>
+          <NavLink href="/awards">AWARDS</NavLink>
+          {/* <NavLink href="#">FOR COMMUNITY</NavLink> */}
+          <MyDropDownLink title="SUPPORT US" links={supportUsLinks} />
 
           <div className="flex items-end gap-6">
             <a
@@ -123,7 +142,7 @@ const Navbar = ({ setIsMenuOpen }: any) => {
               </svg>
             </a>
             <a
-              href="https://www.instagram.com/creativeedinburgh/"
+              href="/join"
               className="text-gray-600 hover:text-tertiary transition-colors duration-300"
             >
               <svg

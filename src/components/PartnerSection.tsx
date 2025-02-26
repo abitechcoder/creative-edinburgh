@@ -3,7 +3,7 @@ import Button from "./Button";
 
 const PartnerSection = () => {
   return (
-    <section className="bg-[#1A1FA7] text-white pt-32 lg:pt-48 pb-12 relative grid grid-cols-1 lg:grid-cols-2">
+    <section className="bg-secondary text-white mt-24 lg:mt-32 py-12 relative grid grid-cols-1 lg:grid-cols-2">
       <div className="max-w-4xl mx-auto px-6">
         <h2
           className={`${styles.heading1} mb-8 text-center lg:text-left uppercase`}
@@ -22,8 +22,8 @@ const PartnerSection = () => {
         </p>
         <p className={`${styles.paragraph} font-normal leading-relaxed mb-4`}>
           If you would like to discuss becoming a partner, please email us at{" "}
-          <a href="mailto:info@creative-edinburgh.com" className="underline">
-            info@creative-edinburgh.com
+          <a href="mailto:connect@sierraleonebusinessmarkit.com" className="underline">
+          connect@sierraleonebusinessmarkit.com
           </a>
           .
         </p>

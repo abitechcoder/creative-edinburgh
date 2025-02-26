@@ -1,16 +1,15 @@
 import {
   BecomeOurPartner,
   OurCommunitySocialMedias,
-  OurPartnerCompany,
   PartnerSection,
 } from "../components";
 
 const BecomeAPartner = () => {
   return (
-    <div>
+    <div className="overflow-hidden bg-white">
       <PartnerSection />
       <OurCommunitySocialMedias />
-      <OurPartnerCompany />
+      {/* <OurPartnerCompany /> */}
       <BecomeOurPartner />
     </div>
   );

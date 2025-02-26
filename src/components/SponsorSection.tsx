@@ -4,7 +4,7 @@ import Button from "./Button";
 
 const PartnerSection = () => {
   return (
-    <section className="bg-[#1A1FA7] text-white mt-24 lg:mt-32   py-12 relative grid grid-cols-1 lg:grid-cols-2">
+    <section className="bg-secondary text-white mt-24 lg:mt-32   py-12 relative grid grid-cols-1 lg:grid-cols-2">
       <div className="max-w-4xl mx-auto px-6">
         <h2
           className={`${styles.heading1}  mb-8 text-center lg:text-left uppercase`}
@@ -13,11 +13,11 @@ const PartnerSection = () => {
         </h2>
         <p className={`${styles.paragraph}  font-normal leading-relaxed mb-4`}>
           With more than <span className="font-bold">6,000 members</span>, we
-          host the largest network of engaged creatives across Edinburgh. We
+          host the largest network of engaged creatives across Sierraleone. We
           bring together freelancers, students, and companies of all sizes and
           specialities, through our vibrant programme of events, career support
           and advocacy. Our mission is to support the city's diverse creative
-          community at every stage of their career, future-proofing Edinburgh as
+          community at every stage of their career, future-proofing Sierraleone as
           the creative capital of the world. Read more about our sponsorship
           packages below and check out our{" "}
           <a href="#" className="underline font-semibold">

@@ -4,7 +4,6 @@ import {
   CommunitySponsor,
   CreativeCommunity,
   OurCommunitySocialMedias,
-  PreviousSponsor,
   SponsorSection,
   SponsorTestimonials,
   WelcomeSponsorship,
@@ -16,7 +15,7 @@ const BecomeASponsor = () => {
       <SponsorSection />
       <SponsorTestimonials />
       <CommunitySponsor />
-      <PreviousSponsor />
+      {/* <PreviousSponsor /> */}
       <BecomeASponsorTestimonial />
       <CreativeCommunity />
       <OurCommunitySocialMedias />

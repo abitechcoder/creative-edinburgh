@@ -8,6 +8,7 @@ import {
   ContactUs,
   ErrorPage,
   Homepage,
+  Login,
   MemberDetails,
   Membership,
   MembersLibrary,
@@ -17,6 +18,7 @@ import {
   VisionMissionPage,
   WhatWeDoPage,
   Mentoring,
+  JoinMembership
 } from "./pages";
 import RootLayout from "./layouts/RootLayout";
 
@@ -51,8 +53,11 @@ function App() {
             element={<SupportOurCommunity />}
           />
         </Route>
+        <Route path="join" element={<JoinMembership />} />
+        <Route path="login" element={<Login />} />
         <Route path="*" element={<ErrorPage />} />{" "}
       </Route>
+
     </Routes>
   );
 }

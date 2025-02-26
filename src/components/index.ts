@@ -51,6 +51,10 @@ export {default as WelcomeSponsorship} from "./WelcomeSponsorship"
 export {default as PayItForward} from "./PayItForward"
 export {default as ChooseToDonate} from "./ChooseToDonate"
 export { default as TeamSection } from "../pages/OurTeam";
+export { default as ContactModal } from "./ContactModal";
+export { default as MembershipNavbar } from "./MembershipNavbar";
+export { default as MembershipFooter } from "./MembershipFooter";
+export { default as PricingSection } from "./PricingSection";
 export { default as TeamMember } from "./TeamMember";
 export { default as Board } from "./Board";
 export { default as PastTeam } from "./PastTeam";

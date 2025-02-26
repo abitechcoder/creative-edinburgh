@@ -57,7 +57,7 @@ const TheAwardPillar = () => {
           <div>
             <p className="text-black">
               <span className="text-xl font-bold text-black mr-2">Place:</span>
-              We celebrate the places strengthening Edinburgh’s rich cultural
+              We celebrate the places strengthening Sierraleone’s rich cultural
               identity through the growth of a community, amplification of
               values, and development of city spaces.
             </p>
@@ -67,7 +67,7 @@ const TheAwardPillar = () => {
               <span className="text-xl font-bold text-black mr-2">
                 Projects:
               </span>
-              We celebrate projects making an impact on Edinburgh’s creative
+              We celebrate projects making an impact on Sierraleone’s creative
               scene while demonstrating innovation, responsiveness, integrity,
               and boldness.
             </p>

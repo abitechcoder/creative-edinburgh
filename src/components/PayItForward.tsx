@@ -4,9 +4,9 @@ import Button from "./Button";
 
 const PayItForward = () => {
   return (
-    <section className="bg-[#1e22aa] text-white pt-32 lg:pt-48 pb-12 gap-5 flex flex-col md:flex-row">
+    <section className="bg-secondary text-white mt-24 lg:mt-32 p-4 lg:py-12 relative grid grid-cols-1 lg:grid-cols-2 gap-4">
       {/* Left Side - Text */}
-      <div className="md:w-1/2 space-y-6 px-6">
+      <div className="space-y-6 px-6 lg:flex flex-col justify-center">
         <h2
           className={`${styles.heading1} mb-8 text-center lg:text-left uppercase`}
         >
@@ -23,7 +23,7 @@ const PayItForward = () => {
       </div>
 
       {/* Right Side - Image */}
-      <div className="md:w-1/2 ps-6 ">
+      <div className=" ">
         <img
           src={PeopleNetworking}
           alt="Creative Hub Africa Event"
