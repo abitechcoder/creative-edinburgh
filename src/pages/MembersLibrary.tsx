@@ -4,9 +4,11 @@ import { useEffect, useState } from "react";
 import { Axios } from "../Axios"
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router";
+import { Logo } from "../assets";
 
 interface BusinessType {
   id: string;
+  logo: string;
   name: string;
   description: string;
   sector: string;
@@ -75,7 +77,7 @@ const MembersLibrary = () => {
     <div className="pb-8 px-8">
       <section className="bg-gray-50 py-16 relative lg:min-h-[50vh] lg:mt-[120px] grid grid-cols-1 lg:grid-cols-2">
         <div className="w-full h-full flex flex-col justify-center">
-          <h2 className={`${styles.heading1} text-black mb-6 lg:mb-10 mt-16 uppercase`}>Creative Edinburgh Members Directory</h2>
+          <h2 className={`${styles.heading1} text-black mb-6 lg:mb-10 mt-16 uppercase`}>Creative Hub Africa Members Directory</h2>
           <p
             className={`${styles.paragraph} text-gray-700 mb-5 font-medium leading-relaxed text-xl`}
           >
@@ -106,7 +108,8 @@ const MembersLibrary = () => {
             {filteredBusinesses.map((business) => (
               <div key={business.id} className={`relative border-secondary border-4 p-8 rounded-lg flex flex-col gap-4 bg-[#faebe6] items-start`}>
                 <div className={`bg-secondary grid text-white place-items-center rounded-lg text-sm font-bold uppercase lg:h-[40px] lg:w-[250px] p-2 lg:absolute -top-[20px] left-8 z-10`}>{business.sector}</div>
-                <h1 className="text-2xl font-bold mt-8">{business.name}</h1>
+                <img src={business.logo === "" ? Logo : ""} alt={`${business.name} logo`} className="h-[70px] mt-8" />
+                <h1 className="text-2xl font-bold">{business.name}</h1>
                 <p>
                   {business.description.length > 200 ? `${business.description.substring(0, 200)}...` : business.description}
                 </p>

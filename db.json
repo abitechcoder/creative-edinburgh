@@ -32,96 +32,112 @@
     "businesses": [
         {
             "id": 1,
+            "logo": "",
             "name": "TechStuff",
             "description": "Founded by Alimamy Turay, TechStuff is an innovative technology company specializing in cutting-edge digital solutions to enhance business operations and consumer experiences.",
             "sector": "Tech"
         },
         {
             "id": 2,
+            "logo": "",
             "name": "CIJ Digital Hub (SL) Limited",
             "description": "Led by Chernor Issa Jalloh, CIJ Digital Hub focuses on digital innovation and transformation, providing technology-driven solutions to businesses and individuals.",
             "sector": "Tech"
         },
         {
             "id": 3,
+            "logo": "",
             "name": "Lisa's Cake",
             "description": "Founded by Hawa Sia Mellisa Johnny, Lisa's Cakes offers a variety of delicious and high quality cakes and pastries tailored to customer preferences.",
             "sector": "Food & Agro Processing"
         },
         {
             "id": 4,
+            "logo": "",
             "name": "Tasty Plates",
             "description": "Managed by Olive Lisk, Tasty Plates specializes in preparing nutiritious and favorful meals, catering to diverse customer needs.",
             "sector": "Food & Agro Processing"
         },
         {
             "id": 5,
+            "logo": "",
             "name": "EcoDesign Waste",
             "description": "A sustainability-driven company focusing on waste management and recycling to reduce environmental impact through innovative recycling processes.",
             "sector": "Circular Economy"
         },
         {
             "id": 6,
+            "logo": "",
             "name": "Textile Waste",
             "description": "An environmentally conscious business dedicated to repurposing textile materials and minimizing fabric waste in the fashion industry.",
             "sector": "Circular Economy"
         },
         {
             "id": 7,
+            "logo": "",
             "name": "Vicky Couture",
             "description": "A fashion brand specializing in stylish and customized clothing, offering unique and high-quality apparel.",
             "sector": "Fashion & Beauty"
         },
         {
             "id": 8,
+            "logo": "",
             "name": "Manikene",
             "description": "A beauty and fashion company dedicated to enhancing personal style and grooming through innovative products and services.",
             "sector": "Fashion & Beauty"
         },
         {
             "id": 9,
+            "logo": "",
             "name": "SALMAH",
             "description": "A fashion and beauty company focusing on high-quality, trendsetting apparel and beauty solutions.",
             "sector": "Fashion & Beauty"
         },
         {
             "id": 10,
+            "logo": "",
             "name": "BOKU TOK",
             "description": "A digital platform designed to facilitate seamless communication and engagement through innovative technology solutions.",
             "sector": "Digital"
         },
         {
             "id": 11,
+            "logo": "",
             "name": "ICE",
             "description": "A digital company providing advanced technology services, including software development and digital marketing.",
             "sector": "Digital"
         },
         {
             "id": 12,
+            "logo": "",
             "name": "Bokya",
             "description": "A service-oriented company offering business solutions to enterprises, ensuring efficiency and growth through strategic management and consultancy.",
             "sector": "Services"
         },
         {
             "id": 13,
+            "logo": "",
             "name": "Fambul Global",
             "description": "Dedicated to providing community-based services, fostering development through sustainable initiatives and impactful programs.",
             "sector": "Services"
         },
         {
             "id": 14,
+            "logo": "",
             "name": "Complain Box",
             "description": "A consumer advocacy platform that provides a structured way for customers to voice concerns and seek resolutions from businesses.",
             "sector": "Services"
         },
         {
             "id": 15,
+            "logo": "",
             "name": "CALMATA",
             "description": "A specialized company offering innovative solutions in the health and wellness sector, focusing on holistic well-being.",
             "sector": "Others"
         },
         {
             "id": 16,
+            "logo": "",
             "name": "Splendor's Design",
             "description": "A creative business dedicated to providing high-quality interior design and aesthetic solutions for residential and commercial spaces.",
             "sector": "Others"

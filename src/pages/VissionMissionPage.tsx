@@ -20,8 +20,8 @@ const VissionMissionPage = () => {
           transform="translate(-853.47 -109.457)"
         ></path>
       </svg>
-      <div className="lg:h-screen px-4 lg:px-8 grid grid-cols-1 lg:grid-cols-2 ">
-        <div className="block lg:flex flex-col justify-end pb-20">
+      <div className="lg:h-[70vh] px-4 lg:px-8 grid grid-cols-1 lg:grid-cols-2 ">
+        <div className="block lg:flex flex-col justify-end py-10 lg:pb-20">
           <h1
             className={`text-5xl lg:text-8xl font-bold text-black mt-[30%] lg:mt-0 lg:mb-10 uppercase`}
           >

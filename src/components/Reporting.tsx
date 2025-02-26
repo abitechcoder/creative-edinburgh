@@ -20,12 +20,12 @@ const Reporting = () => {
           If you are being harassed, notice that someone else is being harassed,
           or have any other concerns, please email us at{" "}
           <a
-            href="mailto:info@creative-edinburgh.com"
+            href="mailto:connect@sierraleonebusinessmarkit.com"
             className="text-blue-600 underline"
           >
-            info@creative-edinburgh.com
+            connect@sierraleonebusinessmarkit.com
           </a>
-          . Emails to this address will be forwarded to the Creative Edinburgh
+          . Emails to this address will be forwarded to the Creative Hub Africa
           Executive Director and will remain confidential unless otherwise
           required. After receiving the complaint, somebody will be in touch to
           discuss further and take a record of your account. We will respond as
@@ -37,10 +37,10 @@ const Reporting = () => {
         <p
           className={`${styles.paragraph} text-black font-normal leading-relaxed mb-4`}
         >
-          This code of conduct applies to Creative Edinburgh activities, but if
+          This code of conduct applies to Creative Hub Africa activities, but if
           you are being harassed by a user within or in the social orbit of
-          Creative Edinburgh, we still want to know about it. We will take all
-          good-faith reports of harassment by Creative Edinburgh seriously.
+          Creative Hub Africa, we still want to know about it. We will take all
+          good-faith reports of harassment by Creative Hub Africa seriously.
         </p>
         <div className="md:pe-6 w-full mb-4">
           <h2 className="text-xl font-bold mb-4">This includes</h2>
@@ -55,10 +55,10 @@ const Reporting = () => {
         <p
           className={`${styles.paragraph} text-black font-normal leading-relaxed mb-4`}
         >
-          The Creative Edinburgh team reserves the right to exclude people from
-          Creative Edinburgh activities based on their past behaviour, including
-          behaviour outside of Creative Edinburgh, and behaviour towards people
-          who are not members of Creative Edinburgh.
+          The Creative Hub Africa team reserves the right to exclude people from
+          Creative Hub Africa activities based on their past behaviour, including
+          behaviour outside of Creative Hub Africa, and behaviour towards people
+          who are not members of Creative Hub Africa.
         </p>
         <p
           className={`${styles.paragraph} text-black font-normal leading-relaxed mb-4`}
@@ -75,7 +75,7 @@ const Reporting = () => {
           victims of abuse. At our discretion, we may publicly name a person
           about whom we’ve received harassment complaints, or privately warn
           third parties about them, if we believe that doing so will increase
-          the safety of Creative Edinburgh members or the general public. We
+          the safety of Creative Hub Africa members or the general public. We
           will not name harassment victims without their affirmative consent.
         </p>
       </div>

@@ -1,4 +1,4 @@
-import { Board, CommunityAdvisor, PastMember, PastTeam, SteeringGroup, TeamMember, WorkWithUs } from "../components";
+import { Board, CommunityAdvisor, ExecutiveTeam, PastMember, PastTeam, SteeringGroup, TeamMember, WorkWithUs } from "../components";
 import styles from "../style";
 
 const OurTeamPage = () => {
@@ -9,14 +9,14 @@ const OurTeamPage = () => {
           <h1
             className={`text-5xl lg:text-7xl font-extrabold text-black mb-10 uppercase  `}
           >
-            PEOPLE BEHIND <br /> CREATIVE EDINBURGH
+            PEOPLE BEHIND <br /> Creative Hub Africa
           </h1>
           <p className={`${styles.paragraph} text-black leading-relaxed`}>
-            The work of Creative Edinburgh is supported by a diverse and
+            The work of Creative Hub Africa is supported by a diverse and
             experienced creative team. Each bring to the table their own unique
             expertise to help the community grow and thrive. Thank you to all
             former team and board members, who have been a big part of Creative
-            Edinburgh’s journey.
+            Hub Africa’s journey.
           </p>
         </div>
 
@@ -25,7 +25,7 @@ const OurTeamPage = () => {
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 714.033 646.015"
-            className="fill-purple-400 w-[110%] mx-auto lg:absolute top-[15%]"
+            className="fill-purple-400 w-[100%] mx-auto lg:absolute top-[15%]"
           >
             <g transform="translate(-725.967 -124.993)">
               <path
@@ -47,13 +47,14 @@ const OurTeamPage = () => {
           </svg>
         </div>
       </section>
+      <ExecutiveTeam />
       <TeamMember />
-      <PastTeam />
+      {/* <PastTeam /> */}
       <WorkWithUs />
       <Board />
-      <PastMember />
-      <CommunityAdvisor />
-      <SteeringGroup />
+      {/* <PastMember /> */}
+      {/* <CommunityAdvisor />
+      <SteeringGroup /> */}
     </div>
   );
 };

@@ -25,7 +25,7 @@ interface CommunityMember {
     {
         name: "NATHAN FULWOOD",
         image: nathan,
-        description: "Nathan is one of the founders of CreateFuture, a marketing consultancy with offices in Edinburgh and London. He has been working mainly in digital since the internet came on a CD, with stints at the Press Association, Orange, Realise and Tayburn. Possibly the tallest member of Creative Edinburgh.",
+        description: "Nathan is one of the founders of CreateFuture, a marketing consultancy with offices in Edinburgh and London. He has been working mainly in digital since the internet came on a CD, with stints at the Press Association, Orange, Realise and Tayburn. Possibly the tallest member of Creative Hub Africa.",
         role: ""
     },
     {
@@ -66,7 +66,7 @@ const CommunityAdvisor = () => {
       <div className="md:w-[42%] w-full my-40">
         <h2 className="text-4xl font-bold mb-4">Community Advisors</h2>
         <p className="text-lg leading-relaxed">
-        Creative Edinburgh’s Community Advisors are composed of committed creative industry experts who champion and advise both our programme and network. They meet a few times a year to provide feedback, suggest new ideas and offer support.
+        Creative Hub Africa’s Community Advisors are composed of committed creative industry experts who champion and advise both our programme and network. They meet a few times a year to provide feedback, suggest new ideas and offer support.
 
         </p>
       </div>

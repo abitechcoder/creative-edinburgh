@@ -68,8 +68,8 @@ const HarassmentPolicy = () => {
           </div>
           <div>
             <h2 className="text-xl font-bold my-5">
-              Creative Edinburgh prioritises marginalised people’s safety over
-              privileged people’s comfort. The Creative Edinburgh team reserves
+              Creative Hub Africa prioritises marginalised people’s safety over
+              privileged people’s comfort. The Creative Hub Africa team reserves
               the right not to act on complaints regarding:
             </h2>
             <ul

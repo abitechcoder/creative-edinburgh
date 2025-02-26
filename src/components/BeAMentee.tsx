@@ -4,7 +4,7 @@ import Button from "./Button";
 
 const BeAMentee = () => {
   return (
-    <section className="grid grid-cols-1 md:grid-cols-2 items-center gap-10 bg-pink-300 py-12 lg:py-20 overflow-hidden">
+    <section className="grid grid-cols-1 md:grid-cols-2 items-center gap-10 bg-primary py-12 lg:py-20 overflow-hidden">
       {/* Left Side - Text Content */}
       <div className=" px-6 text-black">
         <h2 className="text-3xl md:text-5xl font-extrabold text-black mb-5">
@@ -14,7 +14,7 @@ const BeAMentee = () => {
           className={`${styles.paragraph} text-black font-normal leading-relaxed mb-4 max-w-lg`}
         >
           Find out everything you need to know about becoming a mentee as part
-          of the Creative Edinburgh Mentoring Programme.
+          of the Creative Hub Africa Mentoring Programme.
         </p>
         <Button text="Start your journey to becoming a mentee" />
       </div>

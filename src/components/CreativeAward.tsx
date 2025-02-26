@@ -7,12 +7,12 @@ const CreativeAward = () => {
       {/* Left Content */}
       <div className="md:w-1/2 px-6">
         <h2 className="text-3xl md:text-4xl font-extrabold mb-8">
-          2024 CREATIVE EDINBURGH AWARDS
+          2024 Creative Hub Africa AWARDS
         </h2>
         <p
           className={`${styles.paragraph} text-black font-normal leading-relaxed mb-4`}
         >
-          Meet the 2024 Creative Edinburgh Awards Finalists! Nominations for the
+          Meet the 2024 Creative Hub Africa Awards Finalists! Nominations for the
           Awards opened earlier this year, and we were excited to see the
           creative community sending in applications for themselves, their
           peers, and projects that have inspired them over the past 12 months.
@@ -29,7 +29,7 @@ const CreativeAward = () => {
           className={`${styles.paragraph} leading-relaxed mt-4 border-b-2 border-pink-400 text-black`}
         >
           See all the shortlisted finalists across the ten categories in the
-          2024 Creative Edinburgh Awards here!
+          2024 Creative Hub Africa Awards here!
         </a>
       </div>
 

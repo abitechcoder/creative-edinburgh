@@ -8,13 +8,13 @@ const CreativeEdinburghAwards = () => {
         <h1
           className={`${styles.heading1} text-black mb-8 text-center lg:text-left uppercase`}
         >
-          THE CREATIVE EDINBURGH AWARDS
+          THE Creative Hub Africa AWARDS
         </h1>
         <p
           className={`${styles.paragraph} text-black font-normal leading-relaxed mb-4`}
         >
           Since 2012, we’ve been celebrating the city’s creative community at
-          our annual Creative Edinburgh Awards, highlighting the projects,
+          our annual Creative Hub Africa Awards, highlighting the projects,
           people and places that flourish across Edinburgh and continually
           ensuring its place on the cultural map, nationally and
           internationally!
@@ -31,13 +31,13 @@ const CreativeEdinburghAwards = () => {
           href=""
           className={`${styles.paragraph} text-black font-normal leading-relaxed border-b-2 border-pink-400`}
         >
-          Find out more about the 2024 Creative Edinburgh Awards
+          Find out more about the 2024 Creative Hub Africa Awards
         </a>
       </div>
       <div className="md:w-1/2 mt-8 md:mt-0 ps-6">
         <img
           src={PeopleNetworking}
-          alt="Creative Edinburgh Awards Audience"
+          alt="Creative Hub Africa Awards Audience"
           className="rounded-s-2xl w-full object-cover"
         />
       </div>

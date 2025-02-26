@@ -2,7 +2,7 @@ import { teamMembers } from "../constant";
 
 const ContactTeam = () => {
   return (
-    <section className="py-12 px-8">
+    <section className="py-12 px-8 container mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 ">
         {teamMembers.map((member, index) => (
           <div key={index} className="text-center">
@@ -10,7 +10,7 @@ const ContactTeam = () => {
               <img
                 src={member.image}
                 alt={member.name}
-                className="w-full h-[400px] object-cover object-center transition duration-300 ease-in-out group-hover:opacity-50"
+                className="w-full h-[300px] lg:h-[450px] object-cover object-top transition duration-300 ease-in-out group-hover:opacity-50"
               />
               <div className="absolute inset-0 bg-blue-900 bg-opacity-90 flex flex-col items-start text-white opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out p-8">
                 <h3 className="text-lg font-bold">

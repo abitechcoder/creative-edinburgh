@@ -1,17 +1,16 @@
 export { default as CardImage } from "./card-1-image.png";
 export { default as CardImage2 } from "./card-2-image.jpg";
 export { default as CardImage3 } from "./card-3-image.jpg";
-export { default as MeetandGreet } from "./meet-and-greet.avif";
-export { default as PeopleNetworking } from "./create-connection.avif";
+export { default as MeetandGreet } from "./meet-and-greet.png";
+export { default as PeopleNetworking } from "./create-connection.jpg";
 export { default as tn } from "./tnl-logo.png";
 export { default as edinburgh } from "./edinburgh.png";
 export { default as smile } from "./smile.png";
-
-export { default as WhatWeDoImage } from "./what-we-do-image.jpeg"
+export { default as WhatWeDoImage } from "./what-we-do-image.png"
 export { default as OurCommunityImage } from "./our-community-image.jpg"
 export { default as MentorshipSchemeImage } from "./mentorship-scheme-image.jpg"
 export { default as UniqueEventsImage } from "./unique-events-image.jpg"
-export { default as OurVisionImage } from "./our-vision-image.png"
+export { default as OurVisionImage } from "./our-vision-image.avif"
 export { default as OurMissionImage } from "./our-mission-image.jpg"
 export { default as OurValuesImage } from "./our-values-image.jpg"
 export { default as CuriousImage } from "./curious-image.jpg"
@@ -31,9 +30,9 @@ export { default as BecomeMentor } from "./be-a-mentor.jpg"
 export { default as CodeOfConductImage } from "./code-of-conduct.jpg"
 export { default as ConsequencesImage } from "./consequences.png"
 export { default as Harassment } from "./harassment.png"
-export { default as Mentoring } from "./mentoring.png"
+export { default as Mentoring } from "./mentoring2.jpg"
 export { default as ReportingImage } from "./reporting.jpg"
-export { default as WhatIsMentoring } from "./what-is-mentoring.png"
+export { default as WhatIsMentoring } from "./mentoring.png"
 export { default as marie } from "./marie.png"
 export { default as christina } from "./christina.png"
 export { default as amy } from "./amy.png"
@@ -56,4 +55,26 @@ export { default as Agriculture } from "./agriculture.jpg"
 export { default as Renewable } from "./renewable-energy.jpg"
 export { default as Mining } from "./mining.jpg"
 export { default as Tech } from "./tech.jpg"
+export { default as  Profile1} from "./profile1.jpg"
+export { default as  Profile2} from "./profile2.jpg"
+export { default as Team1 } from "./team1.jpg"
+export { default as Team2 } from "./team2.jpg"
+export { default as Team3 } from "./team3.jpg"
+export { default as Team4 } from "./team4.jpg"
+export { default as Team5 } from "./team5.jpg"
+export { default as Board1 } from "./board1.jpg"
+export { default as Board2 } from "./board2.jpg"
+export { default as Board3 } from "./board3.jpg"
+export { default as Board4 } from "./board4.jpg"
+export { default as Board5 } from "./board5.jpg"
+export { default as Board6 } from "./board6.jpg"
+export { default as CreativeSector } from "./creative-sector.jpg"
+export { default as CreativeChildren } from "./creative-with-children.jpg"
+export { default as FutureGaze } from "./futuregaze.jpg"
+export { default as RaiseYourGame } from "./raise-your-game.jpg"
+export { default as RoundTable } from "./round-table.jpg"
+export { default as Surgery } from "./surgery.jpg"
+export { default as ArtParty } from "./art-party.jpg"
+export { default as ArtAward } from "./art-award.jpg"
+export { default as ArtCircle } from "./art-circle.jpg"
 // export { default as  } from "./"

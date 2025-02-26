@@ -28,13 +28,13 @@ const OurProgrammeCard = ({
         <img
           src={imageSrc}
           alt="Creative Circles Event"
-          className={` ${reverse ? " rounded-s-2xl" : "rounded-e-2xl"}`}
+          className={` ${reverse ? " rounded-s-2xl" : "rounded-e-2xl"} h-[300px] lg:h-[550px] object-cover object-center w-full`}
         />
       </div>
 
       {/* Text Section */}
       <div className="md:w-1/2 px-6">
-        <h2 className="text-3xl lg:text-4xl font-bold uppercase">{title}</h2>
+        <h2 className="text-2xl lg:text-4xl font-bold uppercase">{title}</h2>
         <p
           className={`${styles.paragraph} text-gray-800 font-normal leading-relaxed mt-4`}
         >

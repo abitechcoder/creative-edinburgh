@@ -1,11 +1,9 @@
-import styles from "../style";
-
 const MenteeTestimony = () => {
   return (
-    <section className="flex flex-col md:flex-row gap-5 mx-auto bg-green-800 py-12 lg:py-24 relative overflow-hidden">
-      <div className="max-w-lg px-6">
+    <section className="flex flex-col md:flex-row gap-5 mx-auto bg-secondary py-12 lg:py-24 relative overflow-hidden">
+      <div className="w-full px-6">
         <p
-          className={`${styles.paragraph} text-white font-bold leading-relaxed mb-4`}
+          className={`text-lg lg:text-xl text-white font-bold leading-relaxed`}
         >
           "Mentoring was a boost of energy that will help me continue developing
           my project. It was crucially important for me at the very beginning of

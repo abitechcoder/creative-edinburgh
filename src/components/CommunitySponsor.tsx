@@ -61,13 +61,13 @@ const CommunitySponsor = () => {
             title="HEADLINE SPONSOR BENEFITS"
             price="£20,000"
             benefits={[
-              "Exclusive branding - a Headline Sponsor spotlight and logo on the Creative Edinburgh website and a bespoke introduction in a monthly newsletter to our members, which has an open rate of more than 40%.",
+              "Exclusive branding - a Headline Sponsor spotlight and logo on the Creative Hub Africa website and a bespoke introduction in a monthly newsletter to our members, which has an open rate of more than 40%.",
               "Opportunity for self-promotion through social posts, Instagram takeovers and event speaking opportunities.",
-              "Guest participation at an event with Creative Edinburgh to showcase your brand, invite your staff or/and benefit from a speaking slot.",
-              "Co-presenting the Creative Edinburgh Awards or Summer Party with the Creative Edinburgh team.",
-              "Introductory promotional video at the Creative Edinburgh Awards Ceremony and Summer Party.",
+              "Guest participation at an event with Creative Hub Africa to showcase your brand, invite your staff or/and benefit from a speaking slot.",
+              "Co-presenting the Creative Hub Africa Awards or Summer Party with the Creative Hub Africa team.",
+              "Introductory promotional video at the Creative Hub Africa Awards Ceremony and Summer Party.",
               "15 tickets to the annual Awards Ceremony and Summer Party.",
-              "A bespoke creative workshop tailored to your organisation’s needs, co-curated by the Creative Edinburgh team.",
+              "A bespoke creative workshop tailored to your organisation’s needs, co-curated by the Creative Hub Africa team.",
             ]}
             buttonText="EMAIL US"
           />
@@ -80,9 +80,9 @@ const CommunitySponsor = () => {
             title="COMMUNITY SPONSOR BENEFITS"
             price="£10,000"
             benefits={[
-              "Dedicated Community Sponsor spotlight on the Creative Edinburgh website, detailing your company.",
+              "Dedicated Community Sponsor spotlight on the Creative Hub Africa website, detailing your company.",
               "Exclusive introduction in the newsletter to our members, which has an open rate of more than 40%.",
-              "Showcase your business with sponsor guest invitations and branding touchpoints at Creative Edinburgh’s well-attended events.",
+              "Showcase your business with sponsor guest invitations and branding touchpoints at Creative Hub Africa’s well-attended events.",
               "8 tickets to the annual Awards Ceremony and Summer Party.",
               "Exclusive speaking opportunities to position your thought leaders within the creative industry through a variety of hosted events.",
             ]}
@@ -96,12 +96,12 @@ const CommunitySponsor = () => {
             imageSrc={PeopleNetworking}
             title="AWARDS SPONSOR BENEFITS"
             price="£1500-£3000"
-            heading="Sponsorship of one of the 10 Creative Edinburgh Awards, and supporting five months of professional mentoring to the individual winners. Other benefits include:"
+            heading="Sponsorship of one of the 10 Creative Hub Africa Awards, and supporting five months of professional mentoring to the individual winners. Other benefits include:"
             benefits={[
               "Co-presenting the Award with a previous winner.",
-              "Branding across Creative Edinburgh event pages, content and communications.",
+              "Branding across Creative Hub Africa event pages, content and communications.",
               "4 complimentary Award ceremony tickets for your team.",
-              "Your logo included on the Creative Edinburgh website, social media, newsletter, and communications.",
+              "Your logo included on the Creative Hub Africa website, social media, newsletter, and communications.",
               "Instagram story takeover for one day leading up to the Awards.",
             ]}
             buttonText="EMAIL US"
@@ -122,7 +122,7 @@ const CommunitySponsor = () => {
             ]}
             heading2="The benefits include:"
             additionalBenefits={[
-              "Branding and logo across Creative Edinburgh website, newsletter, and social media platforms.",
+              "Branding and logo across Creative Hub Africa website, newsletter, and social media platforms.",
               "6 complimentary tickets for your team to the Summer Party.",
               "An Instagram story takeover leading up to the event.",
             ]}
@@ -135,10 +135,10 @@ const CommunitySponsor = () => {
           <SponsorCard
             imageSrc={PeopleNetworking}
             title="CREATIVE CIRCLES SPONSOR BENEFITS"
-            heading="As an exclusive sponsor of Creative Circles, Creative Edinburgh's flagship monthly networking event, you receive access to an engaged, socially conscious group of freelancers, businesses, and organisations. As well as increased brand awareness and access to different communities of creatives in the Edinburgh city region."
+            heading="As an exclusive sponsor of Creative Circles, Creative Hub Africa's flagship monthly networking event, you receive access to an engaged, socially conscious group of freelancers, businesses, and organisations. As well as increased brand awareness and access to different communities of creatives in the Edinburgh city region."
             benefits={[
               "Your company will be given brand visibility throughout 10 events: your organisation's name will be highlighted in each event venue and featured on banners as well as the welcome desk.",
-              "Your logo included on the Creative Edinburgh website, social media, newsletter, and communications.",
+              "Your logo included on the Creative Hub Africa website, social media, newsletter, and communications.",
               "Instagram story takeover for one day across the year.",
             ]}
             buttonText="EMAIL US"
@@ -153,7 +153,7 @@ const CommunitySponsor = () => {
             heading="As an exclusive sponsor of the Roundtable event series, you receive access to an engaged, socially conscious group of freelancers, businesses, and organisations. As well as increased brand awareness and access to different communities of creatives in the Edinburgh city region."
             benefits={[
               "Your company will be given brand visibility throughout all our panel events: your organisation's name will be highlighted in each event venue and featured on banners as well as the welcome desk.",
-              "Your logo included on the Creative Edinburgh website, social media, newsletter, and communications.",
+              "Your logo included on the Creative Hub Africa website, social media, newsletter, and communications.",
               "Instagram story takeover for one day across the year.",
             ]}
             heading2="Sponsorship Cost:"

@@ -1,4 +1,4 @@
-import { CodeOfConductImage } from "../assets";
+import { CodeOfConductImage, PeopleNetworking } from "../assets";
 import styles from "../style";
 
 const CodeOfConduct = () => {
@@ -23,22 +23,22 @@ const CodeOfConduct = () => {
         <p
           className={`${styles.paragraph} text-black font-normal leading-relaxed mb-5`}
         >
-          Creative Edinburgh is committed to providing a harassment-free
+          Creative Hub Africa is committed to providing a harassment-free
           experience for everyone. We do not tolerate harassment in any form.
           Anyone who violates this code of conduct may be removed from these
-          activities and channels at the discretion of the Creative Edinburgh
+          activities and channels at the discretion of the Creative Hub Africa
           team.
         </p>
         <p
           className={`${styles.paragraph} text-black font-normal leading-relaxed mb-5`}
         >
-          Some Creative Edinburgh activities may have additional rules in place,
+          Some Creative Hub Africa activities may have additional rules in place,
           which will be made clearly available to users at an event description.
         </p>
         <p
           className={`${styles.paragraph} text-black font-normal leading-relaxed mb-5`}
         >
-          All Creative Edinburgh members and visitors are responsible for
+          All Creative Hub Africa members and visitors are responsible for
           knowing and abiding by these rules.
         </p>
       </div>
@@ -46,7 +46,7 @@ const CodeOfConduct = () => {
       {/* Image Section */}
       <div className="md:w-1/2 mt-6 md:mt-0 pl-6">
         <img
-          src={CodeOfConductImage}
+          src={PeopleNetworking}
           alt="Code of Conduct"
           className="rounded-s-2xl w-full h-auto"
         />

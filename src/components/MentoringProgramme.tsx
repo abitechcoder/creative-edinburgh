@@ -1,6 +1,6 @@
 const MentoringProgramme = () => {
   return (
-    <header className="relative lg:h-screen overflow-hidden">
+    <header className="relative lg:h-[70vh] overflow-hidden">
       {/* Yellow Arc */}
       <svg
         viewBox="0 0 467.23 585.48"
@@ -18,7 +18,7 @@ const MentoringProgramme = () => {
           <h1
             className={`text-4xl lg:text-8xl font-bold text-black mt-[130px] lg:mt-0 lg:mb-10 uppercase`}
           >
-            Creative Edinburgh Mentoring Programme
+            Creative Hub Africa Mentoring Programme
           </h1>
         </div>
       </div>

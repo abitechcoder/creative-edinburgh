@@ -1,17 +1,17 @@
 import React from "react";
-import { creativeEdinburgh } from "../constant";
+import { creativeSierraleone } from "../constant";
 import Button from "./Button";
 import { WhatWeDoImage } from "../assets";
 import styles from "../style";
 
-const CreativeEdinburgh: React.FC = () => {
+const CreativeSierraleone: React.FC = () => {
   return (
     <div className="flex flex-col lg:flex-row gap-8 py-6 lg:py-20">
       {/* Left Image Section */}
       <div className="lg:w-1/2 w-full pe-6 ">
         <img
           src={WhatWeDoImage}
-          alt="Creative Edinburgh Event"
+          alt="Creative Hub Africa Event"
           className="w-full h-auto rounded-r-2xl shadow-lg "
         />
       </div>
@@ -21,45 +21,45 @@ const CreativeEdinburgh: React.FC = () => {
         <p
           className={`${styles.paragraph} text-gray-700 mb-5 font-medium leading-relaxed text-xl`}
         >
-          <span className="font-bold"> {creativeEdinburgh.title}</span>{" "}
-          {creativeEdinburgh.description}
+          <span className="font-bold"> {creativeSierraleone.title}</span>{" "}
+          {creativeSierraleone.description}
         </p>
 
         {/* Advancement of Arts and Culture */}
         <h3 className={`${styles.paragraph} text-black mb-5 font-bold text-xl`}>
-          {creativeEdinburgh.subheading1}
+          {creativeSierraleone.subheading1}
         </h3>
         <ul
           className={`${styles.paragraph} text-gray-700 mb-5 font-medium list-disc mt-4 space-y-3 px-5 `}
         >
-          {creativeEdinburgh.activities1.map((activity, index) => (
+          {creativeSierraleone.activities1.map((activity, index) => (
             <li key={index}>{activity}</li>
           ))}
         </ul>
 
         {/* Support and Opportunities */}
         <h3 className={`${styles.paragraph} text-black mb-5 font-bold text-xl`}>
-          {creativeEdinburgh.subheading2}
+          {creativeSierraleone.subheading2}
         </h3>
         <ul
           className={`${styles.paragraph} text-gray-700 mb-5 font-medium  list-disc mt-4 space-y-3 px-5 `}
         >
-          {creativeEdinburgh.activities2.map((activity, index) => (
+          {creativeSierraleone.activities2.map((activity, index) => (
             <li key={index}>{activity}</li>
           ))}
         </ul>
 
         {/* Advancement of Education */}
         <h3 className={`${styles.paragraph} text-black mb-5 font-bold text-xl`}>
-          {creativeEdinburgh.educationHeading}
+          {creativeSierraleone.educationHeading}
         </h3>
         <p className={`${styles.paragraph} text-black  font-medium   `}>
-          {creativeEdinburgh.educationIntro}
+          {creativeSierraleone.educationIntro}
         </p>
         <ul
           className={`${styles.paragraph} text-gray-700 mb-5 font-medium  list-disc mt-4 space-y-3 px-5 `}
         >
-          {creativeEdinburgh.activities3.map((activity, index) => (
+          {creativeSierraleone.activities3.map((activity, index) => (
             <li key={index}>{activity}</li>
           ))}
         </ul>
@@ -69,4 +69,4 @@ const CreativeEdinburgh: React.FC = () => {
   );
 };
 
-export default CreativeEdinburgh;
+export default CreativeSierraleone;

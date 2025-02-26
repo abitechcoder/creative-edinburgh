@@ -10,7 +10,7 @@ const SponsorTestimonial = () => {
         <p
           className={`${styles.paragraph} text-gray-800 font-normal leading-relaxed mt-5`}
         >
-          "The Creative Edinburgh team is made up of positive people, who bring
+          "The Creative Hub Africa team is made up of positive people, who bring
           energy, thoughtfulness and rigorous planning to their partnership
           projects."
         </p>

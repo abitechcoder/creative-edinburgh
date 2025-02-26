@@ -42,7 +42,7 @@ const TheAwardPillar = () => {
         <p
           className={`${styles.paragraph} text-black font-normal leading-relaxed mb-4`}
         >
-          The Creative Edinburgh Awards celebrates three key pillars of the
+          The Creative Hub Africa Awards celebrates three key pillars of the
           creative community:
         </p>
         <div className="space-y-4">

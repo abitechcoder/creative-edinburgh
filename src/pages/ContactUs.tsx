@@ -14,10 +14,10 @@ const ContactUs: React.FC = () => {
           </h1>
           <p className={`${styles.paragraph} text-black mt-5 leading-relaxed`}>
             If your message requires an urgent response, please contact
-            <a href="#" className="text-blue-500 font-medium ml-1">
-              info@creative-edinburgh.com
+            <a href="mailto:connect@sierraleonebusinessmarkit.com" className="text-blue-500 font-medium ml-1">
+            connect@sierraleonebusinessmarkit.com
             </a>
-            , where it can be forwarded to the appropriate Creative Edinburgh
+            , where it can be forwarded to the appropriate Creative Hub Africa
             team member who will be able to assist you.
           </p>
         </div>

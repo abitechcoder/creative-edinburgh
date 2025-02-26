@@ -10,7 +10,7 @@ const UniqueEvent = () => {
           "We offer a variety of events, all of which provide the opportunity to connect, collaborate and get inspired.",
           "From casual monthly meet-ups to lively evening parties, careers and skills workshops to expert panels, we have something for every creative in Edinburgh.",
           "Our events are designed with the needs of the community at their heart - whether you're a freelancer, sole trader, student, working parent, business owner or anything in-between.",
-          "Hosted in-person and online, Creative Edinburgh events span the city’s creative industries, helping you stay connected, build skills and knowledge and get inspired.",
+          "Hosted in-person and online, Creative Hub Africa events span the city’s creative industries, helping you stay connected, build skills and knowledge and get inspired.",
         ]}
         imageSrc={UniqueEventsImage}
         altText="People enjoying an event"

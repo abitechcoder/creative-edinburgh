@@ -11,7 +11,7 @@ export default function OurCommunity() {
           Build your skills. Grow your community. Get inspired.
         </p>
         <p className={`${styles.paragraph} text-black mb-5 font-semibold`}>
-          Creative Edinburgh is the city’s largest network of multi-disciplinary
+          Creative Hub Africa is the city’s largest network of multi-disciplinary
           creatives. Our members span every creative sector, from art and
           design, illustration and animation, to publishing, marketing and
           creative tech. And so much more.

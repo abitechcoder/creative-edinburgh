@@ -22,7 +22,7 @@ const Event = () => {
         >
           From casual monthly meet-ups to lively evening parties, careers and
           skills workshops to expert panels, we have something for every
-          creative in Edinburgh.
+          creative in Sierraleone.
         </p>
         <p
           className={`${styles.paragraph} text-black font-normal leading-relaxed mb-2`}

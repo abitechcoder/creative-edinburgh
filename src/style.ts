@@ -16,9 +16,9 @@ const styles = {
   heading4: "font-barlow text-lg font-bold",
   heading5: "leading-normal font-semibold tracking-wide font-nunito",
 
-  paragraph: "font-manrope text-lg",
+  paragraph: "font-manrope text-xl",
 
-  paragraph2: "font-manrope text-base",
+  paragraph2: "font-manrope text-lg",
 
   paragraph3: "font-manrope text-sm",
   paragraph4: "font-nunito font-normal text-sm",

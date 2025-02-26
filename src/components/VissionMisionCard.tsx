@@ -26,11 +26,11 @@ const VissionMisionCard = ({
         <img
           src={imageSrc}
           alt={title}
-          className={`w-full  h-auto
+          className={`w-full max-h-[800px] object-center object-cover
           } ${isImageLeft ? "rounded-e-2xl " : "rounded-s-2xl"}`}
         />
       </div>
-      <div className="w-full lg:w-1/2  px-6">
+      <div className="w-full lg:w-1/2 px-6">
         <h2
           className={`${styles.heading1} text-black mb-10 text-center lg:text-left uppercase`}
         >

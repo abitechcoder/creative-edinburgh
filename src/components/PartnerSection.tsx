@@ -11,13 +11,13 @@ const PartnerSection = () => {
           Become a Partner
         </h2>
         <p className={`${styles.paragraph} font-normal leading-relaxed mb-4`}>
-          At the core of Creative Edinburgh is collaboration. From being the
+          At the core of Creative Hub Africa is collaboration. From being the
           conduit that connects local creatives to sharing information around
           the community, collaboration is where it all begins.
         </p>
         <p className={`${styles.paragraph}  font-normal leading-relaxed mb-4`}>
           Whether through events, mentorship, skill sharing, and more, there are
-          many ways you can support Creative Edinburgh. We are always keen to
+          many ways you can support Creative Hub Africa. We are always keen to
           hear from individuals and companies keen to partner with us.
         </p>
         <p className={`${styles.paragraph} font-normal leading-relaxed mb-4`}>

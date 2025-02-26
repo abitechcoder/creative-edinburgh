@@ -8,7 +8,7 @@ const WelcomeSponsorship = () => {
       <div className="lg:w-1/2 w-full pe-6">
         <img
           src={PeopleNetworking}
-          alt="Creative Edinburgh Event"
+          alt="Creative Hub Africa Event"
           className="rounded-e-2xl w-full h-auto"
         />
       </div>
@@ -18,7 +18,7 @@ const WelcomeSponsorship = () => {
         <p
           className={`${styles.paragraph} text-gray-700 font-normal leading-relaxed mb-4`}
         >
-          Creative Edinburgh welcomes sponsorships from organisations that align
+          Creative Hub Africa welcomes sponsorships from organisations that align
           with our <strong>Mission, Vision and Values</strong> and those that
           wish to be part of the growth of the creative sector in Scotland.
           Partner with us to not only positively align your reputation with ours
@@ -29,7 +29,7 @@ const WelcomeSponsorship = () => {
           className={`${styles.paragraph} text-black font-normal leading-relaxed mb-4`}
         >
           Join us to embark upon a partnership which will ensure your investment
-          in Creative Edinburgh aligns with your business objectives, reputation
+          in Creative Hub Africa aligns with your business objectives, reputation
           aspirations, and specific areas of interest. Our dedicated team will
           work with you to ensure the sponsorship includes high-quality benefits
           that matter most to you.

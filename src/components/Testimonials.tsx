@@ -1,5 +1,5 @@
 import styles from "../style";
-import { bruce, calum } from "../assets";
+import { Profile1, Profile2 } from "../assets";
 import { FaQuoteLeft } from "react-icons/fa6";
 
 interface TestimonialType {
@@ -13,14 +13,14 @@ interface TestimonialType {
 const testimonials: TestimonialType[] = [
   {
     id: 1,
-    image: bruce,
+    image: Profile1,
     quote: "Sierra Leone Business Markit connected us to investors who believed in our vision. Today, we employ 50+ locals in Freetown.",
     name: "Ibrahim Sesay",
     position: "Founder | GreenEnergy SL"
   },
   {
     id: 2,
-    image: calum,
+    image: Profile2,
     quote: "The directory helped our agro-export business triple its reach. A game-changer for Sierra Leonean SMEs!",
     name: "Aminata Koroma",
     position: "CEO | Liberty Farms"

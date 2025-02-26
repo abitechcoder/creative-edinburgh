@@ -26,13 +26,12 @@ const Consequences = () => {
         <p
           className={`${styles.paragraph} text-gray-700 font-normal leading-relaxed mb-4`}
         >
-          If a participant engages in harassing behaviour, the Creative
-          Edinburgh team may take any action they deem appropriate, up to and
-          including expulsion from all Creative Edinburgh community events and
+          If a participant engages in harassing behaviour, the Creative Hub Africa team may take any action they deem appropriate, up to and
+          including expulsion from all Creative Hub Africa community events and
           channels, and identification of the participant as a harasser to other
-          Creative Edinburgh members or the general public.
+          Creative Hub Africa members or the general public.
         </p>
-        <p
+        {/* <p
           className={`${styles.paragraph} text-gray-700 font-normal leading-relaxed mb-4`}
         >
           This anti-harassment policy is based on{" "}
@@ -44,7 +43,7 @@ const Consequences = () => {
           <a href="#" className="text-pink-500 underline">
             CodeBase Ltd.
           </a>
-        </p>
+        </p> */}
         <p
           className={`${styles.paragraph} text-gray-700 font-normal leading-relaxed mb-4`}
         >
@@ -53,8 +52,8 @@ const Consequences = () => {
         <p
           className={`${styles.paragraph} text-gray-700 font-normal leading-relaxed mb-4`}
         >
-          If you have any feedback about it, we’d welcome your thoughts via
-          info@creative-edinburgh.com rather than in public channels.
+          If you have any feedback about it, we’d welcome your thoughts via {" "}
+           <a href="mailto:connect@sierraleonebusinessmarkit.com" className="text-tertiary underline">connect@sierraleonebusinessmarkit.com</a> rather than in public channels.
         </p>
       </div>
     </div>
