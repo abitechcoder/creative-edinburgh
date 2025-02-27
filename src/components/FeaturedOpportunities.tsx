@@ -1,5 +1,5 @@
 import styles from "../style";
-import { Agriculture, Mining, Renewable, Tech } from "../assets";
+import { Agriculture, Circular, Creative, Manufacturing, Renewable, Tech } from "../assets";
 import { Link } from "react-router";
 
 interface SectorType {
@@ -22,17 +22,35 @@ const sectors: SectorType[] = [
     title: "Renewable Energy",
     description: "Invest in Solar farms powering rural communities."
   },
+  // {
+  //   id: 3,
+  //   image: Mining,
+  //   title: "Mining",
+  //   description: "Ethically sourced diamond and iron ore projects."
+  // },
   {
     id: 3,
-    image: Mining,
-    title: "Mining",
-    description: "Ethically sourced diamond and iron ore projects."
-  },
-  {
-    id: 4,
     image: Tech,
     title: "Tech Innovation",
     description: "Support fintech startups revolutionizing financial inclusion."
+  },
+  {
+    id: 4,
+    image: Creative,
+    title: "Creative",
+    description: ""
+  },
+  {
+    id: 5,
+    image: Circular,
+    title: "Circular",
+    description: ""
+  },
+  {
+    id: 6,
+    image: Manufacturing,
+    title: "New Manufacturing",
+    description: ""
   },
 ]
 
