@@ -1,10 +1,5 @@
 import { Link } from "react-router";
-import {
-  FaTwitter,
-  FaFacebook,
-  FaInstagram,
-  FaLinkedin,
-} from "react-icons/fa";
+import { FaTwitter, FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -14,23 +9,17 @@ const Footer = () => {
         {/* Contact Section */}
         <div>
           <h2 className="text-white font-bold text-lg">CONTACT US</h2>
-          <p
-            className="mt-2 text-white cursor-pointer font-medium"
-          >
+          <p className="mt-2 text-white cursor-pointer font-medium">
             23 Lumley Street, Freetown
           </p>
-          <p
-            className="mt-2 text-white cursor-pointer font-medium"
-          >
+          <p className="mt-2 text-white cursor-pointer font-medium">
             +232 00 123 4567
           </p>
         </div>
 
         {/* General Enquiries Section */}
         <div>
-          <h2 className="text-white font-bold text-lg">
-            GENERAL ENQUIRIES
-          </h2>
+          <h2 className="text-white font-bold text-lg">GENERAL ENQUIRIES</h2>
           <p className="mt-2 relative inline-block">
             <a
               href="mailto:connect@sierraleonebusinessmarkit.com"
@@ -68,7 +57,7 @@ const Footer = () => {
             Registered Charity SC052838
           </p>
           <p className="mt-2 hover:text-yellow-400 transition-all duration-300 ease-in-out font-medium cursor-pointer text-white">
-            Company Limited By Guarantee And Registered In Scotland SC245233
+            Built by Millennial Sierra Leone
           </p>
         </div>
       </div>
@@ -106,7 +95,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex flex-col lg:flex-row gap-4">
-        <Link
+          <Link
             to="#"
             className="bg-primary w-full text-center hover:bg-tertiary text-white px-8 py-5 text-md rounded-md transition-colors"
           >

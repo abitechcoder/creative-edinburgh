@@ -1,6 +1,6 @@
 const MentoringProgramme = () => {
   return (
-    <header className="relative lg:h-[70vh] overflow-hidden">
+    <header className="relative  lg:pt-48 overflow-hidden">
       {/* Yellow Arc */}
       <svg
         viewBox="0 0 467.23 585.48"
