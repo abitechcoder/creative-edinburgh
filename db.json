@@ -26,6 +26,22 @@
         },
         {
             "id": 7,
+            "title": "Tourism"
+        },
+        {
+            "id": 8,
+            "title": "Renewable"
+        },
+        {
+            "id": 9,
+            "title": "Creative"
+        },
+        {
+            "id": 10,
+            "title": "Transport and Logistics"
+        },
+        {
+            "id": 11,
             "title": "Others"
         }
     ],
@@ -141,6 +157,405 @@
             "name": "Splendor's Design",
             "description": "A creative business dedicated to providing high-quality interior design and aesthetic solutions for residential and commercial spaces.",
             "sector": "Others"
+        },
+        {
+            "id": 17,
+            "logo": "",
+            "name": "Nap’s Natural Hair",
+            "description": "Nap’s Natural Hair is a female-owned startup specializing in processing natural products that help hair grow, glow, and be beautiful. The business is legally registered and operational. As a new entry into the hair product space, the company is looking forward to attracting funding opportunities to scale up, but more importantly to establish itself as a force to reckon with in the hair product space. This will help the business to develop structures and systems that will help the business to be sustainable and self-sufficient. This will also help the business to create jobs and increase its turnover.",
+            "sector": "Fashion & Beauty"
+        },
+        {
+            "id": 18,
+            "logo": "",
+            "name": "Her Craft Innovation",
+            "description": "A female-led startup focused on the recycling of old tires and empowering women through craft-making and innovation. Her Craft Innovation produces handmade products while integrating digital tools to expand market reach and streamline operations.",
+            "sector": "Circular Economy"
+        },
+        {
+            "id": 19,
+            "logo": "",
+            "name": "Millet Agricultural Service",
+            "description": "A tech-driven agricultural startup that processes millet into varieties of finished products and as well supports local farmers in Sierra Leone by providing innovative solutions for millet farming, including digital tools for crop management, market access, and sustainable farming practices.",
+            "sector": "Food & Agro Processing"
+        },
+        {
+            "id": 20,
+            "logo": "",
+            "name": "Fambul Global Destination",
+            "description": "A tourism and hospitality startup that promotes Sierra Leone as a global travel destination. Fambul Global Destination leverages digital platforms to showcase local culture, heritage, and eco-tourism opportunities.",
+            "sector": "Tourism"
+        },
+        {
+            "id": 21,
+            "logo": "",
+            "name": "Wisk and Wonders",
+            "description": "A creative startup specializing in the delivery of fresh bakes (bread and cakes). Wisk and Wonders use digital tools to enhance customer experiences, from connecting bakery owners to potential customers and delivering fresh bakes to customers who place orders using their digital platforms.",
+            "sector": "Food & Agro Processing"
+        },
+        {
+            "id": 22,
+            "logo": "",
+            "name": "BS Innovative Technology",
+            "description": "A tech startup focused on developing innovative software and hardware solutions to address local challenges. BS Innovative Technology aims to bridge the digital divide in Sierra Leone through affordable and accessible tech products such as solar freezers and other solar-powered electronic appliances.",
+            "sector": "Renewable"
+        },
+        {
+            "id": 23,
+            "logo": "",
+            "name": "Bokutok TV",
+            "description": "A digital media platform that produces and streams local content, including entertainment, education, and news. Bokutok. TV aims to become Sierra Leone’s leading digital media hub.",
+            "sector": "Creative"
+        },
+        {
+            "id": 24,
+            "logo": "",
+            "name": "Greentech Bioenergy",
+            "description": "A sustainable energy startup that produces bioenergy solutions from organic waste. Greentech Bioenergy uses digital tools to optimize energy production and distribution, contributing to a greener Sierra Leone.",
+            "sector": "Circular Economy"
+        },
+        {
+            "id": 25,
+            "logo": "",
+            "name": "Make E Happen Media Solutions",
+            "description": "A digital marketing and media production startup that helps businesses and individuals build their online presence. Make E Happen offers services such as content creation, social media management, and digital advertising.",
+            "sector": "Creative"
+        },
+        {
+            "id": 26,
+            "logo": "",
+            "name": "Maid4U SL",
+            "description": "A service-based startup that connects households with professional cleaning and home care services. Maid4U SL uses a digital platform to streamline bookings and improve service delivery.",
+            "sector": "Services"
+        },
+        {
+            "id": 27,
+            "logo": "",
+            "name": "Techstuff",
+            "description": "A tech retail and repair startup that provides affordable gadgets, accessories, and repair services. Techstuff also offers digital literacy training to help customers maximize their tech usage.",
+            "sector": "Tech"
+        },
+        {
+            "id": 28,
+            "logo": "",
+            "name": "Amena’s Couture",
+            "description": "A fashion startup specializing in bespoke clothing and accessories. Amena’s Couture uses digital tools to showcase designs, manage orders, and reach a global audience.",
+            "sector": "Fashion & Beauty"
+        },
+        {
+            "id": 29,
+            "logo": "",
+            "name": "Hyacinth’s Signature",
+            "description": "A luxury fashion brand that creates high-quality, culturally inspired clothing and accessories. Hyacinth’s Signature leverages digital platforms to market its products and connect with fashion enthusiasts worldwide.",
+            "sector": "Creative"
+        },
+        {
+            "id": 30,
+            "logo": "",
+            "name": "Vicra’s Fresh Catch",
+            "description": "A seafood startup that sources and delivers fresh fish and seafood to consumers. Vicra’s Fresh Catch uses digital tools to improve supply chain efficiency and ensure timely deliveries.",
+            "sector": "Food & Agro Processing"
+        },
+        {
+            "id": 31,
+            "logo": "",
+            "name": "Ecodesign Innovation SL",
+            "description": "An Eco-friendly startup that designs and produces sustainable products from recycled materials. Ecodesign Innovation SL uses digital marketing to promote its environmentally conscious brand.",
+            "sector": "Circular Economy"
+        },
+        {
+            "id": 32,
+            "logo": "",
+            "name": "OkRide Delivery Service",
+            "description": "A logistics startup offering reliable and affordable delivery services. OkRide uses a digital platform to connect customers with delivery agents, ensuring efficient and transparent service.",
+            "sector": "Transport and Logistics"
+        },
+        {
+            "id": 33,
+            "logo": "",
+            "name": "Shades of Esther",
+            "description": "A beauty and cosmetics startup that produces high-quality skincare and makeup products. Shades of Esther uses digital tools to market its products and engage with customers online.",
+            "sector": "Fashion & Beauty"
+        },
+        {
+            "id": 34,
+            "logo": "",
+            "name": "Manikene",
+            "description": "A fashion and lifestyle brand that creates unique, culturally inspired clothing and accessories. Manikene uses digital platforms to expand its customer base and showcase its creative designs.",
+            "sector": "Fashion & Beauty"
+        },
+        {
+            "id": 35,
+            "logo": "",
+            "name": "Textiles Waste Salone",
+            "description": "A sustainability-focused startup that recycles textile waste into new products. Textiles Waste Salone uses digital tools to raise awareness about waste management and promote its eco-friendly products.",
+            "sector": "Circular Economy"
+        },
+        {
+            "id": 36,
+            "logo": "",
+            "name": "Salmah’s Crochet",
+            "description": "Salmah’s Crochet is a handmade crochet fashion brand that offers stylish high-quality crochet wear. The business is owned and managed by a female entrepreneur that operates in Sierra Leone.",
+            "sector": "Creative"
+        },
+        {
+            "id": 37,
+            "logo": "",
+            "name": "Tech Link Us",
+            "description": "Tech Link Us is a freelance software development startup established in Sierra Leone by Young Tech Developers. The business specializes in web development, App Development, and developing software tools for other businesses and organizations.",
+            "sector": "Tech"
+        },
+        {
+            "id": 38,
+            "logo": "",
+            "name": "Vicky’s Couture",
+            "description": "Vicky’s Couture is crafted with purpose and made in Salone. We create high-quality, sustainable pieces that empower and express your unique style.",
+            "sector": "Fashion & Beauty"
+        },
+        {
+            "id": 39,
+            "logo": "",
+            "name": "Estamos Sewing",
+            "description": "Made in Salone with love and care for your home and personal use. Original designs and high-quality items for your home and more.",
+            "sector": "Fashion & Beauty"
+        },
+        {
+            "id": 40,
+            "logo": "",
+            "name": "J&F Eritej",
+            "description": "J&F Eritej is a premier Couturier House in Sierra Leone with over 25 years of experience. Our greatest achievement has been the resurrection of a dying cultural fashion of Sierra Leone locally known as the “Print”.",
+            "sector": "Fashion & Beauty"
+        },
+        {
+            "id": 41,
+            "logo": "",
+            "name": "Nicosta Initiative",
+            "description": "NICOSTA INITIATIVE is an initiative that recycles waste materials like old tires into furniture, water bottles into women's bracelets, cartoons into decorative materials, alternative use of single-use plastic to that of cotton bags, etc . NICOSTA INITIATIVE is there to protect the environment and empower vulnerable women and girls.",
+            "sector": "Others"
+        },
+        {
+            "id": 42,
+            "logo": "",
+            "name": "Soles & Sparkles",
+            "description": "Soles & Sparkles is dedicated to bringing luxury and style to your wardrobe. Specializing in high-quality made in African fashion and beauty products.",
+            "sector": "Fashion & Beauty"
+        },
+        {
+            "id": 43,
+            "logo": "",
+            "name": "Kujuls Naturals",
+            "description": "Kujuls Naturals is the home of organic products that produces components, focusing mainly on plant based extracts, oils and minerals in other your nourish your hair and skin.",
+            "sector": "Fashion & Beauty"
+        },
+        {
+            "id": 44,
+            "logo": "",
+            "name": "Shea & More Naturals",
+            "description": "Shea & More Naturals products are formulated with locally sourced raw ingredients to grow your natural hair and rejuvenate your skin, leaving it nourished and glowing.",
+            "sector": "Fashion & Beauty"
+        },
+        {
+            "id": 45,
+            "logo": "",
+            "name": "Ofino Natural",
+            "description": "Ofino Natural is the first all-natural ingredient for hair and body. It caters to everyone who is “Ofino,” meaning beautiful.",
+            "sector": "Fashion & Beauty"
+        },
+        {
+            "id": 46,
+            "logo": "",
+            "name": "Queenest Organic Herbal",
+            "description": "Queenest Organic Herbal is an anti-aging product, meant to revitalize the skin and make it younger. It treats spots, pimples, stretch marks, ringworm, and dandruff and grows hair.",
+            "sector": "Fashion & Beauty"
+        },
+        {
+            "id": 47,
+            "logo": "",
+            "name": "Whispers From Salone",
+            "description": "At “Whispers From Salone” our Vision is to celebrate the beauty of art, culture, and sustainability. Our artistic souvenirs not only capture the essence of our nation’s rich heritage but also embody our commitment to environmental consciousness.",
+            "sector": "Creative"
+        },
+        {
+            "id": 48,
+            "logo": "",
+            "name": "Nina's Coffee",
+            "description": "Nina's Coffee comes from Yekebema in Sierra Leone’s Kono District, where the tropical climate enriches the soil. It is crafted with love, using small-batch roasting techniques. This process, accompanied by music, results in a unique and rich flavor profile.",
+            "sector": "Food & Agro Processing"
+        },
+        {
+            "id": 49,
+            "logo": "",
+            "name": "Lyly’s Eats",
+            "description": "Lyly’s Eats is a female-owned catering service startup established in  2021. the business specializes in preparing home-cooked food, especially local dishes and snacks.",
+            "sector": "Tourism"
+        },
+        {
+            "id": 50,
+            "logo": "",
+            "name": "Lyoa Sourced Company Ltd",
+            "description": "Lyoa Sourced Company Ltd is an agro-processing business established in 2018 by a dynamic young female entrepreneur named Juliana Sesay.  the business works with local farmers where they get the freshly harvested produce and add value to them through processing, branding and marketing.",
+            "sector": "Food & Agro Processing"
+        },
+        {
+            "id": 51,
+            "logo": "",
+            "name": "Crafty Bee",
+            "description": "Is a fashion Brand that produces unique African Design bags and accessories we also do short skills training programs empowering youths from different communities in Sierra Leone.",
+            "sector": "Fashion & Beauty"
+        },
+        {
+            "id": 52,
+            "logo": "",
+            "name": "Orkosu Organic Herbal Teas",
+            "description": "Orkosu is a Sierra Leonean tea brand that brings you fusions of naturally flavored, exotic, immune-system-boosting herbal blends, organically grown and handpicked by local women farmers, processed a packaged locally. At Orkosu, we are dedicated to four key pillars; supporting local women farmers, promoting organic farming practices, food security, and well-being. Our mission is to source the finest herbs for our herbal tea blends, promote well-being and positively impact our environment and communities.",
+            "sector": "Others"
+        },
+        {
+            "id": 53,
+            "logo": "",
+            "name": "Mama Lu",
+            "description": "Mama Lu is a female-owned startup that operates as a restaurant. the business offers delicious and moth watering delicacies to meet the demand of its customers. they prepare snacks, and African dishes, and as well sell assorted beverages.",
+            "sector": "Food & Agro Processing"
+        },
+        {
+            "id": 54,
+            "logo": "",
+            "name": "Ankara By Dex",
+            "description": "Ankara By Dex is a fashion business that promotes local traditions and culture through fashion and clothing lines. the business design and sew quality fabrics that boost the confidence of its customers in public places and also promote the rich African culturing through their products.",
+            "sector": "Fashion & Beauty"
+        },
+        {
+            "id": 55,
+            "logo": "",
+            "name": "Igrow Organics",
+            "description": "Igrow Organics is a cosmetology business that formulates hair and skin care products. the business was established by a young lady in 2016 and since then, the business has steadily grown and improved. Igrow products are certified and approved by the standard bureau and the local content agency of Sierra Leone.",
+            "sector": "Fashion & Beauty"
+        },
+        {
+            "id": 56,
+            "logo": "",
+            "name": "Ofino Naturals Ltd",
+            "description": "Ofino Naturals Ltd is a cosmetic business established in the late year 2000 but was later rebranded in 2014 by a young and dynamic female cosmetologist who took over the family business and transformed it into one of the oldest and best natural hair and skin care product manufacturers in Sierra Leone.",
+            "sector": ""
+        },
+        {
+            "id": 57,
+            "logo": "",
+            "name": "Lambano SL Ltd ",
+            "description": "Lambano SL Ltd is a health and wellness brand that processes and sells authentic organic foodstuffs such as natural organic local food, Organic honey, herbal tea, and many more.",
+            "sector": "Food & Agro Processing"
+        },
+        {
+            "id": 58,
+            "logo": "",
+            "name": "FranBeck Designs",
+            "description": "FranBeck Designs is a female-owned clothing brand that designs and produces a variety of clothes for men, women, and children. They also produce customized clothing that meets the specifications of their special clients.",
+            "sector": "Fashion & Beauty"
+        },
+        {
+            "id": 59,
+            "logo": "",
+            "name": "Life of a Canvas",
+            "description": "Life of a Canvas is a female-owned startup that specializes in art design and canvas painting. The business also customizes shoes, bags, and other clothing products.",
+            "sector": "Creative"
+        },
+        {
+            "id": 60,
+            "logo": "",
+            "name": "Dream Trim Couture",
+            "description": "Dream Trim Couture is a female-owned indigenous fashion company that sources, designs, and retails apparel and clothing accessories for men and women of all ages. the business was established in 2021 and has been doing extremely well in producing high-quality products and meeting customers’ satisfaction.",
+            "sector": "Fashion & Beauty"
+        },
+        {
+            "id": 61,
+            "logo": "",
+            "name": "All About Maria",
+            "description": "All About Maria is an event decorating and Kids Entertainment Company that’s based in and around Bo Town City. The event decorating side of the business offers weddings, birthdays, events decoration and catering services to both private and corporate clients. Whilst the Kids Entertainment offers outdoor recreational and playground facilities for kids (Maria’s Kids Zone).",
+            "sector": "Services"
+        },
+        {
+            "id": 62,
+            "logo": "",
+            "name": "BABSI",
+            "description": "BABSI is a design and fashion business that produces a wide range of products, including men's and women's bags, sandals, slippers, belts, pouches, and school bags. Our products are made using durable and affordable materials, and we take pride in using a variety of finished and unfinished products as raw materials to ensure the high quality of our products.",
+            "sector": "Fashion & Beauty"
+        },
+        {
+            "id": 63,
+            "logo": "",
+            "name": "Ballanta Academy of Music and Performing Arts (BAMPA)",
+            "description": "Ballanta Academy of Music and Performing Arts (BAMPA) is a music and performing arts school giving tuition on various musical instruments, organizing events to showcase community talents, and consultation on cultural arts matters nationally and internationally. We provide education for people of all ages who wish to pursue the musical and dance arts. There is currently no other institution of this nature in the country. We also provide advice and support for musical events organized by other entities. We organize workshops, competitions, concerts, and festivals. It is the only private institution involved in the research of indigenous musical arts in the country.",
+            "sector": "Creative"
+        },
+        {
+            "id": 64,
+            "logo": "",
+            "name": "Eminence Africa",
+            "description": "Eminence Africa is a dynamic and innovative multimedia, marketing, and communications company. The company is dedicated to amplifying our clients' visions and helping them achieve their goals in an ever-evolving digital landscape, actualizing imaginative ideas and flourishing brands in the limelight.",
+            "sector": "Creative"
+        },
+        {
+            "id": 65,
+            "logo": "",
+            "name": "Fashion One SL Ltd",
+            "description": "FASHION ONE (SL) INCUBATION HUB LIMITED is a wholesale tailoring company in Sierra Leone. We cater for men, women and children’s clothing on a large scale including weddings, funerals, sports, school uniforms etc. We also help to empower youth through the tailoring training that we offer to young boys and girls in Freetown. Having high quality tailoring service in Sierra Leone is a challenge because of a shortage of properly skilled staff. We are helping to solve this through our training initiative.",
+            "sector": "Fashion & Beauty"
+        },
+        {
+            "id": 66,
+            "logo": "",
+            "name": "Next Chance Innovation Hub",
+            "description": "Next Chance Innovation Hub, established in 2018, is a pioneering business dedicated to transforming waste plastic into high-quality plastic bricks. Our mission is to address the urgent global and national plastic waste problem by providing innovative, eco-friendly, and sustainable solutions. Through advanced recycling technology, we contribute to a circular economy while reducing plastic pollution and conserving natural resources. At Next Chance InnovationHub, we specialize in producing durable and versatile plastic bricks using a proprietary recycling process. These various types of waste plastic, such as PET bottles, HDPE containers, and LDPE films, are sorted, cleaned, and processed to create environmental material. Our plastic bricks boast superior insulation properties, fire resistance, and resistance to water and chemicals, making them the main alternative to traditional construction materials.",
+            "sector": "Circular Economy"
+        },
+        {
+            "id": 67,
+            "logo": "",
+            "name": "Girls Behind The Lens",
+            "description": "Girls Behind The Lens is an all-female photography company that trains and employs talented young women aged 18 - 25 with a keen interest in photography to operate the business and enhance their livelihoods. Our business seeks to provide skills and livelihood support to young women addressing compounding challenges they faced such as lack of skills, financial dependency and unemployment.",
+            "sector": "Creative"
+        },
+        {
+            "id": 68,
+            "logo": "",
+            "name": "J&F Fashion",
+            "description": "J&F Fashion is a premier Couturier House in Sierra Leone with a top tier of private and public clientele. The Couturier House is singularly recognized as a trailblazer and pioneer of modern bespoke fashion with a historic and cultural slant, particularly the Krio Print. J&F Fashion Design started as a one-woman-one-machine business by an unemployed graduate of Economics from the University of Sierra Leone. From as early as age 5, Frederica had this passion for fashion made evident in clothes made for her dolls. Over the years she has developed this God-given talent by research and self-development.",
+            "sector": "Fashion & Beauty"
+        },
+        {
+            "id": 69,
+            "logo": "",
+            "name": "Miimanu Couture Fashion house",
+            "description": "Miimanu Couture Fashionhouse is a business that designs luxury garments as well as general tailoring and designs for the public. The business has expanded into large-scale productions of official uniforms for various institutions such as hotels, private establishments, government ministries, and hospitals. Miimanu Couture produces various types of cuts and sews products, across numerous categories including corporate wear, menswear, womenswear, casuals, and value additions like replacement, prints, handwork, and embroidery. We have trained machinists specialized in manufacturing woven garments. Our production scale has moved from medium to large scale with an improved turnaround time. We have a strong and loyal fanbase and the feedback from our customers has been very positive.",
+            "sector": "Fashion & Beauty"
+        },
+        {
+            "id": 70,
+            "logo": "",
+            "name": "Mindokatie",
+            "description": "Mindokatie is a recycling business that recycles waste plastics into bricks and paving tiles.  Since 2018 Mindokatie has been serving the communities within its reach. These communities have a very high level of waste management and flooding problems. Mindokatie Salone has made a lot of gains in the fight against flooding challenges by recycling plastic waste into pavement blocks also known as recycled paving bricks for building pavements. The recycled paving bricks provide an additional solution which is low-cost building materials.",
+            "sector": "Circular Economy"
+        },
+        {
+            "id": 71,
+            "logo": "",
+            "name": "Mumini Fashion Empire",
+            "description": "Mumini Fashion Empire is a fashion house that specializes in creating ready-to-wear men and bespoke ceremonial dresses for both men and women. We offer a wide range of dresses for different occasions, including weddings, naming ceremonies, birthday parties, and formal events. Our mission is to provide high-quality, stylish dresses that make our customers feel confident, elegant, and empowered. The business was founded by my grandfather and then my father who then handed it over to me and my twin siblings in 2012. Mumini is a generational business that has been in the fashion industry for over 60 years since its inception. We have established ourselves as a trusted and reputable brand. Our team consists of the creative director, experienced tailors, stylists, and an office assistant who work closely with our customers to understand their unique needs and preferences.",
+            "sector": "Fashion & Beauty"
+        },
+        {
+            "id": 72,
+            "logo": "",
+            "name": "Shecures",
+            "description": "Shecures manufactures reusable sanitary pads that are made from an eco-friendly high-absorbent microfiber and waterproof cotton material. They contain non-harmful chemicals with no fragrance or dyes. Our pads are 100% biodegradable and 100% URV sterilized. In addition, we offer the lowest prices and highest quality too. A short description /illustration book written by us comes with the product to guide clients on how to use the product and provide essential information needed by adolescents about menstruation.",
+            "sector": "Circular Economy"
+        },
+        {
+            "id": 73,
+            "logo": "",
+            "name": "Shekam Briquette Making Enterprise",
+            "description": "Shekam Briquette Making Enterprise transforms organic waste into briquettes for cooking in households and commercial industries. The product serves as a more affordable source of energy, which also provides and promotes clean and healthy living conditions for communities in Sierra Leone.",
+            "sector": "Circular Economy"
         }
     ]
 }
