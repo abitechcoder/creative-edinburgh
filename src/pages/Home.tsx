@@ -1,4 +1,4 @@
-import { Hero, ConnectSection, WhyChooseUs, Featured, Testimonials, Newsletter } from "../components";
+import { Hero, ConnectSection, WhyChooseUs, Featured, Testimonials, Newsletter, Analysis } from "../components";
 import StepsToSuccess from "../components/StepsToSuccess";
 
 const Home = () => {
@@ -9,6 +9,7 @@ const Home = () => {
       <Hero />
       <ConnectSection />
       <WhyChooseUs/>
+      <Analysis/>
       <Featured />
       <Testimonials/>
       <StepsToSuccess/>

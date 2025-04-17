@@ -63,3 +63,4 @@ export { default as WorkWithUs } from "./WorkWithUs";
 export { default as CommunityAdvisor } from "./CommunityAdvisor";
 export { default as SteeringGroup } from "./SteeringGroup";
 export { default as ExecutiveTeam } from "./ExecutiveTeam";
+export { default as Analysis } from "./Analysis";
