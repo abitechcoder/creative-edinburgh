@@ -13,7 +13,7 @@ const Hero = () => {
                         Welcome to Sierra Leone's Business Markit - <span className="text-primary">Connect,</span> <span className="text-secondary">Invest,</span> <span className="text-tertiary">Thrive</span>
                     </h1>
                     <p className="text-xl">
-                        Sierra Leone Business Markit is your premier digital gateway to the nation's most trusted business directory, investment opportunities, and SME growth tools. Whether you are a local entrepreneur or a global investor, unlock the potential of West Africa's rising star.
+                        Sierra Leone Business Markit is your premier digital gateway to the nation's most trusted business directory, investment opportunities, and SME growth tools. Whether you are a local entrepreneur or a global investor, unlock the potential of West Africa's next rising star.
                     </p>
                     <a href="#" className="bg-linear-to-br text-white text-xl rounded-lg bg-secondary hover:from-secondary hover:to-primary px-6 py-3">Explore Opportunities</a>
                 </div>

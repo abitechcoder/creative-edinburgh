@@ -136,7 +136,7 @@ export const NavLinks = [
   },
 ]
 export const creativeSierraleone = {
-  title: "Creative Hub Africa is a registered charity.",
+  title: "Creative Hub Africa is a registered creative ecosystem builder.",
   description:
     "Our main objective is to protect the welfare of the creative community through services for creative freelancers, sole traders and startups in order to allow them to develop and thrive, through:",
   subheading1: "The advancement of the arts and culture;",
