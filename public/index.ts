@@ -29,3 +29,6 @@ export { default as OurVisionImage } from "./our-vision-image-e.png";
 export { default as OurMissionImage } from "./our-mission-image-e.png";
 export { default as OurValuesImage } from "./our-values-image.jpg";
 export { default as CuriousImage } from "./curious-image.jpg";
+export { default as Harassment } from "./harassment-e.png";
+export { default as ReportingImage } from "./reporting-e.png";
+export { default as ConsequencesImage } from "./consequences-e.png";

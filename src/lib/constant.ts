@@ -1,3 +1,6 @@
+import { TeamMember } from "@/type";
+import { Team1, Team2, Team3, Team4, Team5, Board3 } from "../../public";
+
 export const creativeSierraleone = {
   title: "Creative Hub Africa is a registered creative ecosystem builder.",
   description:
@@ -37,5 +40,96 @@ export const faqs = [
 We also offer business memberships to professionals and organisations working in the public, third and private sectors in – or with a strong professional connection to – the city of Sierraleone. 
 
 Your membership fee will be invested back into the creative community of Sierraleone through various initiatives, including mentorship bursaries and free tickets to events for those who need them most. It will also provide invaluable support for the small Creative Hub Africa team’s important advocacy work, research and ongoing nurturing of creative practice in the city. `,
+  },
+];
+
+export const teamMembers: TeamMember[] = [
+  {
+    name: "OLA WOJTKIEWICZ",
+    role: "Executive Director",
+    image: Team1,
+    email: "ola@creative-Sierraleone.com",
+    responsibilities: [
+      "Strategic leadership and development",
+      "Overseeing organizational growth",
+      "Building key partnerships",
+    ],
+  },
+  {
+    name: "ZOË ALBA FARRUGIA",
+    role: "Programme Manager",
+    image: Team2,
+    email: "zoe@creative-Sierraleone.com",
+    responsibilities: [
+      "Leading programs and initiatives",
+      "Community engagement",
+      "Managing project timelines and budgets",
+    ],
+  },
+  {
+    name: "INGA DALE STEYN",
+    role: "Community Manager",
+    image: Team3,
+    email: "inga@creative-Sierraleone.com",
+    responsibilities: [
+      "Managing partnerships",
+      "Enhancing membership benefits",
+      "Organizing networking events",
+    ],
+  },
+  {
+    name: "Eva McKenzie",
+    role: "Community Assistant",
+    image: Team4,
+    email: "mentoring@creative-Sierraleone.com",
+    responsibilities: [
+      "Managing Memberships or signing up",
+      "Prospective or current Mentoring questions",
+    ],
+  },
+  {
+    name: "Caitlin Van Buren",
+    role: "Business Coordinator",
+    image: Team5,
+    email: "info@creative-Sierraleone.com",
+    responsibilities: [
+      "General questions",
+      "Problems with the website",
+      "Business or administration",
+    ],
+  },
+  {
+    name: "Vicky Crocker",
+    role: "Marketing + Communications Manager",
+    image: Board3,
+    email: "vicky@creative-Sierraleone.com",
+    responsibilities: [
+      "Marketing partnerships",
+      "Press and PR opportunities",
+      "Requests for brand information",
+    ],
+  },
+];
+
+export const donations = [
+  {
+    amount: "£75",
+    description:
+      "would pay for an annual Premium Membership package at Creative Hub Africa for a creative who is looking for support.",
+  },
+  {
+    amount: "£100",
+    description:
+      "would pay mentoring bursary which includes 5 (1-hour long) mentoring sessions with an expert trained and supported by Creative Hub Africa.",
+  },
+  {
+    amount: "£250",
+    description:
+      "would pay for a bundle of a 10-week-long Raise Your Game digital skills development course for one creative practitioner.",
+  },
+  {
+    amount: "£300",
+    description:
+      "would pay for a bursary for a freelance mentor who can’t afford to offer mentoring free of charge but is passionate about sharing their knowledge.",
   },
 ];

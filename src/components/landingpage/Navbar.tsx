@@ -296,7 +296,7 @@ const Navbar = () => {
               href={`/join`}
               className="px-6 py-2 rounded cursor-pointer bg-cyan-800 text-white "
             >
-              Membership
+              Login
             </Link>
           </div>
         </div>
