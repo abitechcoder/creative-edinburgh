@@ -31,7 +31,7 @@ export interface VisionMissionProps {
 export interface TeamMember {
   name: string;
   role: string;
-  image: string;
+  image: StaticImageData;
   email: string;
   responsibilities: string[];
 }
@@ -48,7 +48,7 @@ export interface CreativeCirclesProps {
   toggleLinkHref?: string;
 }
 export interface SponsorCardProps {
-  imageSrc: string;
+  imageSrc: StaticImageData;
   title: string;
   price?: string;
   benefits: string[];
