@@ -1,5 +1,4 @@
 import styles from "@/style";
-import { PeopleNetworking } from "../../../public";
 import Image from "next/image";
 
 const CodeOfConduct = () => {
@@ -48,7 +47,7 @@ const CodeOfConduct = () => {
       {/* Image Section */}
       <div className="md:w-1/2 mt-6 md:mt-0 pl-6">
         <Image
-          src={PeopleNetworking}
+          src="/create-connection.jpg"
           alt="Code of Conduct"
           className="rounded-s-2xl w-full h-auto"
         />

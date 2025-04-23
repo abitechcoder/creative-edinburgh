@@ -1,5 +1,4 @@
 import styles from "@/style";
-import { ConsequencesImage } from "../../../public";
 import Image from "next/image";
 
 const Consequences = () => {
@@ -7,7 +6,7 @@ const Consequences = () => {
     <div className="flex flex-col md:flex-row gap-5 py-12 mx-auto">
       <div className="md:w-1/2 pe-6">
         <Image
-          src={ConsequencesImage}
+          src="/consequences-e.png"
           alt="Consequences for harassment"
           className="w-full rounded-e-2xl "
         />

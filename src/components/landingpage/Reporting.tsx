@@ -1,5 +1,4 @@
 import styles from "@/style";
-import { ReportingImage } from "../../../public";
 import Image from "next/image";
 
 const codeOfConduct = [
@@ -83,7 +82,7 @@ const Reporting = () => {
       </div>
       <div className="md:w-1/2 ps-6">
         <Image
-          src={ReportingImage}
+          src="/reporting-e.png"
           alt="Reporting an harassment"
           className="w-full rounded-s-2xl "
         />
