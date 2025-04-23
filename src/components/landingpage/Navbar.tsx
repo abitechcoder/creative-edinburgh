@@ -139,13 +139,24 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
-  const scrollPage = () => {
-    if (window.scrollY >= 20) {
-      setIsScrolled(true);
-    } else {
-      setIsScrolled(false);
-    }
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY >= 20) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Initial check in case user reloads on scrolled position
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const aboutLinks = [
     {
@@ -215,7 +226,6 @@ const Navbar = () => {
     },
   ];
 
-  window.addEventListener("scroll", scrollPage);
   return (
     <>
       <MobileMenu

@@ -15,28 +15,28 @@ import {
 const data = [
   {
     name: "2021",
-    present: 70,
-    absent: 60,
+    Female: 70,
+    Male: 60,
   },
   {
     name: "2022",
-    present: 90,
-    absent: 75,
+    Female: 90,
+    Male: 75,
   },
   {
     name: "2023",
-    present: 90,
-    absent: 75,
+    Female: 90,
+    Male: 75,
   },
   {
     name: "2024",
-    present: 65,
-    absent: 55,
+    Female: 65,
+    Male: 55,
   },
   {
     name: "2025",
-    present: 60,
-    absent: 40,
+    Female: 60,
+    Male: 40,
   },
 ];
 
@@ -66,13 +66,13 @@ const AttendanceChart = () => {
             wrapperStyle={{ paddingTop: "20px", paddingBottom: "40px" }}
           />
           <Bar
-            dataKey="present"
+            dataKey="Female"
             fill="#FAE27C"
             legendType="circle"
             radius={[10, 10, 0, 0]}
           />
           <Bar
-            dataKey="absent"
+            dataKey="Male"
             fill="#C3EBFA"
             legendType="circle"
             radius={[10, 10, 0, 0]}
