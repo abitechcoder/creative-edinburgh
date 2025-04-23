@@ -27,7 +27,7 @@ const menuItems = [
       {
         icon: "/parent.png",
         label: "Subscription",
-        href: "/parents",
+        href: "/subscription",
         visible: ["admin", "teacher"],
       },
       // {
