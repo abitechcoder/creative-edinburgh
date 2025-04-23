@@ -59,7 +59,7 @@ const CommunitySponsor = () => {
           <SponsorCard
             imageSrc={PeopleNetworking}
             title="HEADLINE SPONSOR BENEFITS"
-            price="£20,000"
+            price="SLE20,000"
             benefits={[
               "Exclusive branding - a Headline Sponsor spotlight and logo on the Creative Hub Africa website and a bespoke introduction in a monthly newsletter to our members, which has an open rate of more than 40%.",
               "Opportunity for self-promotion through social posts, Instagram takeovers and event speaking opportunities.",
@@ -78,7 +78,7 @@ const CommunitySponsor = () => {
           <SponsorCard
             imageSrc={PeopleNetworking}
             title="COMMUNITY SPONSOR BENEFITS"
-            price="£10,000"
+            price="SLE10,000"
             benefits={[
               "Dedicated Community Sponsor spotlight on the Creative Hub Africa website, detailing your company.",
               "Exclusive introduction in the newsletter to our members, which has an open rate of more than 40%.",
@@ -95,7 +95,7 @@ const CommunitySponsor = () => {
           <SponsorCard
             imageSrc={PeopleNetworking}
             title="AWARDS SPONSOR BENEFITS"
-            price="£1500-£3000"
+            price="SLE1500-SLE3000"
             heading="Sponsorship of one of the 10 Creative Hub Africa Awards, and supporting five months of professional mentoring to the individual winners. Other benefits include:"
             benefits={[
               "Co-presenting the Award with a previous winner.",
@@ -117,8 +117,8 @@ const CommunitySponsor = () => {
             benefits={[
               "Providing food catering for the 100 ticket holders (in-kind).",
               "Providing a keg of beer/soft drinks for the ticket holders (in-kind).",
-              "£2000 contribution to become a Headline Sponsor of the Summer Party (exclusive opportunity).",
-              "£1000 contribution to become a Sponsor of the Summer Party (opportunity limited to up to 3 companies).",
+              "SLE2000 contribution to become a Headline Sponsor of the Summer Party (exclusive opportunity).",
+              "SLE1000 contribution to become a Sponsor of the Summer Party (opportunity limited to up to 3 companies).",
             ]}
             heading2="The benefits include:"
             additionalBenefits={[
@@ -158,7 +158,7 @@ const CommunitySponsor = () => {
             ]}
             heading2="Sponsorship Cost:"
             additionalBenefits={[
-              "We ask for the support of £2,000 for three events over the year.",
+              "We ask for the support of SLE2,000 for three events over the year.",
             ]}
             buttonText="EMAIL US"
           />

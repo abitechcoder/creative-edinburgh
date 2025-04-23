@@ -113,22 +113,22 @@ export const teamMembers: TeamMember[] = [
 
 export const donations = [
   {
-    amount: "£75",
+    amount: "SLE75",
     description:
       "would pay for an annual Premium Membership package at Creative Hub Africa for a creative who is looking for support.",
   },
   {
-    amount: "£100",
+    amount: "SLE100",
     description:
       "would pay mentoring bursary which includes 5 (1-hour long) mentoring sessions with an expert trained and supported by Creative Hub Africa.",
   },
   {
-    amount: "£250",
+    amount: "SLE250",
     description:
       "would pay for a bundle of a 10-week-long Raise Your Game digital skills development course for one creative practitioner.",
   },
   {
-    amount: "£300",
+    amount: "SLE300",
     description:
       "would pay for a bursary for a freelance mentor who can’t afford to offer mentoring free of charge but is passionate about sharing their knowledge.",
   },
