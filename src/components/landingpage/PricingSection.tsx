@@ -14,14 +14,14 @@ const membershipPlans = [
   },
   {
     title: "Plus",
-    price: "£30.00",
+    price: "SLE30.00",
     billing: "* Automatic rebilling",
     duration: "/annual",
     description:
       "We would recommend a Plus Membership to those who are looking for professional development opportunities to help them reach their career goals.",
     benefits: [
       "Enjoy all the Free Membership benefits.",
-      "Benefit from 50% off Creative Edinburgh Mentoring Programme. (Pay £50 instead of £100 for 5 months of mentoring).",
+      "Benefit from 50% off Creative Edinburgh Mentoring Programme. (Pay SLE50 instead of SLE100 for 5 months of mentoring).",
       "Benefit from 30% discount for tickets to Creative Edinburgh’s annual Awards Ceremony and Summer Party (one discounted ticket per event).",
       "Benefit from three months of free access to Spotlight, a leading casting platform in the UK.",
       "Access the Creative Edinburgh Members’ Directory featuring thousands of local creatives to showcase your work.",
@@ -29,7 +29,7 @@ const membershipPlans = [
   },
   {
     title: "Premium",
-    price: "£75.00",
+    price: "SLE75.00",
     billing: "* Automatic rebilling",
     duration: "/annual",
     description:
@@ -44,7 +44,7 @@ const membershipPlans = [
   },
   {
     title: "Business",
-    price: "£200.00",
+    price: "SLE200.00",
     billing: "* Automatic rebilling",
     duration: "/annual",
     description:
