@@ -50,7 +50,10 @@ interface MemberType {
   registrationStatus: string;
   disabilityInclusion: string;
   businessAddress: string;
-  contactDetails: string;
+  contactDetails: {
+    email: string;
+    phone: string;
+  }
   socialMediaLinks: any;
 }
 
@@ -118,7 +121,7 @@ const MemberDetails = () => {
         <section className="bg-gray-50 pt-16 relative lg:min-h-screen grid grid-cols-1 lg:grid-cols-2">
           <div className="w-full h-full flex flex-col items-start justify-center">
             <Link
-              href={"/membership/members-library"}
+              href={"/business-directory"}
               className="hover:cursor-pointer flex items-center gap-4 mt-[130px] lg:mb-4 lg:mt-[130px]"
             >
               <div className="bg-[#07081a] p-4 rounded-full">
@@ -250,7 +253,7 @@ const MemberDetails = () => {
                 Contact Number
               </h3>
               <p className="font-bold text-lg mt-2 lg:mt-4">
-                {member?.contactDetails}
+                {member?.contactDetails.phone}
               </p>
             </div>
             <div>
