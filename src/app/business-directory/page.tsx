@@ -157,11 +157,11 @@ const MembersLibrary = () => {
                       {business.sector}
                     </div>
                     <Image
-                      src={business.logo === "" ? Logo : ""}
+                      src={business.logo === "" ? Logo : business.logo}
                       alt={`${business.name} logo`}
-                      className=" mt-8"
-                      height={150}
-                      width={200}
+                      className="mt-8"
+                      height={100}
+                      width={150}
                     />
                     <h1 className="text-2xl font-bold">{business.name}</h1>
                     <p>

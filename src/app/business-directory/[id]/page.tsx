@@ -5,8 +5,8 @@ import {
   FaArrowLeft,
   FaFacebookF,
   FaInstagram,
-  FaLinkedin,
   FaCheck,
+  FaTiktok,
 } from "react-icons/fa";
 
 import { IoCloseCircleSharp } from "react-icons/io5";
@@ -53,7 +53,7 @@ interface MemberType {
   contactDetails: {
     email: string;
     phone: string;
-  }
+  };
   socialMediaLinks: any;
 }
 
@@ -131,10 +131,11 @@ const MemberDetails = () => {
             </Link>
             <div className="flex flex-col lg:flex-row w-full lg:justify-between items-start lg:items-center gap-8">
               <Image
-                width={200}
                 src={member?.logo === "" ? Logo : member?.logo}
                 alt={`${member?.name} logo`}
-                className=" mt-8"
+                className="mt-8"
+                height={100}
+                width={150}
               />
               <div className="bg-secondary text-sm lg:text-lg text-white py-2 px-6 w-fit rounded-full">
                 {member?.sector}
@@ -165,8 +166,8 @@ const MemberDetails = () => {
             <div className="absolute top-[80%] left-[20%] w-[120px] h-[120px] bg-yellow-400 rounded-full hidden lg:block"></div>
           </div>
         </section>
-        <section className="lg:py-10 py-2 grid grid-cols-1 lg:grid-cols-2">
-          <div className="w-4/5 mx-auto">
+        <section className="lg:py-10 py-2 gap-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+          {/* <div className="w-4/5 mx-auto">
             {member && (
               <Pie
                 data={chartData}
@@ -190,17 +191,17 @@ const MemberDetails = () => {
                 }}
               />
             )}
-          </div>
-          <div className="grid lg:grid-cols-2 grid-cols-1 gap-8 lg:gap-4 py-8">
-            <div>
+          </div> */}
+          {/* <div className="grid lg:grid-cols-2 grid-cols-1 gap-8 lg:gap-4 py-8"></div> */}
+          {/* <div>
               <h3 className="font-black uppercase lg:text-xl text-lg text-secondary">
                 Years in Operation
               </h3>
               <p className="font-bold text-lg mt-2 lg:mt-4">
                 {member?.yearsInOperation} years
               </p>
-            </div>
-            <div>
+            </div> */}
+          {/* <div>
               <h3 className="font-black uppercase lg:text-xl text-lg text-secondary">
                 Revenue
               </h3>
@@ -215,39 +216,48 @@ const MemberDetails = () => {
               <p className="font-bold text-lg mt-2 lg:mt-4">
                 {member?.disabilityInclusion}
               </p>
+            </div> */}
+          <div>
+            <h3 className="font-black uppercase lg:text-xl text-lg text-secondary">
+              Status
+            </h3>
+            <div className="mt-4">
+              {member?.registrationStatus === "Registered" ? (
+                <FaCheck size={30} className="text-green-600" />
+              ) : (
+                <IoCloseCircleSharp size={30} className="text-red-600" />
+              )}
             </div>
-            <div>
-              <h3 className="font-black uppercase lg:text-xl text-lg text-secondary">
-                Status
-              </h3>
-              <div className="mt-4">
-                {member?.registrationStatus === "Registered" ? (
-                  <FaCheck size={30} className="text-green-600" />
-                ) : (
-                  <IoCloseCircleSharp size={30} className="text-red-600" />
-                )}
-              </div>
-            </div>
-            <div>
-              <h3 className="font-black uppercase lg:text-xl text-lg text-secondary">
-                Social Media
-              </h3>
-              <div className="flex gap-4 mt-2 lg:mt-4">
-                {member?.socialMediaLinks && (
-                  <>
+          </div>
+          {member?.socialMediaLinks &&
+            (member.socialMediaLinks.facebook !== "" ||
+              member.socialMediaLinks.instagram !== "" ||
+              member.socialMediaLinks.linkedin !== "") && (
+              <div>
+                <h3 className="font-black uppercase lg:text-xl text-lg text-secondary">
+                  Social Media
+                </h3>
+                <div className="flex gap-4 mt-2 lg:mt-4">
+                  {member.socialMediaLinks.facebook !== "" && (
                     <Link href={member.socialMediaLinks.facebook}>
                       <FaFacebookF size={30} className="hover:text-blue-700" />
                     </Link>
+                  )}
+                  {member.socialMediaLinks.instagram !== "" && (
                     <Link href={member.socialMediaLinks.instagram}>
                       <FaInstagram size={30} className="hover:text-blue-700" />
                     </Link>
-                    <Link href={member.socialMediaLinks.linkedin}>
-                      <FaLinkedin size={30} className="hover:text-blue-700" />
+                  )}
+                  {member.socialMediaLinks.tiktok !== "" && (
+                    <Link href={member.socialMediaLinks.tiktok}>
+                      <FaTiktok size={30} className="hover:text-blue-700" />
                     </Link>
-                  </>
-                )}
+                  )}
+                </div>
               </div>
-            </div>
+            )}
+
+          {member?.contactDetails.phone !== "" && (
             <div>
               <h3 className="font-black uppercase lg:text-xl text-lg text-secondary">
                 Contact Number
@@ -256,6 +266,20 @@ const MemberDetails = () => {
                 {member?.contactDetails.phone}
               </p>
             </div>
+          )}
+
+          {member?.contactDetails.email !== "" && (
+            <div>
+              <h3 className="font-black uppercase lg:text-xl text-lg text-secondary">
+                Email
+              </h3>
+              <p className="font-bold text-lg mt-2 lg:mt-4">
+                {member?.contactDetails.email}
+              </p>
+            </div>
+          )}
+
+          {member?.businessAddress !== "" && (
             <div>
               <h3 className="font-black uppercase lg:text-xl text-lg text-secondary">
                 Address
@@ -264,7 +288,7 @@ const MemberDetails = () => {
                 {member?.businessAddress}
               </p>
             </div>
-          </div>
+          )}
         </section>
       </div>
     </Suspense>
