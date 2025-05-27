@@ -36,7 +36,7 @@ interface MemberType {
   logo: any;
   name: string;
   description: string;
-  sector: string;
+  sector: number;
   ageOfOwner: number;
   genderOfOwner: string;
   workforceNumber: number;
@@ -57,6 +57,11 @@ interface MemberType {
   socialMediaLinks: any;
 }
 
+interface SectorType {
+  id: string;
+  title: string;
+}
+
 const Loading = () => {
   return (
     <div className="h-screen grid place-items-center">
@@ -67,6 +72,7 @@ const Loading = () => {
 
 const MemberDetails = () => {
   const [member, setMember] = useState<MemberType | null>(null);
+  const [sectors, setSectors] = useState<SectorType[] | []>([]);
   const params = useParams();
 
   // Initialize chart data with empty data
@@ -85,7 +91,13 @@ const MemberDetails = () => {
 
   useEffect(() => {
     fetchMember();
+    fetchSectors();
   }, []);
+
+  const fetchSectors = async () => {
+    const { data } = await Axios.get("/sectors");
+    setSectors(data);
+  };
 
   const fetchMember = async () => {
     try {
@@ -138,7 +150,7 @@ const MemberDetails = () => {
                 width={150}
               />
               <div className="bg-secondary text-sm lg:text-lg text-white py-2 px-6 w-fit rounded-full">
-                {member?.sector}
+                {member?.sector ? sectors[member.sector - 1].title : "-"}
               </div>
             </div>
             <h2
