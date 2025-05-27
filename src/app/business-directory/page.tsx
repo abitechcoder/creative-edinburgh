@@ -39,7 +39,7 @@ interface BusinessType {
 }
 
 interface SectorType {
-  id: string;
+  id: number;
   title: string;
 }
 
@@ -151,7 +151,8 @@ const MembersLibrary = () => {
                     <div
                       className={`bg-secondary grid text-white place-items-center rounded-lg text-sm font-bold uppercase lg:h-[40px] lg:w-[250px] p-2 lg:absolute -top-[20px] left-8 z-10`}
                     >
-                      {sectors[business.sector - 1].title}
+                      {sectors[business.sector - 1]?.title || "Unknown Sector"}
+
                     </div>
                     <Image
                       src={business.logo === "" ? Logo : business.logo}

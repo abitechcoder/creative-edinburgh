@@ -11,7 +11,7 @@ const MyAccordion = ({
   title: string;
   data: any;
   selectedItem: number;
-  setSelectedItem: number;
+  setSelectedItem: (id: number) => void;
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   return (
