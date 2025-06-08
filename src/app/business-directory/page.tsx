@@ -23,7 +23,7 @@ interface BusinessType {
   disabilityInclusion: "Yes" | "No";
   registrationStatus: string;
   revenueBracket: string;
-  sector: string;
+  sector: number;
   yearsInOperation: number;
   workforceNumber: number;
   workforceGenderDistribution: {
@@ -39,7 +39,7 @@ interface BusinessType {
 }
 
 interface SectorType {
-  id: string;
+  id: number;
   title: string;
 }
 
@@ -48,7 +48,7 @@ const MembersLibrary = () => {
   const [filteredBusinesses, setFilteredBusinesses] = useState<
     BusinessType[] | []
   >([]);
-  const [selectedSector, setSelectedSector] = useState<string>("");
+  const [selectedSector, setSelectedSector] = useState<number>(0);
   const [sectors, setSectors] = useState<SectorType[] | []>([]);
   const [filter, setFilter] = useState<string>("");
 
@@ -72,7 +72,7 @@ const MembersLibrary = () => {
   };
 
   const filterBusinesses = async () => {
-    if (selectedSector === "") {
+    if (selectedSector === 0) {
       setFilteredBusinesses(businesses);
     } else {
       const filtered = businesses.filter(
@@ -141,9 +141,6 @@ const MembersLibrary = () => {
               if (
                 business.name
                   .toLocaleLowerCase()
-                  .includes(filter.toLocaleLowerCase()) ||
-                business.sector
-                  .toLocaleLowerCase()
                   .includes(filter.toLocaleLowerCase())
               )
                 return (
@@ -154,14 +151,15 @@ const MembersLibrary = () => {
                     <div
                       className={`bg-secondary grid text-white place-items-center rounded-lg text-sm font-bold uppercase lg:h-[40px] lg:w-[250px] p-2 lg:absolute -top-[20px] left-8 z-10`}
                     >
-                      {business.sector}
+                      {sectors[business.sector - 1]?.title || "Unknown Sector"}
+
                     </div>
                     <Image
-                      src={business.logo === "" ? Logo : ""}
+                      src={business.logo === "" ? Logo : business.logo}
                       alt={`${business.name} logo`}
-                      className=" mt-8"
-                      height={150}
-                      width={200}
+                      className="mt-8"
+                      height={100}
+                      width={150}
                     />
                     <h1 className="text-2xl font-bold">{business.name}</h1>
                     <p>

@@ -10,8 +10,8 @@ const MyAccordion = ({
 }: {
   title: string;
   data: any;
-  selectedItem: string;
-  setSelectedItem: any;
+  selectedItem: number;
+  setSelectedItem: (id: number) => void;
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   return (
@@ -35,9 +35,9 @@ const MyAccordion = ({
         }`}
       >
         <div
-          onClick={() => setSelectedItem("")}
+          onClick={() => setSelectedItem(0)}
           className={`px-4 py-2 ${
-            selectedItem === ""
+            selectedItem === 0
               ? "bg-secondary text-white"
               : "bg-gray-200 text-black"
           } hover:bg-secondary hover:text-white hover:cursor-pointer rounded-lg font-semibold text-sm`}
@@ -47,9 +47,9 @@ const MyAccordion = ({
         {data?.map((item: { id: number; title: string }) => (
           <div
             key={item.id}
-            onClick={() => setSelectedItem(item.title)}
+            onClick={() => setSelectedItem(item.id)}
             className={`px-4 py-2 ${
-              selectedItem === item.title
+              selectedItem === item.id
                 ? "bg-secondary text-white"
                 : "bg-gray-200 text-black"
             } hover:bg-secondary hover:text-white hover:cursor-pointer rounded-lg font-semibold text-sm`}
