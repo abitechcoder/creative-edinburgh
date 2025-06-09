@@ -1087,38 +1087,38 @@ export const NavLinks = [
   {
     id: 2,
     title: "Business Directory",
-    url: "",
+    url: "/business-directory",
     links: [],
   },
-  {
-    id: 3,
-    title: "MENTORING",
-    url: "/mentoring",
-    links: [],
-  },
-  {
-    id: 4,
-    title: "EVENTS",
-    url: "",
-    links: [
-      {
-        id: 1,
-        title: "Book Tickets",
-        link: "/events/book-tickets",
-      },
-      {
-        id: 2,
-        title: "Our Programme",
-        link: "/events/our-programme",
-      },
-    ],
-  },
-  {
-    id: 5,
-    title: "AWARDS",
-    url: "/awards",
-    links: [],
-  },
+  // {
+  //   id: 3,
+  //   title: "MENTORING",
+  //   url: "/mentoring",
+  //   links: [],
+  // },
+  // {
+  //   id: 4,
+  //   title: "EVENTS",
+  //   url: "",
+  //   links: [
+  //     {
+  //       id: 1,
+  //       title: "Book Tickets",
+  //       link: "/events/book-tickets",
+  //     },
+  //     {
+  //       id: 2,
+  //       title: "Our Programme",
+  //       link: "/events/our-programme",
+  //     },
+  //   ],
+  // },
+  // {
+  //   id: 5,
+  //   title: "AWARDS",
+  //   url: "/awards",
+  //   links: [],
+  // },
   // {id: 6,
   //   title: "FOR COMMUNITY",
   //   url: "/",

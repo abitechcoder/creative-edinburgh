@@ -85,6 +85,8 @@ const Reporting = () => {
           src="/reporting-e.png"
           alt="Reporting an harassment"
           className="w-full rounded-s-2xl "
+          width={100}
+          height={100}
         />
       </div>
     </section>

@@ -1,5 +1,6 @@
 "use client";
-import { Suspense, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import useMember from "@/hooks/useMember";
 
 import {
   FaArrowLeft,
@@ -25,8 +26,8 @@ import styles from "@/style";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { Logo } from "../../../../public";
-import { Axios } from "@/lib/Axios";
 import Image, { StaticImageData } from "next/image";
+import useSectors from "@/hooks/useSectors";
 
 // Register the required Chart.js components
 ChartJS.register(ArcElement, Tooltip, Legend, Title, CategoryScale);
@@ -62,73 +63,60 @@ interface SectorType {
   title: string;
 }
 
-const Loading = () => {
-  return (
-    <div className="h-screen grid place-items-center">
-      <p>Loading...</p>
-    </div>
-  );
-};
 
 const MemberDetails = () => {
-  const [member, setMember] = useState<MemberType | null>(null);
-  const [sectors, setSectors] = useState<SectorType[] | []>([]);
-  const params = useParams();
+  const { id } = useParams();
+  const { member, isLoading } = useMember(Number(id));
+  const { sectors, isLoadingSect } = useSectors();
+
+  if (isLoadingSect || isLoading) {
+    return (<div className="h-screen grid place-items-center">
+      <div className="flex flex-col justify-center items-center p-4">
+        <Image src={"/loading.gif"} width={50} height={50} alt="Loading animation" />
+        <p>Loading data ...</p>
+      </div>
+    </div>);
+  }
 
 
   // Initialize chart data with empty data
-  const [chartData, setChartData] = useState({
-    labels: ["Male", "Female"],
-    datasets: [
-      {
-        label: "Gender Distribution",
-        data: [0, 0],
-        backgroundColor: ["rgba(75,192,192,1)", "#ecf0f1"],
-        borderColor: "black",
-        borderWidth: 2,
-      },
-    ],
-  });
+  // const [chartData, setChartData] = useState({
+  //   labels: ["Male", "Female"],
+  //   datasets: [
+  //     {
+  //       label: "Gender Distribution",
+  //       data: [0, 0],
+  //       backgroundColor: ["rgba(75,192,192,1)", "#ecf0f1"],
+  //       borderColor: "black",
+  //       borderWidth: 2,
+  //     },
+  //   ],
+  // });
 
-  useEffect(() => {
-    if (params?.id) {
-      fetchMember();
-      fetchSectors();
-    }
-  }, [params?.id]);
-
-  const fetchSectors = async () => {
-    const { data } = await Axios.get("/sectors");
-    setSectors(data);
-  };
-
-  const fetchMember = async () => {
-    try {
-      const { data } = await Axios.get(`/businesses/${params.id}`);
-      setMember(data);
-
-      // Update chart data with the member's workforce gender distribution
-      if (data && data.workforceGenderDistribution) {
-        setChartData({
-          labels: ["Male", "Female"],
-          datasets: [
-            {
-              label: "Gender Distribution",
-              data: [
-                data.workforceGenderDistribution.male,
-                data.workforceGenderDistribution.female,
-              ],
-              backgroundColor: ["#f0ae1e", "#7b479c"],
-              borderColor: "black",
-              borderWidth: 3,
-            },
-          ],
-        });
-      }
-    } catch (error) {
-      console.error("Error fetching member data:", error);
-    }
-  };
+  // const fetchMember = async () => {
+  //   try {
+  //     // Update chart data with the member's workforce gender distribution
+  //     if (data && data.workforceGenderDistribution) {
+  //       setChartData({
+  //         labels: ["Male", "Female"],
+  //         datasets: [
+  //           {
+  //             label: "Gender Distribution",
+  //             data: [
+  //               data.workforceGenderDistribution.male,
+  //               data.workforceGenderDistribution.female,
+  //             ],
+  //             backgroundColor: ["#f0ae1e", "#7b479c"],
+  //             borderColor: "black",
+  //             borderWidth: 3,
+  //           },
+  //         ],
+  //       });
+  //     }
+  //   } catch (error) {
+  //     console.error("Error fetching member data:", error);
+  //   }
+  // };
 
   return (
     <div className="pb-8 px-8">
@@ -152,7 +140,7 @@ const MemberDetails = () => {
               width={150}
             />
             <div className="bg-secondary text-sm lg:text-lg text-white py-2 px-6 w-fit rounded-full">
-              {member?.sector ? sectors.find(s => s.id === member.sector)?.title : "-"}
+              {member?.sector ? sectors.find((s: SectorType) => s.id === member.sector)?.title : "-"}
             </div>
           </div>
           <h2

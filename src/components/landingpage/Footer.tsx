@@ -25,7 +25,7 @@ const Footer = () => {
               href="mailto:connect@sierraleonebusinessmarkit.com"
               className="text-white font-medium relative group"
             >
-              connect@sierraleonebusinessmarkit.com
+              connect
               <span className="absolute right-0 top-6 w-0 h-[2px] bg-yellow-400 transition-all duration-300 ease-in-out group-hover:w-full group-hover:left-0"></span>
             </a>
           </p>

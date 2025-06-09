@@ -8,7 +8,9 @@ const Consequences = () => {
         <Image
           src="/consequences-e.png"
           alt="Consequences for harassment"
-          className="w-full rounded-e-2xl "
+          className="w-full rounded-e-2xl"
+          width={100}
+          height={100}
         />
       </div>
       <div className="md:w-1/2 px-6">

@@ -1,77 +1,31 @@
 "use client";
-import styles from "@/style";
-import { Axios } from "@/lib/Axios";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-
 import { FaArrowRight } from "react-icons/fa";
-
 import MyAccordion from "@/components/landingpage/MyAccordion";
 import Image from "next/image";
 import { Logo } from "../../../public";
+import useSectors from "@/hooks/useSectors";
+import useBusinesses from "@/hooks/useBusinesses";
+import { BusinessType, SectorType } from "@/lib/types";
+import Analysis from "@/components/landingpage/Analysis";
 
-interface BusinessType {
-  id: number;
-  name: string;
-  logo: string;
-  ageOfOwner: number;
-  genderOfOwner: "Male" | "Female" | "Other";
-  businessAddress: string;
-  contactDetails: string;
-  coreProductOrService: string;
-  description: string;
-  disabilityInclusion: "Yes" | "No";
-  registrationStatus: string;
-  revenueBracket: string;
-  sector: number;
-  yearsInOperation: number;
-  workforceNumber: number;
-  workforceGenderDistribution: {
-    male: number;
-    female: number;
-  };
-  socialMediaLinks: {
-    facebook?: string;
-    instagram?: string;
-    linkedin?: string;
-    twitter?: string;
-  };
-}
-
-interface SectorType {
-  id: number;
-  title: string;
-}
 
 const MembersLibrary = () => {
-  const [businesses, setBusinesses] = useState<BusinessType[] | []>([]);
   const [filteredBusinesses, setFilteredBusinesses] = useState<
-    BusinessType[] | []
+    BusinessType[]
   >([]);
   const [selectedSector, setSelectedSector] = useState<number>(0);
-  const [sectors, setSectors] = useState<SectorType[] | []>([]);
-  const [filter, setFilter] = useState<string>("");
+  const { sectors, isLoadingSect } = useSectors();
+  const { businesses, isLoadingBiz } = useBusinesses();
 
-  useEffect(() => {
-    fetchSectors();
-    fetchBusinesses();
-  }, []);
+  const [filter, setFilter] = useState<string>("");
 
   useEffect(() => {
     filterBusinesses();
   }, [selectedSector, businesses]);
 
-  const fetchSectors = async () => {
-    const { data } = await Axios.get("/sectors");
-    setSectors(data);
-  };
-
-  const fetchBusinesses = async () => {
-    const { data } = await Axios.get("/businesses");
-    setBusinesses(data);
-  };
-
-  const filterBusinesses = async () => {
+  const filterBusinesses = () => {
     if (selectedSector === 0) {
       setFilteredBusinesses(businesses);
     } else {
@@ -82,9 +36,37 @@ const MembersLibrary = () => {
     }
   };
 
+  if (isLoadingSect || isLoadingBiz) {
+    return (<div className="h-screen grid place-items-center">
+      <div className="flex flex-col justify-center items-center p-4">
+        <Image src={"/loading.gif"} width={50} height={50} alt="Loading animation" />
+        <p>Loading data ...</p>
+      </div>
+    </div>);
+  }
+
+  const visibleBusinesses = filteredBusinesses.filter((business) =>
+    business.name.toLowerCase().includes(filter.toLowerCase())
+  );
+
+
   return (
-    <div className="pb-8 px-8">
-      <section className="bg-gray-50 py-16 relative lg:min-h-[50vh] lg:mt-[120px] grid grid-cols-1 lg:grid-cols-2">
+    <div className="pb-8 px-8 mt-[140px]">
+      <Analysis/>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-10">
+        {sectors?.map((sector: SectorType) => (
+          <Link
+            href={`/business-directory/sector/${sector.id}`}
+            key={sector.id}
+            className="group bg-secondary hover:bg-primary relative rounded-lg p-6 lg:p-12 lg:gap-8 text-center grid place-items-center"
+          >
+            <h3 className="font-bold text-lg lg:text-2xl text-white group-hover:text-secondary">
+              {sector.title}
+            </h3>
+          </Link>
+        ))}
+      </div>
+      {/* <section className="bg-gray-50 py-16 relative lg:min-h-[50vh] lg:mt-[120px] grid grid-cols-1 lg:grid-cols-2">
         <div className="w-full h-full flex flex-col justify-center">
           <h2
             className={`${styles.heading1} text-black mb-6 lg:mb-10 mt-16 uppercase`}
@@ -107,7 +89,7 @@ const MembersLibrary = () => {
         <div className="relative">
           <div className="absolute top-[50%] left-20 w-[120px] h-[120px] bg-yellow-400 rounded-full hidden lg:block"></div>
         </div>
-      </section>
+      </section> */}
       <div className="my-8">
         <MyAccordion
           title={"FILTER BY SECTOR"}
@@ -115,8 +97,6 @@ const MembersLibrary = () => {
           selectedItem={selectedSector}
           setSelectedItem={setSelectedSector}
         />
-
-        {/* <MyAccordion title={"Filter by membership type"} data={MEMBERSHIP_TYPE} selectedItem={selectedPlan} setSelectedItem={setSelectedPlan} /> */}
       </div>
 
       <div className="flex w-full md:w-1/3 py-2 items-center gap-2 text-xs rounded-full ring-[1.5px] ring-gray-300 px-2">
@@ -131,54 +111,49 @@ const MembersLibrary = () => {
       </div>
 
       <div>
-        {filteredBusinesses.length === 0 ? (
+        {visibleBusinesses.length === 0 ? (
           <div className="px-8 py-16 grid place-items-center text-center">
             No Businesses found. Please try another filter
           </div>
         ) : (
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-4 gap-y-12 py-20">
-            {filteredBusinesses.map((business) => {
-              if (
-                business.name
-                  .toLocaleLowerCase()
-                  .includes(filter.toLocaleLowerCase())
-              )
-                return (
-                  <div
-                    key={business.id}
-                    className={`relative border-secondary border-4 p-8 rounded-lg flex flex-col gap-4 bg-[#faebe6] items-start`}
-                  >
-                    <div
-                      className={`bg-secondary grid text-white place-items-center rounded-lg text-sm font-bold uppercase lg:h-[40px] lg:w-[250px] p-2 lg:absolute -top-[20px] left-8 z-10`}
-                    >
-                      {sectors[business.sector - 1]?.title || "Unknown Sector"}
-
-                    </div>
-                    <Image
-                      src={business.logo === "" ? Logo : business.logo}
-                      alt={`${business.name} logo`}
-                      className="mt-8"
-                      height={100}
-                      width={150}
-                    />
-                    <h1 className="text-2xl font-bold">{business.name}</h1>
-                    <p>
-                      {business.description.length > 200
-                        ? `${business.description.substring(0, 200)}...`
-                        : business.description}
-                    </p>
-                    <Link
-                      href={`/business-directory/${business.id}`}
-                      className="hover:cursor-pointer flex items-center gap-4 my-4"
-                    >
-                      <p className="text-lg font-bold">Visit Profile</p>
-                      <div className="bg-[#07081a] p-4 rounded-full">
-                        <FaArrowRight className="text-white" size={16} />
-                      </div>
-                    </Link>
+            {visibleBusinesses.map((business) => (
+              <div
+                key={business.id}
+                className={`relative border-secondary border-4 p-8 rounded-lg flex flex-col gap-4 bg-[#faebe6] items-start`}
+              >
+                <div
+                  className={`bg-secondary grid text-white place-items-center rounded-lg text-sm font-bold uppercase lg:h-[40px] lg:w-[250px] p-2 lg:absolute -top-[20px] left-8 z-10`}
+                >
+                  {
+                    sectors.find((sector: SectorType) => sector.id === business.sector)?.title ||
+                    "Unknown Sector"
+                  }
+                </div>
+                <Image
+                  src={business.logo === "" ? Logo : business.logo}
+                  alt={`${business.name} logo`}
+                  className="mt-8"
+                  height={100}
+                  width={150}
+                />
+                <h1 className="text-2xl font-bold">{business.name}</h1>
+                <p>
+                  {business.description.length > 200
+                    ? `${business.description.substring(0, 200)}...`
+                    : business.description}
+                </p>
+                <Link
+                  href={`/business-directory/${business.id}`}
+                  className="hover:cursor-pointer flex items-center gap-4 my-4"
+                >
+                  <p className="text-lg font-bold">Visit Profile</p>
+                  <div className="bg-[#07081a] p-4 rounded-full">
+                    <FaArrowRight className="text-white" size={16} />
                   </div>
-                );
-            })}
+                </Link>
+              </div>
+            ))}
           </div>
         )}
       </div>

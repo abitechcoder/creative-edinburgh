@@ -9,7 +9,7 @@ import WhyChooseUs from "@/components/landingpage/WhyChooseUs";
 
 const Homepage = () => {
   return (
-    <div className="">
+    <div className="mt-8">
       <svg
         viewBox="0 0 304.343 675.885"
         preserveAspectRatio="xMinYMin meet"
