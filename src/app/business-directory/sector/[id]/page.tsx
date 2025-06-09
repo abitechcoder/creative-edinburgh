@@ -1,13 +1,10 @@
 "use client";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import Image from "next/image";
 import { Logo } from "../../../../../public";
 import { useParams } from "next/navigation";
 import { BusinessType, SectorType } from "@/lib/types";
-import useBusinesses from "@/hooks/useBusinesses";
 import useSectors from "@/hooks/useSectors";
 import useBusinessesById from "@/hooks/useBusinessesById";
 

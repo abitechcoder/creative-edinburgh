@@ -1,5 +1,4 @@
 "use client";
-import { useEffect, useState } from "react";
 import useMember from "@/hooks/useMember";
 
 import {
@@ -26,7 +25,7 @@ import styles from "@/style";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { Logo } from "../../../../public";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import useSectors from "@/hooks/useSectors";
 
 // Register the required Chart.js components
