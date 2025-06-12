@@ -63,8 +63,8 @@ const membershipPlans = [
 const PricingSection = () => {
   return (
     <div className="flex flex-col p-6 bg-gray-100 items-center">
-      <h1 className="text-3xl my-8 font-semibold">Membership Options</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 mt-10 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <h1 className="text-xl lg:text-3xl my-8 font-semibold text-center">Membership Options</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {membershipPlans.map((plan, index) => (
           <div
             key={index}

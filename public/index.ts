@@ -24,7 +24,7 @@ export { default as Board3 } from "./board3.jpg";
 export { default as Board4 } from "./board4.jpg";
 export { default as Board5 } from "./board5.jpg";
 export { default as Board6 } from "./board6.jpg";
-export { default as join } from "./join.png";
+export { default as join } from "./join.jpg";
 export { default as OurVisionImage } from "./our-vision-image-e.png";
 export { default as OurMissionImage } from "./our-mission-image-e.png";
 export { default as OurValuesImage } from "./our-values-image.jpg";

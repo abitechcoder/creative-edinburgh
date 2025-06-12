@@ -9,6 +9,7 @@ import useSectors from "@/hooks/useSectors";
 import useBusinesses from "@/hooks/useBusinesses";
 import { BusinessType, SectorType } from "@/lib/types";
 import Analysis from "@/components/landingpage/Analysis";
+import styles from "@/style";
 
 
 const MembersLibrary = () => {
@@ -52,21 +53,7 @@ const MembersLibrary = () => {
 
   return (
     <div className="pb-8 px-8 mt-[140px]">
-      <Analysis/>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-10">
-        {sectors?.map((sector: SectorType) => (
-          <Link
-            href={`/business-directory/sector/${sector.id}`}
-            key={sector.id}
-            className="group bg-secondary hover:bg-primary relative rounded-lg p-6 lg:p-12 lg:gap-8 text-center grid place-items-center"
-          >
-            <h3 className="font-bold text-lg lg:text-2xl text-white group-hover:text-secondary">
-              {sector.title}
-            </h3>
-          </Link>
-        ))}
-      </div>
-      {/* <section className="bg-gray-50 py-16 relative lg:min-h-[50vh] lg:mt-[120px] grid grid-cols-1 lg:grid-cols-2">
+      <section className="bg-gray-50 py-16 relative lg:min-h-[50vh] grid grid-cols-1 lg:grid-cols-2">
         <div className="w-full h-full flex flex-col justify-center">
           <h2
             className={`${styles.heading1} text-black mb-6 lg:mb-10 mt-16 uppercase`}
@@ -89,7 +76,21 @@ const MembersLibrary = () => {
         <div className="relative">
           <div className="absolute top-[50%] left-20 w-[120px] h-[120px] bg-yellow-400 rounded-full hidden lg:block"></div>
         </div>
-      </section> */}
+      </section>
+      <Analysis/>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-10">
+        {sectors?.map((sector: SectorType) => (
+          <Link
+            href={`/business-directory/sector/${sector.id}`}
+            key={sector.id}
+            className="group bg-secondary hover:bg-primary relative rounded-lg p-6 lg:p-12 lg:gap-8 text-center grid place-items-center"
+          >
+            <h3 className="font-bold text-lg lg:text-2xl text-white group-hover:text-secondary">
+              {sector.title}
+            </h3>
+          </Link>
+        ))}
+      </div>
       <div className="my-8">
         <MyAccordion
           title={"FILTER BY SECTOR"}

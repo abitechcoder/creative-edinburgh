@@ -17,7 +17,7 @@ const JoinMembership = () => {
             <Image
               src={join}
               alt="Hero Section"
-              className="w-full rounded-lg"
+              className="w-full h-[300px] lg:h-[400px] object-cover object-center rounded-lg"
             />
           </div>
           <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
