@@ -6,10 +6,44 @@
 
 generator client {
   provider = "prisma-client-js"
-  output   = "../generated/prisma"
+  
 }
 
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+
+model Business {
+  id                     Int            @id @default(autoincrement())
+  name                   String         @db.VarChar(255)
+  logo                   String         @db.VarChar(255)
+  ageOfOwner             Int
+  genderOfOwner          String         @db.VarChar(50)
+  businessAddress        String         @db.Text
+  contactDetails         String         @db.Text
+  coreProductOrService   String         @db.Text
+  description            String         @db.Text
+  disabilityInclusion    String         @db.VarChar(100)
+  registrationStatus     String         @db.VarChar(100)
+  revenueBracket         String         @db.VarChar(100)
+  sector                 String         @db.VarChar(100)
+  yearsInOperation       Int
+  workforceNumber        Int
+  createdAt              DateTime       @default(now())
+  updatedAt              DateTime       @updatedAt
+
+  // Relation field
+  socialMedias           SocialMedia[]
+}
+
+model SocialMedia {
+  id         Int      @id @default(autoincrement())
+  name       String?  @db.VarChar(100)
+  link       String?  @db.Text
+  businessId Int
+
+  // Relation field
+  business   Business @relation(fields: [businessId], references: [id])
+}
+

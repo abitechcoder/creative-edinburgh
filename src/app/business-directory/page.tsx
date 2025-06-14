@@ -57,6 +57,8 @@ const MembersLibrary = () => {
     fetchBusinesses();
   }, []);
 
+  console.log(filteredBusinesses);
+
   useEffect(() => {
     filterBusinesses();
   }, [selectedSector, businesses]);
@@ -68,7 +70,23 @@ const MembersLibrary = () => {
 
   const fetchBusinesses = async () => {
     const { data } = await Axios.get("/businesses");
+
+    const jsonData = JSON.stringify(data, null, 2);
+
+    downloadJSON(jsonData);
     setBusinesses(data);
+  };
+
+  const downloadJSON = (data: any) => {
+    const json = JSON.stringify(data, null, 2);
+    const blob = new Blob([json], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "businesses.json";
+    a.click();
+    URL.revokeObjectURL(url);
   };
 
   const filterBusinesses = async () => {
@@ -152,7 +170,6 @@ const MembersLibrary = () => {
                       className={`bg-secondary grid text-white place-items-center rounded-lg text-sm font-bold uppercase lg:h-[40px] lg:w-[250px] p-2 lg:absolute -top-[20px] left-8 z-10`}
                     >
                       {sectors[business.sector - 1]?.title || "Unknown Sector"}
-
                     </div>
                     <Image
                       src={business.logo === "" ? Logo : business.logo}
