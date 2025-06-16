@@ -63,7 +63,7 @@ const MembersLibrary = () => {
           <p
             className={`${styles.paragraph} text-gray-700 mb-5 font-medium leading-relaxed text-xl`}
           >
-            Explore our Members Directory! You can search by sector area and
+            Explore the Creative Hub Bizness Directory! You can search by sector area and
             connect with the city’s makers, thinkers and innovators.
           </p>
           <p
