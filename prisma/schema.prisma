@@ -1,12 +1,7 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+// UPDATED PRISMA SCHEMA (schema.prisma)
 
 generator client {
   provider = "prisma-client-js"
-  
 }
 
 datasource db {
@@ -15,35 +10,56 @@ datasource db {
 }
 
 model Business {
-  id                     Int            @id @default(autoincrement())
-  name                   String         @db.VarChar(255)
-  logo                   String         @db.VarChar(255)
-  ageOfOwner             Int
-  genderOfOwner          String         @db.VarChar(50)
-  businessAddress        String         @db.Text
-  contactDetails         String         @db.Text
-  coreProductOrService   String         @db.Text
-  description            String         @db.Text
-  disabilityInclusion    String         @db.VarChar(100)
-  registrationStatus     String         @db.VarChar(100)
-  revenueBracket         String         @db.VarChar(100)
-  sector                 String         @db.VarChar(100)
-  yearsInOperation       Int
-  workforceNumber        Int
-  createdAt              DateTime       @default(now())
-  updatedAt              DateTime       @updatedAt
+  id                   Int            @id @default(autoincrement())
+  name                 String         @db.VarChar(255)
+  logo                 String         @db.VarChar(255)
+  ageOfOwner           Int?
+  genderOfOwner        String         @db.VarChar(50)
+  businessAddress      String         @db.Text
+  coreProductOrService String         @db.Text
+  description          String         @db.Text
+  disabilityInclusion  String         @db.VarChar(100)
+  registrationStatus   String         @db.VarChar(100)
+  revenueBracket       String         @db.VarChar(100)
+  yearsInOperation     Int
+  createdAt            DateTime       @default(now())
+  updatedAt            DateTime       @updatedAt
 
-  // Relation field
-  socialMedias           SocialMedia[]
+  // Relations
+  sector               Sector?        @relation(fields: [sectorId], references: [id])
+  sectorId             Int?
+  socialMedias         SocialMedia[]
+  workforce            Workforce?
+  contact              Contact[]
+}
+
+model Sector {
+  id       Int        @id @default(autoincrement())
+  name     String     @unique
+  businesses Business[]
 }
 
 model SocialMedia {
   id         Int      @id @default(autoincrement())
-  name       String?  @db.VarChar(100)
-  link       String?  @db.Text
-  businessId Int
-
-  // Relation field
+  name       String   @db.VarChar(100)
+  link       String   @db.Text
   business   Business @relation(fields: [businessId], references: [id])
+  businessId Int
 }
 
+model Workforce {
+  id         Int      @id @default(autoincrement())
+  male       Int
+  female     Int
+  total      Int
+  business   Business @relation(fields: [businessId], references: [id])
+  businessId Int @unique
+}
+
+model Contact {
+  id         Int      @id @default(autoincrement())
+  type       String
+  value      String
+  business   Business @relation(fields: [businessId], references: [id])
+  businessId Int 
+}
