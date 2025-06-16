@@ -4,6 +4,7 @@ import OurValues from "@/components/landingpage/OurValues";
 import VisionSection from "@/components/landingpage/VisionSection";
 // import { motion } from "framer-motion";
 import * as motion from "motion/react-client";
+import styles from "@/style";
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -12,7 +13,7 @@ const sectionVariants = {
 
 const VissionMissionPage = () => {
   return (
-    <div className="bg-gray-50 py-5 relative overflow-x-hidden">
+    <div className="bg-gray-50 py-5 relative overflow-x-hidden lg:mt-[100px]">
       {/* Yellow Arc */}
       <svg
         viewBox="0 0 467.23 585.48"
@@ -27,7 +28,7 @@ const VissionMissionPage = () => {
       <div className="lg:h-[70vh] px-4 lg:px-8 grid grid-cols-1 lg:grid-cols-2 ">
         <div className="block lg:flex flex-col justify-end py-10 lg:pb-20">
           <h1
-            className={`text-5xl lg:text-8xl font-bold text-black mt-[30%] lg:mt-0 lg:mb-10 uppercase`}
+            className={`${styles.heading1} font-bold text-black mt-[30%] lg:mt-0 lg:mb-10 uppercase`}
           >
             Vision, mission and values
           </h1>

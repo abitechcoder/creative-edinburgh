@@ -3,7 +3,7 @@ const styles = {
 
   heroHeading: "text-4xl lg:text-7xl font-bold leading-[40px] lg:leading-[70px]",
 
-  heading1: "lg:text-7xl text-4xl font-bold",
+  heading1: "lg:text-6xl text-3xl font-bold",
 
   heading2: "font-manrope text-2xl font-bold",
 

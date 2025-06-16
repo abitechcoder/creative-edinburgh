@@ -236,7 +236,7 @@ const Navbar = () => {
       />
 
       <nav
-        className={`h-[120px] flex items-center px-4 lg:px-9 fixed top-0 left-0 right-0 ${
+        className={`h-[120px] flex items-center px-4 lg:px-9 fixed top-0 left-0 right-0 shadow-lg ${
           isScrolled ? "bg-white" : "bg-transparent"
         } z-20`}
       >

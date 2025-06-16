@@ -49,6 +49,8 @@ const CodeOfConduct = () => {
         <Image
           src="/create-connection.jpg"
           alt="Code of Conduct"
+          width={100}
+          height={100}
           className="rounded-s-2xl w-full h-auto"
         />
       </div>

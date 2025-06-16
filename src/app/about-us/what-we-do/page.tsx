@@ -8,7 +8,7 @@ import React from "react";
 
 export default function WhatWeDoPage() {
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-hidden mt-[100px]">
       <svg
         viewBox="0 0 467.23 585.48"
         preserveAspectRatio="xMinYMin meet"

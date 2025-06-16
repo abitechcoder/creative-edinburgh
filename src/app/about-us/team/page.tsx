@@ -8,11 +8,11 @@ import React from "react";
 
 export default function Team() {
   return (
-    <div>
+    <div className="lg:mt-[100px]">
       <section className="px-6 py-16 bg-gray-50 min-h-screen lg:h-screen grid grid-cols-1 lg:grid-cols-2">
         <div className="pt-[100px] lg:pt-0 lg:flex flex-col justify-center">
           <h1
-            className={`text-5xl lg:text-7xl font-extrabold text-black mb-10 uppercase  `}
+            className={`${styles.heading1} font-extrabold text-black mb-10 uppercase  `}
           >
             PEOPLE BEHIND <br /> Creative Hub Africa
           </h1>
