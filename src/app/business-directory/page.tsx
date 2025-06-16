@@ -11,11 +11,10 @@ import { BusinessType, SectorType } from "@/lib/types";
 import Analysis from "@/components/landingpage/Analysis";
 import styles from "@/style";
 
-
 const MembersLibrary = () => {
-  const [filteredBusinesses, setFilteredBusinesses] = useState<
-    BusinessType[]
-  >([]);
+  const [filteredBusinesses, setFilteredBusinesses] = useState<BusinessType[]>(
+    []
+  );
   const [selectedSector, setSelectedSector] = useState<number>(0);
   const { sectors, isLoadingSect } = useSectors();
   const { businesses, isLoadingBiz } = useBusinesses();
@@ -40,18 +39,24 @@ const MembersLibrary = () => {
   };
 
   if (isLoadingSect || isLoadingBiz) {
-    return (<div className="h-screen grid place-items-center">
-      <div className="flex flex-col justify-center items-center p-4">
-        <Image src={"/loading.gif"} width={50} height={50} alt="Loading animation" />
-        <p>Loading data ...</p>
+    return (
+      <div className="h-screen grid place-items-center">
+        <div className="flex flex-col justify-center items-center p-4">
+          <Image
+            src={"/loading.gif"}
+            width={50}
+            height={50}
+            alt="Loading animation"
+          />
+          <p>Loading data ...</p>
+        </div>
       </div>
-    </div>);
+    );
   }
 
   const visibleBusinesses = filteredBusinesses.filter((business) =>
     business.name.toLowerCase().includes(filter.toLowerCase())
   );
-
 
   return (
     <div className="pb-8 px-8 mt-[140px]">
@@ -60,12 +65,12 @@ const MembersLibrary = () => {
           <h2
             className={`${styles.heading1} text-black mb-6 lg:mb-10 mt-16 uppercase`}
           >
-            Creative Hub Africa Bizness Directory
+            Creative Hub Africa Members Directory
           </h2>
           <p
             className={`${styles.paragraph} text-gray-700 mb-5 font-medium leading-relaxed text-xl`}
           >
-            Explore the Creative Hub Bizness Directory! You can search by sector area and
+            Explore our Members Directory! You can search by sector area and
             connect with the city’s makers, thinkers and innovators.
           </p>
           <p
@@ -79,7 +84,7 @@ const MembersLibrary = () => {
           <div className="absolute top-[50%] left-20 w-[120px] h-[120px] bg-yellow-400 rounded-full hidden lg:block"></div>
         </div>
       </section>
-      <Analysis/>
+      <Analysis />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-10">
         {sectors?.map((sector: SectorType) => (
           <Link
@@ -128,10 +133,9 @@ const MembersLibrary = () => {
                 <div
                   className={`bg-secondary grid text-white place-items-center rounded-lg text-sm font-bold uppercase lg:h-[40px] lg:w-[250px] p-2 lg:absolute -top-[20px] left-8 z-10`}
                 >
-                  {
-                    sectors.find((sector: SectorType) => sector.id === business.sector)?.title ||
-                    "Unknown Sector"
-                  }
+                  {sectors.find(
+                    (sector: SectorType) => sector.id === business.sector
+                  )?.title || "Unknown Sector"}
                 </div>
                 <Image
                   src={business.logo === "" ? Logo : business.logo}
