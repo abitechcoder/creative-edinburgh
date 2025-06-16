@@ -1086,7 +1086,7 @@ export const NavLinks = [
   },
   {
     id: 2,
-    title: "Business Directory",
+    title: "Bizness Directory",
     url: "/business-directory",
     links: [],
   },
