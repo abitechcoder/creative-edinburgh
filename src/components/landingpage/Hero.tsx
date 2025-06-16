@@ -20,7 +20,7 @@ const Hero = () => {
         {/* Left Column */}
         <div className="lg:col-span-3 flex flex-col items-start justify-center px-4 lg:px-8 gap-6">
           <h1 className={`${styles.heroHeading} mt-[120px] lg:mt-[120px]`}>
-            Welcome to Sierra Leone's Business Markit -{" "}
+            Welcome to Sierra Leone's Bizness Markit -{" "}
             <span className="text-primary">Connect,</span>{" "}
             <span className="text-secondary">Invest,</span>{" "}
             <span className="text-tertiary">Thrive</span>
