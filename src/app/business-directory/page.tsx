@@ -60,12 +60,12 @@ const MembersLibrary = () => {
           <h2
             className={`${styles.heading1} text-black mb-6 lg:mb-10 mt-16 uppercase`}
           >
-            Creative Hub Africa Members Directory
+            Creative Hub Africa Bizness Directory
           </h2>
           <p
             className={`${styles.paragraph} text-gray-700 mb-5 font-medium leading-relaxed text-xl`}
           >
-            Explore our Members Directory! You can search by sector area and
+            Explore the Creative Hub Bizness Directory! You can search by sector area and
             connect with the city’s makers, thinkers and innovators.
           </p>
           <p
