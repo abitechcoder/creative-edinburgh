@@ -2,14 +2,18 @@ import FormModal from "@/components/FormModal";
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
-import { Axios } from "@/lib/Axios";
+
 import { role } from "@/lib/data";
 
 import Image from "next/image";
 import Link from "next/link";
 import { Logo } from "../../../../../public";
-import { Business } from "@prisma/client";
+import { Business, Contact, Prisma, Sector } from "@prisma/client";
 import prisma from "@/lib/prisma";
+import { ITEM_PER_PAGE } from "@/lib/settings";
+import { p } from "framer-motion/client";
+
+type Directories = Business & { contact: Contact[] } & { sector: Sector };
 
 const columns = [
   {
@@ -42,7 +46,7 @@ const columns = [
     accessor: "action",
   },
 ];
-const renderRow = (item: Business) => (
+const renderRow = (item: Directories) => (
   <tr
     key={item.id}
     className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-PurpleDeepLight"
@@ -62,13 +66,17 @@ const renderRow = (item: Business) => (
     </td>
     {/* <td className="hidden md:table-cell">{item.genderOfOwner}</td> */}
     {/* <td className="hidden md:table-cell">{item.subjects.join(",")}</td> */}
-    <td className="hidden md:table-cell">{item.sectorId}</td>
-    {/* <td className="hidden md:table-cell">{item.contactDetails}</td> */}
+    <td className="hidden md:table-cell">{item?.sector?.name}</td>
+    <td className="hidden md:table-cell">
+      {item?.contact?.find((c: any) => c.type === "phone")?.value}
+      <br></br>
+      {item?.contact?.find((c: any) => c.type === "email")?.value}
+    </td>
     <td className="hidden md:table-cell">{item.businessAddress}</td>
     <td className="hidden md:table-cell">{item.revenueBracket}</td>
     <td>
       <div className="flex items-center gap-2">
-        <Link href={`/list/teachers/${item.id}`}>
+        <Link href={`/app/directories/${item.id}`}>
           <button className="w-7 h-7 flex items-center justify-center rounded-full bg-SkyBlue">
             <Image src="/view.png" alt="" width={16} height={16} />
           </button>
@@ -84,8 +92,48 @@ const renderRow = (item: Business) => (
   </tr>
 );
 
-const TeacherListPage = async () => {
-  const data = await prisma.business.findMany();
+const TeacherListPage = async ({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | undefined };
+}) => {
+  const { page, ...queryParams } = searchParams;
+
+  const p = page ? parseInt(page) : 1;
+
+  // URL PARAMS CONDITION
+
+  const query: Prisma.BusinessWhereInput = {};
+
+  if (queryParams) {
+    for (const [key, value] of Object.entries(queryParams)) {
+      if (value !== undefined) {
+        switch (key) {
+          case "sectorId":
+            query.sectorId = parseInt(value);
+            break;
+          case "search":
+            query.name = { contains: value };
+            break;
+          default:
+            break;
+        }
+      }
+    }
+  }
+
+  const [data, count] = await prisma.$transaction([
+    prisma.business.findMany({
+      where: query,
+      include: {
+        contact: true,
+        sector: true,
+      },
+      take: ITEM_PER_PAGE,
+      skip: ITEM_PER_PAGE * (p - 1),
+    }),
+    prisma.business.count({ where: query }),
+  ]);
 
   return (
     <div className="bg-white p-4 rounded-md flex-1 m-4 mt-0">
@@ -113,7 +161,7 @@ const TeacherListPage = async () => {
       {/* LIST */}
       <Table columns={columns} renderRow={renderRow} data={data} />
       {/* PAGINATION */}
-      <Pagination />
+      <Pagination page={p} count={count} />
     </div>
   );
 };
