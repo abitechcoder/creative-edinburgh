@@ -9,57 +9,59 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum UserSex {
+  Male
+  Female
+}
+
 model Business {
-  id                   Int            @id @default(autoincrement())
-  name                 String         @db.VarChar(255)
-  logo                 String         @db.VarChar(255)
+  id                   Int           @id @default(autoincrement())
+  name                 String        @db.VarChar(255)
+  logo                 String?       @db.VarChar(255)
+  userId               String?       @db.VarChar(255)
   ageOfOwner           Int?
-  genderOfOwner        String         @db.VarChar(50)
-  businessAddress      String         @db.Text
-  coreProductOrService String         @db.Text
-  description          String         @db.Text
-  disabilityInclusion  String         @db.VarChar(100)
-  registrationStatus   String         @db.VarChar(100)
-  revenueBracket       String         @db.VarChar(100)
-  yearsInOperation     Int
-  createdAt            DateTime       @default(now())
-  updatedAt            DateTime       @updatedAt
+  genderOfOwner        UserSex
+  email                String?       @db.VarChar(255)
+  phone                String?       @db.VarChar(255)
+  businessAddress      String        @db.Text
+  coreProductOrService String        @db.Text
+  description          String        @db.Text
+  disabilityInclusion  String?       @db.VarChar(100)
+  registrationStatus   String?       @db.VarChar(100)
+  revenueBracket       String?       @db.VarChar(100)
+  yearsInOperation     DateTime?     @default(now())
+  createdAt            DateTime      @default(now())
+  updatedAt            DateTime      @updatedAt
 
   // Relations
-  sector               Sector?        @relation(fields: [sectorId], references: [id])
+  sector               Sector?       @relation(fields: [sectorId], references: [id])
   sectorId             Int?
-  socialMedias         SocialMedia[]
   workforce            Workforce?
-  contact              Contact[]
+  socialMedia          SocialMedia?
 }
 
 model Sector {
-  id       Int        @id @default(autoincrement())
-  name     String     @unique
+  id         Int        @id @default(autoincrement())
+  name       String     @unique
   businesses Business[]
 }
 
-model SocialMedia {
-  id         Int      @id @default(autoincrement())
-  name       String   @db.VarChar(100)
-  link       String   @db.Text
-  business   Business @relation(fields: [businessId], references: [id])
-  businessId Int
-}
-
 model Workforce {
-  id         Int      @id @default(autoincrement())
+  id         Int        @id @default(autoincrement())
   male       Int
   female     Int
   total      Int
-  business   Business @relation(fields: [businessId], references: [id])
-  businessId Int @unique
+  business   Business   @relation(fields: [businessId], references: [id])
+  businessId Int        @unique
 }
 
-model Contact {
-  id         Int      @id @default(autoincrement())
-  type       String
-  value      String
-  business   Business @relation(fields: [businessId], references: [id])
-  businessId Int 
+model SocialMedia {
+  id         Int        @id @default(autoincrement())
+  facebook   String?    @db.Text
+  twitter    String?    @db.Text
+  instagram  String?    @db.Text
+  tiktok     String?    @db.Text
+  youtube    String?    @db.Text
+  business   Business   @relation(fields: [businessId], references: [id])
+  businessId Int        @unique
 }

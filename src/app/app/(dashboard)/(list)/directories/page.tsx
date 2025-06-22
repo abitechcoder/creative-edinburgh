@@ -7,13 +7,14 @@ import { role } from "@/lib/data";
 
 import Image from "next/image";
 import Link from "next/link";
-import { Logo } from "../../../../../public";
-import { Business, Contact, Prisma, Sector } from "@prisma/client";
+
+import { Business, Prisma, Sector } from "@prisma/client";
 import prisma from "@/lib/prisma";
 import { ITEM_PER_PAGE } from "@/lib/settings";
 import { p } from "framer-motion/client";
+import FormContainer from "@/components/FormContainer";
 
-type Directories = Business & { contact: Contact[] } & { sector: Sector };
+type Directories = Business & { sector: Sector };
 
 const columns = [
   {
@@ -53,7 +54,7 @@ const renderRow = (item: Directories) => (
   >
     <td className="flex items-center gap-4 p-4">
       <Image
-        src={Logo}
+        src={item.logo || "/logo.png"}
         alt=""
         width={40}
         height={40}
@@ -68,9 +69,9 @@ const renderRow = (item: Directories) => (
     {/* <td className="hidden md:table-cell">{item.subjects.join(",")}</td> */}
     <td className="hidden md:table-cell">{item?.sector?.name}</td>
     <td className="hidden md:table-cell">
-      {item?.contact?.find((c: any) => c.type === "phone")?.value}
+      {item?.email}
       <br></br>
-      {item?.contact?.find((c: any) => c.type === "email")?.value}
+      {item?.email}
     </td>
     <td className="hidden md:table-cell">{item.businessAddress}</td>
     <td className="hidden md:table-cell">{item.revenueBracket}</td>
@@ -85,7 +86,7 @@ const renderRow = (item: Directories) => (
           // <button className="w-7 h-7 flex items-center justify-center rounded-full bg-PurpleDeep">
           //   <Image src="/delete.png" alt="" width={16} height={16} />
           // </button>
-          <FormModal table="teacher" type="delete" id={item.id} />
+          <FormModal table="directory" type="delete" id={item.id} />
         )}
       </div>
     </td>
@@ -126,7 +127,6 @@ const TeacherListPage = async ({
     prisma.business.findMany({
       where: query,
       include: {
-        contact: true,
         sector: true,
       },
       take: ITEM_PER_PAGE,
@@ -153,7 +153,7 @@ const TeacherListPage = async ({
               // <button className="w-8 h-8 flex items-center justify-center rounded-full bg-YellowDeep">
               //   <Image src="/plus.png" alt="" width={14} height={14} />
               // </button>
-              <FormModal table="teacher" type="create" />
+              <FormContainer table="directory" type="create" />
             )}
           </div>
         </div>

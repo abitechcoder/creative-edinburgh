@@ -4,6 +4,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import ClientLayout from "./LandingPageLayout";
 import { ClerkProvider } from "@clerk/nextjs";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -25,6 +27,7 @@ export default function RootLayout({
         </head>
         <body className={inter.className}>
           <ClientLayout>{children}</ClientLayout>
+          <ToastContainer position="bottom-right" theme="dark" />
         </body>
       </html>
     </ClerkProvider>

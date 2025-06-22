@@ -5,61 +5,70 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import InputField from "../InputField";
 import Image from "next/image";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { useFormState } from "react-dom";
+import { createDirectory, updateDirectory } from "@/lib/actions";
+import { directorySchema } from "@/lib/formValidationSchemas";
+import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
 
-const schema = z.object({
-  username: z
-    .string()
-    .min(3, { message: "Username must be at least 3 characters long!" })
-    .max(20, { message: "Username must be at most 20 characters long!" }),
-  email: z.string().email({ message: "Invalid email address!" }),
-  password: z
-    .string()
-    .min(8, { message: "Password must be at least 8 characters long!" }),
-  firstName: z.string().min(1, { message: "First name is required!" }),
-  lastName: z.string().min(1, { message: "Last name is required!" }),
-  phone: z.string().min(1, { message: "Phone is required!" }),
-  address: z.string().min(1, { message: "Address is required!" }),
-  bloodType: z.string().min(1, { message: "Blood Type is required!" }),
-  birthday: z.date({ message: "Birthday is required!" }),
-  sex: z.enum(["male", "female"], { message: "Sex is required!" }),
-  img: z.instanceof(File, { message: "Image is required" }),
-});
+type Inputs = z.infer<typeof directorySchema>;
 
-type Inputs = z.infer<typeof schema>;
-
-const TeacherForm = ({
+const DirectoryForm = ({
   type,
   data,
+  setOpen,
+  relatedData,
 }: {
   type: "create" | "update";
   data?: any;
+  setOpen: Dispatch<SetStateAction<boolean>>;
+  relatedData?: any;
 }) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<Inputs>({
-    resolver: zodResolver(schema),
+    resolver: zodResolver(directorySchema),
   });
+
+  const [img, setImg] = useState<any>();
+
+  const [state, formAction] = useFormState(
+    type === "create" ? createDirectory : updateDirectory,
+    {
+      success: false,
+      error: false,
+    }
+  );
 
   const onSubmit = handleSubmit((data) => {
     console.log(data);
+    formAction({ ...data, img: img?.secure_url });
   });
 
+  const router = useRouter();
+
+  const { sectors } = relatedData;
+
+  useEffect(() => {
+    if (state.success) {
+      toast(`Directory has been ${type === "create" ? "created" : "updated"}!`);
+      setOpen(false);
+      router.refresh();
+    }
+  }, [state, router, type, setOpen]);
+
+  // const {} = relatedData;
+
   return (
-    <form className="flex flex-col gap-8" onSubmit={onSubmit}>
+    <form className="flex flex-col gap-5" onSubmit={onSubmit}>
       <h1 className="text-xl font-semibold">Add a new directory</h1>
       <span className="text-xs text-gray-400 font-medium">
         Authentication Information
       </span>
       <div className="flex justify-between flex-wrap gap-4">
-        <InputField
-          label="Username"
-          name="username"
-          defaultValue={data?.username}
-          register={register}
-          error={errors?.username}
-        />
         <InputField
           label="Email"
           name="email"
@@ -67,13 +76,21 @@ const TeacherForm = ({
           register={register}
           error={errors?.email}
         />
+
         <InputField
-          label="Password"
-          name="password"
-          type="password"
-          defaultValue={data?.password}
+          label="First Name"
+          name="firstName"
+          defaultValue={data?.firstName}
           register={register}
-          error={errors?.password}
+          error={errors?.firstName}
+        />
+
+        <InputField
+          label="Last Name"
+          name="lastName"
+          defaultValue={data?.lastName}
+          register={register}
+          error={errors?.lastName}
         />
       </div>
       <span className="text-xs text-gray-400 font-medium">
@@ -82,34 +99,35 @@ const TeacherForm = ({
       <div className="flex justify-between flex-wrap gap-4">
         <InputField
           label="Business Name"
-          name="firstName"
-          defaultValue={data?.firstName}
+          name="name"
+          defaultValue={data?.name}
           register={register}
-          error={errors.firstName}
+          error={errors.name}
         />
         <div className="flex flex-col gap-2 w-full md:w-1/4">
           <label className="text-xs text-gray-500">Sector</label>
+
           <select
             className="ring-[1.5px] ring-gray-300 p-2 rounded-md text-sm w-full"
-            {...register("sex")}
-            defaultValue={data?.sex}
+            {...register("secrtorId")}
+            defaultValue={data?.secrtorId}
           >
-            <option value="male">Tech</option>
-            <option value="female">Marketing</option>
+            {sectors.map(
+              (sector: { id: string; name: string; surname: string }) => (
+                <option value={sector.id} key={sector.id}>
+                  {sector.name}
+                </option>
+              )
+            )}
           </select>
-          {errors.sex?.message && (
+
+          {errors.secrtorId?.message && (
             <p className="text-xs text-red-400">
-              {errors.sex.message.toString()}
+              {errors.secrtorId.message.toString()}
             </p>
           )}
         </div>
-        <InputField
-          label="Phone"
-          name="phone"
-          defaultValue={data?.phone}
-          register={register}
-          error={errors.phone}
-        />
+
         <InputField
           label="Address"
           name="address"
@@ -117,29 +135,40 @@ const TeacherForm = ({
           register={register}
           error={errors.address}
         />
+
         <InputField
-          label="Business Description"
-          name="bloodType"
-          defaultValue={data?.bloodType}
+          label="Phone"
+          name="phone"
+          defaultValue={data?.phone}
           register={register}
-          error={errors.bloodType}
+          error={errors.phone}
         />
 
         <InputField
           label="Revenue"
-          name="bloodType"
-          defaultValue={data?.bloodType}
+          name="revenue"
+          defaultValue={data?.revenue}
           register={register}
-          error={errors.bloodType}
+          // error={errors.revenue}
         />
 
         <InputField
-          label="Year In Operation"
-          name="bloodType"
-          defaultValue={data?.bloodType}
+          label="Operating Since"
+          name="operatingSince"
+          defaultValue={data?.operatingSince}
           register={register}
-          error={errors.bloodType}
+          error={errors.operatingSince}
+          type="date"
         />
+
+        <InputField
+          label="Owner's Age"
+          name="ownerAge"
+          defaultValue={data?.ownerAge}
+          register={register}
+          error={errors.ownerAge}
+        />
+
         <div className="flex flex-col gap-2 w-full md:w-1/4">
           <label className="text-xs text-gray-500">Owner's Sex</label>
           <select
@@ -147,8 +176,8 @@ const TeacherForm = ({
             {...register("sex")}
             defaultValue={data?.sex}
           >
-            <option value="male">Male</option>
-            <option value="female">Female</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
           </select>
           {errors.sex?.message && (
             <p className="text-xs text-red-400">
@@ -156,7 +185,26 @@ const TeacherForm = ({
             </p>
           )}
         </div>
-        <div className="flex flex-col gap-2 w-full md:w-1/4 justify-center">
+
+        <InputField
+          fullWidth
+          label="Core Product Or Service"
+          name="coreProductOrService"
+          register={register}
+          as="textarea"
+          inputProps={{ rows: 1, placeholder: "core product..." }}
+          error={errors.coreProductOrService}
+        />
+        <InputField
+          fullWidth
+          label="Description"
+          name="description"
+          register={register}
+          as="textarea"
+          inputProps={{ rows: 3, placeholder: "Enter description..." }}
+          error={errors.description}
+        />
+        {/* <div className="flex flex-col gap-2 w-full md:w-1/4 justify-center">
           <label
             className="text-xs text-gray-500 flex items-center gap-2 cursor-pointer"
             htmlFor="img"
@@ -170,8 +218,13 @@ const TeacherForm = ({
               {errors.img.message.toString()}
             </p>
           )}
-        </div>
+        </div> */}
       </div>
+
+      {state.error && (
+        <span className="text-red-500">Something went wrong!</span>
+      )}
+
       <button className="bg-blue-400 text-white p-2 rounded-md">
         {type === "create" ? "Create" : "Update"}
       </button>
@@ -179,4 +232,4 @@ const TeacherForm = ({
   );
 };
 
-export default TeacherForm;
+export default DirectoryForm;

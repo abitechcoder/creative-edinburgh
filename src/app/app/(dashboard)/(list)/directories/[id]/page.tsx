@@ -1,15 +1,31 @@
 import Announcements from "@/components/Announcements";
 import BigCalendar from "@/components/BigCalender";
+import FormContainer from "@/components/FormContainer";
 import FormModal from "@/components/FormModal";
 import Performance from "@/components/Performance";
 import { role } from "@/lib/data";
 import prisma from "@/lib/prisma";
-import { Business, Contact, Sector, SocialMedia } from "@prisma/client";
+import { Business, Sector, SocialMedia } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Logo } from "../../../../../../public";
-import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa";
+
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaTiktok,
+  FaTwitter,
+  FaLinkedinIn,
+  FaYoutube,
+} from "react-icons/fa";
+
+const platforms = [
+  { key: "facebook", icon: FaFacebookF, className: "hover:text-blue-700" },
+  { key: "instagram", icon: FaInstagram, className: "hover:text-pink-500" },
+  { key: "tiktok", icon: FaTiktok, className: "hover:text-black" },
+  { key: "twitter", icon: FaTwitter, className: "hover:text-sky-500" },
+  { key: "youtube", icon: FaYoutube, className: "hover:text-red-600" },
+];
 
 const DirectoryDetailsPage = async ({
   params: { id },
@@ -17,14 +33,13 @@ const DirectoryDetailsPage = async ({
   params: { id: string };
 }) => {
   const business:
-    | (Business & { contact: Contact[] } & { sector: Sector } & {
+    | (Business & { sector: Sector } & {
         socialMedias: SocialMedia[];
       })
     | null = await prisma.business.findUnique({
     where: { id: Number(id) },
     include: {
-      contact: true,
-      socialMedias: true,
+      socialMedia: true,
       sector: { select: { name: true } },
     },
   });
@@ -43,7 +58,7 @@ const DirectoryDetailsPage = async ({
           <div className="bg-SkyBlue py-6 px-4 rounded-md flex-1 flex gap-4">
             <div className="w-1/3">
               <Image
-                src={business.logo || Logo}
+                src={business.logo || "/logo.png"}
                 alt=""
                 width={144}
                 height={144}
@@ -54,23 +69,10 @@ const DirectoryDetailsPage = async ({
               <div className="flex items-center gap-4">
                 <h1 className="text-xl font-semibold">{business.name}</h1>
                 {role === "admin" && (
-                  <FormModal
-                    table="teacher"
+                  <FormContainer
+                    table="directory"
                     type="update"
-                    data={{
-                      id: 1,
-                      username: "deanguerrero",
-                      email: "deanguerrero@gmail.com",
-                      password: "password",
-                      firstName: "Dean",
-                      lastName: "Guerrero",
-                      phone: "+1 234 567 89",
-                      address: "1234 Main St, Anytown, USA",
-                      bloodType: "A+",
-                      dateOfBirth: "2000-01-01",
-                      sex: "male",
-                      img: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=1200",
-                    }}
+                    data={business}
                   />
                 )}
               </div>
@@ -84,15 +86,15 @@ const DirectoryDetailsPage = async ({
                 </div>
                 <div className="w-full md:w-1/3 lg:w-full 2xl:w-1/3 flex items-center gap-2">
                   <Image src="/date.png" alt="" width={14} height={14} />
-                  <span>{business.yearsInOperation}</span>
+                  {/* <span>{business.yearsInOperation}</span> */}
                 </div>
                 <div className="w-full md:w-1/3 lg:w-full 2xl:w-1/3 flex items-center gap-2">
                   <Image src="/phone.png" alt="" width={14} height={14} />
-                  <span>{business.contact[0].value}</span>
+                  <span>{business?.phone}</span>
                 </div>
                 <div className="w-full md:w-1/3 lg:w-full 2xl:w-1/3 flex items-center gap-2">
                   <Image src="/mail.png" alt="" width={14} height={14} />
-                  <span>{business.contact[1].value}</span>
+                  <span>{business?.email}</span>
                 </div>
               </div>
             </div>
@@ -163,35 +165,38 @@ const DirectoryDetailsPage = async ({
         <div className="mt-4 bg-white rounded-md p-4 h-[800px]">
           <p className="text-md text-gray-500 my-3">{business.description}</p>
 
+          <div className="flex gap-6 items-center my-3">
+            <h3 className="font-black uppercase lg:text-xl text-lg text-secondary">
+              Social Media
+            </h3>
+
+            {role === "admin" && (
+              <FormContainer
+                table="socialmedia"
+                type="create"
+                data={business}
+              />
+            )}
+          </div>
           {business?.socialMedias && (
             <div className="mb-4">
-              <h3 className="font-black uppercase lg:text-xl text-lg text-secondary">
-                Social Media
-              </h3>
-
               <div className="flex gap-4 mt-2 lg:mt-4">
-                {["facebook", "instagram", "tiktok"].map((platform) => {
-                  const media = business.socialMedias.find(
-                    (sm) => sm.name.toLowerCase() === platform && sm.link
-                  );
+                {platforms.map(({ key, icon: Icon, className }) => {
+                  const url =
+                    business.socialMedias?.[
+                      key as keyof typeof business.socialMedias
+                    ];
 
-                  if (!media) return null;
-
-                  const Icon =
-                    platform === "facebook"
-                      ? FaFacebookF
-                      : platform === "instagram"
-                      ? FaInstagram
-                      : FaTiktok;
+                  if (!url) return null;
 
                   return (
                     <Link
-                      key={platform}
-                      href={media.link}
+                      key={key}
+                      href={url}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <Icon size={30} className="hover:text-blue-700" />
+                      <Icon size={30} className={className} />
                     </Link>
                   );
                 })}
