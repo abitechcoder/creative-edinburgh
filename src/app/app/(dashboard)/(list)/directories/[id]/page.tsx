@@ -1,11 +1,12 @@
 import Announcements from "@/components/Announcements";
 import BigCalendar from "@/components/BigCalender";
 import FormContainer from "@/components/FormContainer";
-import FormModal from "@/components/FormModal";
+
 import Performance from "@/components/Performance";
 import { role } from "@/lib/data";
 import prisma from "@/lib/prisma";
 import { Business, Sector, SocialMedia } from "@prisma/client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -15,7 +16,6 @@ import {
   FaInstagram,
   FaTiktok,
   FaTwitter,
-  FaLinkedinIn,
   FaYoutube,
 } from "react-icons/fa";
 
@@ -34,7 +34,7 @@ const DirectoryDetailsPage = async ({
 }) => {
   const business:
     | (Business & { sector: Sector } & {
-        socialMedias: SocialMedia[];
+        socialMedia: SocialMedia;
       })
     | null = await prisma.business.findUnique({
     where: { id: Number(id) },
@@ -47,6 +47,8 @@ const DirectoryDetailsPage = async ({
   if (!business) {
     return notFound();
   }
+
+  // console.log(business);
 
   return (
     <div className="flex-1 p-4 flex flex-col gap-4 xl:flex-row">
@@ -178,13 +180,13 @@ const DirectoryDetailsPage = async ({
               />
             )}
           </div>
-          {business?.socialMedias && (
+          {business?.socialMedia && (
             <div className="mb-4">
               <div className="flex gap-4 mt-2 lg:mt-4">
                 {platforms.map(({ key, icon: Icon, className }) => {
                   const url =
-                    business.socialMedias?.[
-                      key as keyof typeof business.socialMedias
+                    business.socialMedia?.[
+                      key as keyof typeof business.socialMedia
                     ];
 
                   if (!url) return null;
@@ -192,7 +194,7 @@ const DirectoryDetailsPage = async ({
                   return (
                     <Link
                       key={key}
-                      href={url}
+                      href={url + ""}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -217,7 +219,7 @@ const DirectoryDetailsPage = async ({
             <Link className="p-3 rounded-md bg-SkyBlueLight" href="/">
               {business.sector.name}
             </Link>
-            <Link className="p-3 rounded-md bg-PurpleDeepLight" href="/">
+            {/* <Link className="p-3 rounded-md bg-PurpleDeepLight" href="/">
               Teacher&apos;s Students
             </Link>
             <Link className="p-3 rounded-md bg-YellowLight" href="/">
@@ -228,7 +230,7 @@ const DirectoryDetailsPage = async ({
             </Link>
             <Link className="p-3 rounded-md bg-SkyBlueLight" href="/">
               Teacher&apos;s Assignments
-            </Link>
+            </Link> */}
           </div>
         </div>
         <Performance />

@@ -17,11 +17,13 @@ const SocialForm = ({
   data,
   setOpen,
   relatedData,
+  id,
 }: {
   type: "create" | "update";
   data?: any;
   setOpen: Dispatch<SetStateAction<boolean>>;
   relatedData?: any;
+  id: number;
 }) => {
   const {
     register,
@@ -37,8 +39,7 @@ const SocialForm = ({
   });
 
   const onSubmit = handleSubmit((data) => {
-    console.log(data, "data");
-    // formAction({ ...data });
+    formAction({ ...data });
   });
 
   const router = useRouter();
@@ -53,14 +54,14 @@ const SocialForm = ({
 
   return (
     <form className="flex flex-col gap-5" onSubmit={onSubmit}>
-      <h1 className="text-xl font-semibold">Social Media Manager</h1>
+      <h1 className="text-xl font-semibold">Social Media Manager for {id}</h1>
 
       <div className="flex justify-between flex-wrap gap-4">
         {data && (
           <InputField
             label="businessId"
             name="businessId"
-            defaultValue={data?.id}
+            defaultValue={data.id}
             register={register}
             hidden
           />
@@ -71,6 +72,7 @@ const SocialForm = ({
           name="facebook"
           register={register}
           as="textarea"
+          defaultValue={data?.socialMedia?.facebook}
           inputProps={{ rows: 1, placeholder: "" }}
         />
 
@@ -82,6 +84,7 @@ const SocialForm = ({
           as="textarea"
           inputProps={{ rows: 1, placeholder: "" }}
           error={errors.instagram}
+          defaultValue={data?.socialMedia?.instagram}
         />
 
         <InputField
@@ -92,6 +95,7 @@ const SocialForm = ({
           as="textarea"
           inputProps={{ rows: 1, placeholder: "" }}
           error={errors.twitter}
+          defaultValue={data?.socialMedia?.twitter}
         />
 
         <InputField
@@ -102,6 +106,7 @@ const SocialForm = ({
           as="textarea"
           inputProps={{ rows: 1, placeholder: "" }}
           error={errors.tiktok}
+          defaultValue={data?.socialMedia?.tiktok}
         />
       </div>
 

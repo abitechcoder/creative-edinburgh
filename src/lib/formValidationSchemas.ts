@@ -22,7 +22,7 @@ export const directorySchema = z.object({
 export type DirectorySchema = z.infer<typeof directorySchema>;
 
 export const socialSchema = z.object({
-  businessId: z.number().optional(),
+  businessId: z.string().optional(),
   facebook: z.string().optional(),
   twitter: z.string().optional(),
   instagram: z.string().optional(),

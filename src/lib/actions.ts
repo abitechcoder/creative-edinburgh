@@ -125,20 +125,20 @@ export const manageSocials = async (
 
     // Check if the record exists
     const existing = await prisma.socialMedia.findUnique({
-      where: { businessId: data.businessId },
+      where: { businessId: parseInt(data.businessId) },
     });
 
     if (existing) {
       // Update only provided fields
       await prisma.socialMedia.update({
-        where: { businessId: data.businessId },
+        where: { businessId: parseInt(data.businessId) },
         data: updateData,
       });
     } else {
       // Create new social media record
       await prisma.socialMedia.create({
         data: {
-          businessId: data.businessId,
+          businessId: parseInt(data.businessId),
           ...updateData,
         },
       });
