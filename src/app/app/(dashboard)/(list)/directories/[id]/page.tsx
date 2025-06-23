@@ -102,9 +102,9 @@ const DirectoryDetailsPage = async ({
             </div>
           </div>
           {/* SMALL CARDS */}
-          <div className="flex-1 flex gap-4 justify-between flex-wrap">
+          <div className="flex-1 flex gap-4 justify-between flex-wrap ">
             {/* CARD */}
-            <div className="bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[45%] 2xl:w-[48%]">
+            <div className="bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[45%] 2xl:w-[48%] ">
               <Image
                 src="/singleAttendance.png"
                 alt=""
@@ -214,11 +214,25 @@ const DirectoryDetailsPage = async ({
       {/* RIGHT */}
       <div className="w-full xl:w-1/3 flex flex-col gap-4">
         <div className="bg-white p-4 rounded-md">
-          <h1 className="text-xl font-semibold">Shortcuts</h1>
+          <h1 className="text-xl font-semibold">Actions</h1>
           <div className="mt-4 flex gap-4 flex-wrap text-xs text-gray-500">
-            <Link className="p-3 rounded-md bg-SkyBlueLight" href="/">
+            <Link
+              className="p-3 rounded-md bg-SkyBlueLight"
+              href={`/app/directories?sectorId=${business.sector.id}`}
+            >
               {business.sector.name}
             </Link>
+
+            <div className="">
+              {role === "admin" && (
+                <FormContainer
+                  table="workforce"
+                  type="create"
+                  data={business}
+                  text={"Workforce"}
+                />
+              )}
+            </div>
             {/* <Link className="p-3 rounded-md bg-PurpleDeepLight" href="/">
               Teacher&apos;s Students
             </Link>

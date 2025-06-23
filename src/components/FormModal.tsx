@@ -30,7 +30,8 @@ const forms: {
     setOpen: Dispatch<SetStateAction<boolean>>,
     type: "create" | "update",
     data?: any,
-    relatedData?: any
+    relatedData?: any,
+    text?: any
   ) => JSX.Element;
 } = {
   directory: (setOpen, type, data, relatedData) => (
@@ -58,6 +59,7 @@ const FormModal = ({
   data,
   id,
   relatedData,
+  text,
 }: FormContainerProps & { relatedData?: any }) => {
   const size = type === "create" ? "w-8 h-8" : "w-7 h-7";
   const bgColor =
@@ -106,12 +108,21 @@ const FormModal = ({
 
   return (
     <>
-      <button
-        className={`${size} flex items-center justify-center rounded-full ${bgColor}`}
-        onClick={() => setOpen(true)}
-      >
-        <Image src={`/${type}.png`} alt="" width={16} height={16} />
-      </button>
+      {text ? (
+        <button
+          className="p-3 rounded-md bg-SkyBlueLight"
+          onClick={() => setOpen(true)}
+        >
+          <p className=" bg-SkyBlueLight">{text}</p>
+        </button>
+      ) : (
+        <button
+          className={`${size} flex items-center justify-center rounded-full ${bgColor}`}
+          onClick={() => setOpen(true)}
+        >
+          <Image src={`/${type}.png`} alt="" width={16} height={16} />
+        </button>
+      )}
       {open && (
         <div className="w-screen h-screen absolute left-0 top-0 bg-black bg-opacity-60 z-50 flex items-center justify-center">
           <div className="bg-white p-4 rounded-md relative w-[90%] md:w-[70%] lg:w-[60%] xl:w-[50%] 2xl:w-[40%]">

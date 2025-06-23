@@ -12,7 +12,7 @@ import { SocialSchema, socialSchema } from "@/lib/formValidationSchemas";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 
-const SocialForm = ({
+const WorkForceForm = ({
   type,
   data,
   setOpen,
@@ -54,7 +54,7 @@ const SocialForm = ({
 
   return (
     <form className="flex flex-col gap-5" onSubmit={onSubmit}>
-      <h1 className="text-xl font-semibold">Social Media Manager</h1>
+      <h1 className="text-xl font-semibold">Manage Workforce</h1>
 
       <div className="flex justify-between flex-wrap gap-4">
         {data && (
@@ -68,7 +68,7 @@ const SocialForm = ({
         )}
         <InputField
           fullWidth
-          label="Facebook"
+          label="Female"
           name="facebook"
           register={register}
           as="textarea"
@@ -78,35 +78,13 @@ const SocialForm = ({
 
         <InputField
           fullWidth
-          label="Instagram"
+          label="Male"
           name="instagram"
           register={register}
           as="textarea"
           inputProps={{ rows: 1, placeholder: "" }}
           error={errors.instagram}
           defaultValue={data?.socialMedia?.instagram}
-        />
-
-        <InputField
-          fullWidth
-          label="X"
-          name="twitter"
-          register={register}
-          as="textarea"
-          inputProps={{ rows: 1, placeholder: "" }}
-          error={errors.twitter}
-          defaultValue={data?.socialMedia?.twitter}
-        />
-
-        <InputField
-          fullWidth
-          label="Tiktok"
-          name="tiktok"
-          register={register}
-          as="textarea"
-          inputProps={{ rows: 1, placeholder: "" }}
-          error={errors.tiktok}
-          defaultValue={data?.socialMedia?.tiktok}
         />
       </div>
 
@@ -121,4 +99,4 @@ const SocialForm = ({
   );
 };
 
-export default SocialForm;
+export default WorkForceForm;
