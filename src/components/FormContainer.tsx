@@ -12,7 +12,6 @@ export type FormContainerProps = {
     | "class"
     | "lesson"
     | "exam"
-    | "result"
     | "attendance"
     | "event"
     | "announcement";

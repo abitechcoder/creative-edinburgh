@@ -33,16 +33,16 @@ const DirectoryDetailsPage = async ({
   params: { id: string };
 }) => {
   const business:
-    | (Business & { sector: Sector } & {
-        socialMedia: SocialMedia;
-      } & {
-        workforce: Workforce;
+    | (Business & {
+        sector: Sector | null;
+        socialMedia: SocialMedia | null;
+        workforce: Workforce | null;
       })
     | null = await prisma.business.findUnique({
     where: { id: Number(id) },
     include: {
+      sector: { select: { id: true, name: true } }, // ✅ Fix applied here
       socialMedia: true,
-      sector: { select: { name: true } },
       workforce: true,
     },
   });
@@ -116,7 +116,7 @@ const DirectoryDetailsPage = async ({
               <div className="">
                 <span className="text-sm text-gray-400">Sector</span>
                 <h1 className="text-sm font-semibold">
-                  {business.sector.name}
+                  {business?.sector?.name}
                 </h1>
               </div>
             </div>
@@ -227,9 +227,9 @@ const DirectoryDetailsPage = async ({
           <div className="mt-4 flex gap-4 flex-wrap text-xs text-gray-500">
             <Link
               className="p-3 rounded-md bg-SkyBlueLight"
-              href={`/app/directories?sectorId=${business.sector.id}`}
+              href={`/app/directories?sectorId=${business?.sector?.id}`}
             >
-              {business.sector.name}
+              {business?.sector?.name}
             </Link>
 
             <div className="">

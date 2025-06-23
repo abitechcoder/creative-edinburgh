@@ -55,8 +55,8 @@ const ParentListPage = () => {
         <div className="flex items-center gap-2">
           {role === "admin" && (
             <>
-              <FormModal table="parent" type="update" data={item} />
-              <FormModal table="parent" type="delete" id={item.id} />
+              {/* <FormModal table="parent" type="update" data={item} /> */}
+              {/* <FormModal table="parent" type="delete" id={item.id} /> */}
             </>
           )}
         </div>
@@ -85,7 +85,7 @@ const ParentListPage = () => {
       {/* LIST */}
       <Table columns={columns} renderRow={renderRow} data={parentsData} />
       {/* PAGINATION */}
-      <Pagination />
+      {/* <Pagination /> */}
     </div>
   );
 };
