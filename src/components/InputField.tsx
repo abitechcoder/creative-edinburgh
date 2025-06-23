@@ -31,7 +31,9 @@ const InputField = ({
       className={
         hidden
           ? "hidden"
-          : `flex flex-col gap-2 ${fullWidth ? "w-full" : "w-full md:w-1/4"}`
+          : `flex flex-col gap-2 ${
+              fullWidth ? "w-full" : "w-full md:w-1/4 lg:w-4/3"
+            }`
       }
     >
       <label className="text-xs text-gray-500">{label}</label>

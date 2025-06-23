@@ -31,3 +31,11 @@ export const socialSchema = z.object({
 });
 
 export type SocialSchema = z.infer<typeof socialSchema>;
+
+export const workForceSchema = z.object({
+  businessId: z.union([z.string(), z.number()]),
+  male: z.coerce.number().min(0, "Male count must be at least 0"),
+  female: z.coerce.number().min(0, "Female count must be at least 0"),
+});
+
+export type WorkForceSchemaSchema = z.infer<typeof workForceSchema>;

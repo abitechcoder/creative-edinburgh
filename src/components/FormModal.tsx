@@ -23,6 +23,10 @@ const SocialForm = dynamic(() => import("./forms/SocialForm"), {
   loading: () => <h1>Loading...</h1>,
 });
 
+const WorkForceForm = dynamic(() => import("./forms/WorkForceForm"), {
+  loading: () => <h1>Loading...</h1>,
+});
+
 // TODO: OTHER FORMS
 
 const forms: {
@@ -45,6 +49,15 @@ const forms: {
 
   socialmedia: (setOpen, type, data, relatedData) => (
     <SocialForm
+      type={type}
+      data={data}
+      setOpen={setOpen}
+      relatedData={relatedData}
+    />
+  ),
+
+  workforce: (setOpen, type, data, relatedData) => (
+    <WorkForceForm
       type={type}
       data={data}
       setOpen={setOpen}

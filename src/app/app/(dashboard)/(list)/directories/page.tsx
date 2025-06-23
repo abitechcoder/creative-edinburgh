@@ -153,7 +153,7 @@ const TeacherListPage = async ({
               // <button className="w-8 h-8 flex items-center justify-center rounded-full bg-YellowDeep">
               //   <Image src="/plus.png" alt="" width={14} height={14} />
               // </button>
-              <FormContainer table="socialmedia" type="create" />
+              <FormContainer table="directory" type="create" />
             )}
           </div>
         </div>

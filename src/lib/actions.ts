@@ -1,5 +1,9 @@
 "use server";
-import { DirectorySchema, SocialSchema } from "./formValidationSchemas";
+import {
+  DirectorySchema,
+  SocialSchema,
+  WorkForceSchemaSchema,
+} from "./formValidationSchemas";
 import prisma from "./prisma";
 import { clerkClient } from "@clerk/nextjs/server";
 
@@ -147,6 +151,45 @@ export const manageSocials = async (
     return { success: true, error: false };
   } catch (err) {
     console.error("createOrUpdateSocialMedia error:", err);
+    return { success: false, error: true };
+  }
+};
+
+// manage workforce
+
+export const manageWorkforce = async (
+  currentState: CurrentState,
+  data: WorkForceSchemaSchema
+) => {
+  try {
+    const businessId = parseInt(data.businessId as string);
+
+    if (isNaN(businessId)) {
+      throw new Error("Invalid businessId");
+    }
+
+    const male = data.male ?? 0;
+    const female = data.female ?? 0;
+    const total = male + female;
+
+    const existing = await prisma.workforce.findUnique({
+      where: { businessId },
+    });
+
+    if (existing) {
+      await prisma.workforce.update({
+        where: { businessId },
+        data: { male, female, total },
+      });
+    } else {
+      await prisma.workforce.create({
+        data: { businessId, male, female, total },
+      });
+    }
+
+    return { success: true, error: false };
+  } catch (err) {
+    console.error("manageWorkforce error:", err);
     return { success: false, error: true };
   }
 };

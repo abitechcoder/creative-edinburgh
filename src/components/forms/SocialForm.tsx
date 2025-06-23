@@ -17,13 +17,11 @@ const SocialForm = ({
   data,
   setOpen,
   relatedData,
-  id,
 }: {
   type: "create" | "update";
   data?: any;
   setOpen: Dispatch<SetStateAction<boolean>>;
   relatedData?: any;
-  id: number;
 }) => {
   const {
     register,

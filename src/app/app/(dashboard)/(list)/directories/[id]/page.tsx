@@ -5,7 +5,7 @@ import FormContainer from "@/components/FormContainer";
 import Performance from "@/components/Performance";
 import { role } from "@/lib/data";
 import prisma from "@/lib/prisma";
-import { Business, Sector, SocialMedia } from "@prisma/client";
+import { Business, Sector, SocialMedia, Workforce } from "@prisma/client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -35,21 +35,22 @@ const DirectoryDetailsPage = async ({
   const business:
     | (Business & { sector: Sector } & {
         socialMedia: SocialMedia;
+      } & {
+        workforce: Workforce;
       })
     | null = await prisma.business.findUnique({
     where: { id: Number(id) },
     include: {
       socialMedia: true,
       sector: { select: { name: true } },
+      workforce: true,
     },
   });
 
   if (!business) {
     return notFound();
   }
-
-  // console.log(business);
-
+  console.log(business);
   return (
     <div className="flex-1 p-4 flex flex-col gap-4 xl:flex-row">
       {/* LEFT */}
@@ -104,7 +105,7 @@ const DirectoryDetailsPage = async ({
           {/* SMALL CARDS */}
           <div className="flex-1 flex gap-4 justify-between flex-wrap ">
             {/* CARD */}
-            <div className="bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[45%] 2xl:w-[48%] ">
+            <div className="bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[46%] 2xl:w-[48%] ">
               <Image
                 src="/singleAttendance.png"
                 alt=""
@@ -114,13 +115,13 @@ const DirectoryDetailsPage = async ({
               />
               <div className="">
                 <span className="text-sm text-gray-400">Sector</span>
-                <h1 className="text-lg font-semibold">
+                <h1 className="text-sm font-semibold">
                   {business.sector.name}
                 </h1>
               </div>
             </div>
             {/* CARD */}
-            <div className="bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[45%] 2xl:w-[48%]">
+            <div className="bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[46%] 2xl:w-[48%]">
               <Image
                 src="/singleBranch.png"
                 alt=""
@@ -130,11 +131,13 @@ const DirectoryDetailsPage = async ({
               />
               <div className="">
                 <span className="text-sm text-gray-400">Employees</span>
-                <h1 className="text-xl font-semibold">20</h1>
+                <h1 className="text-xl font-semibold">
+                  {business?.workforce?.total ? business?.workforce?.total : 0}
+                </h1>
               </div>
             </div>
             {/* CARD */}
-            <div className="bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[45%] 2xl:w-[48%]">
+            <div className="bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[46%] 2xl:w-[48%]">
               <Image
                 src="/singleLesson.png"
                 alt=""
@@ -144,11 +147,15 @@ const DirectoryDetailsPage = async ({
               />
               <div className="">
                 <span className="text-sm text-gray-400">Female</span>
-                <h1 className="text-xl font-semibold">12</h1>
+                <h1 className="text-xl font-semibold">
+                  {business?.workforce?.female
+                    ? business?.workforce?.female
+                    : 0}
+                </h1>
               </div>
             </div>
             {/* CARD */}
-            <div className="bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[45%] 2xl:w-[48%]">
+            <div className="bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[46%] 2xl:w-[48%]">
               <Image
                 src="/singleClass.png"
                 alt=""
@@ -158,7 +165,9 @@ const DirectoryDetailsPage = async ({
               />
               <div className="">
                 <span className="text-sm text-gray-400">Male</span>
-                <h1 className="text-xl font-semibold">8</h1>
+                <h1 className="text-xl font-semibold">
+                  {business?.workforce?.male ? business?.workforce?.male : 0}
+                </h1>
               </div>
             </div>
           </div>

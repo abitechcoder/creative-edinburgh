@@ -2,13 +2,17 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
 import InputField from "../InputField";
 
 import { Dispatch, SetStateAction, useEffect } from "react";
 import { useFormState } from "react-dom";
-import { manageSocials } from "@/lib/actions";
-import { SocialSchema, socialSchema } from "@/lib/formValidationSchemas";
+import { manageSocials, manageWorkforce } from "@/lib/actions";
+import {
+  SocialSchema,
+  socialSchema,
+  workForceSchema,
+  WorkForceSchemaSchema,
+} from "@/lib/formValidationSchemas";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 
@@ -17,23 +21,21 @@ const WorkForceForm = ({
   data,
   setOpen,
   relatedData,
-  id,
 }: {
   type: "create" | "update";
   data?: any;
   setOpen: Dispatch<SetStateAction<boolean>>;
   relatedData?: any;
-  id: number;
 }) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<SocialSchema>({
-    resolver: zodResolver(socialSchema),
+  } = useForm<WorkForceSchemaSchema>({
+    resolver: zodResolver(workForceSchema),
   });
 
-  const [state, formAction] = useFormState(manageSocials, {
+  const [state, formAction] = useFormState(manageWorkforce, {
     success: false,
     error: false,
   });
@@ -46,17 +48,20 @@ const WorkForceForm = ({
 
   useEffect(() => {
     if (state.success) {
-      toast(`Socials has been added`);
+      toast(`Workforce update`);
       setOpen(false);
       router.refresh();
     }
   }, [state, router, type, setOpen]);
 
+  let defaultMale = data?.workforce?.male ? data?.workforce?.male : 0;
+  let defaultFemale = data?.workforce?.female ? data?.workforce?.female : 0;
+
   return (
     <form className="flex flex-col gap-5" onSubmit={onSubmit}>
       <h1 className="text-xl font-semibold">Manage Workforce</h1>
 
-      <div className="flex justify-between flex-wrap gap-4">
+      <div className="flex justify-between flex-wrap p-2">
         {data && (
           <InputField
             label="businessId"
@@ -67,24 +72,20 @@ const WorkForceForm = ({
           />
         )}
         <InputField
-          fullWidth
           label="Female"
-          name="facebook"
+          name="female"
           register={register}
-          as="textarea"
-          defaultValue={data?.socialMedia?.facebook}
-          inputProps={{ rows: 1, placeholder: "" }}
+          error={errors.female}
+          defaultValue={defaultFemale}
         />
 
         <InputField
-          fullWidth
           label="Male"
-          name="instagram"
+          name="male"
           register={register}
-          as="textarea"
-          inputProps={{ rows: 1, placeholder: "" }}
-          error={errors.instagram}
-          defaultValue={data?.socialMedia?.instagram}
+          // inputProps={{ rows: 1, placeholder: "" }}
+          error={errors.male}
+          defaultValue={defaultMale}
         />
       </div>
 
