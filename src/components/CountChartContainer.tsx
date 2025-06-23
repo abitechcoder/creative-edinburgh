@@ -8,8 +8,6 @@ const CountChartContainer = async () => {
     _count: true,
   });
 
-  console.log(data, 'data from the sex count')
-
   const male = data.find((d) => d.genderOfOwner === "Male")?._count || 0;
   const female = data.find((d) => d.genderOfOwner === "Female")?._count || 0;
 
@@ -24,7 +22,7 @@ const CountChartContainer = async () => {
       <CountChart male={male} female={female} />
       {/* BOTTOM */}
       <div className="flex justify-center gap-16">
-      <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-1">
           <div className="w-5 h-5 bg-lamaYellow rounded-full" />
           <h1 className="font-bold">{female}</h1>
           <h2 className="text-xs text-gray-300">
@@ -38,7 +36,6 @@ const CountChartContainer = async () => {
             Male ({Math.round((male / (male + female)) * 100)}%)
           </h2>
         </div>
-       
       </div>
     </div>
   );

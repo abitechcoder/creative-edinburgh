@@ -69,7 +69,7 @@ const renderRow = (item: Directories) => (
     {/* <td className="hidden md:table-cell">{item.subjects.join(",")}</td> */}
     <td className="hidden md:table-cell">{item?.sector?.name}</td>
     <td className="hidden md:table-cell">
-      {item?.email}
+      {item?.phone}
       <br></br>
       {item?.email}
     </td>
@@ -146,9 +146,9 @@ const TeacherListPage = async ({
             <button className="w-8 h-8 flex items-center justify-center rounded-full bg-YellowDeep">
               <Image src="/filter.png" alt="" width={14} height={14} />
             </button>
-            <button className="w-8 h-8 flex items-center justify-center rounded-full bg-YellowDeep">
+            {/* <button className="w-8 h-8 flex items-center justify-center rounded-full bg-YellowDeep">
               <Image src="/sort.png" alt="" width={14} height={14} />
-            </button>
+            </button> */}
             {role === "admin" && (
               // <button className="w-8 h-8 flex items-center justify-center rounded-full bg-YellowDeep">
               //   <Image src="/plus.png" alt="" width={14} height={14} />

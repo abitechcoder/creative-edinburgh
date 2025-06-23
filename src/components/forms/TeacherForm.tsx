@@ -11,6 +11,7 @@ import { createDirectory, updateDirectory } from "@/lib/actions";
 import { directorySchema } from "@/lib/formValidationSchemas";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
+import { CldUploadWidget } from "next-cloudinary";
 
 type Inputs = z.infer<typeof directorySchema>;
 
@@ -204,21 +205,25 @@ const DirectoryForm = ({
           inputProps={{ rows: 3, placeholder: "Enter description..." }}
           error={errors.description}
         />
-        {/* <div className="flex flex-col gap-2 w-full md:w-1/4 justify-center">
-          <label
-            className="text-xs text-gray-500 flex items-center gap-2 cursor-pointer"
-            htmlFor="img"
-          >
-            <Image src="/upload.png" alt="" width={28} height={28} />
-            <span>Upload a photo</span>
-          </label>
-          <input type="file" id="img" {...register("img")} className="hidden" />
-          {errors.img?.message && (
-            <p className="text-xs text-red-400">
-              {errors.img.message.toString()}
-            </p>
-          )}
-        </div> */}
+        <CldUploadWidget
+          uploadPreset="CreativeHubAfrrica"
+          onSuccess={(result, { widget }) => {
+            setImg(result.info);
+            widget.close();
+          }}
+        >
+          {({ open }) => {
+            return (
+              <div
+                className="text-xs text-gray-500 flex items-center gap-2 cursor-pointer"
+                onClick={() => open()}
+              >
+                <Image src="/upload.png" alt="" width={28} height={28} />
+                <span>Upload a photo</span>
+              </div>
+            );
+          }}
+        </CldUploadWidget>
       </div>
 
       {state.error && (

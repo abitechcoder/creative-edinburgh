@@ -41,7 +41,7 @@ export const createDirectory = async (
         userId: user.id,
         phone: data.phone,
         email: data.email,
-        logo: "",
+        logo: data.img || null,
         disabilityInclusion: "Yes",
         registrationStatus: "Yes",
       },
