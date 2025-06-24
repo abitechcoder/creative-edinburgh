@@ -7,7 +7,7 @@ export type FormContainerProps = {
     | "directory"
     | "socialmedia"
     | "workforce"
-    | "teacher"
+    | "sector"
     | "subject"
     | "class"
     | "lesson"

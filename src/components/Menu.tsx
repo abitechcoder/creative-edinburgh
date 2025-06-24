@@ -19,6 +19,12 @@ const menuItems = [
         visible: ["admin", "staff"],
       },
       {
+        icon: "/message.png",
+        label: "Sectors",
+        href: "/sectors",
+        visible: ["admin", "teacher", "student", "parent"],
+      },
+      {
         icon: "/student.png",
         label: "Staff",
         href: "/staffs",
@@ -30,60 +36,14 @@ const menuItems = [
         href: "/subscription",
         visible: ["admin", "teacher"],
       },
-      // {
-      //   icon: "/subject.png",
-      //   label: "Subjects",
-      //   href: "/subjects",
-      //   visible: ["admin"],
-      // },
-      // {
-      //   icon: "/class.png",
-      //   label: "Classes",
-      //   href: "/classes",
-      //   visible: ["admin", "teacher"],
-      // },
-      // {
-      //   icon: "/lesson.png",
-      //   label: "Lessons",
-      //   href: "/lessons",
-      //   visible: ["admin", "teacher"],
-      // },
-      // {
-      //   icon: "/exam.png",
-      //   label: "Exams",
-      //   href: "/exams",
-      //   visible: ["admin", "teacher", "student", "parent"],
-      // },
-      // {
-      //   icon: "/assignment.png",
-      //   label: "Assignments",
-      //   href: "/assignments",
-      //   visible: ["admin", "teacher", "student", "parent"],
-      // },
-      // {
-      //   icon: "/result.png",
-      //   label: "Results",
-      //   href: "/results",
-      //   visible: ["admin", "teacher", "student", "parent"],
-      // },
-      // {
-      //   icon: "/attendance.png",
-      //   label: "Attendance",
-      //   href: "/attendance",
-      //   visible: ["admin", "teacher", "student", "parent"],
-      // },
+
       {
         icon: "/calendar.png",
         label: "Events",
         href: "/events",
         visible: ["admin", "teacher", "student", "parent"],
       },
-      {
-        icon: "/message.png",
-        label: "Messages",
-        href: "/messages",
-        visible: ["admin", "teacher", "student", "parent"],
-      },
+
       {
         icon: "/announcement.png",
         label: "Announcements",

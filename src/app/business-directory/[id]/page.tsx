@@ -62,21 +62,26 @@ interface SectorType {
   title: string;
 }
 
-
 const MemberDetails = () => {
   const { id } = useParams();
   const { member, isLoading } = useMember(Number(id));
   const { sectors, isLoadingSect } = useSectors();
 
   if (isLoadingSect || isLoading) {
-    return (<div className="h-screen grid place-items-center">
-      <div className="flex flex-col justify-center items-center p-4">
-        <Image src={"/loading.gif"} width={50} height={50} alt="Loading animation" />
-        <p>Loading data ...</p>
+    return (
+      <div className="h-screen grid place-items-center">
+        <div className="flex flex-col justify-center items-center p-4">
+          <Image
+            src={"/loading.gif"}
+            width={50}
+            height={50}
+            alt="Loading animation"
+          />
+          <p>Loading data ...</p>
+        </div>
       </div>
-    </div>);
+    );
   }
-
 
   // Initialize chart data with empty data
   // const [chartData, setChartData] = useState({
@@ -139,7 +144,9 @@ const MemberDetails = () => {
               width={150}
             />
             <div className="bg-secondary text-sm lg:text-lg text-white py-2 px-6 w-fit rounded-full">
-              {member?.sector ? sectors.find((s: SectorType) => s.id === member.sector)?.title : "-"}
+              {member?.sector
+                ? sectors.find((s: SectorType) => s.id === member.sector)?.title
+                : "-"}
             </div>
           </div>
           <h2
@@ -258,24 +265,24 @@ const MemberDetails = () => {
             </div>
           )}
 
-        {member?.contactDetails.phone && (
+        {member?.contactDetails?.phone && (
           <div>
             <h3 className="font-black uppercase lg:text-xl text-lg text-secondary">
               Contact Number
             </h3>
             <p className="font-bold text-lg mt-2 lg:mt-4">
-              {member?.contactDetails.phone}
+              {member?.contactDetails?.phone}
             </p>
           </div>
         )}
 
-        {member?.contactDetails.email && (
+        {member?.contactDetails?.email && (
           <div>
             <h3 className="font-black uppercase lg:text-xl text-lg text-secondary">
               Email
             </h3>
             <p className="font-bold text-lg mt-2 lg:mt-4">
-              {member?.contactDetails.email}
+              {member?.contactDetails?.email}
             </p>
           </div>
         )}

@@ -39,3 +39,10 @@ export const workForceSchema = z.object({
 });
 
 export type WorkForceSchemaSchema = z.infer<typeof workForceSchema>;
+
+export const sectorSchema = z.object({
+  id: z.string().optional(),
+  name: z.string().min(1, { message: "Sector name is required!" }),
+});
+
+export type SectorSchema = z.infer<typeof sectorSchema>;

@@ -27,6 +27,10 @@ const WorkForceForm = dynamic(() => import("./forms/WorkForceForm"), {
   loading: () => <h1>Loading...</h1>,
 });
 
+const SectorForm = dynamic(() => import("./forms/SectorForm"), {
+  loading: () => <h1>Loading...</h1>,
+});
+
 // TODO: OTHER FORMS
 
 const forms: {
@@ -64,6 +68,15 @@ const forms: {
       relatedData={relatedData}
     />
   ),
+
+  sector: (setOpen, type, data, relatedData) => (
+    <SectorForm
+      type={type}
+      data={data}
+      setOpen={setOpen}
+      relatedData={relatedData}
+    />
+  ),
 };
 
 const FormModal = ({
@@ -79,8 +92,8 @@ const FormModal = ({
     type === "create"
       ? "bg-SkyBlue"
       : type === "update"
-      ? "bg-lamaSky"
-      : "bg-lamaPurple";
+      ? "bg-PurpleDeep"
+      : "bg-PurpleDeepLight";
 
   const [open, setOpen] = useState(false);
 

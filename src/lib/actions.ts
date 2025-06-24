@@ -1,13 +1,15 @@
 "use server";
 import {
   DirectorySchema,
+  SectorSchema,
+  sectorSchema,
   SocialSchema,
   WorkForceSchemaSchema,
 } from "./formValidationSchemas";
 import prisma from "./prisma";
 import { clerkClient } from "@clerk/nextjs/server";
 
-type CurrentState = { success: boolean; error: boolean };
+type CurrentState = { success: boolean; error: boolean; message?: string };
 
 export const createDirectory = async (
   currentState: CurrentState,
@@ -191,5 +193,55 @@ export const manageWorkforce = async (
   } catch (err) {
     console.error("manageWorkforce error:", err);
     return { success: false, error: true };
+  }
+};
+
+// manage sector
+
+export const manageSector = async (
+  currentState: CurrentState,
+  data: SectorSchema
+): Promise<CurrentState> => {
+  try {
+    const parsed = sectorSchema.parse(data);
+    const sectorId = parsed.id ? parseInt(parsed.id) : null;
+
+    // Check for duplicate name
+    const existing = await prisma.sector.findFirst({
+      where: {
+        name: parsed.name,
+        ...(sectorId ? { NOT: { id: sectorId } } : {}),
+      },
+    });
+
+    if (existing) {
+      return {
+        success: false,
+        error: true,
+        message: "Sector name already exists!",
+      };
+    }
+
+    if (sectorId) {
+      // Update
+      await prisma.sector.update({
+        where: { id: sectorId },
+        data: { name: parsed.name },
+      });
+    } else {
+      // Create
+      await prisma.sector.create({
+        data: { name: parsed.name },
+      });
+    }
+
+    return { success: true, error: false };
+  } catch (err) {
+    console.error("manageSector error:", err);
+    return {
+      success: false,
+      error: true,
+      message: "Something went wrong!",
+    };
   }
 };

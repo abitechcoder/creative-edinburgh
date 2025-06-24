@@ -50,7 +50,7 @@ const DirectoryDetailsPage = async ({
   if (!business) {
     return notFound();
   }
-  console.log(business);
+
   return (
     <div className="flex-1 p-4 flex flex-col gap-4 xl:flex-row">
       {/* LEFT */}
