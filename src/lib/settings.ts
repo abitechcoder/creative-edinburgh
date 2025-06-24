@@ -1,23 +1,23 @@
-export const ITEM_PER_PAGE = 10
+export const ITEM_PER_PAGE = 10;
 
 type RouteAccessMap = {
   [key: string]: string[];
 };
 
 export const routeAccessMap: RouteAccessMap = {
-  "/app/admin(.*)": ["admin"],
-  "/app/student(.*)": ["student"],
-  "/app/teacher(.*)": ["teacher"],
-  "/app/parent(.*)": ["parent"],
-  "/app/list/teachers": ["admin", "teacher"],
-  "/app/list/students": ["admin", "teacher"],
-  "/app/list/parents": ["admin", "teacher"],
-  "/app/list/subjects": ["admin"],
-  "/app/list/classes": ["admin", "teacher"],
-  "/app/list/exams": ["admin", "teacher", "student", "parent"],
-  "/app/list/assignments": ["admin", "teacher", "student", "parent"],
-  "/app/list/results": ["admin", "teacher", "student", "parent"],
-  "/app/list/attendance": ["admin", "teacher", "student", "parent"],
-  "/app/list/events": ["admin", "teacher", "student", "parent"],
-  "/app/list/announcements": ["admin", "teacher", "student", "parent"],
+  "/admin(.*)": ["admin"],
+  "/student(.*)": ["student"],
+  "/teacher(.*)": ["teacher"],
+  "/parent(.*)": ["parent"],
+  "/list/teachers": ["admin", "teacher"],
+  "/list/students": ["admin", "teacher"],
+  "/list/parents": ["admin", "teacher"],
+  "/list/subjects": ["admin"],
+  "/list/classes": ["admin", "teacher"],
+  "/list/exams": ["admin", "teacher", "student", "parent"],
+  "/list/assignments": ["admin", "teacher", "student", "parent"],
+  "/list/results": ["admin", "teacher", "student", "parent"],
+  "/list/attendance": ["admin", "teacher", "student", "parent"],
+  "/list/events": ["admin", "teacher", "student", "parent"],
+  "/list/announcements": ["admin", "teacher", "student", "parent"],
 };

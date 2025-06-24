@@ -9,6 +9,7 @@ export type FormContainerProps = {
     | "workforce"
     | "sector"
     | "subject"
+    | "teacher"
     | "class"
     | "lesson"
     | "exam"
