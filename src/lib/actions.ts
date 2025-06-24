@@ -245,3 +245,34 @@ export const manageSector = async (
     };
   }
 };
+
+export const deleteSector = async (
+  currentState: CurrentState,
+  data: FormData
+) => {
+  const id = data.get("id");
+
+  // Convert to number and handle invalid/null cases
+  const sectorId = id ? Number(id) : undefined;
+
+  if (!sectorId || isNaN(sectorId)) {
+    return {
+      success: false,
+      error: true,
+      message: "Invalid sector ID",
+    };
+  }
+
+  try {
+    await prisma.sector.delete({
+      where: {
+        id: sectorId,
+      },
+    });
+
+    return { success: true, error: false };
+  } catch (err) {
+    console.log(err);
+    return { success: false, error: true };
+  }
+};
