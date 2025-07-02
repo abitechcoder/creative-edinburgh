@@ -12,8 +12,7 @@ import Image from "next/image";
 type Event = {
   id: number;
   title: string;
-  class: string;
-  date: string;
+  description: string;
   startTime: string;
   endTime: string;
 };
@@ -23,10 +22,10 @@ const columns = [
     header: "Title",
     accessor: "title",
   },
-  // {
-  //   header: "Class",
-  //   accessor: "class",
-  // },
+  {
+    header: "Description",
+    accessor: "description",
+  },
   // {
   //   header: "Date",
   //   accessor: "date",
@@ -54,8 +53,11 @@ const renderRow = (item: Event) => (
     className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-PurpleDeepLight"
   >
     <td className="flex items-center gap-4 p-4">{item.title}</td>
-    {/* <td>{item.class}</td> */}
-    {/* <td className="hidden md:table-cell">{item.date}</td> */}
+    <td className="hidden md:table-cell">
+      {item?.description.length > 50
+        ? `${item.description.substring(0, 50)}...`
+        : item.description}
+    </td>
     <td className="hidden md:table-cell">
       {moment(item?.startTime).format("YYYY-MM-DD HH:mm")}
     </td>

@@ -8,6 +8,7 @@ import { useFormState } from "react-dom";
 import { toast } from "react-toastify";
 import { FormContainerProps } from "./FormContainer";
 import { deleteSector } from "@/lib/actions";
+import { announcementsData } from "@/lib/data";
 
 const deleteActionMap: any = {
   sector: deleteSector,
@@ -36,6 +37,10 @@ const UserForm = dynamic(() => import("./forms/UsersForm"), {
 });
 
 const EventForm = dynamic(() => import("./forms/EventForm"), {
+  loading: () => <h1>Loading...</h1>,
+});
+
+const AnnouncementForm = dynamic(() => import("./forms/AnnouncementForm"), {
   loading: () => <h1>Loading...</h1>,
 });
 
@@ -97,6 +102,15 @@ const forms: {
 
   event: (setOpen, type, data, relatedData) => (
     <EventForm
+      type={type}
+      data={data}
+      setOpen={setOpen}
+      relatedData={relatedData}
+    />
+  ),
+
+  announcement: (setOpen, type, data, relatedData) => (
+    <AnnouncementForm
       type={type}
       data={data}
       setOpen={setOpen}

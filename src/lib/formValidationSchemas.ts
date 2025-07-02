@@ -73,3 +73,13 @@ export const eventSchema = z.object({
 });
 
 export type EventSchema = z.infer<typeof eventSchema>;
+
+export const announcementSchema = z.object({
+  id: z.string().optional(),
+  title: z.string().min(1),
+  description: z.string().min(1),
+  sectorId: z.string().optional(),
+  businessId: z.string().optional(),
+});
+
+export type AnnouncementSchema = z.infer<typeof announcementSchema>;

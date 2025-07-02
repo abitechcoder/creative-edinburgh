@@ -1,5 +1,6 @@
 "use server";
 import {
+  AnnouncementSchema,
   DirectorySchema,
   EventSchema,
   SectorSchema,
@@ -89,7 +90,7 @@ export const updateDirectory = async (
     let userId = data.userId;
 
     // 1. Check if Clerk user exists
-    let clerkUser;
+    let clerkUser: any;
     try {
       if (userId) {
         clerkUser = await clerkClient.users.getUser(userId);
@@ -430,6 +431,41 @@ export const manageEvent = async (
     return { success: true, error: false, message: "" };
   } catch (err) {
     console.error("manageEvent error:", err);
+    return {
+      success: false,
+      error: true,
+      message: "Something went wrong!",
+    };
+  }
+};
+
+export const manageAnnouncement = async (
+  currentState: CurrentState,
+  data: AnnouncementSchema
+): Promise<CurrentState> => {
+  try {
+    const announcementId = data.id ? parseInt(data.id) : null;
+
+    const commonData = {
+      title: data.title,
+      description: data.description,
+      date: new Date(),
+      ...(data.sectorId ? { sectorId: parseInt(data.sectorId) } : {}),
+      ...(data.businessId ? { businessId: parseInt(data.businessId) } : {}),
+    };
+
+    if (announcementId) {
+      await prisma.announcement.update({
+        where: { id: announcementId },
+        data: commonData,
+      });
+    } else {
+      await prisma.announcement.create({ data: commonData });
+    }
+
+    return { success: true, error: false };
+  } catch (err) {
+    console.error("manageAnnouncement error:", err);
     return {
       success: false,
       error: true,
