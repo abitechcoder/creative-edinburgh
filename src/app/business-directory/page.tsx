@@ -21,8 +21,6 @@ const MembersLibrary = () => {
 
   const [filter, setFilter] = useState<string>("");
 
-  console.log(filteredBusinesses);
-
   useEffect(() => {
     filterBusinesses();
   }, [selectedSector, businesses]);

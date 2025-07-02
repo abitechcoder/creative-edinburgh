@@ -271,7 +271,23 @@ const MemberDetails = () => {
               Contact Number
             </h3>
             <p className="font-bold text-lg mt-2 lg:mt-4">
-              {member?.contactDetails?.phone}
+              <a
+                href={`tel:${member.contactDetails.phone}`}
+                className="text-blue-600 hover:underline mr-4"
+              >
+                📞 Call
+              </a>
+              <a
+                href={`https://wa.me/${member.contactDetails.phone.replace(
+                  /^0/,
+                  "234"
+                )}`} // Replace leading 0 for WhatsApp
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-green-600 hover:underline"
+              >
+                💬 WhatsApp
+              </a>
             </p>
           </div>
         )}
@@ -282,7 +298,12 @@ const MemberDetails = () => {
               Email
             </h3>
             <p className="font-bold text-lg mt-2 lg:mt-4">
-              {member?.contactDetails?.email}
+              <a
+                href={`mailto:${member.contactDetails.email}`}
+                className="text-blue-600 hover:underline"
+              >
+                {member.contactDetails.email}
+              </a>
             </p>
           </div>
         )}

@@ -9,7 +9,7 @@ const Hero = () => {
       <svg
         viewBox="0 0 467.23 585.48"
         preserveAspectRatio="xMinYMin meet"
-        className="fill-primary absolute hidden lg:block z-10 top-0 -right-20 lg:-top-30 lg:-right-30 w-48 h-48 lg:w-[300px] lg:h-[300px] rotate-90"
+        className="fill-primary absolute hidden lg:block z-10 top-0 -right-20 lg:-top-30 lg:-right-30 w-48 h-48 lg:w-[300px] lg:h-[300px] rotate-90 opacity-50"
       >
         <path
           d="M1160.562,468.741c-48.074,84.29-155.091,113.632-239.217,65.587L853.47,653.7c149.823,85.752,340.52,33.449,426.1-116.868s33.27-341.638-116.538-427.375L1095.141,228.8c84.018,48.207,113.285,155.544,65.421,239.94"
