@@ -12,6 +12,7 @@ import { directorySchema } from "@/lib/formValidationSchemas";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import { CldUploadWidget } from "next-cloudinary";
+import moment from "moment";
 
 type Inputs = z.infer<typeof directorySchema>;
 
@@ -41,6 +42,7 @@ const DirectoryForm = ({
     {
       success: false,
       error: false,
+      message: "",
     }
   );
 
@@ -79,9 +81,27 @@ const DirectoryForm = ({
         />
 
         <InputField
+          label="UserId"
+          name="userId"
+          defaultValue={data?.user?.id}
+          register={register}
+          error={errors?.email}
+          hidden
+        />
+
+        <InputField
+          label="Id"
+          name="id"
+          defaultValue={data?.id}
+          register={register}
+          error={errors?.email}
+          hidden
+        />
+
+        <InputField
           label="First Name"
           name="firstName"
-          defaultValue={data?.firstName}
+          defaultValue={data?.user?.firstname}
           register={register}
           error={errors?.firstName}
         />
@@ -89,13 +109,13 @@ const DirectoryForm = ({
         <InputField
           label="Last Name"
           name="lastName"
-          defaultValue={data?.lastName}
+          defaultValue={data?.user?.lastname}
           register={register}
           error={errors?.lastName}
         />
       </div>
       <span className="text-xs text-gray-400 font-medium">
-        Directory Information
+        Directory Information {}
       </span>
       <div className="flex justify-between flex-wrap gap-4">
         <InputField
@@ -111,7 +131,7 @@ const DirectoryForm = ({
           <select
             className="ring-[1.5px] ring-gray-300 p-2 rounded-md text-sm w-full"
             {...register("secrtorId")}
-            defaultValue={data?.secrtorId}
+            defaultValue={data?.sector?.id}
           >
             {sectors.map(
               (sector: { id: string; name: string; surname: string }) => (
@@ -132,7 +152,7 @@ const DirectoryForm = ({
         <InputField
           label="Address"
           name="address"
-          defaultValue={data?.address}
+          defaultValue={data?.businessAddress}
           register={register}
           error={errors.address}
         />
@@ -148,7 +168,7 @@ const DirectoryForm = ({
         <InputField
           label="Revenue"
           name="revenue"
-          defaultValue={data?.revenue}
+          defaultValue={data?.revenueBracket}
           register={register}
           // error={errors.revenue}
         />
@@ -156,7 +176,7 @@ const DirectoryForm = ({
         <InputField
           label="Operating Since"
           name="operatingSince"
-          defaultValue={data?.operatingSince}
+          defaultValue={moment(data?.yearsInOperation).format("YYYY-MM-DD")}
           register={register}
           error={errors.operatingSince}
           type="date"
@@ -165,7 +185,7 @@ const DirectoryForm = ({
         <InputField
           label="Owner's Age"
           name="ownerAge"
-          defaultValue={data?.ownerAge}
+          defaultValue={data?.ageOfOwner}
           register={register}
           error={errors.ownerAge}
         />
@@ -195,6 +215,7 @@ const DirectoryForm = ({
           as="textarea"
           inputProps={{ rows: 1, placeholder: "core product..." }}
           error={errors.coreProductOrService}
+          defaultValue={data?.coreProductOrService}
         />
         <InputField
           fullWidth
@@ -204,6 +225,7 @@ const DirectoryForm = ({
           as="textarea"
           inputProps={{ rows: 3, placeholder: "Enter description..." }}
           error={errors.description}
+          defaultValue={data?.description}
         />
         <CldUploadWidget
           uploadPreset="CreativeHubAfrrica"

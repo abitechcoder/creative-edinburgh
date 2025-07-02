@@ -4,25 +4,46 @@ import {
   SectorSchema,
   sectorSchema,
   SocialSchema,
+  UserSchema,
   WorkForceSchemaSchema,
 } from "./formValidationSchemas";
 import prisma from "./prisma";
 import { clerkClient } from "@clerk/nextjs/server";
 
-type CurrentState = { success: boolean; error: boolean; message?: string };
+export type CurrentState = {
+  success: boolean;
+  error: boolean;
+  message?: string;
+};
 
 export const createDirectory = async (
   currentState: CurrentState,
-  data: DirectorySchema
+  data: any
 ) => {
   try {
-    const user = await clerkClient.users.createUser({
+    const user: any = await clerkClient.users.createUser({
       username: data.firstName + data.lastName,
       password: "CHA@2025@yadot",
       firstName: data.firstName,
       lastName: data.lastName,
       emailAddress: [data.email],
       publicMetadata: { role: "member" },
+    });
+
+    await prisma.user.create({
+      data: {
+        id: user.id,
+        username: user.username,
+        firstname: data.firstName || null,
+        lastname: data.lastName || null,
+        email: data.email,
+        phone: data.phone || null,
+        address: data.address || null,
+        img: data.img || null,
+        sex: data.sex || null,
+        birthday: data.birthday ? new Date(data.birthday) : null,
+        role: "member",
+      },
     });
 
     await prisma.business.create({
@@ -40,7 +61,9 @@ export const createDirectory = async (
         sector: {
           connect: { id: parseInt(data.secrtorId) },
         },
-        userId: user.id,
+        user: {
+          connect: { id: user.id }, // <- Connect user relation here
+        },
         phone: data.phone,
         email: data.email,
         logo: data.img || null,
@@ -50,56 +73,112 @@ export const createDirectory = async (
     });
 
     // revalidatePath("/list/teachers");
-    return { success: true, error: false };
+    return { success: true, error: false, message: "" };
   } catch (err) {
     console.log(err);
-    return { success: false, error: true };
+    return { success: false, error: true, mesage: "" };
   }
 };
 
 export const updateDirectory = async (
   currentState: CurrentState,
-  data: DirectorySchema
+  data: any
 ) => {
-  if (!data.id) {
-    return { success: false, error: true };
-  }
   try {
-    // const user = await clerkClient.users.updateUser(data.id, {
-    //   username: data.username,
-    //   ...(data.password !== "" && { password: data.password }),
-    //   firstName: data.name,
-    //   lastName: data.surname,
-    // });
+    let userId = data.userId;
 
-    // await prisma.business.update({
-    //   where: {
-    //     id: data.id,
-    //   },
-    //   data: {
-    //     ...(data.password !== "" && { password: data.password }),
-    //     username: data.username,
-    //     name: data.name,
-    //     surname: data.surname,
-    //     email: data.email || null,
-    //     phone: data.phone || null,
-    //     address: data.address,
-    //     img: data.img || null,
-    //     bloodType: data.bloodType,
-    //     sex: data.sex,
-    //     birthday: data.birthday,
-    //     subjects: {
-    //       set: data.subjects?.map((subjectId: string) => ({
-    //         id: parseInt(subjectId),
-    //       })),
-    //     },
-    //   },
-    // });
-    // revalidatePath("/list/teachers");
-    return { success: true, error: false };
+    // 1. Check if Clerk user exists
+    let clerkUser;
+    try {
+      if (userId) {
+        clerkUser = await clerkClient.users.getUser(userId);
+      }
+    } catch (err) {
+      // Clerk user does not exist, so create it
+      clerkUser = await clerkClient.users.createUser({
+        username: data.firstName + data.lastName,
+        password: "CHA@2025@yadot",
+        firstName: data.firstName,
+        lastName: data.lastName,
+        emailAddress: [data.email],
+        publicMetadata: { role: "member" },
+      });
+      userId = clerkUser.id;
+    }
+
+    // 2. Check if Prisma user exists
+
+    const existingLocalUser = await prisma.user.findUnique({
+      where: { id: userId },
+    });
+
+    if (!existingLocalUser) {
+      // Create new user in local database
+      await prisma.user.create({
+        data: {
+          id: clerkUser.id,
+          username: clerkUser.username,
+          firstname: data.firstName || null,
+          lastname: data.lastName || null,
+          email: data.email,
+          phone: data.phone || null,
+          address: data.address || null,
+          img: data.img || null,
+          sex: data.sex || null,
+          birthday: data.birthday ? new Date(data.birthday) : null,
+          role: "member",
+        },
+      });
+    } else {
+      // Update the existing local user
+      console.log(userId, "Updating record");
+
+      await prisma.user.update({
+        where: { id: userId },
+        data: {
+          id: userId,
+          firstname: data.firstName || null,
+          lastname: data.lastName || null,
+          email: data.email,
+          phone: data.phone || null,
+          address: data.address || null,
+          img: data.img || null,
+          sex: data.sex || null,
+          birthday: data.birthday ? new Date(data.birthday) : null,
+        },
+      });
+    }
+
+    // 3. Update the Business record
+    await prisma.business.update({
+      where: { id: Number(data.id) },
+      data: {
+        name: data.name,
+        ageOfOwner: parseInt(data.ownerAge),
+        businessAddress: data.address,
+        genderOfOwner: data.sex,
+        coreProductOrService: data.coreProductOrService,
+        description: data.description,
+        revenueBracket: data.revenue + "",
+        yearsInOperation: data.operatingSince,
+        sector: {
+          connect: { id: parseInt(data.secrtorId) },
+        },
+        user: {
+          connect: { id: userId },
+        },
+        phone: data.phone,
+        email: data.email,
+        logo: data.img || null,
+        disabilityInclusion: "Yes",
+        registrationStatus: "Yes",
+      },
+    });
+
+    return { success: true, error: false, message: "Directory updated." };
   } catch (err) {
-    console.log(err);
-    return { success: false, error: true };
+    console.error("Update failed:", err);
+    return { success: false, error: true, message: "Update failed." };
   }
 };
 
@@ -274,5 +353,51 @@ export const deleteSector = async (
   } catch (err) {
     console.log(err);
     return { success: false, error: true };
+  }
+};
+
+export const createUser = async (
+  currentState: CurrentState,
+  data: UserSchema
+) => {
+  try {
+    const username =
+      data.firstName && data.lastName
+        ? data.firstName + data.lastName
+        : data.email;
+
+    const user = await clerkClient.users.createUser({
+      username: username,
+      password: "CHA@2025@yadot",
+      firstName: data.firstName,
+      lastName: data.lastName,
+      emailAddress: [data.email],
+      publicMetadata: { role: data.role },
+    });
+
+    // Save user to your Prisma database
+
+    await prisma.user.create({
+      data: {
+        id: user.id,
+        username: user.username || username,
+        firstname: data.firstName || null,
+        lastname: data.lastName || null,
+        email: data.email,
+        phone: data.phone || null,
+        address: data.address || null,
+        img: data.img || null,
+        sex: data.sex || null,
+        birthday: data.birthday ? new Date(data.birthday) : null,
+        role: data.role,
+      },
+    });
+
+    return { success: true, error: false, message: "" };
+  } catch (err: any) {
+    console.log(err);
+    let msg =
+      err?.errors?.length > 0 ? err.errors[0]?.message : "Error saving user";
+    return { success: false, error: true, message: msg };
   }
 };

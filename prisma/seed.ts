@@ -61,6 +61,9 @@ async function main() {
         sector: {
           connect: { id: sector },
         },
+        // user: {
+        //   connect: { id: "null" }, // <- Connect user relation here
+        // },
         phone: contactDetails?.phone,
         email: contactDetails?.email,
       },

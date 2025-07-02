@@ -5,7 +5,7 @@ import FormContainer from "@/components/FormContainer";
 import Performance from "@/components/Performance";
 import { role } from "@/lib/data";
 import prisma from "@/lib/prisma";
-import { Business, Sector, SocialMedia, Workforce } from "@prisma/client";
+import { Business, Sector, SocialMedia, User, Workforce } from "@prisma/client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -37,6 +37,7 @@ const DirectoryDetailsPage = async ({
         sector: Sector | null;
         socialMedia: SocialMedia | null;
         workforce: Workforce | null;
+        user: User | null;
       })
     | null = await prisma.business.findUnique({
     where: { id: Number(id) },
@@ -44,8 +45,11 @@ const DirectoryDetailsPage = async ({
       sector: { select: { id: true, name: true } }, // ✅ Fix applied here
       socialMedia: true,
       workforce: true,
+      user: true,
     },
   });
+
+  console.log(business?.user);
 
   if (!business) {
     return notFound();

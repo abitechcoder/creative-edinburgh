@@ -18,7 +18,8 @@ model Business {
   id                   Int           @id @default(autoincrement())
   name                 String        @db.VarChar(255)
   logo                 String?       @db.VarChar(255)
-  userId               String?       @db.VarChar(255)
+  user     User?     @relation(fields: [userId], references: [id])
+  userId   String?   @unique
   ageOfOwner           Int?
   genderOfOwner        UserSex
   email                String?       @db.VarChar(255)
@@ -38,12 +39,20 @@ model Business {
   sectorId             Int?
   workforce            Workforce?
   socialMedia          SocialMedia?
+  announcement         Announcement[]
+ 
+ 
+ 
+
 }
 
 model Sector {
   id         Int        @id @default(autoincrement())
   name       String     @unique
   businesses Business[]
+  events Event[]
+  announcement Announcement[]
+
 }
 
 model Workforce {
@@ -64,4 +73,52 @@ model SocialMedia {
   youtube    String?    @db.Text
   business   Business   @relation(fields: [businessId], references: [id])
   businessId Int        @unique
+}
+
+
+
+model Event {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  startTime   DateTime
+  endTime     DateTime
+
+  sectorId Int?
+  sector   Sector? @relation(fields: [sectorId], references: [id])
+}
+
+
+model Announcement {
+  id          Int       @id @default(autoincrement())
+  title       String
+  description String
+  date        DateTime
+
+  // Optional relation to Sector
+  sectorId    Int?
+  sector      Sector?   @relation(fields: [sectorId], references: [id])
+
+  // Optional relation to Business
+  businessId  Int?
+  business    Business? @relation(fields: [businessId], references: [id])
+}
+
+
+model User {
+  id          String        @unique
+  username    String?       @unique
+  firstname   String?
+  lastname    String?
+  email       String       @unique
+  phone       String?      
+  address     String?
+  img         String?
+  sex         UserSex?
+  createdAt   DateTime     @default(now())
+  birthday    DateTime?
+  role        String
+
+ business   Business?  @relation 
+  
 }

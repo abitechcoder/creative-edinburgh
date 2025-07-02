@@ -15,10 +15,7 @@ const deleteActionMap: any = {
 
 // USE LAZY LOADING
 
-// import TeacherForm from "./forms/TeacherForm";
-// import StudentForm from "./forms/StudentForm";
-
-const DirectoryForm = dynamic(() => import("./forms/TeacherForm"), {
+const DirectoryForm = dynamic(() => import("./forms/DirectoryForm"), {
   loading: () => <h1>Loading...</h1>,
 });
 
@@ -31,6 +28,10 @@ const WorkForceForm = dynamic(() => import("./forms/WorkForceForm"), {
 });
 
 const SectorForm = dynamic(() => import("./forms/SectorForm"), {
+  loading: () => <h1>Loading...</h1>,
+});
+
+const UserForm = dynamic(() => import("./forms/UsersForm"), {
   loading: () => <h1>Loading...</h1>,
 });
 
@@ -74,6 +75,15 @@ const forms: {
 
   sector: (setOpen, type, data, relatedData) => (
     <SectorForm
+      type={type}
+      data={data}
+      setOpen={setOpen}
+      relatedData={relatedData}
+    />
+  ),
+
+  user: (setOpen, type, data, relatedData) => (
+    <UserForm
       type={type}
       data={data}
       setOpen={setOpen}

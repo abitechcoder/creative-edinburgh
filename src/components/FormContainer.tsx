@@ -9,12 +9,7 @@ export type FormContainerProps = {
     | "socialmedia"
     | "workforce"
     | "sector"
-    | "subject"
-    | "teacher"
-    | "class"
-    | "lesson"
-    | "exam"
-    | "attendance"
+    | "user"
     | "event"
     | "announcement";
   type: "create" | "update" | "delete";

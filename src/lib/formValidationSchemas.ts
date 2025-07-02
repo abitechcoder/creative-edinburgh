@@ -12,6 +12,7 @@ export const directorySchema = z.object({
   sex: z.enum(["Male", "Female"], { message: "Sex is required!" }),
   ownerAge: z.string({ message: "Age is required!" }),
   revenue: z.string().optional(),
+  userId: z.string().optional(),
   coreProductOrService: z.string().min(1, { message: "required!" }),
   description: z.string().min(1, { message: "required!" }),
   secrtorId: z.string({ message: "Sector is required!" }),
@@ -46,3 +47,18 @@ export const sectorSchema = z.object({
 });
 
 export type SectorSchema = z.infer<typeof sectorSchema>;
+
+export const userSchema = z.object({
+  id: z.string().optional(),
+  email: z.string().email({ message: "Invalid email address!" }),
+  firstName: z.string().optional(),
+  lastName: z.string().optional(),
+  role: z.enum(["admin", "cha", "partner"], { message: "Role is required!" }),
+  address: z.string().optional(),
+  img: z.string().optional(),
+  sex: z.enum(["Male", "Female"]).optional(),
+  birthday: z.coerce.date().optional(),
+  phone: z.string().optional(),
+});
+
+export type UserSchema = z.infer<typeof userSchema>;
