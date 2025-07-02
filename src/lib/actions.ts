@@ -88,15 +88,11 @@ export const updateDirectory = async (
 ) => {
   try {
     let userId = data.userId;
-
-    // 1. Check if Clerk user exists
     let clerkUser: any;
-    try {
-      if (userId) {
-        clerkUser = await clerkClient.users.getUser(userId);
-      }
-    } catch (err) {
-      // Clerk user does not exist, so create it
+
+    // 1. Check if userId is missing or empty — create new Clerk user
+    if (!userId || userId.trim() === "") {
+      console.log("pass two");
       clerkUser = await clerkClient.users.createUser({
         username: data.firstName + data.lastName,
         password: "CHA@2025@yadot",
@@ -106,16 +102,34 @@ export const updateDirectory = async (
         publicMetadata: { role: "member" },
       });
       userId = clerkUser.id;
+    } else {
+      // 2. Try to fetch the Clerk user
+      try {
+        console.log("pass one");
+        clerkUser = await clerkClient.users.getUser(userId);
+      } catch (err) {
+        // 3. If Clerk user does not exist, create it
+        console.log("pass two - user not found, creating");
+        clerkUser = await clerkClient.users.createUser({
+          username: data.firstName + data.lastName,
+          password: "CHA@2025@yadot",
+          firstName: data.firstName,
+          lastName: data.lastName,
+          emailAddress: [data.email],
+          publicMetadata: { role: "member" },
+        });
+        userId = clerkUser.id;
+      }
     }
 
-    // 2. Check if Prisma user exists
-
+    // 4. Check if Prisma user exists
+    console.log("pass three", clerkUser, userId);
     const existingLocalUser = await prisma.user.findUnique({
       where: { id: userId },
     });
 
     if (!existingLocalUser) {
-      // Create new user in local database
+      console.log("pass four");
       await prisma.user.create({
         data: {
           id: clerkUser.id,
@@ -132,13 +146,10 @@ export const updateDirectory = async (
         },
       });
     } else {
-      // Update the existing local user
-      console.log(userId, "Updating record");
-
+      console.log("pass five");
       await prisma.user.update({
         where: { id: userId },
         data: {
-          id: userId,
           firstname: data.firstName || null,
           lastname: data.lastName || null,
           email: data.email,
@@ -151,7 +162,7 @@ export const updateDirectory = async (
       });
     }
 
-    // 3. Update the Business record
+    // 5. Update Business
     await prisma.business.update({
       where: { id: Number(data.id) },
       data: {
