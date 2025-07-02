@@ -1,6 +1,7 @@
 "use server";
 import {
   DirectorySchema,
+  EventSchema,
   SectorSchema,
   sectorSchema,
   SocialSchema,
@@ -399,5 +400,40 @@ export const createUser = async (
     let msg =
       err?.errors?.length > 0 ? err.errors[0]?.message : "Error saving user";
     return { success: false, error: true, message: msg };
+  }
+};
+
+export const manageEvent = async (
+  currentState: CurrentState,
+  data: EventSchema
+): Promise<CurrentState> => {
+  try {
+    const eventId = data.id ? parseInt(data.id) : null;
+
+    const commonData = {
+      title: data.title,
+      description: data.description,
+      startTime: new Date(data.startTime),
+      endTime: new Date(data.endTime),
+      ...(data.sectorId ? { sectorId: parseInt(data.sectorId) } : {}),
+    };
+
+    if (eventId) {
+      await prisma.event.update({
+        where: { id: eventId },
+        data: commonData,
+      });
+    } else {
+      await prisma.event.create({ data: commonData });
+    }
+
+    return { success: true, error: false, message: "" };
+  } catch (err) {
+    console.error("manageEvent error:", err);
+    return {
+      success: false,
+      error: true,
+      message: "Something went wrong!",
+    };
   }
 };

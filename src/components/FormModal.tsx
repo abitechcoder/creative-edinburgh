@@ -35,6 +35,10 @@ const UserForm = dynamic(() => import("./forms/UsersForm"), {
   loading: () => <h1>Loading...</h1>,
 });
 
+const EventForm = dynamic(() => import("./forms/EventForm"), {
+  loading: () => <h1>Loading...</h1>,
+});
+
 // TODO: OTHER FORMS
 
 const forms: {
@@ -84,6 +88,15 @@ const forms: {
 
   user: (setOpen, type, data, relatedData) => (
     <UserForm
+      type={type}
+      data={data}
+      setOpen={setOpen}
+      relatedData={relatedData}
+    />
+  ),
+
+  event: (setOpen, type, data, relatedData) => (
+    <EventForm
       type={type}
       data={data}
       setOpen={setOpen}

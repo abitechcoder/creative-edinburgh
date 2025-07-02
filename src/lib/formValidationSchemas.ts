@@ -62,3 +62,14 @@ export const userSchema = z.object({
 });
 
 export type UserSchema = z.infer<typeof userSchema>;
+
+export const eventSchema = z.object({
+  id: z.string().optional(),
+  title: z.string().min(1),
+  description: z.string().min(1),
+  startTime: z.string().min(1),
+  endTime: z.string().min(1),
+  sectorId: z.string().optional(),
+});
+
+export type EventSchema = z.infer<typeof eventSchema>;
