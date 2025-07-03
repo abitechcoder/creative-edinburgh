@@ -1,4 +1,3 @@
-"use client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
@@ -10,51 +9,100 @@ import useBusinesses from "@/hooks/useBusinesses";
 import { BusinessType, SectorType } from "@/lib/types";
 import Analysis from "@/components/landingpage/Analysis";
 import styles from "@/style";
+import { Prisma, Sector } from "@prisma/client";
+import prisma from "@/lib/prisma";
+import { ITEM_PER_PAGE } from "@/lib/settings";
+import Pagination from "@/components/Pagination";
+import TableSearch from "@/components/TableSearch";
 
-const MembersLibrary = () => {
-  const [filteredBusinesses, setFilteredBusinesses] = useState<BusinessType[]>(
-    []
-  );
-  const [selectedSector, setSelectedSector] = useState<number>(0);
-  const { sectors, isLoadingSect } = useSectors();
-  const { businesses, isLoadingBiz } = useBusinesses();
+const MembersLibrary = async ({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | undefined };
+}) => {
+  const { page, ...queryParams } = searchParams;
 
-  const [filter, setFilter] = useState<string>("");
+  const p = page ? parseInt(page) : 1;
 
-  useEffect(() => {
-    filterBusinesses();
-  }, [selectedSector, businesses]);
+  // URL PARAMS CONDITION
 
-  const filterBusinesses = () => {
-    if (selectedSector === 0) {
-      setFilteredBusinesses(businesses);
-    } else {
-      const filtered = businesses.filter(
-        (item: BusinessType) => item.sector === selectedSector
-      );
-      setFilteredBusinesses(filtered);
+  const query: Prisma.BusinessWhereInput = {};
+
+  if (queryParams) {
+    for (const [key, value] of Object.entries(queryParams)) {
+      if (value !== undefined) {
+        switch (key) {
+          case "sectorId":
+            console.log(parseInt(value));
+            query.sectorId = parseInt(value);
+            break;
+          case "search":
+            query.name = { contains: value };
+            break;
+          default:
+            break;
+        }
+      }
     }
-  };
-
-  if (isLoadingSect || isLoadingBiz) {
-    return (
-      <div className="h-screen grid place-items-center">
-        <div className="flex flex-col justify-center items-center p-4">
-          <Image
-            src={"/loading.gif"}
-            width={50}
-            height={50}
-            alt="Loading animation"
-          />
-          <p>Loading data ...</p>
-        </div>
-      </div>
-    );
   }
 
-  const visibleBusinesses = filteredBusinesses.filter((business) =>
-    business.name.toLowerCase().includes(filter.toLowerCase())
-  );
+  const [data, count] = await prisma.$transaction([
+    prisma.business.findMany({
+      where: query,
+      include: {
+        sector: true,
+      },
+      take: ITEM_PER_PAGE,
+      skip: ITEM_PER_PAGE * (p - 1),
+    }),
+    prisma.business.count({ where: query }),
+  ]);
+
+  const [sectors] = await prisma.$transaction([prisma.sector.findMany()]);
+
+  // const [filteredBusinesses, setFilteredBusinesses] = useState<BusinessType[]>(
+  //   []
+  // );
+  // const [selectedSector, setSelectedSector] = useState<number>(0);
+  // const { sectors, isLoadingSect } = useSectors();
+  // const { businesses, isLoadingBiz } = useBusinesses();
+
+  // const [filter, setFilter] = useState<string>("");
+
+  // useEffect(() => {
+  //   filterBusinesses();
+  // }, [selectedSector, businesses]);
+
+  // const filterBusinesses = () => {
+  //   if (selectedSector === 0) {
+  //     setFilteredBusinesses(businesses);
+  //   } else {
+  //     const filtered = businesses.filter(
+  //       (item: BusinessType) => item.sector === selectedSector
+  //     );
+  //     setFilteredBusinesses(filtered);
+  //   }
+  // };
+
+  // if (isLoadingSect || isLoadingBiz) {
+  //   return (
+  //     <div className="h-screen grid place-items-center">
+  //       <div className="flex flex-col justify-center items-center p-4">
+  //         <Image
+  //           src={"/loading.gif"}
+  //           width={50}
+  //           height={50}
+  //           alt="Loading animation"
+  //         />
+  //         <p>Loading data ...</p>
+  //       </div>
+  //     </div>
+  //   );
+  // }
+
+  // const visibleBusinesses = filteredBusinesses.filter((business) =>
+  //   business.name.toLowerCase().includes(filter.toLowerCase())
+  // );
 
   return (
     <div className="pb-8 px-8 mt-[140px]">
@@ -84,46 +132,39 @@ const MembersLibrary = () => {
       </section>
       <Analysis />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-10">
-        {sectors?.map((sector: SectorType) => (
+        {sectors?.map((sector: Sector) => (
           <Link
             href={`/business-directory/sector/${sector.id}`}
             key={sector.id}
             className="group bg-secondary hover:bg-primary relative rounded-lg p-6 lg:p-12 lg:gap-8 text-center grid place-items-center"
           >
             <h3 className="font-bold text-lg lg:text-2xl text-white group-hover:text-secondary">
-              {sector.title}
+              {sector.name}
             </h3>
           </Link>
         ))}
       </div>
       <div className="my-8">
         <MyAccordion
-          title={"FILTER BY SECTOR"}
+          name={"FILTER BY SECTOR"}
           data={sectors}
-          selectedItem={selectedSector}
-          setSelectedItem={setSelectedSector}
+          // selectedItem={selectedSector}
+          // setSelectedItem={setSelectedSector}
         />
       </div>
 
-      <div className="flex w-full md:w-1/3 py-2 items-center gap-2 text-xs rounded-full ring-[1.5px] ring-gray-300 px-2">
-        <Image src="/search.png" alt="" width={14} height={14} />
-        <input
-          value={filter}
-          type="text"
-          placeholder="Search..."
-          className="w-full p-2 bg-transparent outline-none"
-          onChange={(e) => setFilter(e.target.value)}
-        />
+      <div className="flex w-full md:w-1/3 ">
+        <TableSearch />
       </div>
 
       <div>
-        {visibleBusinesses.length === 0 ? (
+        {data.length === 0 ? (
           <div className="px-8 py-16 grid place-items-center text-center">
             No Businesses found. Please try another filter
           </div>
         ) : (
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-4 gap-y-12 py-20">
-            {visibleBusinesses.map((business) => (
+            {data.map((business) => (
               <div
                 key={business.id}
                 className={`relative border-secondary border-4 p-8 rounded-lg flex flex-col gap-4 bg-[#faebe6] items-start`}
@@ -132,11 +173,11 @@ const MembersLibrary = () => {
                   className={`bg-secondary grid text-white place-items-center rounded-lg text-sm font-bold uppercase lg:h-[40px] lg:w-[250px] p-2 lg:absolute -top-[20px] left-8 z-10`}
                 >
                   {sectors.find(
-                    (sector: SectorType) => sector.id === business.sector
-                  )?.title || "Unknown Sector"}
+                    (sector: Sector) => sector.id === business.sector?.id
+                  )?.name || "Unknown Sector"}
                 </div>
                 <Image
-                  src={business.logo === "" ? Logo : business.logo}
+                  src={business.logo || "/logo.png"}
                   alt={`${business.name} logo`}
                   className="mt-8"
                   height={100}
@@ -162,6 +203,7 @@ const MembersLibrary = () => {
           </div>
         )}
       </div>
+      <Pagination page={p} count={count} />
     </div>
   );
 };
