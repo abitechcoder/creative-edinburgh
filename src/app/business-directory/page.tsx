@@ -1,12 +1,7 @@
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import MyAccordion from "@/components/landingpage/MyAccordion";
 import Image from "next/image";
-import { Logo } from "../../../public";
-import useSectors from "@/hooks/useSectors";
-import useBusinesses from "@/hooks/useBusinesses";
-import { BusinessType, SectorType } from "@/lib/types";
 import Analysis from "@/components/landingpage/Analysis";
 import styles from "@/style";
 import { Prisma, Sector } from "@prisma/client";
@@ -59,50 +54,6 @@ const MembersLibrary = async ({
   ]);
 
   const [sectors] = await prisma.$transaction([prisma.sector.findMany()]);
-
-  // const [filteredBusinesses, setFilteredBusinesses] = useState<BusinessType[]>(
-  //   []
-  // );
-  // const [selectedSector, setSelectedSector] = useState<number>(0);
-  // const { sectors, isLoadingSect } = useSectors();
-  // const { businesses, isLoadingBiz } = useBusinesses();
-
-  // const [filter, setFilter] = useState<string>("");
-
-  // useEffect(() => {
-  //   filterBusinesses();
-  // }, [selectedSector, businesses]);
-
-  // const filterBusinesses = () => {
-  //   if (selectedSector === 0) {
-  //     setFilteredBusinesses(businesses);
-  //   } else {
-  //     const filtered = businesses.filter(
-  //       (item: BusinessType) => item.sector === selectedSector
-  //     );
-  //     setFilteredBusinesses(filtered);
-  //   }
-  // };
-
-  // if (isLoadingSect || isLoadingBiz) {
-  //   return (
-  //     <div className="h-screen grid place-items-center">
-  //       <div className="flex flex-col justify-center items-center p-4">
-  //         <Image
-  //           src={"/loading.gif"}
-  //           width={50}
-  //           height={50}
-  //           alt="Loading animation"
-  //         />
-  //         <p>Loading data ...</p>
-  //       </div>
-  //     </div>
-  //   );
-  // }
-
-  // const visibleBusinesses = filteredBusinesses.filter((business) =>
-  //   business.name.toLowerCase().includes(filter.toLowerCase())
-  // );
 
   return (
     <div className="pb-8 px-8 mt-[140px]">
