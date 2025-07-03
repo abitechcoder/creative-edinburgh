@@ -28,7 +28,6 @@ const MembersLibrary = async ({
       if (value !== undefined) {
         switch (key) {
           case "sectorId":
-            console.log(parseInt(value));
             query.sectorId = parseInt(value);
             break;
           case "search":
@@ -54,6 +53,10 @@ const MembersLibrary = async ({
   ]);
 
   const [sectors] = await prisma.$transaction([prisma.sector.findMany()]);
+
+  const registeredCount = await prisma.business.count({
+    where: { registrationStatus: "Registered" },
+  });
 
   return (
     <div className="pb-8 px-8 mt-[140px]">

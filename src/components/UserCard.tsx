@@ -10,7 +10,7 @@ const UserCard = async ({
 
   if (type === "registered") {
     count = await prisma.business.count({
-      where: { registrationStatus: "Yes" },
+      where: { registrationStatus: "Registered" },
     });
   } else if (type === "staff") {
     const result = await prisma.workforce.aggregate({
