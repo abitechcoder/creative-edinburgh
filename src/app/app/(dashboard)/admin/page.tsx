@@ -3,9 +3,15 @@ import AttendanceChart from "@/components/AttendanceChart";
 import CountChartContainer from "@/components/CountChartContainer";
 import EventCalendar from "@/components/EventCalendar";
 import FinanceChart from "@/components/FinanceChart";
+import Reports from "@/components/Reports";
 import UserCard from "@/components/UserCard";
+import prisma from "@/lib/prisma";
 
-const AdminPage = () => {
+const AdminPage = async () => {
+  const revenueData = await prisma.business.groupBy({
+    by: ["revenueBracket"],
+    _count: true,
+  });
   return (
     <div className="p-4 flex gap-4 flex-col md:flex-row">
       {/* LEFT */}

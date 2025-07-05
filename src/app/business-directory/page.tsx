@@ -70,8 +70,10 @@ const MembersLibrary = async ({
           <p
             className={`${styles.paragraph} text-gray-700 mb-5 font-medium leading-relaxed text-xl`}
           >
-            Explore our Members Directory! You can search by sector area and
-            connect with the city’s makers, thinkers and innovators.
+            Explore the Sierra Leone Business Directory! Connect with businesses
+            across Sierra Leone from music and fashion to tech and are . Search
+            by sector or location, discover local services, and grow your
+            network. Support local. Discover more. Build connections.
           </p>
           <p
             className={`${styles.paragraph} text-gray-700 font-medium leading-relaxed text-xl`}

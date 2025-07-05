@@ -484,3 +484,137 @@ export const manageAnnouncement = async (
     };
   }
 };
+
+// reort data
+
+// Businesses by Sector Used
+export const getBusinessesBySector = async () => {
+  const sectors = await prisma.sector.findMany({
+    include: {
+      _count: {
+        select: { businesses: true },
+      },
+    },
+  });
+
+  return sectors.map((sector) => ({
+    name: sector.name,
+    count: sector._count.businesses,
+  }));
+};
+
+// Disability Inclusion Used
+export const getDisabilityInclusionStats = async () => {
+  return prisma.business.groupBy({
+    by: ["disabilityInclusion"],
+    _count: true,
+  });
+};
+
+// Registered vs Unregistered used
+export const getRegistrationStats = async () => {
+  return prisma.business.groupBy({
+    by: ["registrationStatus"],
+    _count: true,
+  });
+};
+
+// Growth Over Time not used
+export const getMonthlyGrowth = async () => {
+  return prisma.business.groupBy({
+    by: ["createdAt"],
+    _count: true,
+    orderBy: {
+      createdAt: "asc",
+    },
+  });
+};
+
+// used
+export const getRevenueBracketBySector = async () => {
+  const businesses = await prisma.business.findMany({
+    where: {
+      revenueBracket: {
+        not: null,
+      },
+      sector: {
+        isNot: null,
+      },
+    },
+    select: {
+      revenueBracket: true,
+      sector: {
+        select: {
+          name: true,
+        },
+      },
+    },
+  });
+
+  // Aggregate count by "Sector - RevenueBracket"
+  const grouped: Record<string, number> = {};
+
+  for (const biz of businesses) {
+    const key = `${biz.sector?.name} - ${biz.revenueBracket}`;
+    grouped[key] = (grouped[key] || 0) + 1;
+  }
+
+  // Format for Recharts
+  return Object.entries(grouped).map(([name, count]) => ({
+    name,
+    count,
+  }));
+};
+
+// getDisabilityCountPerSector
+export const getDisabilityCountPerSector = async () => {
+  const data = await prisma.business.groupBy({
+    by: ["sectorId"],
+    where: {
+      disabilityInclusion: {
+        equals: "Yes",
+      },
+    },
+    _count: true,
+  });
+
+  const result = await Promise.all(
+    data.map(async (item) => {
+      const sector = await prisma.sector.findUnique({
+        where: { id: item.sectorId! },
+      });
+      return {
+        name: sector?.name || "Unknown",
+        count: item._count,
+      };
+    })
+  );
+
+  return result;
+};
+
+export const getRegisteredCountPerSector = async () => {
+  const data = await prisma.business.groupBy({
+    by: ["sectorId"],
+    where: {
+      registrationStatus: {
+        equals: "Registered",
+      },
+    },
+    _count: true,
+  });
+
+  const result = await Promise.all(
+    data.map(async (item) => {
+      const sector = await prisma.sector.findUnique({
+        where: { id: item.sectorId! },
+      });
+      return {
+        name: sector?.name || "Unknown",
+        count: item._count,
+      };
+    })
+  );
+
+  return result;
+};
