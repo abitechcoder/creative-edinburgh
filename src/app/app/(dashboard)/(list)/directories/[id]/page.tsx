@@ -3,9 +3,11 @@ import BigCalendar from "@/components/BigCalender";
 import FormContainer from "@/components/FormContainer";
 
 import Performance from "@/components/Performance";
+import ProductList from "@/components/ProductList";
 import { role } from "@/lib/data";
 import prisma from "@/lib/prisma";
 import { Business, Sector, SocialMedia, User, Workforce } from "@prisma/client";
+import moment from "moment";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -89,10 +91,7 @@ const DirectoryDetailsPage = async ({
                   <Image src="/blood.png" alt="" width={14} height={14} />
                   <span>{business.businessAddress}</span>
                 </div>
-                <div className="w-full md:w-1/3 lg:w-full 2xl:w-1/3 flex items-center gap-2">
-                  <Image src="/date.png" alt="" width={14} height={14} />
-                  {/* <span>{business.yearsInOperation}</span> */}
-                </div>
+
                 <div className="w-full md:w-1/3 lg:w-full 2xl:w-1/3 flex items-center gap-2">
                   <Image src="/phone.png" alt="" width={14} height={14} />
                   <span>{business?.phone}</span>
@@ -100,6 +99,11 @@ const DirectoryDetailsPage = async ({
                 <div className="w-full md:w-1/3 lg:w-full 2xl:w-1/3 flex items-center gap-2">
                   <Image src="/mail.png" alt="" width={14} height={14} />
                   <span>{business?.email}</span>
+                </div>
+                <div className="w-full md:w-1/3 lg:w-full 2xl:w-1/3 flex items-center gap-2">
+                  <Image src="/date.png" alt="" width={14} height={14} />
+                  Opened since
+                  <span>{moment(business.yearsInOperation).fromNow()}</span>
                 </div>
               </div>
             </div>
@@ -175,68 +179,59 @@ const DirectoryDetailsPage = async ({
           </div>
         </div>
         {/* BOTTOM */}
-        <div className="mt-4 bg-white rounded-md p-4 h-[800px]">
+        <div className="mt-4 bg-white rounded-md p-4 ">
           <p className="text-md text-gray-500 my-3">{business.description}</p>
 
           {/* show all social media */}
-          <div className="flex gap-6 items-center my-3">
-            <h3 className="font-black uppercase lg:text-xl text-lg text-secondary">
-              Social Media
-            </h3>
+          <div className="mt-4 mb-6">
+            <div className="flex gap-6 items-center my-3">
+              <h3 className="font-black uppercase lg:text-xl text-lg text-secondary">
+                Social Media
+              </h3>
 
-            {role === "admin" && (
-              <FormContainer
-                table="socialmedia"
-                type="create"
-                data={business}
-              />
+              {role === "admin" && (
+                <FormContainer
+                  table="socialmedia"
+                  type="create"
+                  data={business}
+                />
+              )}
+            </div>
+            {business?.socialMedia && (
+              <div className="mb-4">
+                <div className="flex gap-4 mt-2 lg:mt-4">
+                  {platforms.map(({ key, icon: Icon, className }) => {
+                    const url =
+                      business.socialMedia?.[
+                        key as keyof typeof business.socialMedia
+                      ];
+
+                    if (!url) return null;
+
+                    return (
+                      <Link
+                        key={key}
+                        href={url + ""}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Icon size={30} className={className} />
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
             )}
           </div>
-          {business?.socialMedia && (
-            <div className="mb-4">
-              <div className="flex gap-4 mt-2 lg:mt-4">
-                {platforms.map(({ key, icon: Icon, className }) => {
-                  const url =
-                    business.socialMedia?.[
-                      key as keyof typeof business.socialMedia
-                    ];
-
-                  if (!url) return null;
-
-                  return (
-                    <Link
-                      key={key}
-                      href={url + ""}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Icon size={30} className={className} />
-                    </Link>
-                  );
-                })}
-              </div>
-            </div>
-          )}
-
           {/* show all Products  */}
 
-          <div className="flex gap-6 items-center my-3 mt-4">
-            <h3 className="font-black uppercase lg:text-xl text-lg text-secondary">
-              Catalogue
-            </h3>
+          {/* product list */}
 
-            {role === "admin" && (
-              <FormContainer
-                table="product"
-                type="create"
-                data={{ id: null, businessId: business.id }}
-              />
-            )}
-          </div>
+          <ProductList businessId={business.id} />
 
-          <h1>Opening time</h1>
+          {/* <h1>Opening time</h1> */}
 
-          <BigCalendar />
+          {/* <BigCalendar /> */}
         </div>
       </div>
       {/* RIGHT */}
@@ -261,18 +256,6 @@ const DirectoryDetailsPage = async ({
                 />
               )}
             </div>
-            {/* <Link className="p-3 rounded-md bg-PurpleDeepLight" href="/">
-              Teacher&apos;s Students
-            </Link>
-            <Link className="p-3 rounded-md bg-YellowLight" href="/">
-              Teacher&apos;s Lessons
-            </Link>
-            <Link className="p-3 rounded-md bg-pink-50" href="/">
-              Teacher&apos;s Exams
-            </Link>
-            <Link className="p-3 rounded-md bg-SkyBlueLight" href="/">
-              Teacher&apos;s Assignments
-            </Link> */}
           </div>
         </div>
         <Performance />

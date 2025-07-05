@@ -11,7 +11,6 @@ import Link from "next/link";
 import { Business, Prisma, Sector } from "@prisma/client";
 import prisma from "@/lib/prisma";
 import { ITEM_PER_PAGE } from "@/lib/settings";
-import { p } from "framer-motion/client";
 import FormContainer from "@/components/FormContainer";
 
 type Directories = Business & { sector: Sector };

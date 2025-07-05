@@ -52,7 +52,7 @@ const AdminPage = async () => {
         <div>
           <BarReport
             data={sectorData}
-            xKey="sectorId"
+            // xKey="sectorId"
             title="Businesses by Sector"
             color="#1CA1C8"
           />
@@ -61,7 +61,7 @@ const AdminPage = async () => {
         <div>
           <BarReport
             data={revenueData}
-            xKey="revenueBracket"
+            // xKey="revenueBracket"
             title="Revenue Bracket"
             color="#7b479c"
           />

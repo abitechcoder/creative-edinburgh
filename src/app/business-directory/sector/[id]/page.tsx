@@ -31,18 +31,6 @@ const SectorBusinesses = async ({
     };
   }
 
-  // const { businesses, isLoadingBiz } = useBusinessesById(Number(id));
-  // const { sectors, isLoadingSect } = useSectors();
-
-  // if ( isLoadingBiz) {
-  //     return (<div className="h-screen grid place-items-center">
-  //         <div className="flex flex-col justify-center items-center p-4">
-  //             <Image src={"/loading.gif"} width={50} height={50} alt="Loading animation" />
-  //             <p>Loading data ...</p>
-  //         </div>
-  //     </div>);
-  // }
-
   const [data, count] = await prisma.$transaction([
     prisma.business.findMany({
       where: query,

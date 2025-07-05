@@ -45,7 +45,7 @@ const AdminPage = async () => {
         <div className="w-full h-[500px]">
           <BarReport
             data={revenueBracketBySector}
-            xKey="revenueBracket"
+            // xKey="revenueBracket"
             title="Revenue Bracket"
             color="#7b479c"
           />
