@@ -13,13 +13,13 @@ const menuItems = [
         visible: ["admin", "teacher", "student", "parent"],
       },
       {
-        icon: "/teacher.png",
+        icon: "/cooperation.png",
         label: "Directory",
         href: "/directories",
         visible: ["admin", "staff"],
       },
       {
-        icon: "/message.png",
+        icon: "/pie.png",
         label: "Sectors",
         href: "/sectors",
         visible: ["admin", "teacher", "student", "parent"],
@@ -31,7 +31,7 @@ const menuItems = [
         visible: ["admin", "staff"],
       },
       {
-        icon: "/parent.png",
+        icon: "/subscription.png",
         label: "Subscription",
         href: "/subscription",
         visible: ["admin", "teacher"],

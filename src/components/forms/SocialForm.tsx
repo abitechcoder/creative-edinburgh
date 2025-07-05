@@ -106,6 +106,17 @@ const SocialForm = ({
           error={errors.tiktok}
           defaultValue={data?.socialMedia?.tiktok}
         />
+
+        <InputField
+          fullWidth
+          label="Youtube"
+          name="youtube"
+          register={register}
+          as="textarea"
+          inputProps={{ rows: 1, placeholder: "" }}
+          error={errors.youtube}
+          defaultValue={data?.socialMedia?.youtube}
+        />
       </div>
 
       {state.error && (
