@@ -83,3 +83,17 @@ export const announcementSchema = z.object({
 });
 
 export type AnnouncementSchema = z.infer<typeof announcementSchema>;
+
+export const productSchema = z.object({
+  id: z.string().optional(),
+  name: z.string().min(1, { message: "Name is required!" }),
+  description: z.string().min(1, { message: "Description required!" }),
+  businessId: z.coerce.number(),
+  category: z.enum(["Service", "Product"], {
+    message: "category is required!",
+  }),
+  price: z.coerce.number().optional(),
+  img: z.string().optional(),
+});
+
+export type ProductSchema = z.infer<typeof productSchema>;

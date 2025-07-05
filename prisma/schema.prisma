@@ -40,9 +40,8 @@ model Business {
   workforce            Workforce?
   socialMedia          SocialMedia?
   announcement         Announcement[]
- 
- 
- 
+  products             Product[]
+
 
 }
 
@@ -121,4 +120,20 @@ model User {
 
  business   Business?  @relation 
   
+}
+
+
+model Product {
+  id          Int      @id @default(autoincrement())
+  name        String   @db.VarChar(255)
+  description String   @db.Text
+  price       Float?   // Optional for services or non-priced items
+  image       String?  @db.VarChar(255) // URL to product image
+  category    String?  @db.VarChar(100) // e.g., "Service", "Physical", "Digital"
+
+  business    Business @relation(fields: [businessId], references: [id])
+  businessId  Int
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }

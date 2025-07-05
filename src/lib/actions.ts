@@ -3,6 +3,8 @@ import {
   AnnouncementSchema,
   DirectorySchema,
   EventSchema,
+  ProductSchema,
+  productSchema,
   SectorSchema,
   sectorSchema,
   SocialSchema,
@@ -617,4 +619,70 @@ export const getRegisteredCountPerSector = async () => {
   );
 
   return result;
+};
+
+// manage product
+
+export const manageProduct = async (
+  currentState: CurrentState,
+  data: ProductSchema
+): Promise<CurrentState> => {
+  try {
+    const parsed = productSchema.parse(data);
+    const productId = parsed.id ? parseInt(parsed.id) : null;
+
+    // Check for duplicate product name within the same business
+    const existing = await prisma.product.findFirst({
+      where: {
+        name: parsed.name,
+        businessId: parsed.businessId,
+        ...(productId ? { NOT: { id: productId } } : {}),
+      },
+    });
+
+    if (existing) {
+      return {
+        success: false,
+        error: true,
+        message: "Product name already exists for this business!",
+      };
+    }
+
+    if (productId) {
+      // Update product
+      await prisma.product.update({
+        where: { id: productId },
+        data: {
+          name: parsed.name,
+          description: parsed.description,
+          price: parsed.price ? parsed.price : null,
+          category: parsed.category || null,
+          image: parsed.img || null,
+        },
+      });
+    } else {
+      // Create product
+      await prisma.product.create({
+        data: {
+          name: parsed.name,
+          description: parsed.description,
+          price: parsed.price ? parsed.price : null,
+          category: parsed.category || null,
+          image:
+            parsed.img ||
+            "https://res.cloudinary.com/dnaefwpo1/image/upload/v1751723651/ewulxm8pnsz47u7pkiqv.jpg",
+          businessId: parsed.businessId,
+        },
+      });
+    }
+
+    return { success: true, error: false };
+  } catch (err) {
+    console.error("manageProduct error:", err);
+    return {
+      success: false,
+      error: true,
+      message: "Something went wrong!",
+    };
+  }
 };

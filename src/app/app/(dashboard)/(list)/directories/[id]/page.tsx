@@ -49,8 +49,6 @@ const DirectoryDetailsPage = async ({
     },
   });
 
-  console.log(business?.user);
-
   if (!business) {
     return notFound();
   }
@@ -180,6 +178,7 @@ const DirectoryDetailsPage = async ({
         <div className="mt-4 bg-white rounded-md p-4 h-[800px]">
           <p className="text-md text-gray-500 my-3">{business.description}</p>
 
+          {/* show all social media */}
           <div className="flex gap-6 items-center my-3">
             <h3 className="font-black uppercase lg:text-xl text-lg text-secondary">
               Social Media
@@ -218,6 +217,22 @@ const DirectoryDetailsPage = async ({
               </div>
             </div>
           )}
+
+          {/* show all Products  */}
+
+          <div className="flex gap-6 items-center my-3 mt-4">
+            <h3 className="font-black uppercase lg:text-xl text-lg text-secondary">
+              Catalogue
+            </h3>
+
+            {role === "admin" && (
+              <FormContainer
+                table="product"
+                type="create"
+                data={{ id: null, businessId: business.id }}
+              />
+            )}
+          </div>
 
           <h1>Opening time</h1>
 

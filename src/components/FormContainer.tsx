@@ -11,7 +11,8 @@ export type FormContainerProps = {
     | "sector"
     | "user"
     | "event"
-    | "announcement";
+    | "announcement"
+    | "product";
   type: "create" | "update" | "delete";
   data?: any;
   id?: number | string;
