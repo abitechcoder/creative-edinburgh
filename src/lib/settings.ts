@@ -4,14 +4,12 @@ type RouteAccessMap = {
   [key: string]: string[];
 };
 
-export const routeAccessMap: Record<string, string[]> = {
-  "/app/admin(.*)": ["admin"],
-  "/app/student(.*)": ["student"],
-  "/app/teacher(.*)": ["teacher"],
-  "/app/directories": ["admin"],
+export const routeAccessMap: RouteAccessMap = {
+  "/app/admin(.*)": ["admin", "member"],
+  "/app/directories": ["admin", "member"],
   "/app/sectors": ["admin"],
   "/app/users": ["admin"],
   "/app/events": ["admin"],
-  "/app/announcement": ["admin"],
+  "/app/announcements": ["admin"],
   "/app/subscription": ["admin"],
 };

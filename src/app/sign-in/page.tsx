@@ -76,7 +76,7 @@ const Login = () => {
               }}
               className="w-full bg-green-500 text-white py-2 rounded-md font-semibold hover:bg-green-600"
             >
-              Sign In
+              Sign In Now
             </button>
           </div>
         )}
