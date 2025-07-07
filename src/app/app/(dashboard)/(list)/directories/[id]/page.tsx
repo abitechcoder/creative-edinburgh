@@ -227,7 +227,7 @@ const DirectoryDetailsPage = async ({
 
           {/* product list */}
 
-          <ProductList businessId={business.id} />
+          <ProductList businessId={business.id} showButton={true} />
 
           {/* <h1>Opening time</h1> */}
 

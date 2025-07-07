@@ -12,8 +12,6 @@ const LoginPage = () => {
 
   const router = useRouter();
 
-  console.log(user?.publicMetadata.role)
-
   useEffect(() => {
     const role = user?.publicMetadata.role;
 
@@ -21,11 +19,6 @@ const LoginPage = () => {
       router.push(`app/${role}`);
     }
   }, [user, router]);
-
-
-
-
-
 
   return (
     <div className="h-screen flex items-center justify-center bg-lamaSkyLight">
@@ -36,7 +29,7 @@ const LoginPage = () => {
         >
           <h1 className="text-xl font-bold flex items-center gap-2">
             <Image src="/logo.png" alt="" width={24} height={24} />
-           CHA
+            CHA
           </h1>
           <h2 className="text-gray-400">Sign in to your account</h2>
           <Clerk.GlobalError className="text-sm text-red-400" />

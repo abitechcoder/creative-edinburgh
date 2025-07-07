@@ -4,7 +4,7 @@ import { FaCheckSquare } from "react-icons/fa";
 const Newsletter = () => {
   return (
     <section className="bg-white">
-      <div className="px-4 container mx-auto py-15 lg:py-20">
+      <div className="px-4 container mx-auto py-15 lg:py-20 mb-4">
         <h2
           className={`${styles.heading1} lg:max-w-[70%] lg:mx-auto text-black text-center mb-4`}
         >

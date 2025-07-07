@@ -8,7 +8,13 @@ import { Product } from "@prisma/client";
 import FormContainer from "./FormContainer";
 import { auth } from "@clerk/nextjs/server";
 
-const ProductList = async ({ businessId }: { businessId: number }) => {
+const ProductList = async ({
+  businessId,
+  showButton = false,
+}: {
+  businessId: number;
+  showButton?: boolean;
+}) => {
   const [data] = await prisma.$transaction([
     prisma.product.findMany({
       where: { businessId },
@@ -25,7 +31,7 @@ const ProductList = async ({ businessId }: { businessId: number }) => {
           Catalogue
         </h3>
 
-        {role === "admin" && (
+        {showButton && role === "admin" && (
           <FormContainer
             table="product"
             type="create"
