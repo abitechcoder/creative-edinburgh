@@ -24,9 +24,6 @@ export default clerkMiddleware((auth, req) => {
   const { sessionClaims } = auth();
   const role = (sessionClaims?.metadata as { role?: string })?.role;
 
-  console.log("➡️ currentPath:", currentPath);
-  console.log("🧑 Role:", role);
-
   // ✅ 3. If not logged in, redirect to home
   if (!role) {
     return NextResponse.redirect(new URL("/", req.url));
