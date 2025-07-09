@@ -9,6 +9,7 @@ import { createUser } from "@/lib/actions";
 import { UserSchema, userSchema } from "@/lib/formValidationSchemas";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
+import CustomButton from "../CustomButton";
 
 const UsersForm = ({
   type,
@@ -33,10 +34,11 @@ const UsersForm = ({
     success: false,
     error: false,
     message: "",
+    loading: false,
   });
 
   const onSubmit = handleSubmit((data) => {
-    console.log(data);
+    state.loading = true;
     formAction({ ...data });
   });
 
@@ -103,9 +105,7 @@ const UsersForm = ({
 
       {state.error && <span className="text-red-500">{state.message}</span>}
 
-      <button className="bg-blue-400 text-white p-2 rounded-md">
-        {type === "create" ? "Create" : "Update"}
-      </button>
+      <CustomButton type={type} loading={state.loading} />
     </form>
   );
 };

@@ -13,6 +13,7 @@ import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import { CldUploadWidget } from "next-cloudinary";
 import moment from "moment";
+import CustomButton from "../CustomButton";
 
 type Inputs = z.infer<typeof directorySchema>;
 
@@ -43,11 +44,12 @@ const DirectoryForm = ({
       success: false,
       error: false,
       message: "",
+      loading: false,
     }
   );
 
   const onSubmit = handleSubmit((data) => {
-    console.log(data);
+    state.loading = true;
     formAction({ ...data, img: img?.secure_url });
   });
 
@@ -252,9 +254,7 @@ const DirectoryForm = ({
         <span className="text-red-500">Something went wrong!</span>
       )}
 
-      <button className="bg-blue-400 text-white p-2 rounded-md">
-        {type === "create" ? "Create" : "Update"}
-      </button>
+      <CustomButton type={type} loading={state.loading} />
     </form>
   );
 };

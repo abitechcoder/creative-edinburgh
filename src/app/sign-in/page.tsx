@@ -1,12 +1,18 @@
 "use client";
 import ContactModal from "@/components/landingpage/ContactModal";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 
 import { useState } from "react";
 
 import { FaCalendar, FaHome } from "react-icons/fa";
 import { FaFile } from "react-icons/fa6";
+
+import * as Clerk from "@clerk/elements/common";
+import * as SignIn from "@clerk/elements/sign-in";
+import { useUser } from "@clerk/nextjs";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 const Login = () => {
   const [activeTab, setActiveTab] = useState("MEMBERSHIP INFORMATION");
@@ -20,10 +26,15 @@ const Login = () => {
   ];
   const router = useRouter();
 
-  const signInUser = () => {
-    router.push(`/app`);
-  };
+  const { isLoaded, isSignedIn, user } = useUser();
 
+  useEffect(() => {
+    const role = user?.publicMetadata.role;
+
+    if (role && role !== undefined) {
+      router.push(`app/${role}`);
+    }
+  }, [user, router]);
   return (
     <div className="mt-[150px] bg-white mb-10">
       {/* Navigation Bar */}
@@ -46,39 +57,47 @@ const Login = () => {
       {/* Content Section (White Space) */}
       <div className="container mx-auto p-8 bg-white min-h-[400px]">
         {activeTab === "MEMBERSHIP INFORMATION" && (
-          <div className="max-w-md mx-auto bg-gray-50 p-6 rounded-lg shadow-md">
-            <h2 className="text-lg font-semibold mb-3">MEMBER LOG IN</h2>
-            <p className="text-sm text-gray-600 mb-4">
-              We'll find the membership by looking up your email address. Enter
-              the email address associated with this organization.
-            </p>
-
-            {/* Email Input */}
-            <label className="block text-gray-700 text-sm mb-1">EMAIL</label>
-            <input
-              type="email"
-              placeholder="Email"
-              className="w-full border p-2 rounded-md mb-4"
-              required
-            />
-
-            <input
-              type="password"
-              placeholder="password"
-              className="w-full border p-2 rounded-md mb-4"
-              required
-            />
-
-            {/* Lookup Button */}
-            <button
-              onClick={() => {
-                signInUser();
-              }}
-              className="w-full bg-green-500 text-white py-2 rounded-md font-semibold hover:bg-green-600"
+          <SignIn.Root>
+            <SignIn.Step
+              name="start"
+              className="max-w-md mx-auto bg-gray-50 p-6 rounded-lg shadow-md gap-4 flex flex-col"
             >
-              Sign In Now
-            </button>
-          </div>
+              <h2 className="text-lg font-semibold mb-3">MEMBER LOG IN</h2>
+              <p className="text-sm text-gray-600 mb-4">
+                We'll find the membership by looking up your email address.
+                Enter the email address associated with this organization.
+              </p>
+              <Clerk.GlobalError className="text-sm text-red-400" />
+              <Clerk.Field name="identifier" className="flex flex-col gap-2">
+                <Clerk.Label className="text-sm text-gray-500 font-bold">
+                  Username
+                </Clerk.Label>
+                <Clerk.Input
+                  type="text"
+                  required
+                  className="p-2 rounded-md ring-1 ring-gray-300"
+                />
+                <Clerk.FieldError className="text-xs text-red-400" />
+              </Clerk.Field>
+              <Clerk.Field name="password" className="flex flex-col gap-2">
+                <Clerk.Label className="text-sm text-gray-500 font-bold">
+                  Password
+                </Clerk.Label>
+                <Clerk.Input
+                  type="password"
+                  required
+                  className="p-2 rounded-md ring-1 ring-gray-300"
+                />
+                <Clerk.FieldError className="text-xs text-red-400" />
+              </Clerk.Field>
+              <SignIn.Action
+                submit
+                className="w-full bg-green-500 text-white py-2 rounded-md font-semibold hover:bg-green-600 cursor-pointer"
+              >
+                Sign In
+              </SignIn.Action>
+            </SignIn.Step>
+          </SignIn.Root>
         )}
 
         {activeTab === "PAYMENT DETAILS" && (

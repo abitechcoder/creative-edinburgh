@@ -11,6 +11,7 @@ import { manageSocials } from "@/lib/actions";
 import { SocialSchema, socialSchema } from "@/lib/formValidationSchemas";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
+import CustomButton from "../CustomButton";
 
 const SocialForm = ({
   type,
@@ -34,9 +35,12 @@ const SocialForm = ({
   const [state, formAction] = useFormState(manageSocials, {
     success: false,
     error: false,
+    message: "",
+    loading: false,
   });
 
   const onSubmit = handleSubmit((data) => {
+    state.loading = true;
     formAction({ ...data });
   });
 
@@ -123,9 +127,7 @@ const SocialForm = ({
         <span className="text-red-500">Something went wrong!</span>
       )}
 
-      <button type="submit" className="bg-blue-400 text-white p-2 rounded-md">
-        {type === "create" ? "Create" : "Update"}
-      </button>
+      <CustomButton type={type} loading={state.loading} />
     </form>
   );
 };

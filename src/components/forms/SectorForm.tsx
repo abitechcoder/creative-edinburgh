@@ -10,6 +10,7 @@ import { manageSector } from "@/lib/actions";
 import { sectorSchema, SectorSchema } from "@/lib/formValidationSchemas";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
+import CustomButton from "../CustomButton";
 
 const SectorForm = ({
   type,
@@ -33,9 +34,12 @@ const SectorForm = ({
   const [state, formAction] = useFormState(manageSector, {
     success: false,
     error: false,
+    loading: true,
+    message: "",
   });
 
   const onSubmit = handleSubmit((data) => {
+    state.loading = true;
     formAction({ ...data });
     // console.log(data);
   });
@@ -82,9 +86,7 @@ const SectorForm = ({
         <span className="text-red-500 text-center">{state.message}</span>
       )}
 
-      <button type="submit" className="bg-blue-400 text-white p-2 rounded-md">
-        {type === "create" ? "Create" : "Update"}
-      </button>
+      <CustomButton type={type} loading={state.loading} />
     </form>
   );
 };

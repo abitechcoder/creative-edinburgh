@@ -1,18 +1,35 @@
+"use client";
+
 import Image from "next/image";
-import { UserButton } from "@clerk/nextjs";
-import { currentUser } from "@clerk/nextjs/server";
+import { UserButton, useUser } from "@clerk/nextjs";
+import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
+import { FaArrowLeft } from "react-icons/fa";
 
-const Navbar = async () => {
-  const user = await currentUser();
+const Navbar = () => {
+  const pathname = usePathname();
+  const router = useRouter();
+  const { user } = useUser();
 
-  console.log(user);
+  // Define regex or conditions for pages where the back button should appear
+  const showBackButton =
+    /^\/app\/directories\/\d+$/.test(pathname) ||
+    pathname === "/app/admin/reports";
+
   return (
     <div className="flex items-center justify-between p-4">
-      {/* SEARCH BAR */}
-      {/* <div className='hidden md:flex items-center gap-2 text-xs rounded-full ring-[1.5px] ring-gray-300 px-2'>
-        <Image src="/search.png" alt="" width={14} height={14}/>
-        <input type="text" placeholder="Search..." className="w-[200px] p-2 bg-transparent outline-none"/>
-      </div> */}
+      {/* Back Button */}
+      {showBackButton && (
+        <button
+          onClick={() => router.back()}
+          className="hover:cursor-pointer flex items-center gap-4"
+        >
+          <div className="bg-secondary p-2 rounded-full">
+            <FaArrowLeft className="text-white" size={16} />
+          </div>
+        </button>
+      )}
+
       {/* ICONS AND USER */}
       <div className="flex items-center gap-6 justify-end w-full">
         <div className="bg-white rounded-full w-7 h-7 flex items-center justify-center cursor-pointer">
@@ -32,7 +49,7 @@ const Navbar = async () => {
             {user?.publicMetadata?.role as string}
           </span>
         </div>
-        {/* <Image src="/avatar.png" alt="" width={36} height={36} className="rounded-full"/> */}
+
         <UserButton />
       </div>
     </div>

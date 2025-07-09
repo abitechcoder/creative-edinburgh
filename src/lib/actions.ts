@@ -18,12 +18,13 @@ export type CurrentState = {
   success: boolean;
   error: boolean;
   message?: string;
+  loading: boolean;
 };
 
 export const createDirectory = async (
   currentState: CurrentState,
   data: any
-) => {
+): Promise<CurrentState> => {
   try {
     const user: any = await clerkClient.users.createUser({
       username: data.firstName + data.lastName,
@@ -77,17 +78,17 @@ export const createDirectory = async (
     });
 
     // revalidatePath("/list/teachers");
-    return { success: true, error: false, message: "" };
+    return { success: true, error: false, message: "", loading: false };
   } catch (err) {
     console.log(err);
-    return { success: false, error: true, mesage: "" };
+    return { success: false, error: true, message: "", loading: false };
   }
 };
 
 export const updateDirectory = async (
   currentState: CurrentState,
   data: any
-) => {
+): Promise<CurrentState> => {
   try {
     let userId = data.userId;
     let clerkUser: any;
@@ -190,10 +191,20 @@ export const updateDirectory = async (
       },
     });
 
-    return { success: true, error: false, message: "Directory updated." };
+    return {
+      success: true,
+      error: false,
+      message: "Directory updated.",
+      loading: false,
+    };
   } catch (err) {
     console.error("Update failed:", err);
-    return { success: false, error: true, message: "Update failed." };
+    return {
+      success: false,
+      error: true,
+      message: "Update failed.",
+      loading: false,
+    };
   }
 };
 
@@ -202,7 +213,7 @@ export const updateDirectory = async (
 export const manageSocials = async (
   currentState: CurrentState,
   data: SocialSchema
-) => {
+): Promise<CurrentState> => {
   try {
     if (!data.businessId) {
       throw new Error("Missing businessId");
@@ -244,10 +255,10 @@ export const manageSocials = async (
       });
     }
 
-    return { success: true, error: false };
+    return { success: true, error: false, loading: false };
   } catch (err) {
     console.error("createOrUpdateSocialMedia error:", err);
-    return { success: false, error: true };
+    return { success: false, error: true, loading: false };
   }
 };
 
@@ -256,7 +267,7 @@ export const manageSocials = async (
 export const manageWorkforce = async (
   currentState: CurrentState,
   data: WorkForceSchemaSchema
-) => {
+): Promise<CurrentState> => {
   try {
     const businessId = parseInt(data.businessId as string);
 
@@ -283,10 +294,10 @@ export const manageWorkforce = async (
       });
     }
 
-    return { success: true, error: false };
+    return { success: true, error: false, loading: false };
   } catch (err) {
     console.error("manageWorkforce error:", err);
-    return { success: false, error: true };
+    return { success: false, error: true, loading: false };
   }
 };
 
@@ -313,6 +324,7 @@ export const manageSector = async (
         success: false,
         error: true,
         message: "Sector name already exists!",
+        loading: false,
       };
     }
 
@@ -329,13 +341,14 @@ export const manageSector = async (
       });
     }
 
-    return { success: true, error: false };
+    return { success: true, error: false, loading: false };
   } catch (err) {
     console.error("manageSector error:", err);
     return {
       success: false,
       error: true,
       message: "Something went wrong!",
+      loading: false,
     };
   }
 };
@@ -374,7 +387,7 @@ export const deleteSector = async (
 export const createUser = async (
   currentState: CurrentState,
   data: UserSchema
-) => {
+): Promise<CurrentState> => {
   try {
     const username =
       data.firstName && data.lastName
@@ -408,12 +421,12 @@ export const createUser = async (
       },
     });
 
-    return { success: true, error: false, message: "" };
+    return { success: true, error: false, loading: false, message: "" };
   } catch (err: any) {
     console.log(err);
     let msg =
       err?.errors?.length > 0 ? err.errors[0]?.message : "Error saving user";
-    return { success: false, error: true, message: msg };
+    return { success: false, error: true, message: msg, loading: false };
   }
 };
 
@@ -441,14 +454,46 @@ export const manageEvent = async (
       await prisma.event.create({ data: commonData });
     }
 
-    return { success: true, error: false, message: "" };
+    return { success: true, error: false, loading: false, message: "" };
   } catch (err) {
     console.error("manageEvent error:", err);
     return {
       success: false,
       error: true,
       message: "Something went wrong!",
+      loading: false,
     };
+  }
+};
+
+export const deleteEvent = async (
+  currentState: CurrentState,
+  data: FormData
+) => {
+  const id = data.get("id");
+
+  // Convert to number and handle invalid/null cases
+  const eventId = id ? Number(id) : undefined;
+
+  if (!eventId || isNaN(eventId)) {
+    return {
+      success: false,
+      error: true,
+      message: "Invalid sector ID",
+    };
+  }
+
+  try {
+    await prisma.event.delete({
+      where: {
+        id: eventId,
+      },
+    });
+
+    return { success: true, error: false };
+  } catch (err) {
+    console.log(err);
+    return { success: false, error: true };
   }
 };
 
@@ -476,13 +521,14 @@ export const manageAnnouncement = async (
       await prisma.announcement.create({ data: commonData });
     }
 
-    return { success: true, error: false };
+    return { success: true, error: false, loading: false };
   } catch (err) {
     console.error("manageAnnouncement error:", err);
     return {
       success: false,
       error: true,
       message: "Something went wrong!",
+      loading: false,
     };
   }
 };
@@ -645,6 +691,7 @@ export const manageProduct = async (
         success: false,
         error: true,
         message: "Product name already exists for this business!",
+        loading: false,
       };
     }
 
@@ -676,13 +723,41 @@ export const manageProduct = async (
       });
     }
 
-    return { success: true, error: false };
+    return { success: true, error: false, loading: false };
   } catch (err) {
     console.error("manageProduct error:", err);
     return {
       success: false,
       error: true,
       message: "Something went wrong!",
+      loading: false,
     };
   }
+};
+
+// src/lib/actions.ts or similar
+
+export const getEventsForCalendar = async () => {
+  const now = new Date();
+  const currentMonth = now.getMonth();
+  const currentYear = now.getFullYear();
+
+  const startDate = new Date(currentYear, currentMonth - 1, 1); // Previous month
+  const endDate = new Date(currentYear, currentMonth + 2, 0); // End of next month
+
+  const events = await prisma.event.findMany({
+    where: {
+      startTime: {
+        gte: startDate,
+        lte: endDate,
+      },
+    },
+    select: {
+      id: true,
+      title: true,
+      startTime: true,
+    },
+  });
+
+  return events;
 };

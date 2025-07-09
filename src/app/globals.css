@@ -102,7 +102,14 @@
   background-color: #fdf2fb !important;
 }
 
-.rbc-event-label{
+.rbc-event-label {
   color: gray !important;
   margin-bottom: 5px;
+}
+
+.react-calendar__tile.highlight {
+  background-color: #4f46e5 !important; /* Indigo */
+  color: white;
+  font-weight: bold;
+  border-radius: 4px;
 }

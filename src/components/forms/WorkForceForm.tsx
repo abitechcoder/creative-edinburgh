@@ -6,15 +6,14 @@ import InputField from "../InputField";
 
 import { Dispatch, SetStateAction, useEffect } from "react";
 import { useFormState } from "react-dom";
-import { manageSocials, manageWorkforce } from "@/lib/actions";
+import { manageWorkforce } from "@/lib/actions";
 import {
-  SocialSchema,
-  socialSchema,
   workForceSchema,
   WorkForceSchemaSchema,
 } from "@/lib/formValidationSchemas";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
+import CustomButton from "../CustomButton";
 
 const WorkForceForm = ({
   type,
@@ -38,9 +37,12 @@ const WorkForceForm = ({
   const [state, formAction] = useFormState(manageWorkforce, {
     success: false,
     error: false,
+    message: "",
+    loading: false,
   });
 
   const onSubmit = handleSubmit((data) => {
+    state.loading = true;
     formAction({ ...data });
   });
 
@@ -93,9 +95,7 @@ const WorkForceForm = ({
         <span className="text-red-500">Something went wrong!</span>
       )}
 
-      <button type="submit" className="bg-blue-400 text-white p-2 rounded-md">
-        {type === "create" ? "Create" : "Update"}
-      </button>
+      <CustomButton type={type} loading={state.loading} />
     </form>
   );
 };

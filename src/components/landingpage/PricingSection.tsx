@@ -8,7 +8,7 @@ const membershipPlans = [
     benefits: [
       "Monthly newsletter packed with opportunities, events, jobs, and news.",
       "A place at our monthly Creative Circles events.",
-      "Eligibility for the Creative Edinburgh Awards.",
+      "Eligibility for the Leone Bizness Markit Awards.",
       "Access to purchase tickets to all our events.",
     ],
   },
@@ -21,10 +21,10 @@ const membershipPlans = [
       "We would recommend a Plus Membership to those who are looking for professional development opportunities to help them reach their career goals.",
     benefits: [
       "Enjoy all the Free Membership benefits.",
-      "Benefit from 50% off Creative Edinburgh Mentoring Programme. (Pay SLE50 instead of SLE100 for 5 months of mentoring).",
-      "Benefit from 30% discount for tickets to Creative Edinburgh’s annual Awards Ceremony and Summer Party (one discounted ticket per event).",
+      "Benefit from 50% off Leone Bizness Markit Mentoring Programme. (Pay SLE50 instead of SLE100 for 5 months of mentoring).",
+      "Benefit from 30% discount for tickets to Leone Bizness Markit’s annual Awards Ceremony and Summer Party (one discounted ticket per event).",
       "Benefit from three months of free access to Spotlight, a leading casting platform in the UK.",
-      "Access the Creative Edinburgh Members’ Directory featuring thousands of local creatives to showcase your work.",
+      "Access the Leone Bizness Markit Members’ Directory featuring thousands of local creatives to showcase your work.",
     ],
   },
   {
@@ -39,7 +39,7 @@ const membershipPlans = [
       "Benefit from free and discounted coworking/hotdesking at partner venues across the city.",
       "Receive a Member’s Spotlight, bespoke article about your practice on our website, also featured in one of our monthly newsletters and amplified on social media channels.",
       "Benefit from a 30% discount on tickets to our annual Awards Ceremony and Summer Party (one discounted ticket per event).",
-      "Access the Creative Edinburgh Members’ Directory featuring thousands of local creatives to showcase your work.",
+      "Access the Leone Bizness Markit Members’ Directory featuring thousands of local creatives to showcase your work.",
     ],
   },
   {
@@ -53,9 +53,9 @@ const membershipPlans = [
       "Enjoy all the Free Membership benefits.",
       "Receive a Member’s Spotlight, bespoke article about your practice on our website, also featured in one of our monthly newsletters and amplified on social media channels.",
       "Benefit from an Instagram story takeover promoting your business to our 16,000+ followers.",
-      "Access exclusive speaking opportunities at Creative Edinburgh events.",
-      "Get invited to join the Creative Edinburgh team at exclusive industry events, meetings with international delegations or roundtables with policy makers and creative industry experts.",
-      "Access the Creative Edinburgh Members’ Directory featuring thousands of local creatives to showcase your work.",
+      "Access exclusive speaking opportunities at Leone Bizness Markit events.",
+      "Get invited to join the Leone Bizness Markit team at exclusive industry events, meetings with international delegations or roundtables with policy makers and creative industry experts.",
+      "Access the Leone Bizness Markit Members’ Directory featuring thousands of local creatives to showcase your work.",
     ],
   },
 ];
@@ -63,7 +63,9 @@ const membershipPlans = [
 const PricingSection = () => {
   return (
     <div className="flex flex-col p-6 bg-gray-100 items-center">
-      <h1 className="text-xl lg:text-3xl my-8 font-semibold text-center">Membership Options</h1>
+      <h1 className="text-xl lg:text-3xl my-8 font-semibold text-center">
+        Membership Options
+      </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {membershipPlans.map((plan, index) => (
           <div

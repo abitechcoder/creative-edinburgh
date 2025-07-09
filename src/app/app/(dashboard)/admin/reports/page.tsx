@@ -13,6 +13,7 @@ import {
   getRegistrationStats,
   getRevenueBracketBySector,
 } from "@/lib/actions";
+import { defaultColors2 } from "@/lib/settings";
 
 const AdminPage = async () => {
   const [
@@ -52,9 +53,8 @@ const AdminPage = async () => {
         <div>
           <BarReport
             data={sectorData}
-            // xKey="sectorId"
+            colors={defaultColors2}
             title="Businesses by Sector"
-            color="#1CA1C8"
           />
         </div>
 
@@ -63,7 +63,6 @@ const AdminPage = async () => {
             data={revenueData}
             // xKey="revenueBracket"
             title="Revenue Bracket"
-            color="#7b479c"
           />
         </div>
         {/* disability dayta */}
@@ -81,7 +80,6 @@ const AdminPage = async () => {
             <BarReport
               title="Disability Inclusion per Sector"
               data={disabilityCountData}
-              color="#FAE27C"
             />
           </div>
         </div>
@@ -101,7 +99,7 @@ const AdminPage = async () => {
             <BarReport
               title="Disability Inclusion per Sector"
               data={registerCountData}
-              color="#C3EBFA"
+              colors={defaultColors2}
             />
           </div>
         </div>

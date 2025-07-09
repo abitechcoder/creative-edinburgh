@@ -231,7 +231,7 @@ const DirectoryDetailsPage = async ({
 
           {/* <h1>Opening time</h1> */}
 
-          {/* <BigCalendar /> */}
+          <BigCalendar />
         </div>
       </div>
       {/* RIGHT */}

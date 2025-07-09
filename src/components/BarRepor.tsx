@@ -1,4 +1,5 @@
 "use client";
+import { defaultColors } from "@/lib/settings";
 import {
   BarChart,
   Bar,
@@ -7,17 +8,22 @@ import {
   Tooltip,
   ResponsiveContainer,
   CartesianGrid,
+  Cell,
 } from "recharts";
+
+// Optional: A fallback palette if you don’t pass custom colors
 
 const BarReport = ({
   data,
   title,
-  color = "#4f46e5",
+  colors,
 }: {
   data: { name: string; count: number }[];
   title: string;
-  color?: string;
+  colors?: string[]; // Optional custom color array
 }) => {
+  const barColors = colors || defaultColors;
+
   return (
     <div className="bg-white rounded-xl w-full h-full p-4">
       <h2 className="text-lg font-bold mb-2">{title}</h2>
@@ -27,7 +33,14 @@ const BarReport = ({
           <XAxis dataKey="name" />
           <YAxis />
           <Tooltip />
-          <Bar dataKey="count" fill={color} />
+          <Bar dataKey="count">
+            {data.map((entry, index) => (
+              <Cell
+                key={`cell-${index}`}
+                fill={barColors[index % barColors.length]}
+              />
+            ))}
+          </Bar>
         </BarChart>
       </ResponsiveContainer>
     </div>

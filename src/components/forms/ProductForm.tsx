@@ -5,12 +5,13 @@ import { useForm } from "react-hook-form";
 import InputField from "../InputField";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { useFormState } from "react-dom";
-import { manageEvent, manageProduct } from "@/lib/actions";
+import { manageProduct } from "@/lib/actions";
 import { ProductSchema, productSchema } from "@/lib/formValidationSchemas";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import Image from "next/image";
 import { CldUploadWidget } from "next-cloudinary";
+import CustomButton from "../CustomButton";
 
 const ProductForm = ({
   type,
@@ -36,9 +37,11 @@ const ProductForm = ({
     success: false,
     error: false,
     message: "",
+    loading: false,
   });
 
   const onSubmit = handleSubmit((data) => {
+    state.loading = true;
     formAction({ ...data, img: img?.secure_url });
   });
 
@@ -147,9 +150,7 @@ const ProductForm = ({
         <span className="text-red-500 text-center">{state.message}</span>
       )}
 
-      <button type="submit" className="bg-blue-400 text-white p-2 rounded-md">
-        {type === "create" ? "Create" : "Update"}
-      </button>
+      <CustomButton type={type} loading={state.loading} />
     </form>
   );
 };

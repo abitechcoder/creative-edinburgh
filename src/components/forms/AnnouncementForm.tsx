@@ -6,14 +6,14 @@ import InputField from "../InputField";
 
 import { Dispatch, SetStateAction, useEffect } from "react";
 import { useFormState } from "react-dom";
-import { manageAnnouncement, manageEvent } from "@/lib/actions";
+import { manageAnnouncement } from "@/lib/actions";
 import {
   announcementSchema,
   AnnouncementSchema,
 } from "@/lib/formValidationSchemas";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
-import moment from "moment";
+import CustomButton from "../CustomButton";
 
 const AnnouncementForm = ({
   type,
@@ -38,11 +38,12 @@ const AnnouncementForm = ({
     success: false,
     error: false,
     message: "",
+    loading: false,
   });
 
   const onSubmit = handleSubmit((data) => {
+    state.loading = true;
     formAction({ ...data });
-    console.log(data);
   });
 
   const router = useRouter();
@@ -95,9 +96,7 @@ const AnnouncementForm = ({
         <span className="text-red-500 text-center">{state.message}</span>
       )}
 
-      <button type="submit" className="bg-blue-400 text-white p-2 rounded-md">
-        {type === "create" ? "Create" : "Update"}
-      </button>
+      <CustomButton type={type} loading={state.loading} />
     </form>
   );
 };
