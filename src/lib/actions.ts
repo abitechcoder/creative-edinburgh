@@ -715,9 +715,7 @@ export const manageProduct = async (
           description: parsed.description,
           price: parsed.price ? parsed.price : null,
           category: parsed.category || null,
-          image:
-            parsed.img ||
-            "https://res.cloudinary.com/dnaefwpo1/image/upload/v1751723651/ewulxm8pnsz47u7pkiqv.jpg",
+          image: parsed.img || null,
           businessId: parsed.businessId,
         },
       });
@@ -732,6 +730,39 @@ export const manageProduct = async (
       message: "Something went wrong!",
       loading: false,
     };
+  }
+};
+
+// delete product
+
+export const deleteProduct = async (
+  currentState: CurrentState,
+  data: FormData
+) => {
+  const id = data.get("id");
+
+  // Convert to number and handle invalid/null cases
+  const productId = id ? Number(id) : undefined;
+
+  if (!productId || isNaN(productId)) {
+    return {
+      success: false,
+      error: true,
+      message: "Invalid sector ID",
+    };
+  }
+
+  try {
+    await prisma.product.delete({
+      where: {
+        id: productId,
+      },
+    });
+
+    return { success: true, error: false };
+  } catch (err) {
+    console.log(err);
+    return { success: false, error: true };
   }
 };
 

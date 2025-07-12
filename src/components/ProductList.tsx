@@ -7,13 +7,16 @@ import { Product } from "@prisma/client";
 
 import FormContainer from "./FormContainer";
 import { auth } from "@clerk/nextjs/server";
+import FormModal from "./FormModal";
 
 const ProductList = async ({
   businessId,
-  showButton = false,
+  adminView = false,
+  sideList = false,
 }: {
   businessId: number;
-  showButton?: boolean;
+  adminView?: boolean;
+  sideList?: boolean;
 }) => {
   const [data] = await prisma.$transaction([
     prisma.product.findMany({
@@ -25,13 +28,17 @@ const ProductList = async ({
   const role = (sessionClaims?.metadata as { role?: string })?.role;
 
   return (
-    <div className="w-full  ">
+    <div
+      className={`w-full ${
+        sideList ? "max-h-[calc(100vh-100px)] overflow-y-auto" : ""
+      }`}
+    >
       <div className="flex gap-6 items-center my-3 mt-4">
         <h3 className="font-black uppercase lg:text-xl text-lg text-secondary">
           Catalogue
         </h3>
 
-        {showButton && role === "admin" && (
+        {adminView && role === "admin" && (
           <FormContainer
             table="product"
             type="create"
@@ -39,12 +46,21 @@ const ProductList = async ({
           />
         )}
       </div>
+
       {data.length === 0 ? (
         <div className="py-16 grid place-items-center text-center text-gray-500">
           No products found for this business.
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div
+          className={`grid gap-6 ${
+            sideList
+              ? "grid-cols-1" // vertical list for sidebar
+              : `grid-cols-1 sm:grid-cols-2 md:grid-cols-3 ${
+                  adminView ? "lg:grid-cols-3" : "lg:grid-cols-4"
+                }` // grid layout for full view
+          }`}
+        >
           {data.map((product: Product) => (
             <div
               key={product.id}
@@ -68,7 +84,11 @@ const ProductList = async ({
 
               <div className="flex justify-between items-center mt-4">
                 <Link
-                  href={`/business-directory/${product.id}`}
+                  href={
+                    adminView
+                      ? `/app/directories/${businessId}/${product.id}`
+                      : `/business-directory/${businessId}/${product.id}`
+                  }
                   className="hover:cursor-pointer flex items-center gap-2"
                 >
                   <span className="text-sm font-medium text-primary">
@@ -79,18 +99,8 @@ const ProductList = async ({
                   </div>
                 </Link>
 
-                {role === "admin" && (
-                  <Link
-                    href="#"
-                    className="w-7 h-7 flex items-center justify-center rounded-full bg-white"
-                  >
-                    <Image
-                      src="/delete.png"
-                      alt="Delete"
-                      width={16}
-                      height={16}
-                    />
-                  </Link>
+                {adminView && role === "admin" && (
+                  <FormModal table="product" type="delete" id={product.id} />
                 )}
               </div>
             </div>

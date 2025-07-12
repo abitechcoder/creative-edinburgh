@@ -7,11 +7,12 @@ import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { useFormState } from "react-dom";
 import { toast } from "react-toastify";
 import { FormContainerProps } from "./FormContainer";
-import { deleteEvent, deleteSector } from "@/lib/actions";
+import { deleteEvent, deleteProduct, deleteSector } from "@/lib/actions";
 
 const deleteActionMap: any = {
   sector: deleteSector,
   event: deleteEvent,
+  product: deleteProduct,
 };
 
 // USE LAZY LOADING

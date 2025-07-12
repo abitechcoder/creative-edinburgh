@@ -227,11 +227,11 @@ const DirectoryDetailsPage = async ({
 
           {/* product list */}
 
-          <ProductList businessId={business.id} showButton={true} />
+          <ProductList businessId={business.id} adminView={true} />
 
           {/* <h1>Opening time</h1> */}
 
-          <BigCalendar />
+          {/* <BigCalendar /> */}
         </div>
       </div>
       {/* RIGHT */}
