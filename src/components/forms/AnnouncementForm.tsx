@@ -14,6 +14,7 @@ import {
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import CustomButton from "../CustomButton";
+import moment from "moment";
 
 const AnnouncementForm = ({
   type,
@@ -21,7 +22,7 @@ const AnnouncementForm = ({
   setOpen,
   relatedData,
 }: {
-  type: "create" | "update";
+  type: "create" | "update" | "view";
   data?: any;
   setOpen: Dispatch<SetStateAction<boolean>>;
   relatedData?: any;
@@ -56,49 +57,61 @@ const AnnouncementForm = ({
     }
   }, [state, router, type, setOpen]);
 
-  return (
-    <form className="flex flex-col gap-5" onSubmit={onSubmit}>
-      <h1 className="text-xl font-semibold">Announcement Manager</h1>
+  if (type === "view")
+    return (
+      <div className="flex flex-col gap-5">
+        <h1 className="text-xl font-semibold">{data?.title}</h1>
+        <p className="">{data?.description}</p>
 
-      <div className="flex justify-between flex-wrap p-2 gap-4">
-        {data && (
+        <p className="">
+          Published {moment(data?.date).format("YYYY-MM-DD hh:mm")}
+        </p>
+      </div>
+    );
+  else
+    return (
+      <form className="flex flex-col gap-5" onSubmit={onSubmit}>
+        <h1 className="text-xl font-semibold">Announcement Manager</h1>
+
+        <div className="flex justify-between flex-wrap p-2 gap-4">
+          {data && (
+            <InputField
+              label="id"
+              name="id"
+              defaultValue={data.id}
+              register={register}
+              hidden
+            />
+          )}
+
           <InputField
-            label="id"
-            name="id"
-            defaultValue={data.id}
+            fullWidth
+            label="Title"
+            name="title"
             register={register}
-            hidden
+            error={errors.title}
+            defaultValue={data?.title}
           />
+
+          <InputField
+            fullWidth
+            label="Description"
+            name="description"
+            register={register}
+            as="textarea"
+            inputProps={{ rows: 3, placeholder: "Enter description..." }}
+            error={errors.description}
+            defaultValue={data?.description}
+          />
+        </div>
+
+        {state.error && (
+          <span className="text-red-500 text-center">{state.message}</span>
         )}
 
-        <InputField
-          fullWidth
-          label="Title"
-          name="title"
-          register={register}
-          error={errors.title}
-          defaultValue={data?.title}
-        />
-
-        <InputField
-          fullWidth
-          label="Description"
-          name="description"
-          register={register}
-          as="textarea"
-          inputProps={{ rows: 3, placeholder: "Enter description..." }}
-          error={errors.description}
-          defaultValue={data?.description}
-        />
-      </div>
-
-      {state.error && (
-        <span className="text-red-500 text-center">{state.message}</span>
-      )}
-
-      <CustomButton type={type} loading={state.loading} />
-    </form>
-  );
+        <CustomButton type={type} loading={state.loading} />
+      </form>
+    );
 };
 
 export default AnnouncementForm;

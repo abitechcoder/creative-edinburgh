@@ -31,7 +31,7 @@ const StudentForm = ({
   type,
   data,
 }: {
-  type: "create" | "update";
+  type: "create" | "update" | "view";
   data?: any;
 }) => {
   const {

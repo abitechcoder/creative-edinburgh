@@ -117,8 +117,7 @@ model User {
   createdAt   DateTime     @default(now())
   birthday    DateTime?
   role        String
-
- business   Business?  @relation 
+  business   Business?  @relation 
   
 }
 

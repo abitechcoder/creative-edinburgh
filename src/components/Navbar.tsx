@@ -1,34 +1,23 @@
-"use client";
-
 import Image from "next/image";
-import { UserButton, useUser } from "@clerk/nextjs";
-import { usePathname, useRouter } from "next/navigation";
+import { UserButton } from "@clerk/nextjs";
+import { currentUser } from "@clerk/nextjs/server";
 import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa";
 
-const Navbar = () => {
-  const pathname = usePathname();
-  const router = useRouter();
-  const { user } = useUser();
-
-  // Define regex or conditions for pages where the back button should appear
-  const showBackButton =
-    /^\/app\/directories\/\d+$/.test(pathname) ||
-    pathname === "/app/admin/reports";
+const Navbar = async () => {
+  const user = await currentUser();
 
   return (
     <div className="flex items-center justify-between p-4">
-      {/* Back Button */}
-      {showBackButton && (
-        <button
-          onClick={() => router.back()}
-          className="hover:cursor-pointer flex items-center gap-4"
-        >
-          <div className="bg-secondary p-2 rounded-full">
-            <FaArrowLeft className="text-white" size={16} />
-          </div>
-        </button>
-      )}
+      {/* I want this to go bacl to previos page  */}
+      <Link
+        href={"/business-directory"}
+        className="hover:cursor-pointer flex items-center gap-4  "
+      >
+        <div className="bg-secondary p-2 rounded-full">
+          <FaArrowLeft className="text-white" size={16} />
+        </div>
+      </Link>
 
       {/* ICONS AND USER */}
       <div className="flex items-center gap-6 justify-end w-full">

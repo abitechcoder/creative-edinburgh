@@ -18,7 +18,7 @@ const EventForm = ({
   setOpen,
   relatedData,
 }: {
-  type: "create" | "update";
+  type: "create" | "update" | "view";
   data?: any;
   setOpen: Dispatch<SetStateAction<boolean>>;
   relatedData?: any;
@@ -53,68 +53,83 @@ const EventForm = ({
       router.refresh();
     }
   }, [state, router, type, setOpen]);
+  if (type === "view")
+    return (
+      <div className="flex flex-col gap-5">
+        <h1 className="text-xl font-semibold">{data?.title}</h1>
+        <p className="">{data?.description}</p>
 
-  return (
-    <form className="flex flex-col gap-5" onSubmit={onSubmit}>
-      <h1 className="text-xl font-semibold">Event Manager</h1>
+        <p className="">
+          Starts {moment(data?.startTime).format("YYYY-MM-DD hh:mm")}
+        </p>
 
-      <div className="flex justify-between flex-wrap p-2 gap-4">
-        {data && (
+        <p className="">
+          Ends {moment(data?.endTime).format("YYYY-MM-DD hh:mm")}
+        </p>
+      </div>
+    );
+  else
+    return (
+      <form className="flex flex-col gap-5" onSubmit={onSubmit}>
+        <h1 className="text-xl font-semibold">Event Manager</h1>
+
+        <div className="flex justify-between flex-wrap p-2 gap-4">
+          {data && (
+            <InputField
+              label="id"
+              name="id"
+              defaultValue={data.id}
+              register={register}
+              hidden
+            />
+          )}
+
           <InputField
-            label="id"
-            name="id"
-            defaultValue={data.id}
+            fullWidth
+            label="Title"
+            name="title"
             register={register}
-            hidden
+            error={errors.title}
+            defaultValue={data?.title}
           />
+
+          <InputField
+            fullWidth
+            label="Description"
+            name="description"
+            register={register}
+            as="textarea"
+            inputProps={{ rows: 3, placeholder: "Enter description..." }}
+            error={errors.description}
+            defaultValue={data?.description}
+          />
+
+          <InputField
+            label="Start Time"
+            name="startTime"
+            defaultValue={moment(data?.startTime).format("YYYY-MM-DD")}
+            register={register}
+            error={errors.startTime}
+            type="datetime-local"
+          />
+
+          <InputField
+            label="End Time"
+            name="endTime"
+            defaultValue={moment(data?.endTime).format("YYYY-MM-DD")}
+            register={register}
+            error={errors.endTime}
+            type="datetime-local"
+          />
+        </div>
+
+        {state.error && (
+          <span className="text-red-500 text-center">{state.message}</span>
         )}
 
-        <InputField
-          fullWidth
-          label="Title"
-          name="title"
-          register={register}
-          error={errors.title}
-          defaultValue={data?.title}
-        />
-
-        <InputField
-          fullWidth
-          label="Description"
-          name="description"
-          register={register}
-          as="textarea"
-          inputProps={{ rows: 3, placeholder: "Enter description..." }}
-          error={errors.description}
-          defaultValue={data?.description}
-        />
-
-        <InputField
-          label="Start Time"
-          name="startTime"
-          defaultValue={moment(data?.startTime).format("YYYY-MM-DD")}
-          register={register}
-          error={errors.startTime}
-          type="datetime-local"
-        />
-
-        <InputField
-          label="End Time"
-          name="endTime"
-          defaultValue={moment(data?.endTime).format("YYYY-MM-DD")}
-          register={register}
-          error={errors.endTime}
-          type="datetime-local"
-        />
-      </div>
-
-      {state.error && (
-        <span className="text-red-500 text-center">{state.message}</span>
-      )}
-
-      <CustomButton type={type} loading={state.loading} />
-    </form>
-  );
+        <CustomButton type={type} loading={state.loading} />
+      </form>
+    );
 };
 
 export default EventForm;

@@ -279,7 +279,7 @@ const Navbar = () => {
             {/* <MyDropDownLink title="Events" links={eventsLinks} /> */}
             {/* <NavLink href="/awards">AWARDS</NavLink> */}
             {/* <NavLink href="#">FOR COMMUNITY</NavLink> */}
-            <MyDropDownLink title="SUPPORT US" links={supportUsLinks} />
+            {/* <MyDropDownLink title="SUPPORT US" links={supportUsLinks} /> */}
 
             <div className="flex items-end gap-6 py-2">
               <a

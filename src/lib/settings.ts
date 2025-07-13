@@ -5,13 +5,14 @@ type RouteAccessMap = {
 };
 
 export const routeAccessMap: RouteAccessMap = {
-  "/app/admin(.*)": ["admin", "member"],
-  "/app/directories(.*)": ["admin", "member"],
-  "/app/sectors(.*)": ["admin"],
+  "/app/admin(.*)": ["admin", "partner"],
+  "/app/directories(.*)": ["admin", "partner"],
+  "/app/member(.*)": ["member"],
+  "/app/sectors(.*)": ["admin", "partner"],
   "/app/users(.*)": ["admin"],
-  "/app/events(.*)": ["admin"],
-  "/app/announcements(.*)": ["admin"],
-  "/app/subscription": ["admin"],
+  "/app/events(.*)": ["admin", "partner", "member"],
+  "/app/announcements(.*)": ["admin", "partner", "member"],
+  "/app/subscription": ["admin", "partner", "member"],
 };
 
 export const defaultColors = [

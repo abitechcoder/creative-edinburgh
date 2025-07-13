@@ -9,18 +9,6 @@ import { Prisma, User } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
 
-type Student = {
-  id: number;
-  studentId: string;
-  name: string;
-  email?: string;
-  photo: string;
-  phone?: string;
-  grade: number;
-  class: string;
-  address: string;
-};
-
 const columns = [
   {
     header: "Info",

@@ -54,7 +54,7 @@ const ProductForm = dynamic(() => import("./forms/ProductForm"), {
 const forms: {
   [key: string]: (
     setOpen: Dispatch<SetStateAction<boolean>>,
-    type: "create" | "update",
+    type: any,
     data?: any,
     relatedData?: any,
     text?: any
@@ -179,7 +179,7 @@ const FormModal = ({
           Delete
         </button>
       </form>
-    ) : type === "create" || type === "update" ? (
+    ) : type === "create" || type === "update" || "view" ? (
       forms[table](setOpen, type, data, relatedData)
     ) : (
       "Form not found!"

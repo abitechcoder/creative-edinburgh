@@ -1,4 +1,4 @@
-import { role } from "@/lib/data";
+import { currentUser } from "@clerk/nextjs/server";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -10,45 +10,52 @@ const menuItems = [
         icon: "/home.png",
         label: "Dashboard",
         href: "/",
-        visible: ["admin", "teacher", "student", "parent"],
+        visible: ["admin", "partner"],
       },
       {
         icon: "/cooperation.png",
         label: "Directory",
         href: "/directories",
-        visible: ["admin", "staff"],
+        visible: ["admin", "partner"],
+      },
+
+      {
+        icon: "/cooperation.png",
+        label: "Member",
+        href: "/member",
+        visible: ["member"],
       },
       {
         icon: "/pie.png",
         label: "Sectors",
         href: "/sectors",
-        visible: ["admin", "teacher", "student", "parent"],
+        visible: ["admin", "partner"],
       },
       {
         icon: "/student.png",
         label: "Users",
         href: "/users",
-        visible: ["admin", "staff"],
+        visible: ["admin", "partner"],
       },
       {
         icon: "/subscription.png",
         label: "Subscription",
         href: "/subscription",
-        visible: ["admin", "teacher"],
+        visible: ["admin", "partner", "member"],
       },
 
       {
         icon: "/calendar.png",
         label: "Events",
         href: "/events",
-        visible: ["admin", "teacher", "student", "parent"],
+        visible: ["admin", "partner", "member"],
       },
 
       {
         icon: "/announcement.png",
         label: "Announcements",
         href: "/announcements",
-        visible: ["admin", "teacher", "student", "parent"],
+        visible: ["admin", "partner", "member"],
       },
     ],
   },
@@ -59,19 +66,22 @@ const menuItems = [
         icon: "/profile.png",
         label: "Profile",
         href: "/profile",
-        visible: ["admin", "teacher", "student", "parent"],
+        visible: ["admin", "partner", "member"],
       },
       {
         icon: "/setting.png",
         label: "Settings",
         href: "/settings",
-        visible: ["admin", "teacher", "student", "parent"],
+        visible: ["admin", "member"],
       },
     ],
   },
 ];
 
-const Menu = () => {
+const Menu = async () => {
+  const user = await currentUser();
+  const role = user?.publicMetadata.role as string;
+  // console.log(user);
   return (
     <div className="mt-4 text-sm">
       {menuItems.map((i) => (

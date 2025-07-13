@@ -66,6 +66,7 @@ const renderRow = (item: Event) => (
     </td>
     <td>
       <div className="flex items-center gap-2">
+        <FormModal table="event" type="view" data={item} />
         {role === "admin" && (
           <>
             <FormModal table="event" type="update" data={item} />
@@ -110,8 +111,6 @@ const EventListPage = async ({
     }),
     prisma.event.count({ where: query }),
   ]);
-
-  // console.log(data[0]);
 
   return (
     <div className="bg-white p-4 rounded-md flex-1 m-4 mt-0">

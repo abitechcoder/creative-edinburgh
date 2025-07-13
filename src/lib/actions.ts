@@ -1,7 +1,6 @@
 "use server";
 import {
   AnnouncementSchema,
-  DirectorySchema,
   EventSchema,
   ProductSchema,
   productSchema,

@@ -19,7 +19,7 @@ const ProductForm = ({
   setOpen,
   relatedData,
 }: {
-  type: "create" | "update";
+  type: "create" | "update" | "view";
   data?: any;
   setOpen: Dispatch<SetStateAction<boolean>>;
   relatedData?: any;
@@ -139,7 +139,7 @@ const ProductForm = ({
                 onClick={() => open()}
               >
                 <Image src="/upload.png" alt="" width={28} height={28} />
-                <span>Upload a photo</span>
+                <span>{img ? img : "Upload a photo"}</span>
               </div>
             );
           }}

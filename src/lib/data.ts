@@ -294,28 +294,28 @@ export const NavLinks = [
   //   url: "/",
   //   links: []
   // },
-  {
-    id: 7,
-    title: "SUPPORT US",
-    url: "",
-    links: [
-      {
-        id: 1,
-        title: "Become A Partner",
-        link: "/support-us/become-a-partner",
-      },
-      {
-        id: 2,
-        title: "Become A Sponsor",
-        link: "/support-us/become-a-sponsor",
-      },
-      {
-        id: 3,
-        title: "Support Our Community",
-        link: "/support-us/support-our-community",
-      },
-    ],
-  },
+  // {
+  //   id: 7,
+  //   title: "SUPPORT US",
+  //   url: "",
+  //   links: [
+  //     {
+  //       id: 1,
+  //       title: "Become A Partner",
+  //       link: "/support-us/become-a-partner",
+  //     },
+  //     {
+  //       id: 2,
+  //       title: "Become A Sponsor",
+  //       link: "/support-us/become-a-sponsor",
+  //     },
+  //     {
+  //       id: 3,
+  //       title: "Support Our Community",
+  //       link: "/support-us/support-our-community",
+  //     },
+  //   ],
+  // },
   {
     id: 8,
     title: "LOGIN",
