@@ -9,7 +9,7 @@ export const routeAccessMap: RouteAccessMap = {
   "/app/directories(.*)": ["admin", "partner"],
   "/app/member(.*)": ["member"],
   "/app/sectors(.*)": ["admin", "partner"],
-  "/app/users(.*)": ["admin"],
+  "/app/users(.*)": ["admin", "partner"],
   "/app/events(.*)": ["admin", "partner", "member"],
   "/app/announcements(.*)": ["admin", "partner", "member"],
   "/app/subscription": ["admin", "partner", "member"],

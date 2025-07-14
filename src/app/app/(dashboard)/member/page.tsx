@@ -4,7 +4,7 @@ import FormContainer from "@/components/FormContainer";
 
 import Performance from "@/components/Performance";
 import ProductList from "@/components/ProductList";
-import { role } from "@/lib/data";
+
 import prisma from "@/lib/prisma";
 import { currentUser } from "@clerk/nextjs/server";
 import { Business, Sector, SocialMedia, User, Workforce } from "@prisma/client";
@@ -33,6 +33,7 @@ const platforms = [
 const DirectoryDetailsPage = async () => {
   const user = await currentUser();
 
+  const role = user?.publicMetadata.role as string;
   const business:
     | (Business & {
         sector: Sector | null;

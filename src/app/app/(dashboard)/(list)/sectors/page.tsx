@@ -2,9 +2,10 @@ import FormModal from "@/components/FormModal";
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
-import { role } from "@/lib/data";
+
 import prisma from "@/lib/prisma";
 import { ITEM_PER_PAGE } from "@/lib/settings";
+import { currentUser } from "@clerk/nextjs/server";
 import { Prisma, Sector } from "@prisma/client";
 
 type SectorWithBusinessCount = Sector & {
@@ -13,33 +14,35 @@ type SectorWithBusinessCount = Sector & {
   };
 };
 
-const columns = [
-  {
-    header: "Name",
-    accessor: "name",
-  },
-  // {
-  //   header: "Class",
-  //   accessor: "class",
-  // },
-  {
-    header: "Number of Bussiness",
-    accessor: "numberOfBusiness",
-    className: "hidden md:table-cell",
-  },
-  {
-    header: "Actions",
-    accessor: "action",
-  },
-];
-
 const SectorListPage = async ({
   searchParams,
 }: {
   searchParams: { [key: string]: string | undefined };
 }) => {
+  const user = await currentUser();
+  const role = user?.publicMetadata.role as string;
+
   const { page, ...queryParams } = searchParams;
 
+  const columns = [
+    {
+      header: "Name",
+      accessor: "name",
+    },
+    // {
+    //   header: "Class",
+    //   accessor: "class",
+    // },
+    {
+      header: "Number of Bussiness",
+      accessor: "numberOfBusiness",
+      className: "hidden md:table-cell",
+    },
+    {
+      header: "Actions",
+      accessor: "action",
+    },
+  ];
   const p = page ? parseInt(page) : 1;
 
   const query: Prisma.SectorWhereInput = {};

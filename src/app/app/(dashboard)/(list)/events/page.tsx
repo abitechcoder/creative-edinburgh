@@ -2,9 +2,10 @@ import FormModal from "@/components/FormModal";
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
-import { role } from "@/lib/data";
+
 import prisma from "@/lib/prisma";
 import { ITEM_PER_PAGE } from "@/lib/settings";
+import { currentUser } from "@clerk/nextjs/server";
 import { Prisma } from "@prisma/client";
 import moment from "moment";
 import Image from "next/image";
@@ -17,74 +18,72 @@ type Event = {
   endTime: string;
 };
 
-const columns = [
-  {
-    header: "Title",
-    accessor: "title",
-  },
-  {
-    header: "Description",
-    accessor: "description",
-  },
-  // {
-  //   header: "Date",
-  //   accessor: "date",
-  //   className: "hidden md:table-cell",
-  // },
-  {
-    header: "Start Time",
-    accessor: "startTime",
-    className: "hidden md:table-cell",
-  },
-  {
-    header: "End Time",
-    accessor: "endTime",
-    className: "hidden md:table-cell",
-  },
-  {
-    header: "Actions",
-    accessor: "action",
-  },
-];
-
-const renderRow = (item: Event) => (
-  <tr
-    key={item.id}
-    className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-PurpleDeepLight"
-  >
-    <td className="flex items-center gap-4 p-4">{item.title}</td>
-    <td className="hidden md:table-cell">
-      {item?.description.length > 50
-        ? `${item.description.substring(0, 50)}...`
-        : item.description}
-    </td>
-    <td className="hidden md:table-cell">
-      {moment(item?.startTime).format("YYYY-MM-DD HH:mm")}
-    </td>
-    <td className="hidden md:table-cell">
-      {moment(item?.endTime).format("YYYY-MM-DD HH:mm")}
-    </td>
-    <td>
-      <div className="flex items-center gap-2">
-        <FormModal table="event" type="view" data={item} />
-        {role === "admin" && (
-          <>
-            <FormModal table="event" type="update" data={item} />
-            <FormModal table="event" type="delete" id={item.id} />
-          </>
-        )}
-      </div>
-    </td>
-  </tr>
-);
-
 const EventListPage = async ({
   searchParams,
 }: {
   searchParams: { [key: string]: string | undefined };
 }) => {
+  const user = await currentUser();
+  const role = user?.publicMetadata.role as string;
+
   const { page, ...queryParams } = searchParams;
 
+  const columns = [
+    {
+      header: "Title",
+      accessor: "title",
+    },
+    {
+      header: "Description",
+      accessor: "description",
+    },
+
+    {
+      header: "Start Time",
+      accessor: "startTime",
+      className: "hidden md:table-cell",
+    },
+    {
+      header: "End Time",
+      accessor: "endTime",
+      className: "hidden md:table-cell",
+    },
+    {
+      header: "Actions",
+      accessor: "action",
+    },
+  ];
+
+  const renderRow = (item: Event) => (
+    <tr
+      key={item.id}
+      className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-PurpleDeepLight"
+    >
+      <td className="flex items-center gap-4 p-4">{item.title}</td>
+      <td className="hidden md:table-cell">
+        {item?.description.length > 50
+          ? `${item.description.substring(0, 50)}...`
+          : item.description}
+      </td>
+      <td className="hidden md:table-cell">
+        {moment(item?.startTime).format("YYYY-MM-DD HH:mm")}
+      </td>
+      <td className="hidden md:table-cell">
+        {moment(item?.endTime).format("YYYY-MM-DD HH:mm")}
+      </td>
+      <td>
+        <div className="flex items-center gap-2">
+          <FormModal table="event" type="view" data={item} />
+          {role === "admin" && (
+            <>
+              <FormModal table="event" type="update" data={item} />
+              <FormModal table="event" type="delete" id={item.id} />
+            </>
+          )}
+        </div>
+      </td>
+    </tr>
+  );
   const p = page ? parseInt(page) : 1;
 
   const query: Prisma.EventWhereInput = {};
