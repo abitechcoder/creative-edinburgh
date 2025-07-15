@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="bg-secondary text-white py-10 lg:py-20 px-4 md:px-8">
       {/* Main Footer Grid */}
-      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-10">
+      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
         {/* Contact Section */}
 
         <Image
@@ -20,10 +20,13 @@ const Footer = () => {
         <div>
           <h2 className="text-white font-bold text-lg">CONTACT US</h2>
           <p className="mt-2 text-white cursor-pointer font-medium">
-            23 Lumley Street, Freetown
+            41 A/B Lumley Road, off Spur Road
           </p>
           <p className="mt-2 text-white cursor-pointer font-medium">
-            +232 00 123 4567
+            +232 90083111
+          </p>
+          <p className="mt-2 text-white cursor-pointer font-medium">
+            info@creativehubafrica.com
           </p>
         </div>
 
@@ -35,12 +38,12 @@ const Footer = () => {
               href="mailto:connect@sierraleonebusinessmarkit.com"
               className="text-white font-medium relative group"
             >
-              connect
+              Contact us
               <span className="absolute right-0 top-6 w-0 h-[2px] bg-yellow-400 transition-all duration-300 ease-in-out group-hover:w-full group-hover:left-0"></span>
             </a>
           </p>
         </div>
-        <div>
+        {/* <div>
           <h2 className="hover:text-yellow-400 transition-all duration-300 ease-in-out font-medium cursor-pointer text-white text-md">
             Terms Of Use
           </h2>
@@ -60,7 +63,7 @@ const Footer = () => {
               Privacy Policy
             </a>
           </p>
-        </div>
+        </div> */}
         {/* Policies Section */}
         <div className="text-md">
           <p className="hover:text-yellow-400 transition-all duration-300 ease-in-out font-medium cursor-pointer text-white">

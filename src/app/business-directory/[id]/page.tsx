@@ -6,6 +6,7 @@ import {
   FaTiktok,
   FaTwitter,
   FaYoutube,
+  FaEnvelope,
 } from "react-icons/fa";
 
 import { IoCloseCircleSharp } from "react-icons/io5";
@@ -215,7 +216,8 @@ const MemberDetails = async ({
                 href={`mailto:${member.email}`}
                 className="text-blue-600 hover:underline"
               >
-                {member.email}
+                <FaEnvelope size={30} className="text-blue-600" />
+                {/* {member.email} */}
               </a>
             </p>
           </div>

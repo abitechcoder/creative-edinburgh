@@ -37,9 +37,11 @@ model Business {
   // Relations
   sector               Sector?       @relation(fields: [sectorId], references: [id])
   sectorId             Int?
+  
   workforce            Workforce?
   socialMedia          SocialMedia?
   announcement         Announcement[]
+  event                Event[]
   products             Product[]
 
 
@@ -78,20 +80,23 @@ model SocialMedia {
 
 model Event {
   id          Int      @id @default(autoincrement())
-  title       String
-  description String
+  title       String   @db.VarChar(255)
+  description String   @db.Text
   startTime   DateTime
   endTime     DateTime
 
   sectorId Int?
   sector   Sector? @relation(fields: [sectorId], references: [id])
+
+  businessId Int?
+  business   Business? @relation(fields: [businessId], references: [id])
 }
 
 
 model Announcement {
   id          Int       @id @default(autoincrement())
-  title       String
-  description String
+  title       String    @db.VarChar(255)
+  description String    @db.Text
   date        DateTime
 
   // Optional relation to Sector

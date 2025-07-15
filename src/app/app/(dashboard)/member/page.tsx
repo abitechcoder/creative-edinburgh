@@ -1,5 +1,6 @@
 import Announcements from "@/components/Announcements";
 import BigCalendar from "@/components/BigCalender";
+import EventCalendarContainer from "@/components/EventCalendarContainer";
 import FormContainer from "@/components/FormContainer";
 
 import Performance from "@/components/Performance";
@@ -30,7 +31,11 @@ const platforms = [
   { key: "youtube", icon: FaYoutube, className: "hover:text-red-600" },
 ];
 
-const DirectoryDetailsPage = async () => {
+const DirectoryDetailsPage = async ({
+  searchParams,
+}: {
+  searchParams: { [keys: string]: string | undefined };
+}) => {
   const user = await currentUser();
 
   const role = user?.publicMetadata.role as string;
@@ -236,28 +241,7 @@ const DirectoryDetailsPage = async () => {
       </div>
       {/* RIGHT */}
       <div className="w-full xl:w-1/3 flex flex-col gap-4">
-        <div className="bg-white p-4 rounded-md">
-          <h1 className="text-xl font-semibold">Actions</h1>
-          <div className="mt-4 flex gap-4 flex-wrap text-xs text-gray-500">
-            <Link
-              className="p-3 rounded-md bg-SkyBlueLight"
-              href={`/app/directories?sectorId=${business?.sector?.id}`}
-            >
-              {business?.sector?.name}
-            </Link>
-
-            <div className="">
-              {role === "admin" && (
-                <FormContainer
-                  table="workforce"
-                  type="create"
-                  data={business}
-                  text={"Workforce"}
-                />
-              )}
-            </div>
-          </div>
-        </div>
+        <EventCalendarContainer searchParams={searchParams} />
         <Performance />
         <Announcements />
       </div>

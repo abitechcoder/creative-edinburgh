@@ -65,8 +65,6 @@ const DirectoryForm = ({
     }
   }, [state, router, type, setOpen]);
 
-  // const {} = relatedData;
-
   return (
     <form className="flex flex-col gap-5" onSubmit={onSubmit}>
       <h1 className="text-xl font-semibold">Add a new directory</h1>
@@ -229,6 +227,8 @@ const DirectoryForm = ({
           error={errors.description}
           defaultValue={data?.description}
         />
+
+        {/* display_name, original_filename, path, thumbnail_url */}
         <CldUploadWidget
           uploadPreset="CreativeHubAfrrica"
           onSuccess={(result, { widget }) => {
@@ -242,8 +242,13 @@ const DirectoryForm = ({
                 className="text-xs text-gray-500 flex items-center gap-2 cursor-pointer"
                 onClick={() => open()}
               >
-                <Image src="/upload.png" alt="" width={28} height={28} />
-                <span>{img ? img : "Upload a photo"}</span>
+                <Image
+                  src={img ? img?.thumbnail_url : "/upload.png"}
+                  alt=""
+                  width={28}
+                  height={28}
+                />
+                <span>{img ? img?.display_name : "Upload a photo"}</span>
               </div>
             );
           }}

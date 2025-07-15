@@ -11,7 +11,7 @@ import {
   WorkForceSchemaSchema,
 } from "./formValidationSchemas";
 import prisma from "./prisma";
-import { clerkClient } from "@clerk/nextjs/server";
+import { auth, clerkClient } from "@clerk/nextjs/server";
 
 export type CurrentState = {
   success: boolean;
@@ -442,6 +442,7 @@ export const manageEvent = async (
       startTime: new Date(data.startTime),
       endTime: new Date(data.endTime),
       ...(data.sectorId ? { sectorId: parseInt(data.sectorId) } : {}),
+      ...(data.businessId ? { businessId: parseInt(data.businessId) } : {}),
     };
 
     if (eventId) {
@@ -768,20 +769,39 @@ export const deleteProduct = async (
 // src/lib/actions.ts or similar
 
 export const getEventsForCalendar = async () => {
+  const { sessionClaims } = auth();
+  const role = (sessionClaims?.metadata as { role?: string })?.role;
+
+  const userId = sessionClaims?.sub;
+
+  const userBusiness = await prisma.business.findFirst({
+    where: { userId: userId ?? "" },
+    select: { id: true, sectorId: true },
+  });
+
   const now = new Date();
   const currentMonth = now.getMonth();
   const currentYear = now.getFullYear();
 
-  const startDate = new Date(currentYear, currentMonth - 1, 1); // Previous month
-  const endDate = new Date(currentYear, currentMonth + 2, 0); // End of next month
+  const startDate = new Date(currentYear, currentMonth - 1, 1);
+  const endDate = new Date(currentYear, currentMonth + 2, 0);
+
+  const where =
+    role === "member" && userBusiness
+      ? {
+          startTime: { gte: startDate, lte: endDate },
+          OR: [
+            { businessId: userBusiness.id, sectorId: null },
+            { businessId: null, sectorId: userBusiness.sectorId },
+            { businessId: null, sectorId: null },
+          ],
+        }
+      : {
+          startTime: { gte: startDate, lte: endDate },
+        };
 
   const events = await prisma.event.findMany({
-    where: {
-      startTime: {
-        gte: startDate,
-        lte: endDate,
-      },
-    },
+    where,
     select: {
       id: true,
       title: true,

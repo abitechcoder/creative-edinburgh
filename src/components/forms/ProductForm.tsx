@@ -139,7 +139,7 @@ const ProductForm = ({
                 onClick={() => open()}
               >
                 <Image src="/upload.png" alt="" width={28} height={28} />
-                <span>{img ? img : "Upload a photo"}</span>
+                <span>{img ? img?.original_filename : "Upload a photo"}</span>
               </div>
             );
           }}

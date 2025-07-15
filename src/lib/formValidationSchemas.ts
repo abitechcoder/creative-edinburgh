@@ -70,6 +70,7 @@ export const eventSchema = z.object({
   startTime: z.string().min(1),
   endTime: z.string().min(1),
   sectorId: z.string().optional(),
+  businessId: z.string().optional(),
 });
 
 export type EventSchema = z.infer<typeof eventSchema>;

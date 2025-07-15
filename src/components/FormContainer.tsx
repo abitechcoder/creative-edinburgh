@@ -41,6 +41,17 @@ const FormContainer = async ({
         relatedData = { sectors: sectors };
         break;
 
+      case "event":
+        const allSectors = await prisma.sector.findMany({
+          select: { name: true, id: true },
+        });
+
+        const allBiz = await prisma.business.findMany({
+          select: { name: true, id: true },
+        });
+        relatedData = { sectors: allSectors, businesses: allBiz };
+        break;
+
       default:
         break;
     }

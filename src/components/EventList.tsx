@@ -1,16 +1,36 @@
 import prisma from "@/lib/prisma";
+import { auth } from "@clerk/nextjs/server";
 
 const EventList = async ({ dateParam }: { dateParam: string | undefined }) => {
+  const { sessionClaims } = auth();
+  const role = (sessionClaims?.metadata as { role?: string })?.role;
+  const userId = sessionClaims?.sub;
+
+  const userBusiness = await prisma.business.findFirst({
+    where: { userId: userId ?? "" },
+    select: { id: true, sectorId: true },
+  });
+
   const date = dateParam ? new Date(dateParam) : new Date();
 
-  const data = await prisma.event.findMany({
-    where: {
-      startTime: {
-        gte: new Date(date.setHours(0, 0, 0, 0)),
-        lte: new Date(date.setHours(23, 59, 59, 999)),
-      },
-    },
-  });
+  const start = new Date(date.setHours(0, 0, 0, 0));
+  const end = new Date(date.setHours(23, 59, 59, 999));
+
+  const where =
+    role === "member" && userBusiness
+      ? {
+          startTime: { gte: start, lte: end },
+          OR: [
+            { businessId: userBusiness.id, sectorId: null },
+            { businessId: null, sectorId: userBusiness.sectorId },
+            { businessId: null, sectorId: null },
+          ],
+        }
+      : {
+          startTime: { gte: start, lte: end },
+        };
+
+  const data = await prisma.event.findMany({ where });
 
   return data.map((event) => (
     <div

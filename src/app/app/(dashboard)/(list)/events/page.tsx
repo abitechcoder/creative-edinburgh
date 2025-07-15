@@ -1,4 +1,4 @@
-import FormModal from "@/components/FormModal";
+import FormContainer from "@/components/FormContainer";
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
@@ -6,17 +6,9 @@ import TableSearch from "@/components/TableSearch";
 import prisma from "@/lib/prisma";
 import { ITEM_PER_PAGE } from "@/lib/settings";
 import { currentUser } from "@clerk/nextjs/server";
-import { Prisma } from "@prisma/client";
+import { Event, Prisma } from "@prisma/client";
 import moment from "moment";
 import Image from "next/image";
-
-type Event = {
-  id: number;
-  title: string;
-  description: string;
-  startTime: string;
-  endTime: string;
-};
 
 const EventListPage = async ({
   searchParams,
@@ -73,11 +65,11 @@ const EventListPage = async ({
       </td>
       <td>
         <div className="flex items-center gap-2">
-          <FormModal table="event" type="view" data={item} />
+          <FormContainer table="event" type="view" data={item} />
           {role === "admin" && (
             <>
-              <FormModal table="event" type="update" data={item} />
-              <FormModal table="event" type="delete" id={item.id} />
+              <FormContainer table="event" type="update" data={item} />
+              <FormContainer table="event" type="delete" id={item.id} />
             </>
           )}
         </div>
@@ -86,7 +78,41 @@ const EventListPage = async ({
   );
   const p = page ? parseInt(page) : 1;
 
+  const userBusiness = await prisma.business.findUnique({
+    where: { userId: user?.id },
+    select: { id: true, sectorId: true },
+  });
+
   const query: Prisma.EventWhereInput = {};
+
+  const searchFilter =
+    queryParams.search && queryParams.search.length > 0
+      ? { title: { contains: queryParams.search } }
+      : undefined;
+
+  if (role === "member") {
+    if (userBusiness) {
+      query.AND = [
+        searchFilter || {}, // Add search if present
+        {
+          OR: [
+            { businessId: userBusiness.id, sectorId: null }, // Business-specific
+            { sectorId: userBusiness.sectorId, businessId: null }, // Sector-specific
+            { sectorId: null, businessId: null }, // General
+          ],
+        },
+      ];
+    } else {
+      query.AND = [
+        searchFilter || {},
+        { sectorId: null, businessId: null }, // Only general events
+      ];
+    }
+  } else {
+    if (searchFilter) {
+      query.title = searchFilter.title;
+    }
+  }
 
   if (queryParams) {
     for (const [key, value] of Object.entries(queryParams)) {
@@ -104,7 +130,7 @@ const EventListPage = async ({
 
   const [data, count] = await prisma.$transaction([
     prisma.event.findMany({
-      where: query, // your optional filter
+      where: query,
       take: ITEM_PER_PAGE,
       skip: ITEM_PER_PAGE * (p - 1),
     }),
@@ -125,7 +151,7 @@ const EventListPage = async ({
             <button className="w-8 h-8 flex items-center justify-center rounded-full bg-YellowDeep">
               <Image src="/sort.png" alt="" width={14} height={14} />
             </button>
-            {role === "admin" && <FormModal table="event" type="create" />}
+            {role === "admin" && <FormContainer table="event" type="create" />}
           </div>
         </div>
       </div>

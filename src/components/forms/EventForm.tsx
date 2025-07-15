@@ -11,6 +11,7 @@ import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import moment from "moment";
 import CustomButton from "../CustomButton";
+import { Business, Sector } from "@prisma/client";
 
 const EventForm = ({
   type,
@@ -31,6 +32,8 @@ const EventForm = ({
     resolver: zodResolver(eventSchema),
   });
 
+  const { sectors, businesses } = relatedData;
+
   const [state, formAction] = useFormState(manageEvent, {
     success: false,
     error: false,
@@ -41,8 +44,10 @@ const EventForm = ({
   const onSubmit = handleSubmit((data) => {
     state.loading = true;
     formAction({ ...data });
-    // console.log(data);
+    // console.log(data, "the data");
   });
+
+  // console.log(data, "the data");
 
   const router = useRouter();
 
@@ -57,15 +62,44 @@ const EventForm = ({
     return (
       <div className="flex flex-col gap-5">
         <h1 className="text-xl font-semibold">{data?.title}</h1>
+
+        {data?.businessId ? (
+          <p className="">
+            Business:
+            <span className="font-semibold">
+              {" "}
+              {businesses.find((biz: Business) => biz.id === data.businessId)
+                ?.name || " All "}
+            </span>
+          </p>
+        ) : (
+          <p className="">
+            Sector:
+            <span className="font-semibold">
+              {" "}
+              {sectors.find((sector: Sector) => sector.id === data.sectorId)
+                ?.name || " All "}{" "}
+            </span>
+          </p>
+        )}
+
         <p className="">{data?.description}</p>
 
-        <p className="">
-          Starts {moment(data?.startTime).format("YYYY-MM-DD hh:mm")}
-        </p>
+        <div className="flex gap-4">
+          <p className="">
+            Starts{" "}
+            <span className="font-semibold">
+              {moment(data?.startTime).format("YYYY-MM-DD hh:mm")}
+            </span>
+          </p>
 
-        <p className="">
-          Ends {moment(data?.endTime).format("YYYY-MM-DD hh:mm")}
-        </p>
+          <p className="">
+            Ends{" "}
+            <span className="font-semibold">
+              {moment(data?.endTime).format("YYYY-MM-DD hh:mm")}{" "}
+            </span>
+          </p>
+        </div>
       </div>
     );
   else
@@ -103,6 +137,57 @@ const EventForm = ({
             error={errors.description}
             defaultValue={data?.description}
           />
+
+          <div className="flex flex-col gap-2 w-full md:w-1/4">
+            <label className="text-xs text-gray-500">Business</label>
+
+            <select
+              className="ring-[1.5px] ring-gray-300 p-2 rounded-md text-sm w-full"
+              {...register("businessId")}
+              defaultValue={data?.businessId}
+            >
+              <option value={""}>Select</option>
+
+              {businesses.map(
+                (biz: { id: string; name: string; surname: string }) => (
+                  <option value={biz.id} key={biz.id}>
+                    {biz.name}
+                  </option>
+                )
+              )}
+            </select>
+
+            {errors.businessId?.message && (
+              <p className="text-xs text-red-400">
+                {errors.businessId.message.toString()}
+              </p>
+            )}
+          </div>
+
+          <div className="flex flex-col gap-2 w-full md:w-1/4">
+            <label className="text-xs text-gray-500">Sector</label>
+
+            <select
+              className="ring-[1.5px] ring-gray-300 p-2 rounded-md text-sm w-full"
+              {...register("sectorId")}
+              defaultValue={data?.sectorId}
+            >
+              <option value={""}>Select</option>
+              {sectors.map(
+                (sector: { id: string; name: string; surname: string }) => (
+                  <option value={sector.id} key={sector.id}>
+                    {sector.name}
+                  </option>
+                )
+              )}
+            </select>
+
+            {errors.sectorId?.message && (
+              <p className="text-xs text-red-400">
+                {errors.sectorId.message.toString()}
+              </p>
+            )}
+          </div>
 
           <InputField
             label="Start Time"
