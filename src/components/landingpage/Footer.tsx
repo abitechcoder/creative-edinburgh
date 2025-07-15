@@ -7,6 +7,7 @@ const Footer = () => {
   return (
     <footer className="bg-secondary text-white py-10 lg:py-20 px-4 md:px-8">
       {/* Main Footer Grid */}
+
       <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
         {/* Contact Section */}
 

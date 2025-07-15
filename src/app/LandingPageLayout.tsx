@@ -4,6 +4,7 @@
 import { usePathname } from "next/navigation";
 import Navbar from "@/components/landingpage/Navbar";
 import Footer from "@/components/landingpage/Footer";
+import { Partner } from "@/components/Partner";
 
 export default function ClientLayout({
   children,
@@ -19,7 +20,12 @@ export default function ClientLayout({
     <>
       {!hideNavbar && <Navbar />}
       {children}
-      {!hideNavbar && <Footer />}
+      {!hideNavbar && (
+        <>
+          <Partner />
+          <Footer />
+        </>
+      )}
     </>
   );
 }

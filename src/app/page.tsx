@@ -6,6 +6,7 @@ import Newsletter from "@/components/landingpage/Newsletter";
 import StepsToSuccess from "@/components/landingpage/StepsToSuccess";
 import Testimonials from "@/components/landingpage/Testimonials";
 import WhyChooseUs from "@/components/landingpage/WhyChooseUs";
+import { Partner } from "@/components/Partner";
 
 const Homepage = () => {
   return (
@@ -21,6 +22,7 @@ const Homepage = () => {
         ></path>
       </svg>
       <Hero />
+      {/* <Partner /> */}
       <Analysis />
       <ConnectSection />
       <WhyChooseUs />

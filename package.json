@@ -17,6 +17,8 @@
     "@types/react-big-calendar": "^1.8.9",
     "axios": "^1.8.4",
     "chart.js": "^4.4.9",
+    "embla-carousel-autoplay": "^8.6.0",
+    "embla-carousel-react": "^8.6.0",
     "framer-motion": "^12.7.4",
     "moment": "^2.30.1",
     "motion": "^12.7.4",
