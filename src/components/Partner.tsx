@@ -22,7 +22,7 @@ export function Partner() {
           <div className="   h-40 w-full max-w-xs relative">
             <Image
               fill
-              src="/logo.png"
+              src="/part.png"
               alt="Partner logo"
               className="object-contain"
             />
@@ -33,7 +33,7 @@ export function Partner() {
           <div className="   h-40 w-full max-w-xs relative">
             <Image
               fill
-              src="/logo.png"
+              src="/part2.png"
               alt="Partner logo"
               className="object-contain"
             />

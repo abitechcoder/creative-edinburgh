@@ -26,8 +26,8 @@ const Hero = () => {
             <span className="text-tertiary">Thrive</span>
           </h1>
           <p className="text-xl">
-            Sierra Leone Business Markit is your premier digital gateway to the
-            nation's most trusted business directory, investment opportunities,
+            Sierra Leone Bizness Markit is your premier digital gateway to the
+            nation's most trusted bizness directory, investment opportunities,
             and SME growth tools. Whether you are a local entrepreneur or a
             global investor, unlock the potential of West Africa's next rising
             star.

@@ -16,17 +16,17 @@ const testimonials: TestimonialType[] = [
     id: 1,
     image: Profile1,
     quote:
-      "Sierra Leone Business Markit connected us to investors who believed in our vision. Today, we employ 50+ locals in Freetown.",
-    name: "Ibrahim Sesay",
-    position: "Founder | GreenEnergy SL",
+      "This Directory helps me collaborate with other green enthusiasts to create eco-friendly products.",
+    name: "Mariama Koroma",
+    position: "CEO Her Craft Creation",
   },
   {
     id: 2,
     image: Profile2,
     quote:
-      "The directory helped our agro-export business triple its reach. A game-changer for Sierra Leonean SMEs!",
-    name: "Aminata Koroma",
-    position: "CEO | Liberty Farms",
+      "The Bizness Directory is supporting my business with new customers as more people reach out to my business through the directory.",
+    name: "Sallay Sankoh",
+    position: "CEO, NAPS Natural Beauty",
   },
 ];
 
