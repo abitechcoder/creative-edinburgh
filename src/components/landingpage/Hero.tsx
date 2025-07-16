@@ -20,13 +20,13 @@ const Hero = () => {
         {/* Left Column */}
         <div className="lg:col-span-3 flex flex-col items-start justify-center px-4 lg:px-8 gap-6">
           <h1 className={`${styles.heroHeading} mt-[120px] lg:mt-[120px]`}>
-            Welcome to Sierra Leone's Bizness Markit -{" "}
+            Welcome to Sierra Leone's Bizness Directory -{" "}
             <span className="text-primary">Connect,</span>{" "}
             <span className="text-secondary">Invest,</span>{" "}
             <span className="text-tertiary">Thrive</span>
           </h1>
           <p className="text-xl">
-            Sierra Leone Bizness Markit is your premier digital gateway to the
+            Sierra Leone bizness Markit is your premier digital gateway to the
             nation's most trusted bizness directory, investment opportunities,
             and SME growth tools. Whether you are a local entrepreneur or a
             global investor, unlock the potential of West Africa's next rising

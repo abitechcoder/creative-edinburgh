@@ -275,7 +275,7 @@ const Navbar = () => {
           <div className="hidden lg:flex items-end gap-8">
             <MyDropDownLink title="ABOUT US" links={aboutLinks} />
             {/* <MyDropDownLink title="MEMBERSHIP" links={membershipLinks} /> */}
-            <NavLink href="/business-directory">Business Directory</NavLink>
+            <NavLink href="/business-directory">Bizness Directory</NavLink>
             {/* <MyDropDownLink title="Events" links={eventsLinks} /> */}
             {/* <NavLink href="/awards">AWARDS</NavLink> */}
             {/* <NavLink href="#">FOR COMMUNITY</NavLink> */}

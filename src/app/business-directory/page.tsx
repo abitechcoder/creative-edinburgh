@@ -70,7 +70,7 @@ const MembersLibrary = async ({
           <p
             className={`${styles.paragraph} text-gray-700 mb-5 font-medium leading-relaxed text-xl`}
           >
-            Explore the Sierra Leone Business Directory! Connect with businesses
+            Explore the Sierra Leone Bizness Directory! Connect with businesses
             across Sierra Leone from music and fashion to tech and are . Search
             by sector or location, discover local services, and grow your
             network. Support local. Discover more. Build connections.

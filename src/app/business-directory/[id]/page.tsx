@@ -117,32 +117,32 @@ const MemberDetails = async ({
         </div>
       </section>
       <section className="lg:py-10 py-2 gap-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-        <div>
+        {/* <div>
           <h3 className="font-black uppercase lg:text-xl text-lg text-secondary">
             Years in Operation
           </h3>
           <p className="font-bold text-lg mt-2 lg:mt-4">
-            Opened since {moment(member.yearsInOperation).fromNow()} years
+            Opened since {moment(member.yearsInOperation).fromNow()}
           </p>
-        </div>
+        </div> */}
 
-        <div>
+        {/* <div>
           <h3 className="font-black uppercase lg:text-xl text-lg text-secondary">
             Revenue
           </h3>
           <p className="font-bold text-lg mt-2 lg:mt-4">
             {member?.revenueBracket}
           </p>
-        </div>
+        </div> */}
 
-        <div>
+        {/* <div>
           <h3 className="font-black uppercase lg:text-xl text-lg text-secondary">
             Disability Inclusion
           </h3>
           <p className="font-bold text-lg mt-2 lg:mt-4">
             {member?.disabilityInclusion}
           </p>
-        </div>
+        </div> */}
 
         <div>
           <h3 className="font-black uppercase lg:text-xl text-lg text-secondary">
