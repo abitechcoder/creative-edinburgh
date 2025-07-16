@@ -26,7 +26,7 @@ const Hero = () => {
             <span className="text-tertiary">Thrive</span>
           </h1>
           <p className="text-xl">
-            Sierra Leone bizness Directory is your premier digital gateway to
+            Sierra Leone Bizness Directory is your premier digital gateway to
             the nation's most trusted bizness directory, investment
             opportunities, and SME growth tools. Whether you are a local
             entrepreneur or a global investor, unlock the potential of West
