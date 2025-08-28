@@ -7,12 +7,18 @@ import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { useFormState } from "react-dom";
 import { toast } from "react-toastify";
 import { FormContainerProps } from "./FormContainer";
-import { deleteEvent, deleteProduct, deleteSector } from "@/lib/actions";
+import {
+  deleteEvent,
+  deleteProduct,
+  deleteSector,
+  deleteDirectory,
+} from "@/lib/actions";
 
 const deleteActionMap: any = {
   sector: deleteSector,
   event: deleteEvent,
   product: deleteProduct,
+  directory: deleteDirectory,
 };
 
 // USE LAZY LOADING
@@ -173,7 +179,8 @@ const FormModal = ({
       <form action={formAction} className="p-4 flex flex-col gap-4">
         <input type="text | number" name="id" value={id} hidden />
         <span className="text-center font-medium">
-          All data will be lost. Are you sure you want to delete this {table}?
+          {id} All data will be lost. Are you sure you want to delete this{" "}
+          {table}?
         </span>
         <button className="bg-red-700 text-white py-2 px-4 rounded-md border-none w-max self-center">
           Delete

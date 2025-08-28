@@ -10,7 +10,11 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Creative Hub Africa",
-  description: "creative hub africa web site",
+  description: `Sierra Leone Bizness Directory is your premier digital gateway to
+            the nation's most trusted bizness directory, investment
+            opportunities, and SME growth tools. Whether you are a local
+            entrepreneur or a global investor, unlock the potential of West
+            Africa's next rising star.`,
 };
 
 export default function RootLayout({

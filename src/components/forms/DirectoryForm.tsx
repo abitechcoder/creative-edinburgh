@@ -255,9 +255,7 @@ const DirectoryForm = ({
         </CldUploadWidget>
       </div>
 
-      {state.error && (
-        <span className="text-red-500">Something went wrong!</span>
-      )}
+      {state.error && <span className="text-red-500">{state.message}</span>}
 
       <CustomButton type={type} loading={state.loading} />
     </form>

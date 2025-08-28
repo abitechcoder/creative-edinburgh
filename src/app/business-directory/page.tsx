@@ -9,7 +9,15 @@ import prisma from "@/lib/prisma";
 import { ITEM_PER_PAGE } from "@/lib/settings";
 import Pagination from "@/components/Pagination";
 import TableSearch from "@/components/TableSearch";
-
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Bizness Directory",
+  description: `Sierra Leone Bizness Directory is your premier digital gateway to
+            the nation's most trusted bizness directory, investment
+            opportunities, and SME growth tools. Whether you are a local
+            entrepreneur or a global investor, unlock the potential of West
+            Africa's next rising star.`,
+};
 const MembersLibrary = async ({
   searchParams,
 }: {

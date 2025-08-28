@@ -19,14 +19,14 @@ export type CurrentState = {
   message?: string;
   loading: boolean;
 };
-
+// create record
 export const createDirectory = async (
   currentState: CurrentState,
   data: any
 ): Promise<CurrentState> => {
   try {
     const user: any = await clerkClient.users.createUser({
-      username: data.firstName + data.lastName,
+      username: data.firstName.trim() + data.lastName.trim(),
       password: "CHA@2025@yadot",
       firstName: data.firstName,
       lastName: data.lastName,
@@ -78,12 +78,19 @@ export const createDirectory = async (
 
     // revalidatePath("/list/teachers");
     return { success: true, error: false, message: "", loading: false };
-  } catch (err) {
+  } catch (err: any) {
     console.log(err);
-    return { success: false, error: true, message: "", loading: false };
+    return {
+      success: false,
+      error: true,
+      message: err?.errors
+        ? err?.errors[0]?.message
+        : "error creating directory",
+      loading: false,
+    };
   }
 };
-
+// update record
 export const updateDirectory = async (
   currentState: CurrentState,
   data: any
@@ -125,7 +132,7 @@ export const updateDirectory = async (
     }
 
     // 4. Check if Prisma user exists
-    console.log("pass three", clerkUser, userId);
+
     const existingLocalUser = await prisma.user.findUnique({
       where: { id: userId },
     });
@@ -202,6 +209,77 @@ export const updateDirectory = async (
       success: false,
       error: true,
       message: "Update failed.",
+      loading: false,
+    };
+  }
+};
+
+//
+
+export const deleteDirectory = async (
+  currentState: CurrentState,
+  data: FormData
+): Promise<CurrentState> => {
+  try {
+    const id = data.get("id");
+
+    const directoryId = id ? Number(id) : undefined;
+
+    if (!directoryId || isNaN(directoryId)) {
+      return {
+        success: false,
+        error: true,
+        message: "Invalid business ID",
+        loading: false,
+      };
+    }
+
+    // 1. Find the business to get the related userId
+    const business = await prisma.business.findUnique({
+      where: { id: directoryId },
+      include: { user: true },
+    });
+
+    if (!business) {
+      return {
+        success: false,
+        error: true,
+        message: "Business not found",
+        loading: false,
+      };
+    }
+
+    const userId = business.userId; // Make sure your Business model has userId
+
+    // 2. Delete business first
+    await prisma.business.delete({
+      where: { id: directoryId },
+    });
+
+    // 3. Delete user from Prisma (if exists)
+    if (userId) {
+      await prisma.user.delete({
+        where: { id: userId },
+      });
+
+      // 4. Delete user from Clerk
+      await clerkClient.users.deleteUser(userId);
+    }
+
+    return {
+      success: true,
+      error: false,
+      message: "Directory deleted successfully",
+      loading: false,
+    };
+  } catch (err: any) {
+    console.error("Error deleting directory:", err);
+    return {
+      success: false,
+      error: true,
+      message: err?.errors
+        ? err?.errors[0]?.message
+        : "Error deleting directory",
       loading: false,
     };
   }
@@ -426,6 +504,49 @@ export const createUser = async (
     let msg =
       err?.errors?.length > 0 ? err.errors[0]?.message : "Error saving user";
     return { success: false, error: true, message: msg, loading: false };
+  }
+};
+
+// update user recrod
+export const updateUser = async (
+  currentState: CurrentState,
+  userId: string,
+  data: Partial<UserSchema>
+): Promise<CurrentState> => {
+  try {
+    // 1. Update Clerk user
+    await clerkClient.users.updateUser(userId, {
+      firstName: data.firstName,
+      lastName: data.lastName,
+    });
+
+    // 2. Update your database user record
+    await prisma.user.update({
+      where: { id: userId },
+      data: {
+        firstname: data.firstName || undefined,
+        lastname: data.lastName || undefined,
+        email: data.email || undefined,
+        phone: data.phone || undefined,
+        address: data.address || undefined,
+        img: data.img || undefined,
+        sex: data.sex || undefined,
+        birthday: data.birthday ? new Date(data.birthday) : undefined,
+        role: data.role || undefined,
+      },
+    });
+
+    return {
+      success: true,
+      error: false,
+      loading: false,
+      message: "User updated successfully",
+    };
+  } catch (err: any) {
+    console.error("Update error:", err);
+    const msg =
+      err?.errors?.length > 0 ? err.errors[0]?.message : "Error updating user";
+    return { success: false, error: true, loading: false, message: msg };
   }
 };
 
