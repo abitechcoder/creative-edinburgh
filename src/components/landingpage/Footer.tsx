@@ -67,9 +67,9 @@ const Footer = () => {
         </div> */}
         {/* Policies Section */}
         <div className="text-md">
-          <p className="hover:text-yellow-400 transition-all duration-300 ease-in-out font-medium cursor-pointer text-white">
+          {/* <p className="hover:text-yellow-400 transition-all duration-300 ease-in-out font-medium cursor-pointer text-white">
             Registered Charity SC052838
-          </p>
+          </p> */}
           <p className="mt-2 hover:text-yellow-400 transition-all duration-300 ease-in-out font-medium cursor-pointer text-white">
             Built by Millennial Sierra Leone
           </p>

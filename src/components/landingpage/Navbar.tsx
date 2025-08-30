@@ -256,7 +256,7 @@ const Navbar = () => {
                 height={100}
               />
             </Link>
-            <Link href="/">
+            {/* <Link href="/">
               <Image
                 src={"/eu.PNG"}
                 alt="Creative Hub Africa Logo"
@@ -264,7 +264,7 @@ const Navbar = () => {
                 height={100}
                 className=""
               />
-            </Link>
+            </Link> */}
           </div>
           <div
             className="lg:hidden cursor-pointer"
