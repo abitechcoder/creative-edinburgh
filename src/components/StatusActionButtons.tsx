@@ -42,6 +42,16 @@ const StatusActionButtons = ({
           <Image src="/close.svg" alt="deactivate" width={16} height={16} />
         </button>
       )}
+      {status === BusinessStatus.Inactive && (
+        <button
+          className="w-7 h-7 flex items-center justify-center rounded-full bg-green-500 disabled:bg-gray-400"
+          onClick={() => handleClick(BusinessStatus.Active)}
+          disabled={isPending}
+          title="Activate"
+        >
+          <Image src="/check.svg" alt="activate" width={16} height={16} />
+        </button>
+      )}
     </>
   );
 };

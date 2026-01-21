@@ -9,11 +9,10 @@ import FormContainer from "@/components/FormContainer";
 
 const JoinMembership = () => {
   const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
-  const [isBusinessModalOpen, setIsBusinessModalOpen] = useState(false);
 
   return (
-    <section className="w-full flex min-h-screen bg-white ">
-      <div>
+    <section className="w-full flex min-h-screen  ">
+      <div className=" ">
         <div className="mx-5">
           <div className="mt-32">
             <Image

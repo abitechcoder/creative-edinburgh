@@ -67,7 +67,9 @@ const DirectoryForm = ({
 
   return (
     <form className="flex flex-col gap-5" onSubmit={onSubmit}>
-      <h1 className="text-xl font-semibold">Add a new directory</h1>
+      <h1 className="text-xl font-semibold text-gray-400">
+        Add a new directory
+      </h1>
       <span className="text-xs text-gray-400 font-medium">
         Authentication Information
       </span>
@@ -193,7 +195,7 @@ const DirectoryForm = ({
         <div className="flex flex-col gap-2 w-full md:w-1/4">
           <label className="text-xs text-gray-500">Owner's Sex</label>
           <select
-            className="ring-[1.5px] ring-gray-300 p-2 rounded-md text-sm w-full"
+            className="ring-[1.5px] ring-gray-300 p-2 rounded-md text-sm w-full text-black"
             {...register("sex")}
             defaultValue={data?.sex}
           >
