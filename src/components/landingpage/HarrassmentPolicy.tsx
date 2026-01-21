@@ -69,9 +69,9 @@ const HarassmentPolicy = () => {
           </div>
           <div>
             <h2 className="text-xl font-bold my-5">
-              Creative Hub Africa prioritises marginalised people’s safety over
-              privileged people’s comfort. The Creative Hub Africa team reserves
-              the right not to act on complaints regarding:
+              Salone Bizness Directory prioritises marginalised people’s safety
+              over privileged people’s comfort. The Salone Bizness Directory
+              team reserves the right not to act on complaints regarding:
             </h2>
             <ul
               className={`${styles.paragraph}  font-normal leading-relaxed list-disc pl-5 space-y-2 text-gray-700`}

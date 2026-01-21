@@ -14,10 +14,10 @@ export default function Team() {
           <h1
             className={`${styles.heading1} font-extrabold text-black mb-10 uppercase  `}
           >
-            PEOPLE BEHIND <br /> Creative Hub Africa
+            PEOPLE BEHIND <br /> Salone Bizness Directory
           </h1>
           <p className={`${styles.paragraph} text-black leading-relaxed`}>
-            The work of Creative Hub Africa is supported by a diverse and
+            The work of Salone Bizness Directory is supported by a diverse and
             experienced creative team. Each bring to the table their own unique
             expertise to help the community grow and thrive. Thank you to all
             former team and board members, who have been a big part of Creative

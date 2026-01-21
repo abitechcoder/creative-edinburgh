@@ -73,7 +73,7 @@ const MembersLibrary = async ({
           <h2
             className={`${styles.heading1} text-black mb-6 lg:mb-10 mt-16 uppercase`}
           >
-            Creative Hub Africa Members Directory
+            Salone Bizness Directory Members Directory
           </h2>
           <p
             className={`${styles.paragraph} text-gray-700 mb-5 font-medium leading-relaxed text-xl`}

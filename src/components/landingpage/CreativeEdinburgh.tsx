@@ -15,7 +15,7 @@ const CreativeSierraleone: React.FC = () => {
       <div className="lg:w-1/2 w-full pe-6 ">
         <Image
           src={WhatWeDoImage}
-          alt="Creative Hub Africa Event"
+          alt="Salone Bizness Directory Event"
           className="w-full h-auto rounded-r-2xl shadow-lg "
         />
       </div>

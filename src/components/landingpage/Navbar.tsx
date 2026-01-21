@@ -251,7 +251,7 @@ const Navbar = () => {
             <Link href="/">
               <Image
                 src={Logo}
-                alt="Creative Hub Africa Logo"
+                alt="Salone Bizness Directory Logo"
                 width={100}
                 height={100}
               />
@@ -259,7 +259,7 @@ const Navbar = () => {
             {/* <Link href="/">
               <Image
                 src={"/eu.PNG"}
-                alt="Creative Hub Africa Logo"
+                alt="Salone Bizness Directory Logo"
                 width={100}
                 height={100}
                 className=""

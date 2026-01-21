@@ -14,9 +14,9 @@ const PayItForward = () => {
           PAY IT FORWARD
         </h2>
         <p className={`${styles.paragraph}  font-normal leading-relaxed mb-4`}>
-          All donations are invested back to the Creative Hub Africa community,
-          so by supporting us, you support your fellow creatives! As a
-          non-profit social enterprise, we rely on fundraising and donations,
+          All donations are invested back to the Salone Bizness Directory
+          community, so by supporting us, you support your fellow creatives! As
+          a non-profit social enterprise, we rely on fundraising and donations,
           and we will be able to do even more for our creative community with
           your support.
         </p>
@@ -27,7 +27,7 @@ const PayItForward = () => {
       <div className=" ">
         <Image
           src={PeopleNetworking}
-          alt="Creative Hub Africa Event"
+          alt="Salone Bizness Directory Event"
           className="w-full rounded-s-2xl"
         />
       </div>

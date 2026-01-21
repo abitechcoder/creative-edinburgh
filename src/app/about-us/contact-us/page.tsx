@@ -20,8 +20,8 @@ const ContactUs: React.FC = () => {
             >
               email
             </a>
-            , where it can be forwarded to the appropriate Creative Hub Africa
-            team member who will be able to assist you.
+            , where it can be forwarded to the appropriate Salone Bizness
+            Directory team member who will be able to assist you.
           </p>
         </div>
 

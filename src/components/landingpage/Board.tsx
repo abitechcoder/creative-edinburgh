@@ -90,10 +90,10 @@ const Board = () => {
         <div className="md:w-[50%] w-full mb-20 flex flex-col gap-4 lg:gap-8">
           <h2 className="text-2xl lg:text-5xl font-bold">Board</h2>
           <p className="text-xl leading-relaxed">
-            Creative Hub Africa’s independent Board are ardent supporters of the
-            creative sectors. They meet every two months to support policy and
-            strategic developments within the organisation, discussing how best
-            to move forward.
+            Salone Bizness Directory’s independent Board are ardent supporters
+            of the creative sectors. They meet every two months to support
+            policy and strategic developments within the organisation,
+            discussing how best to move forward.
           </p>
         </div>
       </div>

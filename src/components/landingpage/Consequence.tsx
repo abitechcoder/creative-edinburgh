@@ -30,9 +30,9 @@ const Consequences = () => {
         >
           If a participant engages in harassing behaviour, the Creative Hub
           Africa team may take any action they deem appropriate, up to and
-          including expulsion from all Creative Hub Africa community events and
-          channels, and identification of the participant as a harasser to other
-          Creative Hub Africa members or the general public.
+          including expulsion from all Salone Bizness Directory community events
+          and channels, and identification of the participant as a harasser to
+          other Salone Bizness Directory members or the general public.
         </p>
         {/* <p
           className={`${styles.paragraph} text-gray-700 font-normal leading-relaxed mb-4`}

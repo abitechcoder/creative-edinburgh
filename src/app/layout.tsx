@@ -9,7 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Creative Hub Africa",
+  title: "Salone Bizness Directory",
   description: `Sierra Leone Bizness Directory is your premier digital gateway to
             the nation's most trusted bizness directory, investment
             opportunities, and SME growth tools. Whether you are a local
@@ -26,7 +26,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <head>
-          <title>Creative Hub Africa</title>
+          <title>Salone Bizness Directory</title>
           <link rel="icon" href="/logo.png" />
         </head>
         <body className={inter.className}>

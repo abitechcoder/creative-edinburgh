@@ -28,20 +28,21 @@ const JoinMembership = () => {
               className="w-[150px] h-[180px] object-contain"
             />
             <h1 className=" flex text-4xl w-full sm:text-start  md:w-[40%] gap-2 font-semibold flex-col">
-              Creative Hub Africa
+              Salone Bizness Directory
               <span className="text-[15px] font-normal leading-6 text-justify">
-                Creative Hub Africa unites creative thinkers across the city.
-                Through events, career support, and advocacy, we bring together
-                and help grow the city’s creative community, providing a space
-                for creation, collaboration, and connection at every stage of
-                your career.
+                Salone Bizness Directory unites creative thinkers across the
+                city. Through events, career support, and advocacy, we bring
+                together and help grow the city’s creative community, providing
+                a space for creation, collaboration, and connection at every
+                stage of your career.
               </span>
             </h1>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-2 ">
-              <div className="px-3 py-2 flex gap-2 items-center rounded outline-cyan-800 hover:bg-cyan-800 hover:text-white text-cyan-800 bg-transparent outline-2">
-                Register Business{" "}
-                <FormContainer table="directory" type="create" />
-              </div>
+              <FormContainer
+                table="directory"
+                type="create"
+                text="List Business"
+              />
 
               <button
                 onClick={() => setIsModalOpen(true)} // Open the modal

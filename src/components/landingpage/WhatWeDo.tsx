@@ -10,10 +10,10 @@ const WhatWeDo = () => {
         <p
           className={`${styles.paragraph} text-gray-700 mb-5 font-medium leading-relaxed text-xl`}
         >
-          Creative Hub Africa unites creative thinkers across the city through
-          events, career support and advocacy, we bring together and help grow
-          the city’s creative community, providing a space for creation,
-          collaboration and connection at every stage of your career.
+          Salone Bizness Directory unites creative thinkers across the city
+          through events, career support and advocacy, we bring together and
+          help grow the city’s creative community, providing a space for
+          creation, collaboration and connection at every stage of your career.
         </p>
       </div>
       <div className="relative">

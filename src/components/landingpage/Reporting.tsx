@@ -26,22 +26,23 @@ const Reporting = () => {
           >
             email
           </a>
-          . Emails to this address will be forwarded to the Creative Hub Africa
-          Executive Director and will remain confidential unless otherwise
-          required. After receiving the complaint, somebody will be in touch to
-          discuss further and take a record of your account. We will respond as
-          promptly as we can. If other parties need to become involved in the
-          process as your complaint progresses, we'll work with you to ensure
-          that you're comfortable and that we have your consent to share
-          information.
+          . Emails to this address will be forwarded to the Salone Bizness
+          Directory Executive Director and will remain confidential unless
+          otherwise required. After receiving the complaint, somebody will be in
+          touch to discuss further and take a record of your account. We will
+          respond as promptly as we can. If other parties need to become
+          involved in the process as your complaint progresses, we'll work with
+          you to ensure that you're comfortable and that we have your consent to
+          share information.
         </p>
         <p
           className={`${styles.paragraph} text-black font-normal leading-relaxed mb-4`}
         >
-          This code of conduct applies to Creative Hub Africa activities, but if
-          you are being harassed by a user within or in the social orbit of
-          Creative Hub Africa, we still want to know about it. We will take all
-          good-faith reports of harassment by Creative Hub Africa seriously.
+          This code of conduct applies to Salone Bizness Directory activities,
+          but if you are being harassed by a user within or in the social orbit
+          of Salone Bizness Directory, we still want to know about it. We will
+          take all good-faith reports of harassment by Salone Bizness Directory
+          seriously.
         </p>
         <div className="md:pe-6 w-full mb-4">
           <h2 className="text-xl font-bold mb-4">This includes</h2>
@@ -56,10 +57,11 @@ const Reporting = () => {
         <p
           className={`${styles.paragraph} text-black font-normal leading-relaxed mb-4`}
         >
-          The Creative Hub Africa team reserves the right to exclude people from
-          Creative Hub Africa activities based on their past behaviour,
-          including behaviour outside of Creative Hub Africa, and behaviour
-          towards people who are not members of Creative Hub Africa.
+          The Salone Bizness Directory team reserves the right to exclude people
+          from Salone Bizness Directory activities based on their past
+          behaviour, including behaviour outside of Salone Bizness Directory,
+          and behaviour towards people who are not members of Salone Bizness
+          Directory.
         </p>
         <p
           className={`${styles.paragraph} text-black font-normal leading-relaxed mb-4`}
@@ -76,8 +78,8 @@ const Reporting = () => {
           victims of abuse. At our discretion, we may publicly name a person
           about whom we’ve received harassment complaints, or privately warn
           third parties about them, if we believe that doing so will increase
-          the safety of Creative Hub Africa members or the general public. We
-          will not name harassment victims without their affirmative consent.
+          the safety of Salone Bizness Directory members or the general public.
+          We will not name harassment victims without their affirmative consent.
         </p>
       </div>
       <div className="md:w-1/2 ps-6">

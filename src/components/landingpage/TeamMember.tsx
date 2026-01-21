@@ -16,7 +16,7 @@ const teamMembers: TeamMember[] = [
     role: "Executive Director",
     image: Team1,
     description:
-      "Ola oversees Creative Hub Africa’s strategic development, creative programmes and advocacy. She has over two decades of experience in various senior roles across the creative sector including at National Galleries of Scotland, Edinburgh International Book Festival and Edinburgh International Festival. She is a passionate and results-focussed cultural leader with an interest in diversity of thinking, civic debate, and sustainability.",
+      "Ola oversees Salone Bizness Directory’s strategic development, creative programmes and advocacy. She has over two decades of experience in various senior roles across the creative sector including at National Galleries of Scotland, Edinburgh International Book Festival and Edinburgh International Festival. She is a passionate and results-focussed cultural leader with an interest in diversity of thinking, civic debate, and sustainability.",
     email: "ola@sierraleonebusinessmarkit.com",
   },
   {
@@ -32,7 +32,7 @@ const teamMembers: TeamMember[] = [
     role: "Programme Manager",
     image: Team3,
     description:
-      "Zoë oversees our programme strategy and delivery of all Creative Hub Africa events. She has over 7 years of experience in events management and is passionate about collaborating with and supporting creative communities. An accomplished theatre-maker, she co-founded Prickly Pear Productions, a female-led theatre company that champions underrepresented artists. She is also a Board Member at Stellar Quines, an intersectional feminist theatre company based in Scotland.",
+      "Zoë oversees our programme strategy and delivery of all Salone Bizness Directory events. She has over 7 years of experience in events management and is passionate about collaborating with and supporting creative communities. An accomplished theatre-maker, she co-founded Prickly Pear Productions, a female-led theatre company that champions underrepresented artists. She is also a Board Member at Stellar Quines, an intersectional feminist theatre company based in Scotland.",
     email: "zoe@sierraleonebusinessmarkit.com",
   },
   {
@@ -40,7 +40,7 @@ const teamMembers: TeamMember[] = [
     role: "Marketing + Communications Manager",
     image: Team4,
     description:
-      "Vicky is the Marketing and Communications Manager here at Creative Hub Africa. She is a digital marketing and brand professional with over ten years’ experience working in creative organisations around the world, including World of WearableArt in New Zealand. She is passionate about supporting and facilitating opportunities for artists and creatives, has recently become Carbon Literate Certified, and enjoys volunteering her time and skills to performing arts organisations. ",
+      "Vicky is the Marketing and Communications Manager here at Salone Bizness Directory. She is a digital marketing and brand professional with over ten years’ experience working in creative organisations around the world, including World of WearableArt in New Zealand. She is passionate about supporting and facilitating opportunities for artists and creatives, has recently become Carbon Literate Certified, and enjoys volunteering her time and skills to performing arts organisations. ",
     email: "vicky@sierraleonebusinessmarkit.com",
   },
   {

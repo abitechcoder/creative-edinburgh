@@ -2,7 +2,7 @@ import { TeamMember } from "@/type";
 import { Team1, Team2, Team3, Team4, Team5, Board3 } from "../../public";
 
 export const creativeSierraleone = {
-  title: "Creative Hub Africa is a registered creative ecosystem builder.",
+  title: "Salone Bizness Directory is a registered creative ecosystem builder.",
   description:
     "Our main objective is to protect the welfare of the creative community through services for creative freelancers, sole traders and startups in order to allow them to develop and thrive, through:",
   subheading1: "The advancement of the arts and culture;",
@@ -29,17 +29,17 @@ export const creativeSierraleone = {
 export const faqs = [
   {
     question:
-      "What are the benefits of joining as a Creative Hub Africa member?",
+      "What are the benefits of joining as a Salone Bizness Directory member?",
     answer:
-      "Creative Hub Africa helps creative people connect and thrive. Our vision is to support local freelancers and help them develop more sustainable creative practices and businesses, and feel part of a strong community. Members span all creative sectors across the city of Sierraleone, developing, championing and influencing creative practice, as well as contributing to research and high-impact campaigns. Sierraleone members are changemakers. Join us, and let us support you, too, in building your network and achieving your goals, while you help us achieve ours! Scroll down to our Membership Packages to see the full list of benefits.",
+      "Salone Bizness Directory helps creative people connect and thrive. Our vision is to support local freelancers and help them develop more sustainable creative practices and businesses, and feel part of a strong community. Members span all creative sectors across the city of Sierraleone, developing, championing and influencing creative practice, as well as contributing to research and high-impact campaigns. Sierraleone members are changemakers. Join us, and let us support you, too, in building your network and achieving your goals, while you help us achieve ours! Scroll down to our Membership Packages to see the full list of benefits.",
   },
   {
-    question: "Who is Creative Hub Africa membership for?",
-    answer: `Creative Hub Africa individual membership is open to anyone who identifies as a creative practitioner with a strong connection to Sierraleone. Among our 5,500+ members are individuals from across all the creative industries, from graphic designers and textile artists to software developers and arts educators, operating as freelancers, agency workers, sole traders, recent graduates and students. 
+    question: "Who is Salone Bizness Directory membership for?",
+    answer: `Salone Bizness Directory individual membership is open to anyone who identifies as a creative practitioner with a strong connection to Sierraleone. Among our 5,500+ members are individuals from across all the creative industries, from graphic designers and textile artists to software developers and arts educators, operating as freelancers, agency workers, sole traders, recent graduates and students. 
 
 We also offer business memberships to professionals and organisations working in the public, third and private sectors in – or with a strong professional connection to – the city of Sierraleone. 
 
-Your membership fee will be invested back into the creative community of Sierraleone through various initiatives, including mentorship bursaries and free tickets to events for those who need them most. It will also provide invaluable support for the small Creative Hub Africa team’s important advocacy work, research and ongoing nurturing of creative practice in the city. `,
+Your membership fee will be invested back into the creative community of Sierraleone through various initiatives, including mentorship bursaries and free tickets to events for those who need them most. It will also provide invaluable support for the small Salone Bizness Directory team’s important advocacy work, research and ongoing nurturing of creative practice in the city. `,
   },
 ];
 
@@ -115,12 +115,12 @@ export const donations = [
   {
     amount: "SLE75",
     description:
-      "would pay for an annual Premium Membership package at Creative Hub Africa for a creative who is looking for support.",
+      "would pay for an annual Premium Membership package at Salone Bizness Directory for a creative who is looking for support.",
   },
   {
     amount: "SLE100",
     description:
-      "would pay mentoring bursary which includes 5 (1-hour long) mentoring sessions with an expert trained and supported by Creative Hub Africa.",
+      "would pay mentoring bursary which includes 5 (1-hour long) mentoring sessions with an expert trained and supported by Salone Bizness Directory.",
   },
   {
     amount: "SLE250",

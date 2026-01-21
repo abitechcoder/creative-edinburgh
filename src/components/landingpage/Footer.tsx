@@ -2,6 +2,7 @@ import Link from "next/link";
 import { FaTwitter, FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import Image from "next/image";
 import { FaXTwitter } from "react-icons/fa6";
+import FormContainer from "../FormContainer";
 
 const Footer = () => {
   return (
@@ -13,7 +14,7 @@ const Footer = () => {
 
         <Image
           src="/eu.PNG"
-          alt="Creative Hub Africa Logo"
+          alt="Salone Bizness Directory Logo"
           height={300}
           width={260}
           className=""
@@ -110,25 +111,20 @@ const Footer = () => {
         </div>
         <div className="flex flex-col lg:flex-row gap-4 items-center">
           {/* OTHER BUTTONS */}
-          <Link
-            href="#"
-            className="bg-primary w-full text-center hover:bg-tertiary text-white px-8 py-5 text-md rounded-md transition-colors flex items-center justify-center h-[80px]"
-          >
-            List your Business
-          </Link>
 
+          <FormContainer table="directory" type="create" text="List Business" />
           <Link
             href="#"
-            className="bg-white w-full text-center hover:bg-primary text-black px-8 py-5 text-md rounded-md transition-colors flex items-center justify-center h-[80px]"
+            className="rounded-lg bg-white hover:bg-primary text-black px-6 py-3 text-sm flex items-center justify-center transition-colors"
           >
             Browse Investments
           </Link>
 
           <Link
             href="#"
-            className="bg-tertiary w-full text-center hover:bg-primary text-white px-8 py-5 text-md rounded-md transition-colors flex items-center justify-center h-[80px]"
+            className="rounded-lg bg-tertiary hover:bg-primary text-white px-6 py-3 text-sm flex items-center justify-center transition-colors"
           >
-            Contact our Team
+            Contact Us
           </Link>
         </div>
       </div>

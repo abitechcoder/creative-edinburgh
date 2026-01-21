@@ -23,23 +23,23 @@ const CodeOfConduct = () => {
         <p
           className={`${styles.paragraph} text-black font-normal leading-relaxed mb-5`}
         >
-          Creative Hub Africa is committed to providing a harassment-free
+          Salone Bizness Directory is committed to providing a harassment-free
           experience for everyone. We do not tolerate harassment in any form.
           Anyone who violates this code of conduct may be removed from these
-          activities and channels at the discretion of the Creative Hub Africa
-          team.
+          activities and channels at the discretion of the Salone Bizness
+          Directory team.
         </p>
         <p
           className={`${styles.paragraph} text-black font-normal leading-relaxed mb-5`}
         >
-          Some Creative Hub Africa activities may have additional rules in
+          Some Salone Bizness Directory activities may have additional rules in
           place, which will be made clearly available to users at an event
           description.
         </p>
         <p
           className={`${styles.paragraph} text-black font-normal leading-relaxed mb-5`}
         >
-          All Creative Hub Africa members and visitors are responsible for
+          All Salone Bizness Directory members and visitors are responsible for
           knowing and abiding by these rules.
         </p>
       </div>

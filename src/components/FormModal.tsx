@@ -196,10 +196,10 @@ const FormModal = ({
     <>
       {text ? (
         <button
-          className="p-3 rounded-md bg-SkyBlueLight"
+          className="p-3 rounded-lg bg-primary hover:from-secondary hover:to-primary px-6 py-3 text-sm "
           onClick={() => setOpen(true)}
         >
-          <p className=" bg-SkyBlueLight">{text}</p>
+          <p className="text-white">{text}</p>
         </button>
       ) : (
         <button
@@ -210,7 +210,8 @@ const FormModal = ({
         </button>
       )}
       {open && (
-        <div className="w-screen h-screen absolute left-0 top-0 bg-black bg-opacity-60 z-50 flex items-center justify-center">
+        <div className="fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center">
+>
           <div className="bg-white p-4 rounded-md relative w-[90%] md:w-[70%] lg:w-[60%] xl:w-[50%] 2xl:w-[40%]">
             <Form />
             <div

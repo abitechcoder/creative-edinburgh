@@ -25,8 +25,8 @@ const MentoringScheme = () => {
           Mentoring can be the missing link between where you are now, and where
           you want to be. If you’re looking for accountability for your progress
           on a particular project, business or creative idea while gaining some
-          diverse industry insight, the Creative Hub Africa mentoring scheme
-          could be for you!
+          diverse industry insight, the Salone Bizness Directory mentoring
+          scheme could be for you!
         </p>
         <Button
           className="text-white"
