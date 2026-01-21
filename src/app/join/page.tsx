@@ -12,7 +12,7 @@ const JoinMembership = () => {
   const [isBusinessModalOpen, setIsBusinessModalOpen] = useState(false);
 
   return (
-    <section className="w-full flex min-h-screen">
+    <section className="w-full flex min-h-screen bg-white ">
       <div>
         <div className="mx-5">
           <div className="mt-32">

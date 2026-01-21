@@ -1,4 +1,5 @@
 "use server";
+import { BusinessStatus } from "@prisma/client";
 import {
   AnnouncementSchema,
   EventSchema,
@@ -285,6 +286,33 @@ export const deleteDirectory = async (
       message: err?.errors
         ? err?.errors[0]?.message
         : "Error deleting directory",
+      loading: false,
+    };
+  }
+};
+
+export const updateBusinessStatus = async (
+  id: number,
+  status: BusinessStatus
+): Promise<CurrentState> => {
+  try {
+    await prisma.business.update({
+      where: { id },
+      data: { status },
+    });
+    // revalidatePath("/app/app/(dashboard)/(list)/directories");
+    return {
+      success: true,
+      error: false,
+      message: "Business status updated.",
+      loading: false,
+    };
+  } catch (err) {
+    console.error("Update failed:", err);
+    return {
+      success: false,
+      error: true,
+      message: "Update failed.",
       loading: false,
     };
   }

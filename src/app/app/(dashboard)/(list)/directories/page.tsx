@@ -3,6 +3,7 @@ import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
 import Filter from "@/components/Filter"; // Import the new Filter component
+import StatusActionButtons from "@/components/StatusActionButtons"; // Import the new StatusActionButtons component
 
 import Image from "next/image";
 import Link from "next/link";
@@ -39,7 +40,11 @@ const TeacherListPage = async ({
       accessor: "sector",
       className: "hidden md:table-cell",
     },
-
+    {
+      header: "Status",
+      accessor: "status",
+      className: "hidden md:table-cell",
+    },
     {
       header: "Phone",
       accessor: "phone",
@@ -81,6 +86,7 @@ const TeacherListPage = async ({
       {/* <td className="hidden md:table-cell">{item.genderOfOwner}</td> */}
       {/* <td className="hidden md:table-cell">{item.subjects.join(",")}</td> */}
       <td className="hidden md:table-cell">{item?.sector?.name}</td>
+      <td className="hidden md:table-cell">{item.status}</td>
       <td className="hidden md:table-cell">
         {item?.phone}
         <br></br>
@@ -96,10 +102,10 @@ const TeacherListPage = async ({
             </button>
           </Link>
           {role === "admin" && (
-            // <button className="w-7 h-7 flex items-center justify-center rounded-full bg-PurpleDeep">
-            //   <Image src="/delete.png" alt="" width={16} height={16} />
-            // </button>
-            <FormModal table="directory" type="delete" id={item.id} />
+            <>
+              <StatusActionButtons id={item.id} status={item.status} />
+              <FormModal table="directory" type="delete" id={item.id} />
+            </>
           )}
         </div>
       </td>

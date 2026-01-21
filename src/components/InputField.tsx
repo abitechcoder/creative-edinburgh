@@ -41,7 +41,7 @@ const InputField = ({
       {as === "textarea" ? (
         <textarea
           {...register(name)}
-          className="ring-[1.5px] ring-gray-300 p-2 rounded-md text-sm w-full"
+          className="ring-[1.5px] ring-gray-300 p-2 rounded-md text-sm w-full text-black"
           defaultValue={defaultValue}
           {...inputProps}
         />
