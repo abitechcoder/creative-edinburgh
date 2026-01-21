@@ -85,7 +85,7 @@ const TeacherListPage = async ({
         {item?.email}
       </td>
       <td className="hidden md:table-cell">{item.businessAddress}</td>
-      <td className="hidden md:table-cell">{item.revenueBracket}</td>
+      <td className="hidden md:table-cell">{item.status}</td>
       <td>
         <div className="flex items-center gap-2">
           <Link href={`/app/directories/${item.id}`}>

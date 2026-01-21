@@ -1,5 +1,3 @@
-// UPDATED PRISMA SCHEMA (schema.prisma)
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -9,135 +7,132 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-enum UserSex {
-  Male
-  Female
-}
-
 model Business {
-  id                   Int           @id @default(autoincrement())
-  name                 String        @db.VarChar(255)
-  logo                 String?       @db.VarChar(255)
-  user     User?     @relation(fields: [userId], references: [id])
-  userId   String?   @unique
+  id                   Int            @id @default(autoincrement())
+  name                 String         @db.VarChar(255)
+  logo                 String?        @db.VarChar(255)
+  userId               String?        @unique
   ageOfOwner           Int?
   genderOfOwner        UserSex
-  email                String?       @db.VarChar(255)
-  phone                String?       @db.VarChar(255)
-  businessAddress      String        @db.Text
-  coreProductOrService String        @db.Text
-  description          String        @db.Text
-  disabilityInclusion  String?       @db.VarChar(100)
-  registrationStatus   String?       @db.VarChar(100)
-  revenueBracket       String?       @db.VarChar(100)
-  yearsInOperation     DateTime?     @default(now())
-  createdAt            DateTime      @default(now())
-  updatedAt            DateTime      @updatedAt
-
-  // Relations
-  sector               Sector?       @relation(fields: [sectorId], references: [id])
+  email                String?        @db.VarChar(255)
+  phone                String?        @db.VarChar(255)
+  businessAddress      String         @db.Text
+  coreProductOrService String         @db.Text
+  description          String         @db.Text
+  disabilityInclusion  String?        @db.VarChar(100)
+  registrationStatus   String?        @db.VarChar(100)
+  revenueBracket       String?        @db.VarChar(100)
+  yearsInOperation     DateTime?      @default(now())
+  createdAt            DateTime       @default(now())
+  updatedAt            DateTime       @updatedAt
   sectorId             Int?
-  
-  workforce            Workforce?
-  socialMedia          SocialMedia?
   announcement         Announcement[]
+  sector               Sector?        @relation(fields: [sectorId], references: [id])
+  user                 User?          @relation(fields: [userId], references: [id])
   event                Event[]
   products             Product[]
+  socialMedia          SocialMedia?
+  workforce            Workforce?
+  status               BusinessStatus @default(Pending) 
 
+  @@index([sectorId], map: "Business_sectorId_fkey")
+}
 
+enum BusinessStatus {
+  Active
+  Inactive
+  Pending
 }
 
 model Sector {
-  id         Int        @id @default(autoincrement())
-  name       String     @unique
-  businesses Business[]
-  events Event[]
+  id           Int            @id @default(autoincrement())
+  name         String         @unique
   announcement Announcement[]
-
+  businesses   Business[]
+  events       Event[]
 }
 
 model Workforce {
-  id         Int        @id @default(autoincrement())
+  id         Int      @id @default(autoincrement())
   male       Int
   female     Int
   total      Int
-  business   Business   @relation(fields: [businessId], references: [id])
-  businessId Int        @unique
+  businessId Int      @unique
+  business   Business @relation(fields: [businessId], references: [id])
 }
 
 model SocialMedia {
-  id         Int        @id @default(autoincrement())
-  facebook   String?    @db.Text
-  twitter    String?    @db.Text
-  instagram  String?    @db.Text
-  tiktok     String?    @db.Text
-  youtube    String?    @db.Text
-  business   Business   @relation(fields: [businessId], references: [id])
-  businessId Int        @unique
+  id         Int      @id @default(autoincrement())
+  facebook   String?  @db.Text
+  twitter    String?  @db.Text
+  instagram  String?  @db.Text
+  tiktok     String?  @db.Text
+  youtube    String?  @db.Text
+  businessId Int      @unique
+  business   Business @relation(fields: [businessId], references: [id])
 }
-
-
 
 model Event {
-  id          Int      @id @default(autoincrement())
-  title       String   @db.VarChar(255)
-  description String   @db.Text
+  id          Int       @id @default(autoincrement())
+  title       String    @db.VarChar(255)
+  description String    @db.Text
   startTime   DateTime
   endTime     DateTime
+  sectorId    Int?
+  businessId  Int?
+  business    Business? @relation(fields: [businessId], references: [id])
+  sector      Sector?   @relation(fields: [sectorId], references: [id])
 
-  sectorId Int?
-  sector   Sector? @relation(fields: [sectorId], references: [id])
-
-  businessId Int?
-  business   Business? @relation(fields: [businessId], references: [id])
+  @@index([businessId], map: "Event_businessId_fkey")
+  @@index([sectorId], map: "Event_sectorId_fkey")
 }
-
 
 model Announcement {
   id          Int       @id @default(autoincrement())
   title       String    @db.VarChar(255)
   description String    @db.Text
   date        DateTime
-
-  // Optional relation to Sector
   sectorId    Int?
-  sector      Sector?   @relation(fields: [sectorId], references: [id])
-
-  // Optional relation to Business
   businessId  Int?
   business    Business? @relation(fields: [businessId], references: [id])
-}
+  sector      Sector?   @relation(fields: [sectorId], references: [id])
 
+  @@index([businessId], map: "Announcement_businessId_fkey")
+  @@index([sectorId], map: "Announcement_sectorId_fkey")
+}
 
 model User {
-  id          String        @unique
-  username    String?       @unique
-  firstname   String?
-  lastname    String?
-  email       String       @unique
-  phone       String?      
-  address     String?
-  img         String?
-  sex         UserSex?
-  createdAt   DateTime     @default(now())
-  birthday    DateTime?
-  role        String
-  business   Business?  @relation 
-  
+  id        String    @unique
+  username  String?   @unique
+  firstname String?
+  lastname  String?
+  email     String    @unique
+  phone     String?
+  address   String?
+  img       String?
+  sex       UserSex?
+  createdAt DateTime  @default(now())
+  birthday  DateTime?
+  role      String
+  business  Business?
 }
-
 
 model Product {
   id          Int      @id @default(autoincrement())
   name        String   @db.VarChar(255)
   description String   @db.Text
-  price       Float?   // Optional for services or non-priced items
-  image       String?  @db.VarChar(255) // URL to product image
-  category    String?  @db.VarChar(100) // e.g., "Service", "Physical", "Digital"
-
-  business    Business @relation(fields: [businessId], references: [id])
+  price       Float?
+  image       String?  @db.VarChar(255)
+  category    String?  @db.VarChar(100)
   businessId  Int
-
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+  business    Business @relation(fields: [businessId], references: [id])
+
+  @@index([businessId], map: "Product_businessId_fkey")
+}
+
+enum UserSex {
+  Male
+  Female
 }

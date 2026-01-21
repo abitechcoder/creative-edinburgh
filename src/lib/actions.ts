@@ -12,6 +12,7 @@ import {
 } from "./formValidationSchemas";
 import prisma from "./prisma";
 import { auth, clerkClient } from "@clerk/nextjs/server";
+import { currentUser } from "@clerk/nextjs/server";
 
 export type CurrentState = {
   success: boolean;
@@ -24,6 +25,9 @@ export const createDirectory = async (
   currentState: CurrentState,
   data: any
 ): Promise<CurrentState> => {
+  const user = await currentUser();
+  const role = user?.publicMetadata.role as string;
+
   try {
     const user: any = await clerkClient.users.createUser({
       username: data.firstName.trim() + data.lastName.trim(),
@@ -73,6 +77,7 @@ export const createDirectory = async (
         logo: data.img || null,
         disabilityInclusion: "Yes",
         registrationStatus: "Yes",
+        status: role === "admin" ? "Active" : "Pending",
       },
     });
 
@@ -931,4 +936,11 @@ export const getEventsForCalendar = async () => {
   });
 
   return events;
+};
+
+export const getSectors = async () => {
+  const sectors = await prisma.sector.findMany({
+    select: { name: true, id: true },
+  });
+  return sectors;
 };

@@ -1,7 +1,8 @@
-import prisma from "@/lib/prisma";
+"use client";
+
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import FormModal from "./FormModal";
-import { auth } from "@clerk/nextjs/server";
-// fix error
+import { getSectors } from "@/lib/actions";
 
 export type FormContainerProps = {
   table:
@@ -17,45 +18,40 @@ export type FormContainerProps = {
   data?: any;
   id?: number | string;
   text?: any;
+  setOpen?: Dispatch<SetStateAction<boolean>>;
 };
 
-const FormContainer = async ({
+const FormContainer = ({
   table,
   type,
   data,
   id,
   text,
+  setOpen,
 }: FormContainerProps) => {
-  let relatedData = {};
+  const [relatedData, setRelatedData] = useState({});
 
-  const { userId, sessionClaims } = auth();
-  const role = (sessionClaims?.metadata as { role?: string })?.role;
-  const currentUserId = userId;
+  useEffect(() => {
+    const fetchRelatedData = async () => {
+      if (type !== "delete") {
+        switch (table) {
+          case "directory":
+            try {
+              const sectors = await getSectors();
+              setRelatedData({ sectors });
+            } catch (error) {
+              console.error("Failed to fetch sectors:", error);
+            }
+            break;
+          // Add other cases as needed
+          default:
+            break;
+        }
+      }
+    };
 
-  if (type !== "delete") {
-    switch (table) {
-      case "directory":
-        const sectors = await prisma.sector.findMany({
-          select: { name: true, id: true },
-        });
-        relatedData = { sectors: sectors };
-        break;
-
-      case "event":
-        const allSectors = await prisma.sector.findMany({
-          select: { name: true, id: true },
-        });
-
-        const allBiz = await prisma.business.findMany({
-          select: { name: true, id: true },
-        });
-        relatedData = { sectors: allSectors, businesses: allBiz };
-        break;
-
-      default:
-        break;
-    }
-  }
+    fetchRelatedData();
+  }, [table, type]);
 
   return (
     <div className="">
@@ -66,6 +62,7 @@ const FormContainer = async ({
         id={id}
         relatedData={relatedData}
         text={text}
+        setOpen={setOpen}
       />
     </div>
   );

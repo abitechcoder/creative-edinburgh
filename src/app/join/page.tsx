@@ -5,9 +5,11 @@ import Image from "next/image";
 import ContactModal from "@/components/landingpage/ContactModal";
 import PricingSection from "@/components/landingpage/PricingSection";
 import Link from "next/link";
+import FormContainer from "@/components/FormContainer";
 
 const JoinMembership = () => {
   const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
+  const [isBusinessModalOpen, setIsBusinessModalOpen] = useState(false);
 
   return (
     <section className="w-full flex min-h-screen">
@@ -24,11 +26,11 @@ const JoinMembership = () => {
             <Image
               src={Logo}
               alt=""
-              className="w-[180px] h-[180px] object-contain"
+              className="w-[150px] h-[180px] object-contain"
             />
-            <h1 className="flex text-4xl w-full sm:text-start text-center sm:w-[52%] gap-2 font-semibold flex-col">
+            <h1 className=" flex text-4xl w-full sm:text-start  md:w-[40%] gap-2 font-semibold flex-col">
               Creative Hub Africa
-              <span className="text-[15px] font-normal leading-6">
+              <span className="text-[15px] font-normal leading-6 text-justify">
                 Creative Hub Africa unites creative thinkers across the city.
                 Through events, career support, and advocacy, we bring together
                 and help grow the city’s creative community, providing a space
@@ -36,16 +38,21 @@ const JoinMembership = () => {
                 your career.
               </span>
             </h1>
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-2">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-2 ">
+              <div className="px-3 py-2 flex gap-2 items-center rounded outline-cyan-800 hover:bg-cyan-800 hover:text-white text-cyan-800 bg-transparent outline-2">
+                Register Business{" "}
+                <FormContainer table="directory" type="create" />
+              </div>
+
               <button
                 onClick={() => setIsModalOpen(true)} // Open the modal
-                className="px-6 py-2 rounded outline-cyan-800 hover:bg-cyan-800 hover:text-white text-cyan-800 bg-transparent outline-2"
+                className="px-3 py-2 rounded outline-cyan-800 hover:bg-cyan-800 hover:text-white text-cyan-800 bg-transparent outline-2"
               >
                 Contact US
               </button>
               <Link
                 href={`/sign-in`}
-                className="px-6 py-2 rounded cursor-pointer bg-cyan-800 text-white"
+                className="px-3 py-2 rounded cursor-pointer bg-cyan-800 text-white"
               >
                 Member Log in
               </Link>
