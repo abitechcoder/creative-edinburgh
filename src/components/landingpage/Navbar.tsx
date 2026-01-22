@@ -16,6 +16,7 @@ import {
 import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 import { IoCloseSharp } from "react-icons/io5";
 import { FaXTwitter } from "react-icons/fa6";
+import { socials } from "@/lib/constant";
 
 const NavLink = ({ children, href = "#" }: { children: any; href: string }) => (
   <Link
@@ -274,42 +275,23 @@ const Navbar = () => {
           </div>
           <div className="hidden lg:flex items-end gap-8">
             <MyDropDownLink title="ABOUT US" links={aboutLinks} />
-            {/* <MyDropDownLink title="MEMBERSHIP" links={membershipLinks} /> */}
+
             <NavLink href="/business-directory">Bizness Directory</NavLink>
-            {/* <MyDropDownLink title="Events" links={eventsLinks} /> */}
-            {/* <NavLink href="/awards">AWARDS</NavLink> */}
-            {/* <NavLink href="#">FOR COMMUNITY</NavLink> */}
-            {/* <MyDropDownLink title="SUPPORT US" links={supportUsLinks} /> */}
 
-            <div className="flex items-end gap-6 py-2">
-              <a
-                href="https://twitter.com/creativeedin"
-                className="text-gray-600 hover:text-tertiary transition-colors duration-300"
-                aria-label="Twitter (X)"
-              >
-                <FaXTwitter size={22} />
-              </a>
-
-              <a
-                href="https://www.linkedin.com/company/creative-edinburgh/"
-                className="text-gray-600 hover:text-tertiary transition-colors duration-300"
-              >
-                <FaLinkedin size={22} />
-              </a>
-
-              <a
-                href="https://www.facebook.com/CreativeEdinburgh/"
-                className="text-gray-600 hover:text-tertiary transition-colors duration-300"
-              >
-                <FaFacebook size={22} />
-              </a>
-              <a
-                href="https://www.instagram.com/creativeedinburgh/"
-                className="text-gray-600 hover:text-tertiary transition-colors duration-300"
-              >
-                <FaInstagram size={22} />
-              </a>
+            <div className="flex items-end gap-6 ">
+              {socials.map(({ name, link, icon: Icon }) => (
+                <a
+                  key={name}
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-600 hover:text-tertiary transition-colors duration-300"
+                >
+                  <Icon size={24} />
+                </a>
+              ))}
             </div>
+
             <Link
               href={`/join`}
               className="px-6 py-2 rounded cursor-pointer bg-cyan-800 text-white "

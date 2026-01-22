@@ -3,6 +3,7 @@ import { FaTwitter, FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import Image from "next/image";
 import { FaXTwitter } from "react-icons/fa6";
 import FormContainer from "../FormContainer";
+import { socials } from "@/lib/constant";
 
 const Footer = () => {
   return (
@@ -83,30 +84,17 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-semibold mb-4">FOLLOW US</h3>
           <div className="flex space-x-4">
-            <a
-              href="https://www.facebook.com/CreativeEdinburgh/"
-              className="hover:text-yellow-400 transition-colors duration-300 ease-in-out"
-            >
-              <FaFacebook size={24} />
-            </a>
-            <a
-              href="https://www.linkedin.com/company/creative-edinburgh/"
-              className="hover:text-yellow-400 transition-colors duration-300 ease-in-out"
-            >
-              <FaLinkedin size={24} />
-            </a>
-            <a
-              href="https://twitter.com/creativeedin"
-              className="hover:text-yellow-400 transition-colors duration-300 ease-in-out"
-            >
-              <FaXTwitter size={24} />
-            </a>
-            <a
-              href="https://www.instagram.com/creativeedinburgh/"
-              className="hover:text-yellow-400 transition-colors duration-300 ease-in-out"
-            >
-              <FaInstagram size={24} />
-            </a>
+            {socials.map(({ name, link, icon: Icon }) => (
+              <a
+                key={name}
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-yellow-400 transition-colors duration-300 ease-in-out"
+              >
+                <Icon size={24} />
+              </a>
+            ))}
           </div>
         </div>
         <div className="flex flex-col lg:flex-row gap-4 items-center">
@@ -114,14 +102,14 @@ const Footer = () => {
 
           <FormContainer table="directory" type="create" text="List Business" />
           <Link
-            href="#"
+            href="/business-directory"
             className="rounded-lg bg-white hover:bg-primary text-black px-6 py-3 text-sm flex items-center justify-center transition-colors"
           >
             Browse Investments
           </Link>
 
           <Link
-            href="#"
+            href="/join"
             className="rounded-lg bg-tertiary hover:bg-primary text-white px-6 py-3 text-sm flex items-center justify-center transition-colors"
           >
             Contact Us

@@ -1,6 +1,6 @@
 const ContactModal = ({ onClose }: any) => {
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black/40 bg-opacity-50 z-50">
+    <div className="fixed inset-0 flex items-center justify-center bg-black/40 bg-opacity-50 z-[200]">
       <div className="bg-white w-[500px] rounded-lg p-6 shadow-lg">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-xl font-semibold">Contact Creative Edinburgh</h2>

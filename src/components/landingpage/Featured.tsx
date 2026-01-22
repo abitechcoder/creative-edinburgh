@@ -103,7 +103,10 @@ const Featured = () => {
             Over <span className="text-primary">$5M+</span> in deals closed
             through our platform in 2023
           </h3>
-          <Link href="#" className="px-6 py-3 bg-primary font-bold rounded-lg">
+          <Link
+            href="/business-directory"
+            className="px-6 py-3 bg-primary font-bold rounded-lg"
+          >
             Browse All Sectors
           </Link>
         </div>

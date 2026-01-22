@@ -1,5 +1,6 @@
 import { TeamMember } from "@/type";
 import { Team1, Team2, Team3, Team4, Team5, Board3 } from "../../public";
+import { FaFacebook, FaInstagram, FaTiktok } from "react-icons/fa";
 
 export const creativeSierraleone = {
   title: "Salone Bizness Directory is a registered creative ecosystem builder.",
@@ -131,5 +132,24 @@ export const donations = [
     amount: "SLE300",
     description:
       "would pay for a bursary for a freelance mentor who can’t afford to offer mentoring free of charge but is passionate about sharing their knowledge.",
+  },
+];
+
+export const socials = [
+  {
+    name: "facebook",
+    link: "https://www.facebook.com/share/1CQQQJDVtm/?mibextid=wwXIfr",
+    icon: FaFacebook,
+  },
+
+  {
+    name: "tiktok",
+    link: "https://www.tiktok.com/@creativehub_africasl?_r=1&_t=ZS-93I8Oa41Tmx",
+    icon: FaTiktok,
+  },
+  {
+    name: "instagram",
+    link: "https://www.instagram.com/creativehubafricasl?igsh=MThoNm0weXl2NTA2NA==",
+    icon: FaInstagram,
   },
 ];

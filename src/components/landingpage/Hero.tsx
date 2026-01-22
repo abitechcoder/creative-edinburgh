@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { MeetandGreet } from "../../../public";
 import styles from "../../style";
 import Image from "next/image";
@@ -32,12 +33,13 @@ const Hero = () => {
             entrepreneur or a global investor, unlock the potential of West
             Africa's next rising star.
           </p>
-          <a
-            href="#"
+
+          <Link
+            href={`/business-directory`}
             className="bg-linear-to-br text-white text-xl rounded-lg bg-secondary hover:from-secondary hover:to-primary px-6 py-3"
           >
             Explore Opportunities
-          </a>
+          </Link>
         </div>
         <div className="lg:col-span-2 flex flex-col justify-end relative">
           <svg
