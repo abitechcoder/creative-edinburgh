@@ -26,7 +26,7 @@ const Hero = () => {
             <span className="text-secondary">Invest,</span>{" "}
             <span className="text-tertiary">Thrive</span>
           </h1>
-          <p className="text-xl">
+          <p className={`${styles.paragraph}`}>
             Sierra Leone Bizness Directory is your premier digital gateway to
             the nation's most trusted bizness directory, investment
             opportunities, and SME growth tools. Whether you are a local

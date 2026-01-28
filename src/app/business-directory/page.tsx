@@ -67,16 +67,20 @@ const MembersLibrary = async ({
   });
 
   return (
-    <div className="pb-8 px-8 mt-[140px]">
+    <div className="pb-8 px-8 mt-4 md:mt-[140px]">
       <section className="bg-gray-50 py-16 relative lg:min-h-[50vh] grid grid-cols-1 lg:grid-cols-2">
         <div className="w-full h-full flex flex-col justify-center">
           <h2
             className={`${styles.heading1} text-black mb-6 lg:mb-10 mt-16 uppercase`}
           >
-            Salone Bizness Directory Members Directory
+            {" "}
+            Salone Bizness Directory{" "}
+            <span className="text-primary">Members</span>{" "}
+            <span className="text-secondary">Directory</span>{" "}
+            <span className="text-tertiary">Network</span>{" "}
           </h2>
           <p
-            className={`${styles.paragraph} text-gray-700 mb-5 font-medium leading-relaxed text-xl`}
+            className={`${styles.paragraph}  text-gray-700 mb-5 font-medium leading-relaxed text-xl`}
           >
             Explore the Sierra Leone Bizness Directory! Connect with businesses
             across Sierra Leone from music and fashion to tech and are . Search

@@ -1,7 +1,8 @@
 const styles = {
   boxWidth: "lg:max-w-[1900px] w-full",
 
-  heroHeading: "text-4xl lg:text-7xl font-bold leading-[40px] lg:leading-[70px]",
+  heroHeading:
+    "text-4xl lg:text-7xl font-bold leading-[40px] lg:leading-[70px]",
 
   heading1: "lg:text-6xl text-3xl font-bold",
 
@@ -16,7 +17,7 @@ const styles = {
   heading4: "font-barlow text-lg font-bold",
   heading5: "leading-normal font-semibold tracking-wide font-nunito",
 
-  paragraph: "font-manrope text-xl",
+  paragraph: "font-manrope text-xl text-justify",
 
   paragraph2: "font-manrope text-lg",
 

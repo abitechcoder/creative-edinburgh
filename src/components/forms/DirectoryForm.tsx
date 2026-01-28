@@ -9,7 +9,7 @@ import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { useFormState } from "react-dom";
 import { createDirectory, updateDirectory } from "@/lib/actions";
 import { directorySchema } from "@/lib/formValidationSchemas";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import { CldUploadWidget } from "next-cloudinary";
 import moment from "moment";
@@ -22,11 +22,13 @@ const DirectoryForm = ({
   data,
   setOpen,
   relatedData,
+  text,
 }: {
   type: "create" | "update" | "view";
   data?: any;
   setOpen: Dispatch<SetStateAction<boolean>>;
   relatedData?: any;
+  text?: string;
 }) => {
   const {
     register,
@@ -35,6 +37,12 @@ const DirectoryForm = ({
   } = useForm<Inputs>({
     resolver: zodResolver(directorySchema),
   });
+
+  const pathname = usePathname();
+
+  const headingText = pathname.includes("/app/directories")
+    ? "Add a new directory"
+    : "Add your business";
 
   const [img, setImg] = useState<any>();
 
@@ -67,9 +75,7 @@ const DirectoryForm = ({
 
   return (
     <form className="flex flex-col gap-5" onSubmit={onSubmit}>
-      <h1 className="text-xl font-semibold text-gray-400">
-        Add a new directory
-      </h1>
+      <h1 className="text-xl font-semibold text-gray-400">{headingText}</h1>
       <span className="text-xs text-gray-400 font-medium">
         Authentication Information
       </span>
@@ -117,7 +123,7 @@ const DirectoryForm = ({
         />
       </div>
       <span className="text-xs text-gray-400 font-medium">
-        Directory Information {}
+        Directory Information
       </span>
       <div className="flex justify-between flex-wrap gap-4">
         <InputField

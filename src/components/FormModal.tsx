@@ -66,12 +66,13 @@ const forms: {
     text?: any
   ) => JSX.Element;
 } = {
-  directory: (setOpen, type, data, relatedData) => (
+  directory: (setOpen, type, data, relatedData, text) => (
     <DirectoryForm
       type={type}
       data={data}
       setOpen={setOpen}
       relatedData={relatedData}
+      text={text}
     />
   ),
 
