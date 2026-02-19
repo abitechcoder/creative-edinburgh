@@ -72,7 +72,7 @@ const TeacherListPage = async ({
     >
       <td className="flex items-center gap-4 p-4">
         <Image
-          src={item.logo || "/logo.png"}
+          src={item?.logo && !item.logo.includes('https://cdn.glitch.global') ? item.logo : "/logo.png"}
           alt=""
           width={40}
           height={40}
