@@ -145,7 +145,7 @@ const MembersLibrary = async ({
                   )?.name || "Unknown Sector"}
                 </div>
                 <Image
-                  src={business.logo || "/logo.png"}
+                  src={business?.logo && !business.logo.includes('https://cdn.glitch.global') ? business.logo : "/logo.png"}
                   alt={`${business.name} logo`}
                   className="mt-8"
                   height={100}
