@@ -2,7 +2,7 @@ import useSWR from "swr";
 import { fetcher } from "../lib/fetcher";
 
 function useBusinesses() {
-    const { data, error, isLoading } = useSWR("https://clear-crystal-scorpio.glitch.me/businesses", fetcher)
+    const { data, error, isLoading } = useSWR("https://cha.merchantgroup.com.ng/businesses", fetcher)
     return {
         businesses: data || [],
         error,
